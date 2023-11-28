@@ -1,33 +1,20 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
-#!/usr/bin/env python
+# !/usr/bin/env python
 
-import os
-import sys
+import argparse
 import json
+import numpy as np
+import os
+import submitit
+import sys
 import time
 import torch
-import submitit
-import argparse
-import numpy as np
 
 import models
 from datasets import get_loaders
 
-
-class Tee:
-    def __init__(self, fname, stream, mode="a+"):
-        self.stream = stream
-        self.file = open(fname, mode)
-
-    def write(self, message):
-        self.stream.write(message)
-        self.file.write(message)
-        self.flush()
-
-    def flush(self):
-        self.stream.flush()
-        self.file.flush()
+from utils import Tee
 
 
 def randl(l_):
@@ -40,7 +27,7 @@ def parse_args():
     parser.add_argument('--slurm_output_dir', type=str, default='slurm_outputs')
     parser.add_argument('--data_path', type=str, default='data')
     parser.add_argument('--slurm_partition', type=str, default=None)
-    parser.add_argument('--max_time', type=int, default=3*24*60)
+    parser.add_argument('--max_time', type=int, default=3 * 24 * 60)
     parser.add_argument('--num_hparams_seeds', type=int, default=20)
     parser.add_argument('--num_init_seeds', type=int, default=5)
     parser.add_argument('--selector', type=str, default='min_acc_va')
@@ -85,6 +72,7 @@ def run_experiment(args):
         best_selec_val = model.best_selec_val
 
     for epoch in range(last_epoch, args["num_epochs"]):
+        print("Epoch {}".format(epoch))
         if epoch == args["T"] + 1 and args["method"] == "jtt":
             loaders = get_loaders(
                 args["data_path"],
@@ -124,36 +112,42 @@ if __name__ == "__main__":
     for hparams_seed in range(args["num_hparams_seeds"]):
         torch.manual_seed(hparams_seed)
         args["hparams_seed"] = hparams_seed
-
         args["dataset"] = randl(
-            ["waterbirds", "celeba", "multinli", "civilcomments"])
-
+            ["SMA"])
         args["method"] = randl(
             ["erm", "suby", "subg", "rwy", "rwg", "dro", "jtt"])
-
-        args["num_epochs"] = {
-            "waterbirds": 300 + 60,
-            "celeba": 50 + 10,
-            "multinli": 5 + 2,
-            "civilcomments": 5 + 2
-        }[args["dataset"]]
-
+        # Global hyperparameters
         args["eta"] = 0.1
         args["lr"] = randl([1e-5, 1e-4, 1e-3])
         args["weight_decay"] = randl([1e-4, 1e-3, 1e-2, 1e-1, 1])
 
-        if args["dataset"] in ["waterbirds", "celeba"]:
-            args["batch_size"] = randl([2, 4, 8, 16, 32, 64, 128])
-        else:
-            args["batch_size"] = randl([2, 4, 8, 16, 32])
+        # Specific hyperparameters
+        if args["dataset"] == "SMA":
+            args["num_epochs"] = 30
+            args["batch_size"] = 32 #randl([2, 4, 8, 16, 32])
+            args["up"] = randl([4, 5, 6, 20, 50, 100])
+            args["T"] = randl([40, 50, 60])
 
-        args["up"] = randl([4, 5, 6, 20, 50, 100])
-        args["T"] = {
-            "waterbirds": randl([40, 50, 60]),
-            "celeba": randl([1, 5, 10]),
-            "multinli": randl([1, 2]),
-            "civilcomments": randl([1, 2])
-        }[args["dataset"]]
+        else :
+            args["num_epochs"] = {
+                "waterbirds": 300 + 60,
+                "celeba": 50 + 10,
+                "multinli": 5 + 2,
+                "civilcomments": 5 + 2
+            }[args["dataset"]]
+
+            if args["dataset"] in ["waterbirds", "celeba"]:
+                args["batch_size"] = randl([2, 4, 8])  # PERSO  [2, 4, 8,16, 32, 64, 128])
+            else:
+                args["batch_size"] = randl([2, 4, 8, 16, 32])
+
+            args["up"] = randl([4, 5, 6, 20, 50, 100])
+            args["T"] = {
+                "waterbirds": randl([40, 50, 60]),
+                "celeba": randl([1, 5, 10]),
+                "multinli": randl([1, 2]),
+                "civilcomments": randl([1, 2])
+            }[args["dataset"]]
 
         for init_seed in range(args["num_init_seeds"]):
             args["init_seed"] = init_seed
@@ -175,4 +169,3 @@ if __name__ == "__main__":
     else:
         for command in commands:
             run_experiment(command)
-    

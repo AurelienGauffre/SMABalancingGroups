@@ -1,16 +1,14 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
-import os
-import torch
-import pandas as pd
 import numpy as np
-
+import os
+import pandas as pd
+import torch
 from PIL import Image
+from sklearn.datasets import make_blobs
+from torch.utils.data import DataLoader
 from torchvision import transforms
 from transformers import BertTokenizer
-from torch.utils.data import DataLoader
-from sklearn.datasets import make_blobs
-import pandas as pd
 
 
 class GroupDataset:
@@ -93,6 +91,31 @@ class GroupDataset:
 
     def __len__(self):
         return len(self.i)
+
+class SMA(GroupDataset):
+    def __init__(self, data_path, split, subsample_what=None, duplicates=None):
+        root = os.path.join(data_path, "AWA")
+        metadata = os.path.join(data_path,"metadata_AWA.csv")
+
+        transform = transforms.Compose(
+            [
+                transforms.Resize(
+                    (
+                        int(224 * (256 / 224)),
+                        int(224 * (256 / 224)),
+                    )
+                ),
+                transforms.CenterCrop(224),
+                transforms.ToTensor(),
+                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]), #todo compute the statistics for each SMA dataset
+            ]
+        )
+        super().__init__(split, root, metadata, transform, subsample_what, duplicates)
+        self.data_type = "images"
+
+    def transform(self, x):
+        return self.transform_(Image.open(x).convert("RGB"))
+
 
 
 class Waterbirds(GroupDataset):
@@ -314,6 +337,7 @@ class Toy(GroupDataset):
 
 def get_loaders(data_path, dataset_name, batch_size, method="erm", duplicates=None):
     Dataset = {
+        "SMA": SMA,
         "waterbirds": Waterbirds,
         "celeba": CelebA,
         "multinli": MultiNLI,

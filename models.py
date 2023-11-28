@@ -91,7 +91,7 @@ class ERM(torch.nn.Module):
         }
 
         if data_type == "images":
-            self.network = torchvision.models.resnet.resnet50(pretrained=True)
+            self.network = torchvision.models.resnet.resnet18(pretrained=True)
             self.network.fc = torch.nn.Linear(
                 self.network.fc.in_features, self.n_classes)
 
