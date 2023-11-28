@@ -72,7 +72,6 @@ def run_experiment(args):
         best_selec_val = model.best_selec_val
 
     for epoch in range(last_epoch, args["num_epochs"]):
-        print("Epoch {}".format(epoch))
         if epoch == args["T"] + 1 and args["method"] == "jtt":
             loaders = get_loaders(
                 args["data_path"],
@@ -123,7 +122,7 @@ if __name__ == "__main__":
 
         # Specific hyperparameters
         if args["dataset"] == "SMA":
-            args["num_epochs"] = 30
+            args["num_epochs"] = 50
             args["batch_size"] = 32 #randl([2, 4, 8, 16, 32])
             args["up"] = randl([4, 5, 6, 20, 50, 100])
             args["T"] = randl([40, 50, 60])

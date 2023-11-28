@@ -1,10 +1,9 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-
-
 K_DEFAULT = 2
 IMBALANCE_RATIO_DEFAULT = (0.05,1)
 
 import argparse
+import csv
 import logging
 import numpy as np
 import os
@@ -12,7 +11,7 @@ import re
 import tarfile
 from sklearn.model_selection import train_test_split
 from zipfile import ZipFile
-import csv
+
 logging.basicConfig(level=logging.INFO)
 import itertools
 import gdown
@@ -384,7 +383,7 @@ def _df_to_keep_K(df, K):
     """ Keep K classes and K styles (+ original)"""
     all_styles = df['style'].unique().tolist()
     all_classes = df['class'].unique().tolist()
-
+    print()
     if K > len(all_styles) or K > len(all_classes):
         raise ValueError('K exceeds the number of available styles or classes')
 
