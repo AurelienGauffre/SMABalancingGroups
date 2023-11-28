@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 from zipfile import ZipFile
 import csv
 logging.basicConfig(level=logging.INFO)
-
+import itertools
 import gdown
 import pandas as pd
 from six import remove_move
