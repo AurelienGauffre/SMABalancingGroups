@@ -12,7 +12,7 @@ import re
 import tarfile
 from sklearn.model_selection import train_test_split
 from zipfile import ZipFile
-
+import csv
 logging.basicConfig(level=logging.INFO)
 
 import gdown
