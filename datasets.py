@@ -9,11 +9,12 @@ from sklearn.datasets import make_blobs
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from transformers import BertTokenizer
+from setup_datasets import generate_metadata_SMA
 
 
 class GroupDataset:
     def __init__(
-        self, split, root, metadata, transform, subsample_what=None, duplicates=None
+            self, split, root, metadata, transform, subsample_what=None, duplicates=None
     ):
         self.transform_ = transform
         df = pd.read_csv(metadata)
@@ -65,8 +66,8 @@ class GroupDataset:
             y, g = self.y[self.i[p]], self.g[self.i[p]]
 
             if (
-                subsample_what == "groups"
-                and counts_g[self.nb_groups * int(y) + int(g)] < min_size
+                    subsample_what == "groups"
+                    and counts_g[self.nb_groups * int(y) + int(g)] < min_size
             ) or (subsample_what == "classes" and counts_y[int(y)] < min_size):
                 counts_g[self.nb_groups * int(y) + int(g)] += 1
                 counts_y[int(y)] += 1
@@ -92,22 +93,36 @@ class GroupDataset:
     def __len__(self):
         return len(self.i)
 
+
 class SMA(GroupDataset):
-    def __init__(self, data_path, split, subsample_what=None, duplicates=None):
-        root = os.path.join(data_path, "AWA")
-        metadata = os.path.join(data_path,"metadata_AWA.csv")
+    def __init__(self, data_path, split, subsample_what=None, duplicates=None, args_SMA=None):
+        root = os.path.join(data_path, args_SMA.name)
+
+        metadata = os.path.join(data_path,
+                                f"metadata_{args_SMA.name}_K={args_SMA.K}_imbalancetuple={args_SMA.imbalance_tuple}_splitseed={args_SMA.split_seed}.csv")
+        if not os.path.exists(metadata):
+            print(f"Metadata file does not exist. Creating it...")
+
+            generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metadata', ratio=(.5, .2, .3),
+                                  K=args_SMA.K,
+                                  drop_original=True,
+                                  imbalance_tuple=args_SMA.imbalance_tuple,
+                                  pure_style=None,
+                                  overwrite=True,
+                                  seed=args_SMA.split_seed)
 
         transform = transforms.Compose(
             [
                 transforms.Resize(
                     (
-                        int(224 * (256 / 224)),
-                        int(224 * (256 / 224)),
+                        args_SMA.img_size,
+                        args_SMA.img_size,
                     )
                 ),
-                transforms.CenterCrop(224),
+                #transforms.CenterCrop(224), #todo no crop ?
                 transforms.ToTensor(),
-                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]), #todo compute the statistics for each SMA dataset
+                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+                # todo compute the statistics for each SMA dataset
             ]
         )
         super().__init__(split, root, metadata, transform, subsample_what, duplicates)
@@ -117,11 +132,10 @@ class SMA(GroupDataset):
         return self.transform_(Image.open(x).convert("RGB"))
 
 
-
 class Waterbirds(GroupDataset):
     def __init__(self, data_path, split, subsample_what=None, duplicates=None):
         root = os.path.join(data_path, "waterbirds/waterbird_complete95_forest2water2/")
-        metadata = os.path.join(data_path,"metadata_waterbirds.csv")
+        metadata = os.path.join(data_path, "metadata_waterbirds.csv")
 
         transform = transforms.Compose(
             [
@@ -146,7 +160,7 @@ class Waterbirds(GroupDataset):
 class CelebA(GroupDataset):
     def __init__(self, data_path, split, subsample_what=None, duplicates=None):
         root = os.path.join(data_path, "celeba/img_align_celeba/")
-        metadata = os.path.join(data_path,"metadata_celeba.csv")
+        metadata = os.path.join(data_path, "metadata_celeba.csv")
 
         transform = transforms.Compose(
             [
@@ -206,14 +220,14 @@ class MultiNLI(GroupDataset):
 
 class CivilComments(GroupDataset):
     def __init__(
-        self,
-        data_path,
-        split,
-        subsample_what=None,
-        duplicates=None,
-        granularity="coarse",
+            self,
+            data_path,
+            split,
+            subsample_what=None,
+            duplicates=None,
+            granularity="coarse",
     ):
-        metadata = os.path.join(data_path,"metadata_civilcomments_{}.csv".format(granularity))
+        metadata = os.path.join(data_path, "metadata_civilcomments_{}.csv".format(granularity))
 
         text = pd.read_csv(
             os.path.join(
@@ -283,13 +297,13 @@ class Toy(GroupDataset):
         return torch.tensor(x)
 
     def make_dataset(
-        self,
-        n_samples=1000,
-        dim_noise=1200,
-        blob_std=0.15,
-        core_cor=1.0,
-        spu_cor=0.8,
-        train=True,
+            self,
+            n_samples=1000,
+            dim_noise=1200,
+            blob_std=0.15,
+            core_cor=1.0,
+            spu_cor=0.8,
+            train=True,
     ):
         X = make_blobs(n_samples=n_samples, centers=1, cluster_std=[blob_std])[0]
         X -= X.mean(0, keepdims=True) + np.array([[1.0, 1.0]])
@@ -300,16 +314,16 @@ class Toy(GroupDataset):
         core_features = X[:, 0] * y
         # random without replacement
         random_indices_for_core = np.random.permutation(np.arange(n_samples))[
-            : int((1 - core_cor) * n_samples)
-        ]
+                                  : int((1 - core_cor) * n_samples)
+                                  ]
         core_features[random_indices_for_core] *= -1
         g[random_indices_for_core] *= -1
 
         # making of the spurious feature
         spu_features = X[:, 1] * y
         random_indices_for_spu = np.random.permutation(np.arange(n_samples))[
-            : int((1 - spu_cor) * n_samples)
-        ]
+                                 : int((1 - spu_cor) * n_samples)
+                                 ]
         spu_features[random_indices_for_spu] *= -1
         g[random_indices_for_spu] *= -1
 
@@ -335,7 +349,7 @@ class Toy(GroupDataset):
         return i, X, y, g
 
 
-def get_loaders(data_path, dataset_name, batch_size, method="erm", duplicates=None):
+def get_loaders(data_path, dataset_name, batch_size, method="erm", args_SMA=None, duplicates=None):
     Dataset = {
         "SMA": SMA,
         "waterbirds": Waterbirds,
@@ -346,6 +360,8 @@ def get_loaders(data_path, dataset_name, batch_size, method="erm", duplicates=No
         else CivilComments,
         "toy": Toy,
     }[dataset_name]
+    if dataset_name == "SMA" and args_SMA is None:
+        raise ValueError("args_SMA must be provided for SMA dataset in the config file (args.SMA must be defined)")
 
     def dl(dataset, bs, shuffle, weights):
         if weights is not None:
@@ -367,8 +383,10 @@ def get_loaders(data_path, dataset_name, batch_size, method="erm", duplicates=No
         subsample_what = "classes"
     else:
         subsample_what = None
-
-    dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates)
+    if dataset_name != "SMA":
+        dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates)
+    else:
+        dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates, args_SMA)
 
     if method == "rwg" or method == "dro":
         weights_tr = dataset_tr.wg
@@ -377,8 +395,15 @@ def get_loaders(data_path, dataset_name, batch_size, method="erm", duplicates=No
     else:
         weights_tr = None
 
-    return {
-        "tr": dl(dataset_tr, batch_size, weights_tr is None, weights_tr),
-        "va": dl(Dataset(data_path, "va", None), 128, False, None),
-        "te": dl(Dataset(data_path, "te", None), 128, False, None),
-    }
+    if dataset_name != "SMA":
+        return {
+            "tr": dl(dataset_tr, batch_size, weights_tr is None, weights_tr),
+            "va": dl(Dataset(data_path, "va", None), 128, False, None),
+            "te": dl(Dataset(data_path, "te", None), 128, False, None),
+        }
+    else:
+        return {
+            "tr": dl(dataset_tr, batch_size, weights_tr is None, weights_tr),
+            "va": dl(Dataset(data_path, "va", None, args_SMA=args_SMA), 128, False, None),
+            "te": dl(Dataset(data_path, "te", None, args_SMA=args_SMA), 128, False, None),
+        }

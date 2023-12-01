@@ -1,3 +1,6 @@
+# TODO
+- [ ] Add a link to the paper
+
 # BalancingGroups
 
 Code to replicate the experimental results from [Simple data balancing baselines achieve competitive worst-group-accuracy](https://arxiv.org/abs/2110.14503).

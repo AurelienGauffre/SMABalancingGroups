@@ -1,6 +1,5 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-K_DEFAULT = 2
-IMBALANCE_RATIO_DEFAULT = (0.05,1)
+
 
 import argparse
 import csv
@@ -299,6 +298,8 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metad
     The splits are stratified on the class and very importantly, different styles of the same content image are in the SAME split to prevent data leakage.
     The CSV has the same columns as the ALL_EXAMPLES CSV file with an additional column:
         - split: 0 for train, 1 for val, 2 for test
+        - y: the class of the image (one of the 20 classes)
+        - a: the style of the image (original or one of the 20 styles)
     Several options are available:
         - K: if not None, only keep K classes and K styles (+ original) sampled randomly
         - imbalance_tuple: if not None, create an imbalance in the dataset by keeping :
@@ -312,8 +313,8 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metad
         print(f'########### No main CSV file found for dataset {SMA_dataset}. Creating it.')
         generate_ALL_EXAMPLES_csv(data_folder=data_folder, dataset_name=SMA_dataset, csv_name=None)
     meta_data_folders = f'./{data_folder}//'
-    metadata_csv_path = os.path.join(meta_data_folders, f"{csv_name}_{SMA_dataset}.csv")
-
+    #"metadata_{args_SMA.name}_K={args_SMA.K}_imbalancetuple={args_SMA.imbalance_tuple}_splitseed={args_SMA.split_seed}.csv"
+    metadata_csv_path = os.path.join(meta_data_folders, f"metadata_{SMA_dataset}_K={K}_imbalancetuple={imbalance_tuple}_splitseed={seed}.csv")
     if os.path.isfile(metadata_csv_path):
         if not overwrite:
             print(f'########### CSV file {metadata_csv_path} already exists. Loading it instead of creating it.')

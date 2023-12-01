@@ -1,3 +1,4 @@
+import numpy as np
 class Tee:
     def __init__(self, fname, stream, mode="a+"):
         self.stream = stream
@@ -11,3 +12,46 @@ class Tee:
     def flush(self):
         self.stream.flush()
         self.file.flush()
+
+def flatten_dictionary_for_wandb(args):
+    """
+    Small script to keep a clean Wandb config file by having easy access to the hyperparameters
+    """
+    # Check if 'SMA' is a key in the dictionary and if its value is a dictionary
+    if 'SMA' in args and isinstance(args['SMA'], dict):
+        # Update the original dictionary with the values from args['SMA']
+        args.update(args['SMA'])
+        # Remove the 'SMA' key from the dictionary
+        del args['SMA']
+    return args
+
+
+def list_to_matrix(lst):
+    K = int(np.sqrt(len(lst)))
+    return np.array(lst).reshape(K, K)
+
+def zero_diagonal(M):
+    """Sets the diagonal of the matrix to zero"""
+    M_copy = np.copy(M)
+    np.fill_diagonal(M_copy, 0)
+    return M_copy
+
+
+def results_to_log_dict(result):
+    """ Computes the mean, worst, minor, major and relative accuracy from a list of accuracies"""
+    log_dict = {}
+    for acc in ['acc_tr', 'acc_va', 'acc_te']:
+        if acc in result:
+            acc_mat = list_to_matrix(result[acc]) * 100
+            K = acc_mat.shape[0]
+            log_dict[f'mean_{acc}'] = np.mean(acc_mat)
+            log_dict[f'worst_{acc}'] = np.min(acc_mat)
+            minor_acc = zero_diagonal(acc_mat).sum() / (K*(K-1))
+            major_acc = np.trace(acc_mat) / K
+            log_dict[f'minor_{acc}'] = minor_acc
+            log_dict[f'major_{acc}'] = major_acc
+            log_dict[f'relative_{acc}'] = minor_acc / major_acc
+
+    return log_dict
+
+
