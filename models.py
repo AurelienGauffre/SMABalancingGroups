@@ -83,7 +83,7 @@ class ERM(torch.nn.Module):
         self.best_selec_val = 0
         self.init_model_(self.data_type)
 
-    def init_model_(self, data_type, text_optim="sgd"):
+    def init_model_(self, data_type, text_optim="sgd",arch="resnet18"):
         self.clip_grad = text_optim == "adamw"
         optimizers = {
             "adamw": get_bert_optim,
@@ -91,7 +91,10 @@ class ERM(torch.nn.Module):
         }
 
         if data_type == "images":
-            self.network = torchvision.models.resnet.resnet18(pretrained=True)
+            if arch == "resnet18":
+                self.network = torchvision.models.resnet.resnet18(pretrained=True)
+            elif arch == "resnet50":
+                self.network = torchvision.models.resnet.resnet50(pretrained=True)
             self.network.fc = torch.nn.Linear(
                 self.network.fc.in_features, self.n_classes)
 
@@ -265,9 +268,9 @@ class JTT(ERM):
         else:
             self.eval()
             if predictions.squeeze().ndim == 1:
-                wrong_predictions = (predictions > 0).cpu().ne(y).float()
+                wrong_predictions = (predictions > 0).cpu().ne(y.cpu()).float() #TODO Added .cpu() to fix error
             else:
-                wrong_predictions = predictions.argmax(1).cpu().ne(y).float()
+                wrong_predictions = predictions.argmax(1).cpu().ne(y.cpu()).float() #TODO Added .cpu() to fix error
 
             self.weights[i] += wrong_predictions.detach() * (self.hparams["up"] - 1)
             self.train()
