@@ -288,9 +288,9 @@ def generate_ALL_EXAMPLES_csv(data_folder='./data', dataset_name='AWA', csv_name
 
 
 def generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metadata', ratio=(.5, .2, .3),
-                          K=K_DEFAULT,
+                          K=2,
                           drop_original=True,
-                          imbalance_tuple=IMBALANCE_RATIO_DEFAULT,
+                          imbalance_tuple=(.1,1),
                           pure_style=None,
                           overwrite=True,
                           seed=42):
