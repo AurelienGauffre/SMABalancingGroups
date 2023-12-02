@@ -384,7 +384,7 @@ def _df_to_keep_K(df, K):
     """ Keep K classes and K styles (+ original)"""
     all_styles = df['style'].unique().tolist()
     all_classes = df['class'].unique().tolist()
-    print()
+
     if K > len(all_styles) or K > len(all_classes):
         raise ValueError('K exceeds the number of available styles or classes')
 
