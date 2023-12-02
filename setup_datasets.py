@@ -290,7 +290,7 @@ def generate_ALL_EXAMPLES_csv(data_folder='./data', dataset_name='AWA', csv_name
 def generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metadata', ratio=(.5, .2, .3),
                           K=2,
                           drop_original=True,
-                          imbalance_tuple=(.1,1),
+                          mu=.1,
                           pure_style=None,
                           overwrite=True,
                           seed=42):
@@ -313,8 +313,9 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metad
         print(f'########### No main CSV file found for dataset {SMA_dataset}. Creating it.')
         generate_ALL_EXAMPLES_csv(data_folder=data_folder, dataset_name=SMA_dataset, csv_name=None)
     meta_data_folders = f'./{data_folder}//'
-    #"metadata_{args_SMA.name}_K={args_SMA.K}_imbalancetuple={args_SMA.imbalance_tuple}_splitseed={args_SMA.split_seed}.csv"
-    metadata_csv_path = os.path.join(meta_data_folders, f"metadata_{SMA_dataset}_K={K}_imbalancetuple={imbalance_tuple}_splitseed={seed}.csv")
+    # "metadata_{args_SMA.name}_K={args_SMA.K}_imbalancetuple={args_SMA.imbalance_tuple}_splitseed={args_SMA.split_seed}.csv"
+    metadata_csv_path = os.path.join(meta_data_folders,
+                                     f"metadata_{SMA_dataset}_K={K}_mu={mu}_splitseed={seed}.csv")
     if os.path.isfile(metadata_csv_path):
         if not overwrite:
             print(f'########### CSV file {metadata_csv_path} already exists. Loading it instead of creating it.')
@@ -358,9 +359,8 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metad
     df = df.drop(columns=['original_name_without_extension'])
     if drop_original:
         df = df[df['style'] != 'original']
-    if imbalance_tuple is not None:
-        minority_to_keep, majority_to_keep = imbalance_tuple
-        df = _df_to_imbalalance_ratio(df, minority_to_keep, majority_to_keep, seed)
+    if mu is not None:
+        df = _df_to_imbalalance_ratio(df, mu, seed)
 
     if pure_style is not None:
         df = _df_to_pure_style(df, pure_style)
@@ -395,7 +395,7 @@ def _df_to_keep_K(df, K):
     return df[(df['style'].isin(selected_styles)) & (df['class'].isin(selected_classes))]
 
 
-def _df_to_imbalalance_ratio(df, minority_to_keep, majority_to_keep, seed):
+def _df_to_imbalalance_ratio(df, mu, seed):
     """ Create groups imbalance in the dataset by keeping :
         - minority_to_keep: fraction or number of examples to keep in minority classes
         - majority_to_keep: fraction or number of examples to keep in majority classes
@@ -413,15 +413,15 @@ def _df_to_imbalalance_ratio(df, minority_to_keep, majority_to_keep, seed):
                 if split in [1, 2]:  # val/test are kept balanced
                     pass
                 elif i == j:  # majority class
-                    if isinstance(majority_to_keep, float) or majority_to_keep == 1:
-                        subset = subset.sample(frac=majority_to_keep, random_state=seed)
-                    elif isinstance(majority_to_keep, int):
-                        subset = subset.sample(n=majority_to_keep, random_state=seed)
+                    pass
+                    # if isinstance(majority_to_keep, float) or majority_to_keep == 1:
+                    #     subset = subset.sample(frac=majority_to_keep, random_state=seed)
+                    # elif isinstance(majority_to_keep, int):
+                    #     subset = subset.sample(n=majority_to_keep, random_state=seed)
                 else:  # minority class
-                    if isinstance(minority_to_keep, float) or majority_to_keep == 1:
-                        subset = subset.sample(frac=minority_to_keep, random_state=seed)
-                    elif isinstance(minority_to_keep, int):
-                        subset = subset.sample(n=minority_to_keep, random_state=seed)
+
+                    subset = subset.sample(frac=mu, random_state=seed)
+
                 to_keep.append(subset)
 
     return pd.concat(to_keep, ignore_index=True)
