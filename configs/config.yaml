@@ -31,5 +31,5 @@ SMA:
   name: 'AWA'
   split_seed: 0
   K: [2,3]
-  imbalance_tuple: (0.05, 1)
-  img_size: 224 #224
+  mu: 0.05
+  img_size: 256 #224

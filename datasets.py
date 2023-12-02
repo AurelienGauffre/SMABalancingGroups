@@ -99,14 +99,14 @@ class SMA(GroupDataset):
         root = os.path.join(data_path, args_SMA.name)
 
         metadata = os.path.join(data_path,
-                                f"metadata_{args_SMA.name}_K={args_SMA.K}_imbalancetuple={args_SMA.imbalance_tuple}_splitseed={args_SMA.split_seed}.csv")
+                                f"metadata_{args_SMA.name}_K={args_SMA.K}_mu={args_SMA.mu}_splitseed={args_SMA.split_seed}.csv")
         if not os.path.exists(metadata):
             print(f"Metadata file does not exist. Creating it...")
 
             generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metadata', ratio=(.5, .2, .3),
                                   K=args_SMA.K,
                                   drop_original=True,
-                                  imbalance_tuple=args_SMA.imbalance_tuple,
+                                  mu=args_SMA.mu,
                                   pure_style=None,
                                   overwrite=True,
                                   seed=args_SMA.split_seed)
