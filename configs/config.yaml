@@ -9,7 +9,7 @@ num_init_seeds: 5
 selector: 'min_acc_va'
 
 #Sweep
-method: ['erm','jtt', 'suby']
+method: ['subg', 'rwy', 'rwg', 'dro']
 dataset: ['SMA']
 init_seed: [0]
 hparams_seed: [0]
