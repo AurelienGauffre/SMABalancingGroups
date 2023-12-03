@@ -18,7 +18,7 @@ def flatten_dictionary_for_wandb(args):
     Small script to keep a clean Wandb config file by having easy access to the hyperparameters
     """
     # Check if 'SMA' is a key in the dictionary and if its value is a dictionary
-    if 'SMA' in args and isinstance(args['SMA'], dict):
+    if 'SMA' in args :
         # Update the original dictionary with the values from args['SMA']
         args.update(args['SMA'])
         # Remove the 'SMA' key from the dictionary
