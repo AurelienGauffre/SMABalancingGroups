@@ -16,7 +16,7 @@ hparams_seed: [0]
 eval_every_n_epochs: 1
 # Hyperparameters for all methods
 
-num_epochs: [10,20,30]
+num_epochs: [20]
 batch_size: 16
 eta: 0.1
 lr: [3e-5, 1e-4, 3e-3]
