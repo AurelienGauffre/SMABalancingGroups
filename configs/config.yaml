@@ -14,7 +14,7 @@ dataset: ['SMA']
 init_seed: [0]
 hparams_seed: [0]
 eval_every_n_epochs: 1
-arch: "resnet50"
+arch: "resnet18"
 # Hyperparameters for all methods
 
 num_epochs: [20,30,40]
