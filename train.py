@@ -84,6 +84,7 @@ def run_experiment(args):
         result = {"epoch": epoch, "time": time.time() - start_time}
         if epoch % args.eval_every_n_epochs == 0:
             for loader_name, loader in loaders.items():
+                print('yes')
                 avg_acc, group_accs = model.accuracy(loader)
                 result["acc_" + loader_name] = group_accs
                 result["avg_acc_" + loader_name] = avg_acc
