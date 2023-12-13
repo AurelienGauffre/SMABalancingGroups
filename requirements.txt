@@ -15,4 +15,5 @@ wandb
 sklearn
 timm
 OmegaConf
+deephyper
 git+https://github.com/ildoonet/pytorch-randaugment

@@ -1,5 +1,10 @@
+# Done
+- [x] early stopping
+- [x] scheduler ?
+- 
 # TODO
-- [ ] Add a link to the paper
+- [ ] deephyper
+- 
 
 # BalancingGroups
 

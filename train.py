@@ -15,7 +15,9 @@ import itertools
 from datasets import get_loaders
 from setup_datasets import generate_metadata_SMA
 from omegaconf import OmegaConf
-
+# from deephyper.problem import HpProblem
+# from deephyper.evaluator import Evaluator
+# from deephyper.evaluator.callback import TqdmCallback
 from utils import Tee, flatten_dictionary_for_wandb,results_to_log_dict
 
 import wandb
@@ -137,7 +139,7 @@ if __name__ == "__main__":
     #         args["num_epochs"] = {
     #             "waterbirds": 300 + 60,
     #             "celeba": 50 + 10,
-    #             "multinli": 5 + 2,
+    #             "multinli": 5 + 2, 
     #             "civilcomments": 5 + 2
     #         }[args["dataset"]]
     #
