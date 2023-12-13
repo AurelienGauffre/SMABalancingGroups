@@ -10,7 +10,7 @@ selector: 'min_acc_va'
 
 #Sweep
 #['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-method: 'suby'
+method: 'subg'
 dataset: ['SMA']
 init_seed: [0]
 hparams_seed: [0]
