@@ -1,7 +1,7 @@
 # Done
 - [x] early stopping
-- [x] scheduler ?
-- 
+- [x] scheduler 
+- I started to 16x16
 # TODO
 - [ ] deephyper
 - 
