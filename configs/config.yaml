@@ -31,7 +31,7 @@ T: 40 #[40, 50, 60]
 # Specific hyperparameters for to create SMA dataset
 SMA:
   name: 'AWA'
-  split_seed: 0
+  split_seed: 1
   K: 4
   mu: 0.05
   img_size: 256
