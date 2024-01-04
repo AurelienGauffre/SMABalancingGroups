@@ -1,4 +1,4 @@
-wandb_project: 'AWA big : weight decay '
+wandb_project: 'AWA big weight decay'
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
