@@ -276,11 +276,11 @@ class JTT(ERM):
         else:
             self.eval()
             if predictions.squeeze().ndim == 1:
-                wrong_predictions = (predictions > 0).cpu().ne(y.cpu()).float() #TODO Added .cpu() to fix error
+                wrong_predictions = (predictions > 0).cuda().ne(y.cuda()).float() #TODO Added .cuda() to fix error
             else:
-                wrong_predictions = predictions.argmax(1).cpu().ne(y.cpu()).float() #TODO Added .cpu() to fix error
+                wrong_predictions = predictions.argmax(1).cuda().ne(y.cuda()).float() #TODO Added .cuda() to fix error
 
-            self.weights[i] += wrong_predictions.detach() * (self.hparams["up"] - 1)
+            self.weights[i] += (wrong_predictions.detach() * (self.hparams["up"] - 1)).long() #TODO Added .long() to fix error
             self.train()
             loss_value = None
 
