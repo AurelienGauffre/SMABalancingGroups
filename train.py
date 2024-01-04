@@ -36,6 +36,7 @@ def run_experiment(args):
     if 'SMA' not in args:
         args.SMA = None
     wandb.init(project=args.wandb_project, config=flatten_dictionary_for_wandb(dict(args)))
+    print(args)
     print(f'Method: {args.method}')
     #print(args)
     start_time = time.time()
@@ -83,7 +84,7 @@ def run_experiment(args):
         for i, x, y, g in loaders["tr"]:
             model.update(i, x, y, g, epoch)
 
-        result = {"epoch": epoch, "time": time.time() - start_time}
+        result = {"epoch": epoch, "time": time.time() - start_time, "lr": model.optimizer.param_groups[0]["lr"]}
         if epoch % args.eval_every_n_epochs == 0:
             for loader_name, loader in loaders.items():
                 avg_acc, group_accs = model.accuracy(loader)
@@ -106,6 +107,41 @@ def run_experiment(args):
         log_dict = results_to_log_dict(result)
         wandb.log(log_dict, step=epoch)
     wandb.finish()
+
+def get_nested_config(config, key_path):
+    """
+    Retrieve the value from a nested configuration dictionary based on the key path.
+    """
+    keys = key_path.split('.')
+    for key in keys:
+        config = config.get(key)
+        if config is None:
+            return None
+    return config
+
+
+def find_list_keys(d, parent_key=''):
+    """
+    Recursively find all keys in the dictionary `d` that have list values.
+    """
+    list_keys = []
+    for k, v in d.items():
+        new_key = f"{parent_key}.{k}" if parent_key else k
+        if isinstance(v, list):
+            list_keys.append(new_key)
+        elif isinstance(v, dict):
+            list_keys.extend(find_list_keys(v, new_key))
+    return list_keys
+
+
+def set_nested_config(config, key_path, value):
+    """
+    Set the value in a nested configuration dictionary based on the key path.
+    """
+    keys = key_path.split('.')
+    for key in keys[:-1]:
+        config = config.setdefault(key, {})
+    config[keys[-1]] = value
 
 
 if __name__ == "__main__":
@@ -161,15 +197,15 @@ if __name__ == "__main__":
     # torch.manual_seed(0)
     # commands = [commands[int(p)] for p in torch.randperm(len(commands))] #simple shuffle de la liste
 
-    os.makedirs(config_dict["output_dir"], exist_ok=True)
+    os.makedirs(config_dict.get("output_dir", "."), exist_ok=True)
 
-    # The following code is a simple way to iterate over all the possible combinations of hyperparameters that are given
-    # as lists in the config file
-    list_keys = [k for k, v in config_dict.items() if isinstance(v, list)]  # Identify which keys have list values
-    combinations = list(itertools.product(*(config_dict[k] for k in list_keys)))
+    list_keys = find_list_keys(config_dict)  # Find keys with list values, including nested ones
+    list_values = [get_nested_config(config_dict, k) for k in list_keys]
+    combinations = list(itertools.product(*list_values))
+
     for values in combinations:
         for k, v in zip(list_keys, values):
-            config_dict[k] = v
+            set_nested_config(config_dict, k, v)
         command = OmegaConf.create(config_dict)
         run_experiment(command)
 
@@ -185,3 +221,5 @@ if __name__ == "__main__":
     # else:
     #     for command in commands:
     #         run_experiment(command)
+
+

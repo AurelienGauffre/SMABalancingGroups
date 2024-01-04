@@ -16,4 +16,6 @@ sklearn
 timm
 OmegaConf
 deephyper
+ray # for deephyper
+
 git+https://github.com/ildoonet/pytorch-randaugment
