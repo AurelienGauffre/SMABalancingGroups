@@ -1,4 +1,4 @@
-wandb_project: 'AWA 2/4/8 big '
+wandb_project: 'AWA K=2_4_8 big '
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
