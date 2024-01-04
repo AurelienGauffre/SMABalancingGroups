@@ -103,7 +103,15 @@ class ERM(torch.nn.Module):
                 self.hparams['lr'],
                 self.hparams['weight_decay'])
 
-            self.lr_scheduler = None
+            if self.hparams.get('scheduler', False):
+                print("Using cosine annealing scheduler")
+                num_training_steps = int(self.hparams["num_epochs"]) * self.n_batches
+                # Assuming T_max and eta_min as hyperparameters
+                self.lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+                    self.optimizer, T_max=num_training_steps, eta_min=0)
+            else:
+                self.lr_scheduler = None
+
             self.loss = torch.nn.CrossEntropyLoss(reduction="none")
 
         elif data_type == "text":

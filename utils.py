@@ -39,7 +39,7 @@ def zero_diagonal(M):
 
 def results_to_log_dict(result):
     """ Computes the mean, worst, minor, major and relative accuracy from a list of accuracies"""
-    log_dict = {}
+    log_dict = {'lr': result['lr']}
     for acc in ['acc_tr', 'acc_va', 'acc_te']:
         if acc in result:
             acc_mat = list_to_matrix(result[acc]) * 100

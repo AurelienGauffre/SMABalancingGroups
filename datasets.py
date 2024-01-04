@@ -95,6 +95,9 @@ class GroupDataset:
 
 
 class SMA(GroupDataset):
+    """
+    SMA dataset
+    """
     def __init__(self, data_path, split, subsample_what=None, duplicates=None, args_SMA=None):
         root = os.path.join(data_path, args_SMA.name)
 

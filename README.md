@@ -1,17 +1,14 @@
 # Done
 - [x] early stopping
 - [x] scheduler 
-- I started to 16x16
+- [x] deephyper
+
 # TODO
-- [ ] deephyper
-- 
 
-# BalancingGroups
+- [] Les methodes suby et rwy qui sous sample les classent devraient pas performées vraiment differement sur un dataset equilibré
 
-Code to replicate the experimental results from [Simple data balancing baselines achieve competitive worst-group-accuracy](https://arxiv.org/abs/2110.14503).
 
-## Replicating the main results
-
+#
 ### Installing dependencies
 
 Easiest way to have a working environment for this repo is to create a conda environement with the following commands
