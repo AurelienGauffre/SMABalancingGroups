@@ -89,6 +89,7 @@ def run(job):
                 args["dataset"],
                 args["batch_size"],
                 args["method"],
+                args["SMA"],
                 model.weights.tolist())
 
         for i, x, y, g in loaders["tr"]:
