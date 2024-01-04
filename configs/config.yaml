@@ -1,4 +1,4 @@
-wandb_project: 'AWA big weight decay'
+wandb_project: 'AWA K=2_4_8 big '
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -10,7 +10,7 @@ selector: 'min_acc_va'
 
 #Sweep
 #['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-method: ['erm','jtt']   #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
+method: ['jtt']   #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: ['SMA']
 init_seed: [0]
 hparams_seed: [0]
@@ -18,11 +18,11 @@ eval_every_n_epochs: 1
 arch: "resnet18"
 # Hyperparameters for all methods
 
-num_epochs: [20]
+num_epochs: [20,40,60]
 batch_size: [16]
 eta: 0.1
-lr: [1e-3]
-weight_decay: [1,1e-2,1e-3,1e-4,1e-5,0]
+lr: [1e-3, 1e-4, 1e-5, 1e-6]
+weight_decay: [1e-3]
 up: [20] #[4, 5, 6, 20, 50, 100]
 T: [3] #[40, 50, 60]
 scheduler: [False]
@@ -36,6 +36,8 @@ SMA:
   K: [2,4,8]
   mu: 0.05
   img_size: 256
+
+
 
 #
 #wandb_project: 'AWA K=2_4_8 big '
