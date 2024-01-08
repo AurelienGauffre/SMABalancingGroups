@@ -81,9 +81,9 @@ class ERM(torch.nn.Module):
         self.n_examples = len(dataset)
         self.last_epoch = 0
         self.best_selec_val = 0
-        self.init_model_(self.data_type)
+        self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
 
-    def init_model_(self, data_type, text_optim="sgd",arch="resnet18"):
+    def init_model_(self, data_type, text_optim="sgd", arch="resnet18"):
         self.clip_grad = text_optim == "adamw"
         optimizers = {
             "adamw": get_bert_optim,
@@ -144,7 +144,7 @@ class ERM(torch.nn.Module):
                 self.hparams['lr'],
                 self.hparams['weight_decay'])
             self.lr_scheduler = None
-            self.loss = lambda x, y:\
+            self.loss = lambda x, y: \
                 torch.nn.BCEWithLogitsLoss(reduction="none")(x.squeeze(),
                                                              y.float())
 
@@ -199,8 +199,8 @@ class ERM(torch.nn.Module):
                     totals[gi] += (groups == gi).sum()
         corrects, totals = corrects.tolist(), totals.tolist()
         self.train()
-        return sum(corrects) / sum(totals),\
-            [c/t for c, t in zip(corrects, totals)]
+        return sum(corrects) / sum(totals), \
+            [c / t for c, t in zip(corrects, totals)]
 
     def load(self, fname):
         dicts = torch.load(fname)
@@ -247,7 +247,7 @@ class GroupDRO(ERM):
 
         for idx_g, idx_b in self.groups_(y, g):
             self.q[idx_g] *= (
-                self.hparams["eta"] * losses[idx_b].mean()).exp().item()
+                    self.hparams["eta"] * losses[idx_b].mean()).exp().item()
 
         self.q /= self.q.sum()
 
@@ -265,9 +265,9 @@ class JTT(ERM):
             "weights", torch.ones(self.n_examples, dtype=torch.long).cuda())
 
     def compute_loss_value_(self, i, x, y, g, epoch):
-        if epoch == self.hparams["T"] + 1 and\
-           self.last_epoch == self.hparams["T"]:
-            self.init_model_(self.data_type, text_optim="adamw")
+        if epoch == self.hparams["T"] + 1 and \
+                self.last_epoch == self.hparams["T"]:
+            self.init_model_(self.data_type, text_optim="adamw", arch=self.hparams['arch'])
 
         predictions = self.network(x)
 
@@ -276,11 +276,12 @@ class JTT(ERM):
         else:
             self.eval()
             if predictions.squeeze().ndim == 1:
-                wrong_predictions = (predictions > 0).cuda().ne(y.cuda()).float() #TODO Added .cuda() to fix error
+                wrong_predictions = (predictions > 0).cuda().ne(y.cuda()).float()  # TODO Added .cuda() to fix error
             else:
-                wrong_predictions = predictions.argmax(1).cuda().ne(y.cuda()).float() #TODO Added .cuda() to fix error
+                wrong_predictions = predictions.argmax(1).cuda().ne(y.cuda()).float()  # TODO Added .cuda() to fix error
 
-            self.weights[i] += (wrong_predictions.detach() * (self.hparams["up"] - 1)).long() #TODO Added .long() to fix error
+            self.weights[i] += (
+                        wrong_predictions.detach() * (self.hparams["up"] - 1)).long()  # TODO Added .long() to fix error
             self.train()
             loss_value = None
 
@@ -291,7 +292,7 @@ class JTT(ERM):
         self.last_epoch = dicts["epoch"]
 
         if self.last_epoch > self.hparams["T"]:
-            self.init_model_(self.data_type, text_optim="adamw")
+            self.init_model_(self.data_type, text_optim="adamw", arch=self.hpams['arch'])
 
         self.load_state_dict(dicts["model"])
         self.optimizer.load_state_dict(dicts["optimizer"])
