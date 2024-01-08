@@ -34,6 +34,7 @@ class BertWrapper(torch.nn.Module):
             token_type_ids=x[:, :, 2]).logits
 
 
+
 def get_bert_optim(network, lr, weight_decay):
     no_decay = ["bias", "LayerNorm.weight"]
     decay_params = []
