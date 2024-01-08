@@ -73,7 +73,6 @@ def run_experiment(args):
     #     best_selec_val = model.best_selec_val
 
     for epoch in range(last_epoch, args["num_epochs"]):
-        print(model.weights)
         if epoch == args["T"] + 1 and args["method"] == "jtt":
             loaders = get_loaders(
                 args["data_path"],
