@@ -18,7 +18,7 @@ eval_every_n_epochs: 1
 arch: "resnet50"
 # Hyperparameters for all methods
 
-num_epochs: 10
+num_epochs: 50
 batch_size: 16
 eta: 0.1
 lr: 1e-3
