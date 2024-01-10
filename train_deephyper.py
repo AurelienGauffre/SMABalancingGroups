@@ -21,9 +21,11 @@ from deephyper.evaluator.callback import TqdmCallback
 from deephyper.search.hps import CBO
 import ray
 
-from utils import Tee, flatten_dictionary_for_wandb,results_to_log_dict
+
+from utils import Tee, flatten_dictionary_for_wandb, results_to_log_dict, append_to_dataframe_and_save
 
 import wandb
+
 
 def randl(l_):
     return l_[torch.randperm(len(l_))[0]]
@@ -31,10 +33,8 @@ def randl(l_):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Training configurations.')
-    parser.add_argument('--config', type=str, default='config.yaml')
+    parser.add_argument('--config', type=str, default='config_deephyper.yaml')
     return parser.parse_args()
-
-
 
 
 def run(job):
@@ -42,13 +42,12 @@ def run(job):
     for parameters, value in job.parameters.items():
         setattr(args, parameters, value)
 
-
     if 'SMA' not in args:
         args.SMA = None
     wandb.init(project=args.wandb_project, config=flatten_dictionary_for_wandb(dict(args)))
     print(args)
     print(f'Method: {args.method}')
-    #print(args)
+    # print(args)
     start_time = time.time()
     torch.manual_seed(args["init_seed"])
     np.random.seed(args["init_seed"])
@@ -63,7 +62,8 @@ def run(job):
     best_checkpoint_file = os.path.join(
         args["output_dir"],
         f"seed_{args['hparams_seed']}_{args['init_seed']}.best.pt")
-
+    result_file = os.path.join(
+        args["output_dir"], f"{args['wandb_project']}.csv")
     model = {
         "erm": models.ERM,
         "suby": models.ERM,
@@ -117,8 +117,10 @@ def run(job):
         print(json.dumps(result))
         log_dict = results_to_log_dict(result)
         wandb.log(log_dict, step=epoch)
+    append_to_dataframe_and_save(args, log_dict, result_file)
     wandb.finish()
     return avg_acc
+
 
 def get_ray_evaluator(run_function):
     # Default arguments for Ray: 1 worker and 1 worker per evaluation
@@ -141,9 +143,11 @@ def get_ray_evaluator(run_function):
         method="ray",
         method_kwargs=method_kwargs
     )
-    print(f"Created new evaluator with {evaluator.num_workers} worker{'s' if evaluator.num_workers > 1 else ''} and config: {method_kwargs}", )
+    print(
+        f"Created new evaluator with {evaluator.num_workers} worker{'s' if evaluator.num_workers > 1 else ''} and config: {method_kwargs}", )
 
     return evaluator
+
 
 if __name__ == "__main__":
 
@@ -155,26 +159,23 @@ if __name__ == "__main__":
     args["n_gpus"] = torch.cuda.device_count()
     problem = HpProblem()
 
-    problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
-    problem.add_hyperparameter((1e-5, 1e-3, "log-uniform"), "lr", default_value=1e-3)
-    problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
+    # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
+    problem.add_hyperparameter((1e-4, 1e-2, "log-uniform"), "lr", default_value=1e-3)
+    # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
     # problem.add_hyperparameter((4, 100), "up", default_value=20)
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
 
-
-    evaluator = get_ray_evaluator(run)
-    print("Number of workers: ", evaluator.num_workers)
     # Define your search and execute it
-    search = CBO(problem, evaluator, verbose=1,random_state=42)
-    print(problem.default_configuration)
-    print(f"GPU available: {torch.cuda.is_available()}")
-    results = search.search(max_evals=3)
-    print(results['objective'])
-    print(results)
-
-
-
-
-
-
-
+    for K in [2, 4]:
+        for method in ["erm", "jtt", "dro", "suby", "subg", "rwy", "rwg"]:
+            args.method = method
+            args.SMA.K = K
+            args.group = f"K={args.SMA.K}_{args.method}"
+            evaluator = get_ray_evaluator(run)
+            search = CBO(problem, evaluator, verbose=1, random_state=42)
+            print("Number of workers: ", evaluator.num_workers)
+            print(problem.default_configuration)
+            print(f"GPU available: {torch.cuda.is_available()}")
+            results = search.search(max_evals=10)
+            print(results['objective'])
+            print(results)
