@@ -35,6 +35,6 @@ SMA:
   split_seed: 0
   K: 2
   mu: 0.05
-  img_size: 32
+  img_size: 256
 
 
