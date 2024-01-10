@@ -31,7 +31,7 @@ scheduler: [False]
 # Specific hyperparameters for to create SMA dataset
 SMA:
   name: 'AWA'
-  split_seed: [0,1,2,3,4]
+  split_seed: [0,1,2]
   K: [2,4,8]
   mu: 0.05
   img_size: 256
