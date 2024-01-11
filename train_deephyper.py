@@ -160,7 +160,7 @@ if __name__ == "__main__":
     problem = HpProblem()
 
     # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
-    problem.add_hyperparameter((1e-4, 1e-2, "log-uniform"), "lr", default_value=1e-3)
+    problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
     # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
     # problem.add_hyperparameter((4, 100), "up", default_value=20)
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
