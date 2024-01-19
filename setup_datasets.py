@@ -406,6 +406,12 @@ def _df_to_imbalalance_ratio(df, mu, seed):
         raise ValueError(
             "Imbalance_ratio argument requires the same number of classes and styles (make sure to that drop_original is set to True)")
     to_keep = []
+
+    # subsampling of classes : we only keep a fraction of each classes to guarantee an extra class imbalance
+    nu_classes = np.random.uniform(.2, 1, len(all_classes))
+    nu_classes[0] = 1
+    nu_classes[1] = .2
+
     for i, cls in enumerate(all_classes):
         for j, style in enumerate(all_styles):
             for s, split in enumerate(df['split'].unique().tolist()):
@@ -413,14 +419,14 @@ def _df_to_imbalalance_ratio(df, mu, seed):
                 if split in [1, 2]:  # val/test are kept balanced
                     pass
                 elif i == j:  # majority class
-                    pass
+                    subset = subset.sample(frac=nu_classes[i], random_state=seed)
                     # if isinstance(majority_to_keep, float) or majority_to_keep == 1:
                     #     subset = subset.sample(frac=majority_to_keep, random_state=seed)
                     # elif isinstance(majority_to_keep, int):
                     #     subset = subset.sample(n=majority_to_keep, random_state=seed)
                 else:  # minority class
 
-                    subset = subset.sample(frac=mu, random_state=seed)
+                    subset = subset.sample(frac=mu * nu_classes[i], random_state=seed)
 
                 to_keep.append(subset)
 

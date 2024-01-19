@@ -56,8 +56,10 @@ class GroupDataset:
 
         if subsample_what == "groups":
             min_size = min(list(self.group_sizes))
-        else:
+        elif subsample_what == "classes":
             min_size = min(list(self.class_sizes))
+        else:
+            raise ValueError("subsample_what must be groups or classes")
 
         counts_g = [0] * self.nb_groups * self.nb_labels
         counts_y = [0] * self.nb_labels
