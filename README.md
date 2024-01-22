@@ -1,16 +1,14 @@
 # Done
-- [x] early stopping
-- [x] scheduler 
-- [x] deephyper
 
 # TODO
+
+- [] logger la mean_acc ET la mean_group_acc (faire la distiction et se mettre au clair sur l'objectif d'optimisation
 
 - [] Les methodes suby et rwy qui sous sample les classent devraient pas performées vraiment differement sur un dataset equilibré => biaser notre dataset en terme de classe ?
 - [] JTT : tres sensible aux hyper parametres!
 - [] probleme de maximiser la relative accuracy : la mean accuracy peut etre presque à 0 et la relative accuracy a 1 (avantage de la worst acc c'est que c'est un minorant la mean acc) 
-- 
-- [] rajouter une imbalance dans les y ! 
-- relancer sur un nouveau dataset
+- [] Quelle accuracy utiliser ? La mean_acc est en fait la group_mean_acc qui n'est pas pondérée : chaque groupe à la meme importance
+
 #
 ### Installing dependencies
 
