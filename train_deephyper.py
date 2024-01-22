@@ -166,7 +166,7 @@ if __name__ == "__main__":
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
 
     # Define your search and execute it
-    for K in [2,4]:
+    for K in [2]:
         for method in ["erm", "jtt", "dro", "suby"] : # "subg", "rwy", "rwg"]:
             args.method = method
             args.SMA.K = K
@@ -176,6 +176,6 @@ if __name__ == "__main__":
             print("Number of workers: ", evaluator.num_workers)
             print(problem.default_configuration)
             print(f"GPU available: {torch.cuda.is_available()}")
-            results = search.search(max_evals=10)
+            results = search.search(max_evals=5)
             print(results['objective'])
             print(results)
