@@ -1,4 +1,4 @@
-wandb_project: 'AWA BO new'
+wandb_project: 'AWA BO new (y subsampling+new AWA)'
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
