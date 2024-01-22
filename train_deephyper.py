@@ -81,6 +81,8 @@ def run(job):
     #     model.load(checkpoint_file)
     #     last_epoch = model.last_epoch
     #     best_selec_val = model.best_selec_val
+    best_mean_acc_va = 0
+    best_mean_acc_te = 0
 
     for epoch in range(last_epoch, args["num_epochs"]):
         if epoch == args["T"] + 1 and args["method"] == "jtt":
@@ -112,11 +114,17 @@ def run(job):
                 best_selec_val = selec_value
                 model.save(best_checkpoint_file)
 
+            if result["avg_acc_va"] > best_mean_acc_va:
+                best_mean_acc_va = result["avg_acc_va"]
+                best_mean_acc_te = result["avg_acc_te"]
+
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         print(json.dumps(result))
         log_dict = results_to_log_dict(result)
         wandb.log(log_dict, step=epoch)
+    wandb.run.summary["best_mean_acc_va"] = best_mean_acc_va
+    wandb.run.summary["best_mean_acc_te"] = best_mean_acc_te
     append_to_dataframe_and_save(args, log_dict, result_file)
     wandb.finish()
     return avg_acc
@@ -167,7 +175,7 @@ if __name__ == "__main__":
 
     # Define your search and execute it
     for K in [2]:
-        for method in ["subg", "rwy", "rwg"]: #["erm", "jtt", "dro", "suby"] : #
+        for method in ["erm", "jtt", "dro", "suby", "subg", "rwy", "rwg"]:
             args.method = method
             args.SMA.K = K
             args.group = f"K={args.SMA.K}_{args.method}"
