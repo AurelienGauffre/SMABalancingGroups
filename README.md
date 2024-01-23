@@ -4,6 +4,12 @@
 
 - [] logger la mean_acc ET la mean_group_acc (faire la distiction et se mettre au clair sur l'objectif d'optimisation
 
+Question : 
+- [] Qu'est ce que la regularisation sur validation set evoquée dans le papier ?
+
+
+
+Remarque :
 - [] Les methodes suby et rwy qui sous sample les classent devraient pas performées vraiment differement sur un dataset equilibré => biaser notre dataset en terme de classe ?
 - [] JTT : tres sensible aux hyper parametres!
 - [] probleme de maximiser la relative accuracy : la mean accuracy peut etre presque à 0 et la relative accuracy a 1 (avantage de la worst acc c'est que c'est un minorant la mean acc) 
