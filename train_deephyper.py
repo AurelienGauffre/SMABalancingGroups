@@ -176,7 +176,7 @@ if __name__ == "__main__":
 
     # Define your search and execute it
     for K in [2]:
-        for method in ["erm", "jtt"]: # "dro", "suby", "subg", "rwy", "rwg"]:
+        for method in ["erm", "jtt", "dro", "suby", "subg", "rwy", "rwg"]:
             args.method = method
             args.SMA.K = K
             args.group = f"K={args.SMA.K}_{args.method}"
