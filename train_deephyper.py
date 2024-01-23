@@ -175,7 +175,7 @@ if __name__ == "__main__":
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
 
     # Define your search and execute it
-    for K in [8]:
+    for K in [2]:
         for method in ["erm", "jtt"]: # "dro", "suby", "subg", "rwy", "rwg"]:
             args.method = method
             args.SMA.K = K
