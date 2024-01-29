@@ -287,7 +287,7 @@ def generate_ALL_EXAMPLES_csv(data_folder='./data', dataset_name='plt-net', csv_
                     })
 
 
-def generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metadata', ratio=(.5, .2, .3),
+def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='metadata', ratio=(.5, .2, .3),
                           K=2,
                           drop_original=True,
                           mu=.1,
