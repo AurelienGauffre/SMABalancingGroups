@@ -282,15 +282,19 @@ class JTT(ERM):
             else:
                 wrong_predictions = predictions.argmax(1).cuda().ne(y.cuda()).float()  # TODO Added .cuda() to fix error
 
-            if wrong_predictions.ndim == 1:# TODO Added .ndim to fix error
-                wrong_predictions = wrong_predictions.unsqueeze(0)
+
 
             print("DEBUG SHAPE Weight[i]: ", self.weights[i].shape)
             print(self.weights[i])
             print("DEBUG SHAPE wrong_predictions: ", wrong_predictions.shape)
             print(wrong_predictions)
-            self.weights[i] += (
-                        wrong_predictions.detach() * (self.hparams["up"] - 1)).long()  # TODO Added .long() to fix error
+            if self.weights[i].shape == wrong_predictions.shape:
+                self.weights[i] += (
+                            wrong_predictions.detach() * (self.hparams["up"] - 1)).long()  # TODO Added .long() to fix error
+            else:
+                print("Dimension error, adding zeros of the same size as self.weights[i] tofix")
+                # Add zeros of the same size as self.weights[i]
+                self.weights[i] += torch.zeros_like(self.weights[i]).long()
             self.train()
             loss_value = None
 
