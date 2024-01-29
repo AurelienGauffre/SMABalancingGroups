@@ -108,7 +108,7 @@ class SMA(GroupDataset):
         if not os.path.exists(metadata):
             print(f"Metadata file does not exist. Creating it...")
 
-            generate_metadata_SMA(data_folder='data', SMA_dataset="AWA", csv_name='metadata', ratio=(.5, .2, .3),
+            generate_metadata_SMA(data_folder='data', SMA_dataset=args_SMA.name, csv_name='metadata', ratio=(.5, .2, .3),
                                   K=args_SMA.K,
                                   drop_original=True,
                                   mu=args_SMA.mu,
@@ -365,6 +365,8 @@ def get_loaders(data_path, dataset_name, batch_size, method="erm", args_SMA=None
         else CivilComments,
         "toy": Toy,
     }[dataset_name]
+
+
     if dataset_name == "SMA" and args_SMA is None:
         raise ValueError("args_SMA must be provided for SMA dataset in the config file (args.SMA must be defined)")
 
