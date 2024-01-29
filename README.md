@@ -2,9 +2,10 @@
 
 # TODO
 
-- [] logger la mean_acc ET la mean_group_acc (faire la distiction et se mettre au clair sur l'objectif d'optimisation
-
-Question : 
+- [] bien distinguer et logger la mean_acc ET la mean_group_acc (faire la distiction et se mettre au clair sur l'objectif d'optimisation
+- [] dataset vraiemnt tres petits avec k=2 et mu=0.05 (10 exemples pour les groupes de minority  classes)
+    1000/2(train)/20(minority)/3(y_sampling)
+- Question : 
 - [] Qu'est ce que la regularisation sur validation set evoquée dans le papier ?
 
 
