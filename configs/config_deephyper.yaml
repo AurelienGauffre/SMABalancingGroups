@@ -1,4 +1,4 @@
-wandb_project: 'AWA BO new (y subsampling+new AWA)'
+wandb_project: 'PLT'
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -31,7 +31,7 @@ scheduler: False
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
-  name: 'AWA'
+  name: 'plt-net'
   split_seed: 0
   K: 2
   mu: 0.1

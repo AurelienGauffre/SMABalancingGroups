@@ -7,7 +7,7 @@
     1000/2(train)/20(minority)/3(y_sampling)
 - Question : 
 - [] Qu'est ce que la regularisation sur validation set evoquée dans le papier ?
-
+- [] mu varying ?
 
 
 Remarque :
