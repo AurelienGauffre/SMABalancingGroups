@@ -282,6 +282,9 @@ class JTT(ERM):
             else:
                 wrong_predictions = predictions.argmax(1).cuda().ne(y.cuda()).float()  # TODO Added .cuda() to fix error
 
+            if wrong_predictions.ndim == 1:# TODO Added .ndim to fix error
+                wrong_predictions = wrong_predictions.unsqueeze(0)
+
             print("DEBUG SHAPE Weight[i]: ", self.weights[i].shape)
             print(self.weights[i])
             print("DEBUG SHAPE wrong_predictions: ", wrong_predictions.shape)
