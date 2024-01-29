@@ -237,7 +237,7 @@ def generate_metadata_multinli(data_path):
     #     )
 
 
-def generate_ALL_EXAMPLES_csv(data_folder='./data', dataset_name='AWA', csv_name=None):
+def generate_ALL_EXAMPLES_csv(data_folder='./data', dataset_name='plt-net', csv_name=None):
     """ Generate a CSV file containing all the example from the dataset (content and stylised)
     This function is supposed to be called only once per dataset. (#todo I think the csv output of this function should be included with the dataset natively)
     All dataset will be extracted from this CSV file (this allows to study different subsets of the dataset without having to recompute the CSV file).
