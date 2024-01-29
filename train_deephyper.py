@@ -103,8 +103,8 @@ def run(job):
                 avg_acc, group_accs = model.accuracy(loader)
                 result["acc_" + loader_name] = group_accs
                 result["avg_acc_" + loader_name] = avg_acc
-            print("DEBUG: ", result["acc_va"])
-            print("DEBUG AVG: ", result["avg_acc_va"])
+            # print("DEBUG: ", result["acc_va"])
+            # print("DEBUG AVG: ", result["avg_acc_va"])
             selec_value = {
                 "min_acc_va": min(result["acc_va"]),
                 "avg_acc_va": result["avg_acc_va"],
@@ -175,8 +175,9 @@ if __name__ == "__main__":
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
 
     # Define your search and execute it
-    for K in [8]:
-        for method in ["rwy"]:
+    for K in [2]:
+        # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+        for method in ["jtt"]:
             args.method = method
             args.SMA.K = K
             args.group = f"K={args.SMA.K}_{args.method}"
