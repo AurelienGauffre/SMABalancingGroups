@@ -282,6 +282,10 @@ class JTT(ERM):
             else:
                 wrong_predictions = predictions.argmax(1).cuda().ne(y.cuda()).float()  # TODO Added .cuda() to fix error
 
+            print("DEBUG SHAPE Weight[i]: ", self.weights[i].shape)
+            print(self.weights[i])
+            print("DEBUG SHAPE wrong_predictions: ", wrong_predictions.shape)
+            print(wrong_predictions)
             self.weights[i] += (
                         wrong_predictions.detach() * (self.hparams["up"] - 1)).long()  # TODO Added .long() to fix error
             self.train()

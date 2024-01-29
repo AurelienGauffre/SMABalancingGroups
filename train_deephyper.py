@@ -181,6 +181,7 @@ if __name__ == "__main__":
             args.method = method
             args.SMA.K = K
             args.group = f"K={args.SMA.K}_{args.method}"
+            args.group_seed = f"K={args.SMA.K}_{args.method}_seed={args.SMA.split_seed}"
             evaluator = get_ray_evaluator(run)
             search = CBO(problem, evaluator, verbose=1, random_state=42)
             print("Number of workers: ", evaluator.num_workers)
