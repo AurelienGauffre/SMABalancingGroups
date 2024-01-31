@@ -116,19 +116,20 @@ def run(job):
                 model.save(best_checkpoint_file)
 
             if result["avg_acc_va"] > best_mean_acc_va:
-                best_mean_acc_va = result["avg_acc_va"]
-                best_mean_acc_te = result["avg_acc_te"]
+                best_acc_va = result["avg_acc_va"]
+                best_acc_te = result["avg_acc_te"]
 
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         print(json.dumps(result))
         log_dict = results_to_log_dict(result)
+        append_to_dataframe_and_save(args, log_dict, result_file)
         wandb.log(log_dict, step=epoch)
-    wandb.run.summary["best_mean_acc_va"] = best_mean_acc_va
-    wandb.run.summary["best_mean_acc_te"] = best_mean_acc_te
-    append_to_dataframe_and_save(args, log_dict, result_file)
+    wandb.run.summary["best_mean_acc_va"] = best_acc_va
+    wandb.run.summary["best_mean_acc_te"] = best_acc_te
+
     wandb.finish()
-    return avg_acc
+    return log_dict['mean_grp_acc_va']
 
 
 def get_ray_evaluator(run_function):
