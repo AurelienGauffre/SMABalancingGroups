@@ -46,18 +46,18 @@ def results_to_log_dict(result):
         if acc in result:
             acc_mat = list_to_matrix(result[acc]) * 100
             K = acc_mat.shape[0]
-            log_dict[f'mean_{acc}'] = np.mean(acc_mat)
-            log_dict[f'worst_{acc}'] = np.min(acc_mat)
+            log_dict[f'mean_grp_{acc}'] = np.mean(acc_mat)
+            log_dict[f'worst_grp_{acc}'] = np.min(acc_mat)
             minor_acc = zero_diagonal(acc_mat).sum() / (K*(K-1))
             major_acc = np.trace(acc_mat) / K
-            log_dict[f'minor_{acc}'] = minor_acc
-            log_dict[f'major_{acc}'] = major_acc
-            log_dict[f'relative_{acc}'] = minor_acc / major_acc
+            log_dict[f'minor_grp_{acc}'] = minor_acc
+            log_dict[f'major_grp_{acc}'] = major_acc
+            log_dict[f'relative_grp_{acc}'] = minor_acc / major_acc
 
     return log_dict
 
 
-def append_to_dataframe_and_save(args,data, results_path):
+def append_to_dataframe_and_save(args, data, results_path):
     """
     Appends a given dictionary of data to a pandas DataFrame and saves it to a specified file.
 
