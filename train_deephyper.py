@@ -21,7 +21,6 @@ from deephyper.evaluator.callback import TqdmCallback
 from deephyper.search.hps import CBO
 import ray
 
-
 from utils import Tee, flatten_dictionary_for_wandb, results_to_log_dict, append_to_dataframe_and_save
 
 import wandb
@@ -176,9 +175,9 @@ if __name__ == "__main__":
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
 
     # Define your search and execute it
-    for K in [8]:
+    for K in [2]:
         # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-        for method in ['erm','jtt']:# 'suby', 'subg', 'rwy', 'rwg', 'dro']:
+        for method in ['erm', 'jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
             args.method = method
             args.SMA.K = K
             args.group = f"K={args.SMA.K}_{args.method}"
