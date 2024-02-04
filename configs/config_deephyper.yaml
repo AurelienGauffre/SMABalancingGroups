@@ -34,7 +34,7 @@ SMA:
   name: 'plt-net'
   split_seed: 0
   K: 2
-  mu: 0.1
+  mu: 0.05
   img_size: 256
 
 
