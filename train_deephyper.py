@@ -189,6 +189,6 @@ if __name__ == "__main__":
             print("Number of workers: ", evaluator.num_workers)
             print(problem.default_configuration)
             print(f"GPU available: {torch.cuda.is_available()}")
-            results = search.search(max_evals=12)
+            results = search.search(max_evals=2)
             print(results['objective'])
             print(results)
