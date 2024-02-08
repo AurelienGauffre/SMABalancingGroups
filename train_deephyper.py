@@ -175,7 +175,7 @@ if __name__ == "__main__":
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
 
     # Define your search and execute it
-    for K in [2,4,8,16]:
+    for K in [2,4,8]:
         # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
         #['erm', 'jtt', 'suby']
         #['subg', 'rwy', 'rwg', 'dro']
