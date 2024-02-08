@@ -31,9 +31,9 @@ scheduler: False
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
-  name: 'AWA' #plt-net # ins2
+  name: 'medical-leaf' #plt-net ins2 medical-leaf
   split_seed: 0
-  K: 16
+  K:
   mu: .1
   img_size: 256
 
