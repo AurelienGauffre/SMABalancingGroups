@@ -1,4 +1,4 @@
-wandb_project: 'AWA * 16 test'
+wandb_project: SMA medical-leaf HBO'
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
