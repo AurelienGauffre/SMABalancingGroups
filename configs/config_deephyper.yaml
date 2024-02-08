@@ -1,4 +1,4 @@
-wandb_project: SMA medical-leaf HBO'
+wandb_project: SMA texture-dtd HBO'
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -31,10 +31,10 @@ scheduler: False
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
-  name: 'medical-leaf' #plt-net ins2 medical-leaf
+  name: 'texture-dtd' #plt-net ins2 medical-leaf
   split_seed: 0
   K:
-  mu: .1
+  mu: [.1]
   img_size: 256
 
 
