@@ -427,6 +427,10 @@ def _df_to_imbalalance_ratio(df, mu, seed):
                 else:  # minority class
                     #debug print mu and nu_classes[i]
                     print(f"mu={mu}, nu_classes[i]={nu_classes[i]}")
+                    #print info of the subset
+                    print(subset)
+                    print(subset.shape)
+
                     subset = subset.sample(frac=mu * nu_classes[i], random_state=seed)
 
                 to_keep.append(subset)
