@@ -179,7 +179,7 @@ if __name__ == "__main__":
         # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
         #['erm', 'jtt', 'suby']
         #['subg', 'rwy', 'rwg', 'dro']
-        for method in  ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
+        for method in  ['suby','erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
             args.method = method
             args.SMA.K = K
             args.group = f"K={args.SMA.K}_{args.method}"

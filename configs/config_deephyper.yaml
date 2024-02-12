@@ -31,7 +31,7 @@ scheduler: False
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
-  name: 'texture-dtd' #plt-net ins2 medical-leaf
+  name: 'medical-leaf' #plt-net ins2 medical-leaf texture
   split_seed: 0
   K:
   mu: .1
