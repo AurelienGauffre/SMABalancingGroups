@@ -202,7 +202,7 @@ class ERM(torch.nn.Module):
         corrects, totals = corrects.tolist(), totals.tolist()
         self.train()
         return sum(corrects) / sum(totals), \
-            [c / t for c, t in zip(corrects, totals)]
+            [c / t if t!=0 else 0 for c, t in zip(corrects, totals) ]
 
     def load(self, fname):
         dicts = torch.load(fname)
