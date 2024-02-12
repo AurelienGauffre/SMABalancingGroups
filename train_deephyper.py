@@ -21,7 +21,7 @@ from deephyper.evaluator.callback import TqdmCallback
 from deephyper.search.hps import CBO
 import ray
 
-from utils import Tee, flatten_dictionary_for_wandb, results_to_log_dict, append_to_dataframe_and_save
+from utils import Tee, flatten_dictionary_for_wandb, results_to_log_dict
 
 import wandb
 
@@ -122,7 +122,6 @@ def run(job):
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         print(json.dumps(result))
         log_dict = results_to_log_dict(result)
-        append_to_dataframe_and_save(args, log_dict, result_file)
         wandb.log(log_dict, step=epoch)
     wandb.run.summary["best_mean_acc_va"] = best_acc_va
     wandb.run.summary["best_mean_acc_te"] = best_acc_te

@@ -56,31 +56,3 @@ def results_to_log_dict(result):
 
     return log_dict
 
-
-def append_to_dataframe_and_save(args, data, results_path):
-    """
-    Appends a given dictionary of data to a pandas DataFrame and saves it to a specified file.
-
-    Parameters:
-    data (dict): Data to be appended.
-    results_path (str): File path to save the DataFrame.
-    """
-    # Check if the file exists
-    if os.path.exists(results_path):
-        # Load existing DataFrame
-        df = pd.read_csv(results_path)
-    else:
-        # Create a new DataFrame
-        df = pd.DataFrame()
-
-    # Put here the columns that have to be saved
-    data["method"] = args["method"]
-    data["K"] = args["SMA"]["K"]
-    data["mu"] = args["SMA"]["mu"]
-    data["lr"] = args["lr"]
-    data["split_seed"] = args["SMA"]["split_seed"]
-    data["weight_decay"] = args["weight_decay"]
-    df = df.append(data, ignore_index=True)
-
-    # Save the DataFrame
-    df.to_csv(results_path, index=False)
