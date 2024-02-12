@@ -34,7 +34,6 @@ class BertWrapper(torch.nn.Module):
             token_type_ids=x[:, :, 2]).logits
 
 
-
 def get_bert_optim(network, lr, weight_decay):
     no_decay = ["bias", "LayerNorm.weight"]
     decay_params = []
@@ -202,7 +201,7 @@ class ERM(torch.nn.Module):
         corrects, totals = corrects.tolist(), totals.tolist()
         self.train()
         return sum(corrects) / sum(totals), \
-            [c / t if t!=0 else 0 for c, t in zip(corrects, totals) ]
+            [c / t if t != 0 else 0 for c, t in zip(corrects, totals)]
 
     def load(self, fname):
         dicts = torch.load(fname)
@@ -282,15 +281,13 @@ class JTT(ERM):
             else:
                 wrong_predictions = predictions.argmax(1).cuda().ne(y.cuda()).float()  # TODO Added .cuda() to fix error
 
-
-
             print("DEBUG SHAPE Weight[i]: ", self.weights[i].shape)
             print(self.weights[i])
             print("DEBUG SHAPE wrong_predictions: ", wrong_predictions.shape)
             print(wrong_predictions)
             if self.weights[i].shape == wrong_predictions.shape:
                 self.weights[i] += (
-                            wrong_predictions.detach() * (self.hparams["up"] - 1)).long()  # TODO Added .long() to fix error
+                        wrong_predictions.detach() * (self.hparams["up"] - 1)).long()  # TODO Added .long() to fix error
             else:
                 print("Dimension error, adding zeros of the same size as self.weights[i] tofix")
                 # Add zeros of the same size as self.weights[i]
