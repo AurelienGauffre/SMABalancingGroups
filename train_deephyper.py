@@ -180,14 +180,26 @@ if __name__ == "__main__":
         # ['subg', 'rwy', 'rwg', 'dro']
         for method in ['erm', 'jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
             args.method = method
+            if method == 'jtt':
+                problem.add_hyperparameter([1,3,5], "T", default_value=3)
             args.SMA.K = K
             args.group = f"K={args.SMA.K}_{args.method}"
-            args.group_seed = f"K={args.SMA.K}_{args.method}_seed={args.SMA.split_seed}"
+            args.group_best = f"K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
             evaluator = get_ray_evaluator(run)
             search = CBO(problem, evaluator, verbose=1, random_state=42)
             print("Number of workers: ", evaluator.num_workers)
             print(problem.default_configuration)
             print(f"GPU available: {torch.cuda.is_available()}")
-            results = search.search(max_evals=12)
-            print(results['objective'])
-            print(results)
+            results = search.search(max_evals=2)
+            # print(results['objective'])
+            # print(results)
+
+            i_max = results.objective.argmax()
+            best_config = results.iloc[i_max][:-3].to_dict()
+            best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
+
+            print(
+                  f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
+                  f"finished after {results['timestamp_gather'].iloc[i_max]:.2f} secondes of search.\n")
+
+            print(json.dumps(best_config, indent=4))

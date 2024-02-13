@@ -1,7 +1,9 @@
 # Done
 
 # TODO
-
+- [] JTT : trouver les bons HP pour chaque dataset (en utilisant HBO)
+- Ecrire la partie experimentale du papier
+- [] Experiment plan to send to Lisheng
 - [] bien distinguer et logger la mean_acc ET la mean_group_acc (faire la distiction et se mettre au clair sur l'objectif d'optimisation
 - [] dataset vraiemnt tres petits avec k=2 et mu=0.05 (10 exemples pour les groupes de minority  classes)
     1000/2(train)/20(minority)/3(y_sampling)
@@ -9,6 +11,12 @@
 - [] Qu'est ce que la regularisation sur validation set evoquée dans le papier ?
 - [] mu varying ?
 
+
+# Study
++ maybe do the 2,4,8,16
++ conclusion du papier ?
++ influence of K as mu
++ 
 
 Remarque :
 - [] Les methodes suby et rwy qui sous sample les classent devraient pas performées vraiment differement sur un dataset equilibré => biaser notre dataset en terme de classe ?

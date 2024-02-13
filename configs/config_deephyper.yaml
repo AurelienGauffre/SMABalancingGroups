@@ -1,4 +1,4 @@
-wandb_project: SMA-medical-leaf-HBO
+wandb_project: debug_HBO
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
