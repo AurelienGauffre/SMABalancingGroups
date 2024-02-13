@@ -174,11 +174,11 @@ if __name__ == "__main__":
     # problem.add_hyperparameter((1, 60), "T", default_value=40)
 
     # Define your search and execute it
-    for K in [2, 4, 8]:
+    for K in [2]:
         # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
         # ['erm', 'jtt', 'suby']
         # ['subg', 'rwy', 'rwg', 'dro']
-        for method in ['erm', 'jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
+        for method in ['jtt','erm']:
             args.method = method
             if method == 'jtt':
                 problem.add_hyperparameter([1,3,5], "T", default_value=3)
