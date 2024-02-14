@@ -28,7 +28,7 @@ weight_decay: 1e-3
 up: 20 #[4, 5, 6, 20, 50, 100]
 T: 3
 scheduler: False
-new_reset: True
+new_reset: False
 
 
 
