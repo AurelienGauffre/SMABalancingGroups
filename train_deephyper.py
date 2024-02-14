@@ -86,13 +86,14 @@ def run(job=None):
 
     last_epoch = 0
     best_selec_val = float('-inf')
+    best_mean_group_acc_va = float('-inf')
+    best_mean_group_acc_te = float('-inf')
     # Deactivate loading model for now
     # if os.path.exists(checkpoint_file):
     #     model.load(checkpoint_file)
     #     last_epoch = model.last_epoch
     #     best_selec_val = model.best_selec_val
-    best_mean_acc_va = 0
-    best_mean_acc_te = 0
+
 
     for epoch in range(last_epoch, args["num_epochs"]):
         if epoch == args["T"] + 1 and args["method"] == "jtt":
@@ -113,11 +114,13 @@ def run(job=None):
                 avg_acc, group_accs = model.accuracy(loader)
                 result["acc_" + loader_name] = group_accs
                 result["avg_acc_" + loader_name] = avg_acc
+                result["mean_grp_acc_" + loader_name] = np.mean(group_accs)
             # print("DEBUG: ", result["acc_va"])
             # print("DEBUG AVG: ", result["avg_acc_va"])
             selec_value = {
                 "min_acc_va": min(result["acc_va"]),
                 "avg_acc_va": result["avg_acc_va"],
+                "mean_grp_acc_va": result["mean_grp_acc_va"],
             }[args["selector"]]
 
             if selec_value >= best_selec_val:
@@ -125,20 +128,23 @@ def run(job=None):
                 best_selec_val = selec_value
                 model.save(best_checkpoint_file)
 
-            if result["avg_acc_va"] > best_mean_acc_va:
-                best_acc_va = result["avg_acc_va"]
-                best_acc_te = result["avg_acc_te"]
+            if result["mean_grp_acc_va"] >= best_mean_group_acc_va:
+                best_mean_group_acc_va = result['mean_grp_acc_va']
+                best_mean_group_acc_te = result['mean_grp_acc_te']
+
 
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
-        print(json.dumps(result))
+        # print(json.dumps(result))
         log_dict = results_to_log_dict(result)
-        wandb.log(log_dict, step=epoch)
-    wandb.run.summary["best_mean_acc_va"] = best_acc_va
-    wandb.run.summary["best_mean_acc_te"] = best_acc_te
 
+
+        wandb.log(log_dict, step=epoch)
+    #log in the end the best acc as summary
+    wandb.run.summary["best_mean_group_acc_va"] = best_mean_group_acc_va
+    wandb.run.summary["best_mean_group_acc_te"] = best_mean_group_acc_te
     wandb.finish()
-    return log_dict['mean_grp_acc_va']
+    return best_mean_group_acc_va
 
 
 def get_ray_evaluator(run_function):
@@ -177,9 +183,10 @@ if __name__ == "__main__":
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
 
-    for dataset in ['medical-leaf','texture-dtd']:
-    # Define your search and execute it
-        for K in [2,4]:
+    for dataset_name in ['medical_leaf', 'texture-dtd']:
+        args.SMA.name = dataset_name
+        # Define your search and execute it
+        for K in [2, 4]:
             args.SMA.K = K
             # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
             # ['erm', 'jtt', 'suby']
@@ -188,9 +195,7 @@ if __name__ == "__main__":
                 args.method = method
 
                 for weight_decay in [1e-4, 1e-3, 1e-2, 1e-1, 1]:
-                    args.method = args.weight_decay
-
-
+                    args.weight_decay = args.weight_decay
 
                 ###### HBO PART
                 # problem = HpProblem()
@@ -210,7 +215,7 @@ if __name__ == "__main__":
                 # print("Number of workers: ", evaluator.num_workers)
                 # print(problem.default_configuration)
                 # print(f"GPU available: {torch.cuda.is_available()}")
-                # results = search.search(max_evals=12)
+                # results = search.search(max_evals=args.n_HBO_runs)
                 # # print(results['objective'])
                 # # print(results)
                 #
@@ -227,9 +232,9 @@ if __name__ == "__main__":
                 #     print(f"{k}: {v}")
 
                 # now we use the best hyper parameters to rerun the model with 3 different init seed :
-                for i in range(1)[::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
+                for i in range(args.n_eval_init_seed)[
+                         ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
                     args["init_seed"] = i
                     run()
-
 
             # print(json.dumps(best_config, indent=4))
