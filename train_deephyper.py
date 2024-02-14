@@ -195,7 +195,7 @@ if __name__ == "__main__":
                 args.method = method
 
                 for weight_decay in [1e-4, 1e-3, 1e-2, 1e-1, 1]:
-                    args.weight_decay = args.weight_decay
+                    args.weight_decay = weight_decay
 
                 ###### HBO PART
                 # problem = HpProblem()
