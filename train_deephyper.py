@@ -94,7 +94,6 @@ def run(job=None):
     #     last_epoch = model.last_epoch
     #     best_selec_val = model.best_selec_val
 
-
     for epoch in range(last_epoch, args["num_epochs"]):
         if epoch == args["T"] + 1 and args["method"] == "jtt":
             loaders = get_loaders(
@@ -132,15 +131,13 @@ def run(job=None):
                 best_mean_group_acc_va = result['mean_grp_acc_va']
                 best_mean_group_acc_te = result['mean_grp_acc_te']
 
-
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         # print(json.dumps(result))
         log_dict = results_to_log_dict(result)
 
-
         wandb.log(log_dict, step=epoch)
-    #log in the end the best acc as summary
+    # log in the end the best acc as summary
     wandb.run.summary["best_mean_group_acc_va"] = best_mean_group_acc_va
     wandb.run.summary["best_mean_group_acc_te"] = best_mean_group_acc_te
     wandb.finish()
@@ -182,59 +179,54 @@ if __name__ == "__main__":
                                     args_command_line.config)))
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
-
-    for dataset_name in ['medical-leaf', 'texture-dtd','73sports','resisc','dogs']:
+    #'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
+    for dataset_name in ['dogs']:
         args.SMA.name = dataset_name
         # Define your search and execute it
-        for K in [2, 4]:
+        for K in [2, 4, 8, 16]:
             args.SMA.K = K
             # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
             # ['erm', 'jtt', 'suby']
             # ['subg', 'rwy', 'rwg', 'dro']
-            for method in ['jtt']:
+            for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
                 args.method = method
+            ##### HBO PART
+            problem = HpProblem()
+            # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
+            problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
+            # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
+            # problem.add_hyperparameter((4, 100), "up", default_value=20)
+            # problem.add_hyperparameter((1, 60), "T", default_value=40)
+            if method == 'jtt':
+                problem.add_hyperparameter([1, 3, 5], "T", default_value=3)
 
-                for T in [1,2,3,5,10]:
-                    args.T = T
+            args.group = f"K={args.SMA.K}_{args.method}"
+            args.group_best = f"K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
+            evaluator = get_ray_evaluator(run)
+            search = CBO(problem, evaluator, verbose=1, random_state=42)
+            print("Number of workers: ", evaluator.num_workers)
+            print(problem.default_configuration)
+            print(f"GPU available: {torch.cuda.is_available()}")
+            results = search.search(max_evals=args.n_HBO_runs)
+            # print(results['objective'])
+            # print(results)
 
-                ###### HBO PART
-                # problem = HpProblem()
-                # # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
-                # problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
-                # # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
-                # # problem.add_hyperparameter((4, 100), "up", default_value=20)
-                # # problem.add_hyperparameter((1, 60), "T", default_value=40)
-                # if method == 'jtt':
-                #     problem.add_hyperparameter([1, 2, 3, 4, 5], "T", default_value=3)
-                #
-                #
-                # args.group = f"K={args.SMA.K}_{args.method}"
-                # args.group_best = f"K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
-                # evaluator = get_ray_evaluator(run)
-                # search = CBO(problem, evaluator, verbose=1, random_state=42)
-                # print("Number of workers: ", evaluator.num_workers)
-                # print(problem.default_configuration)
-                # print(f"GPU available: {torch.cuda.is_available()}")
-                # results = search.search(max_evals=args.n_HBO_runs)
-                # # print(results['objective'])
-                # # print(results)
-                #
-                # i_max = results.objective.argmax()
-                # best_config = results.iloc[i_max][:-3].to_dict()
-                # best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
-                #
-                # print(
-                #     f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
-                # )
-                #
-                # for k, v in best_config.items():
-                #     args[k] = v
-                #     print(f"{k}: {v}")
+            i_max = results.objective.argmax()
+            best_config = results.iloc[i_max][:-3].to_dict()
+            best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
+
+            print(
+                f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
+            )
+
+            for k, v in best_config.items():
+                args[k] = v
+                print(f"{k}: {v}")
 
                 # now we use the best hyper parameters to rerun the model with 3 different init seed :
-                    for i in range(args.n_eval_init_seed)[
-                             ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
-                        args["init_seed"] = i
-                        run()
+                for i in range(args.n_eval_init_seed)[
+                         ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
+                    args["init_seed"] = i
+                    run()
 
             # print(json.dumps(best_config, indent=4))
