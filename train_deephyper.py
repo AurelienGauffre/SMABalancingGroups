@@ -49,7 +49,7 @@ def run(job=None):
     if job is not None:
         for parameters, value in job.parameters.items():
             setattr(args, parameters, value)
-    else :
+    else:
         project_name = args.wandb_project + "_best"
 
     if 'SMA' not in args:
@@ -176,51 +176,60 @@ if __name__ == "__main__":
                                     args_command_line.config)))
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
-    problem = HpProblem()
 
-    # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
-    problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
-    # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
-    # problem.add_hyperparameter((4, 100), "up", default_value=20)
-    # problem.add_hyperparameter((1, 60), "T", default_value=40)
-
+    for dataset in ['medical-leaf','texture-dtd']:
     # Define your search and execute it
-    for K in [2]:
-        # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-        # ['erm', 'jtt', 'suby']
-        # ['subg', 'rwy', 'rwg', 'dro']
-        for method in ['jtt','erm']:
-            args.method = method
-            if method == 'jtt':
-                problem.add_hyperparameter([1,3,5], "T", default_value=3)
+        for K in [2,4]:
             args.SMA.K = K
-            args.group = f"K={args.SMA.K}_{args.method}"
-            args.group_best = f"K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
-            evaluator = get_ray_evaluator(run)
-            search = CBO(problem, evaluator, verbose=1, random_state=42)
-            print("Number of workers: ", evaluator.num_workers)
-            print(problem.default_configuration)
-            print(f"GPU available: {torch.cuda.is_available()}")
-            results = search.search(max_evals=12)
-            # print(results['objective'])
-            # print(results)
+            # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+            # ['erm', 'jtt', 'suby']
+            # ['subg', 'rwy', 'rwg', 'dro']
+            for method in ['jtt', 'erm', 'suby']:
+                args.method = method
 
-            i_max = results.objective.argmax()
-            best_config = results.iloc[i_max][:-3].to_dict()
-            best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
-
-            print(
-                  f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
-            )
-
-            for k, v in best_config.items():
-                args[k] = v
-
-            #now we use the best hyper parameters to rerun the model with 3 different init seed :
-            for i in range(3)[::-1]: #-1 to have reverse order to 0 in the end for next outer loop
-                args["init_seed"] = i
-                run()
-            #the problem is that init_seed will stay on threef or the hyperparameters search, so we need to reset it to 0
+                for weight_decay in [1e-4, 1e-3, 1e-2, 1e-1, 1]:
+                    args.method = args.weight_decay
 
 
-            print(json.dumps(best_config, indent=4))
+
+                ###### HBO PART
+                # problem = HpProblem()
+                # # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
+                # problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
+                # # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
+                # # problem.add_hyperparameter((4, 100), "up", default_value=20)
+                # # problem.add_hyperparameter((1, 60), "T", default_value=40)
+                # if method == 'jtt':
+                #     problem.add_hyperparameter([1, 2, 3, 4, 5], "T", default_value=3)
+                #
+                #
+                # args.group = f"K={args.SMA.K}_{args.method}"
+                # args.group_best = f"K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
+                # evaluator = get_ray_evaluator(run)
+                # search = CBO(problem, evaluator, verbose=1, random_state=42)
+                # print("Number of workers: ", evaluator.num_workers)
+                # print(problem.default_configuration)
+                # print(f"GPU available: {torch.cuda.is_available()}")
+                # results = search.search(max_evals=12)
+                # # print(results['objective'])
+                # # print(results)
+                #
+                # i_max = results.objective.argmax()
+                # best_config = results.iloc[i_max][:-3].to_dict()
+                # best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
+                #
+                # print(
+                #     f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
+                # )
+                #
+                # for k, v in best_config.items():
+                #     args[k] = v
+                #     print(f"{k}: {v}")
+
+                # now we use the best hyper parameters to rerun the model with 3 different init seed :
+                for i in range(1)[::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
+                    args["init_seed"] = i
+                    run()
+
+
+            # print(json.dumps(best_config, indent=4))
