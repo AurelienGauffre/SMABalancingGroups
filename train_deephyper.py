@@ -191,7 +191,7 @@ if __name__ == "__main__":
             # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
             # ['erm', 'jtt', 'suby']
             # ['subg', 'rwy', 'rwg', 'dro']
-            for method in ['jtt', 'erm', 'suby','subg', 'rwy', 'rwg', 'dro']:
+            for method in ['jtt']:
                 args.method = method
 
                 for T in [1,2,3,5,10]:
