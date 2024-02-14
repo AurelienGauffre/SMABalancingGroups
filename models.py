@@ -92,6 +92,7 @@ class ERM(torch.nn.Module):
 
         if data_type == "images":
             if arch == "resnet18":
+
                 self.network = torchvision.models.resnet.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V2)
             elif arch == "resnet50":
 
