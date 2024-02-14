@@ -1,4 +1,4 @@
-wandb_project: JTT T test
+wandb_project: SMA_HBO2
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
