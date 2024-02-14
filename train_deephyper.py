@@ -183,7 +183,7 @@ if __name__ == "__main__":
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
 
-    for dataset_name in ['medical-leaf', 'texture-dtd']:
+    for dataset_name in ['medical-leaf', 'texture-dtd','73sports','resisc','dogs']:
         args.SMA.name = dataset_name
         # Define your search and execute it
         for K in [2, 4]:
@@ -191,7 +191,7 @@ if __name__ == "__main__":
             # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
             # ['erm', 'jtt', 'suby']
             # ['subg', 'rwy', 'rwg', 'dro']
-            for method in ['jtt', 'erm', 'suby']:
+            for method in ['jtt', 'erm', 'suby','subg', 'rwy', 'rwg', 'dro']:
                 args.method = method
 
                 for weight_decay in [1e-4, 1e-3, 1e-2, 1e-1, 1]:
@@ -232,9 +232,9 @@ if __name__ == "__main__":
                 #     print(f"{k}: {v}")
 
                 # now we use the best hyper parameters to rerun the model with 3 different init seed :
-                for i in range(args.n_eval_init_seed)[
-                         ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
-                    args["init_seed"] = i
-                    run()
+                    for i in range(args.n_eval_init_seed)[
+                             ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
+                        args["init_seed"] = i
+                        run()
 
             # print(json.dumps(best_config, indent=4))
