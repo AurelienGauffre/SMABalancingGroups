@@ -1,4 +1,4 @@
-wandb_project: Test WD+newreset
+wandb_project: SMA : Test WD+newreset
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -26,6 +26,7 @@ weight_decay: 1e-3
 up: 20 #[4, 5, 6, 20, 50, 100]
 T: 3 #[40, 50, 60]
 scheduler: False
+new_reset: False
 
 
 
