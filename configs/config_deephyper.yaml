@@ -1,4 +1,4 @@
-wandb_project: HBO2
+wandb_project: Test WD+newreset
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -14,11 +14,11 @@ method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
-eval_every_n_epochs: 1
+eval_every_n_epochs: 3
 arch: "resnet50"
 # Hyperparameters for all methods
 
-num_epochs: 25
+num_epochs: 30
 batch_size: 16
 eta: 0.1
 lr: 1e-3
