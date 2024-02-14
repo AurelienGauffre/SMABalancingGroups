@@ -380,17 +380,23 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='m
     return df
 
 
-def _df_to_keep_K(df, K):
-    """ Keep K classes and K styles (+ original)"""
+def _df_to_keep_K(df, K, random_select=False):
+    """ Keep K classes and K styles (+ original)
+   To reduce variance when changing values of K and mu, we set random_select to False to keep the same classes and styles
+   across experiments"""
     all_styles = df['style'].unique().tolist()
     all_classes = df['class'].unique().tolist()
 
     if K > len(all_styles) or K > len(all_classes):
         raise ValueError('K exceeds the number of available styles or classes')
 
-    selected_styles = ['original'] + list(
-        np.random.choice([s for s in all_styles if s != 'original'], K, replace=False))
-    selected_classes = list(np.random.choice(all_classes, K, replace=False))
+    if random_select:
+        selected_styles = ['original'] + list(
+            np.random.choice([s for s in all_styles if s != 'original'], K, replace=False))
+        selected_classes = list(np.random.choice(all_classes, K, replace=False))
+    else :
+        selected_classes = all_classes[:K]
+        selected_styles = ['original'] + [s for s in all_styles if s != 'original'][:K]
 
     return df[(df['style'].isin(selected_styles)) & (df['class'].isin(selected_classes))]
 
@@ -408,9 +414,9 @@ def _df_to_imbalalance_ratio(df, mu, seed):
     to_keep = []
 
     # subsampling of classes : we only keep a fraction of each classes to guarantee an extra class imbalance
-    nu_classes = np.random.uniform(.2, 1, len(all_classes))
+    nu_classes = np.random.uniform(.5, 1, len(all_classes))
     nu_classes[0] = 1
-    nu_classes[1] = .2
+    nu_classes[1] = .5
 
     for i, cls in enumerate(all_classes):
         for j, style in enumerate(all_styles):
