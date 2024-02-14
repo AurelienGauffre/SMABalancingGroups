@@ -58,6 +58,7 @@ class GroupDataset:
             min_size = min(list(self.group_sizes))
         elif subsample_what == "classes":
             min_size = min(list(self.class_sizes))
+            min_size = min(list(self.class_sizes))
         else:
             raise ValueError("subsample_what must be groups or classes")
 
