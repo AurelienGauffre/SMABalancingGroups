@@ -92,10 +92,10 @@ class ERM(torch.nn.Module):
 
         if data_type == "images":
             if arch == "resnet18":
-                self.network = torchvision.models.resnet.resnet18(weights=torchvision.ResNet18_Weights.IMAGENET1K_V2)
+                self.network = torchvision.models.resnet.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V2)
             elif arch == "resnet50":
 
-                self.network = torchvision.models.resnet.resnet50(weights=torchvision.ResNet50_Weights.IMAGENET1K_V2)
+                self.network = torchvision.models.resnet.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V2)
             self.network.fc = torch.nn.Linear(
                 self.network.fc.in_features, self.n_classes)
 
