@@ -1,4 +1,4 @@
-wandb_project: Test WD+newreset
+wandb_project: JTT T test
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -39,5 +39,7 @@ SMA:
   K:
   mu: .2
   img_size: 256
+
+
 
 
