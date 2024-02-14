@@ -36,14 +36,25 @@ def parse_args():
     return parser.parse_args()
 
 
-def run(job):
+def run(job=None):
+    """
+    Main function to run the training of the model
+    :param job: If the job is not None, it means that the function is called by DeepHyper
+    else, it is called after with the best hyperparameters found by DeepHyper
+    :return: The mean accuracy on the validation set
+    """
+    project_name = args.wandb_project
+
     # Start by replacing all the hyperparameters optimized by DeepHyper
-    for parameters, value in job.parameters.items():
-        setattr(args, parameters, value)
+    if job is not None:
+        for parameters, value in job.parameters.items():
+            setattr(args, parameters, value)
+    else :
+        project_name = args.wandb_project + "_best"
 
     if 'SMA' not in args:
         args.SMA = None
-    wandb.init(project=args.wandb_project, config=flatten_dictionary_for_wandb(dict(args)))
+    wandb.init(project=project_name, config=flatten_dictionary_for_wandb(dict(args)))
     print(args)
     print(f'Method: {args.method}')
     # print(args)
@@ -190,7 +201,7 @@ if __name__ == "__main__":
             print("Number of workers: ", evaluator.num_workers)
             print(problem.default_configuration)
             print(f"GPU available: {torch.cuda.is_available()}")
-            results = search.search(max_evals=2)
+            results = search.search(max_evals=12)
             # print(results['objective'])
             # print(results)
 
@@ -200,6 +211,16 @@ if __name__ == "__main__":
 
             print(
                   f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
-                  f"finished after {results['timestamp_gather'].iloc[i_max]:.2f} secondes of search.\n")
+            )
+
+            for k, v in best_config.items():
+                args[k] = v
+
+            #now we use the best hyper parameters to rerun the model with 3 different init seed :
+            for i in range(3)[::-1]: #-1 to have reverse order to 0 in the end for next outer loop
+                args["init_seed"] = i
+                run()
+            #the problem is that init_seed will stay on threef or the hyperparameters search, so we need to reset it to 0
+
 
             print(json.dumps(best_config, indent=4))
