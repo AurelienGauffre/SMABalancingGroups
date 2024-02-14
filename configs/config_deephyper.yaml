@@ -1,4 +1,4 @@
-wandb_project: debug_HBO
+wandb_project: HBO2
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -18,7 +18,7 @@ eval_every_n_epochs: 1
 arch: "resnet50"
 # Hyperparameters for all methods
 
-num_epochs: 6
+num_epochs: 25
 batch_size: 16
 eta: 0.1
 lr: 1e-3
