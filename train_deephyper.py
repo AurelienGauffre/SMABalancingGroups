@@ -183,48 +183,48 @@ if __name__ == "__main__":
     for dataset_name in ['73sports']:
         args.SMA.name = dataset_name
         # Define your search and execute it
-        for K in [2, 4, 8, 16]:
+        for K in [2,4,8]:
             args.SMA.K = K
             # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-            for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
+            for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg']:
                 args.method = method
-            ##### HBO PART
-            problem = HpProblem()
-            # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
-            problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
-            # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
-            # problem.add_hyperparameter((4, 100), "up", default_value=20)
-            # problem.add_hyperparameter((1, 60), "T", default_value=40)
-            if method == 'jtt':
-                problem.add_hyperparameter([1, 3, 5], "T", default_value=3)
+                ##### HBO PART
+                problem = HpProblem()
+                # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
+                problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
+                # problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
+                # problem.add_hyperparameter((4, 100), "up", default_value=20)
+                # problem.add_hyperparameter((1, 60), "T", default_value=40)
+                if method == 'jtt':
+                    problem.add_hyperparameter([1, 3, 5], "T", default_value=3)
 
-            args.group = f"K={args.SMA.K}_{args.method}"
-            args.group_best = f"K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
-            evaluator = get_ray_evaluator(run)
-            search = CBO(problem, evaluator, verbose=1, random_state=42)
-            print("Number of workers: ", evaluator.num_workers)
-            print(problem.default_configuration)
-            print(f"GPU available: {torch.cuda.is_available()}")
-            results = search.search(max_evals=args.n_HBO_runs)
-            # print(results['objective'])
-            # print(results)
+                args.group = f"K={args.SMA.K}_{args.method}"
+                args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
+                evaluator = get_ray_evaluator(run)
+                search = CBO(problem, evaluator, verbose=1, random_state=42)
+                print("Number of workers: ", evaluator.num_workers)
+                print(problem.default_configuration)
+                print(f"GPU available: {torch.cuda.is_available()}")
+                results = search.search(max_evals=args.n_HBO_runs)
+                # print(results['objective'])
+                # print(results)
 
-            i_max = results.objective.argmax()
-            best_config = results.iloc[i_max][:-3].to_dict()
-            best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
+                i_max = results.objective.argmax()
+                best_config = results.iloc[i_max][:-3].to_dict()
+                best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
 
-            print(
-                f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
-            )
+                print(
+                    f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
+                )
 
-            for k, v in best_config.items():
-                args[k] = v
-                print(f"{k}: {v}")
+                for k, v in best_config.items():
+                    args[k] = v
+                    print(f"{k}: {v}")
 
-                # now we use the best hyper parameters to rerun the model with 3 different init seed :
-                for i in range(args.n_eval_init_seed)[
-                         ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
-                    args["init_seed"] = i
-                    run()
+                    # now we use the best hyper parameters to rerun the model with 3 different init seed :
+                    for i in range(args.n_eval_init_seed)[
+                             ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
+                        args["init_seed"] = i
+                        run()
 
             # print(json.dumps(best_config, indent=4))
