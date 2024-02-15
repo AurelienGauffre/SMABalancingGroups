@@ -37,7 +37,7 @@ SMA:
   name:  #plt-net ins2 medical-leaf texture-dtd
   split_seed: 0
   K:
-  mu: .1
+  mu: .2
   img_size: 256
 
 
