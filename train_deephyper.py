@@ -183,7 +183,7 @@ if __name__ == "__main__":
     for dataset_name in ['dogs']:
         args.SMA.name = dataset_name
         # Define your search and execute it
-        for K in [2,4]:
+        for K in [8]:
             args.SMA.K = K
             # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
             for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
