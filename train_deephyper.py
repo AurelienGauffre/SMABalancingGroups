@@ -188,7 +188,7 @@ if __name__ == "__main__":
             for K in [2, 4, 8]:
                 args.SMA.K = K
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-                for method in ['jtt']:
+                for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
                     args.method = method
                     args.group = f"K={args.SMA.K}_{args.method}"
                     args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
