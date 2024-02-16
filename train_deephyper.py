@@ -183,7 +183,7 @@ if __name__ == "__main__":
     for dataset_name in ['73sports']:
         args.SMA.name = dataset_name
         # Define your search and execute it
-        for mu in [0.2]:
+        for mu in [0.1]:
             args.SMA.mu = mu
             for K in [2, 4, 8]:
                 args.SMA.K = K
