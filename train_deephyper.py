@@ -180,15 +180,15 @@ if __name__ == "__main__":
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
-    for dataset_name in ['73sports']:
+    for dataset_name in ['dogs']:
         args.SMA.name = dataset_name
         # Define your search and execute it
-        for mu in [0.1]:
+        for mu in [0.05]:
             args.SMA.mu = mu
-            for K in [8]:
+            for K in [2,4]:
                 args.SMA.K = K
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-                for method in ['suby', 'subg']:
+                for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
                     args.method = method
                     args.group = f"K={args.SMA.K}_{args.method}"
                     args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
