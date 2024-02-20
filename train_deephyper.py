@@ -185,7 +185,7 @@ if __name__ == "__main__":
         # Define your search and execute it
         for mu in [.1]:
             args.SMA.mu = mu
-            for K in [12]:
+            for K in [16]:
                 args.SMA.K = K
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
                 for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
