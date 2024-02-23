@@ -14,7 +14,7 @@ method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
 n_eval_init_seed: 3
-n_HBO_runs: 12
+n_HBO_runs: 6
 hparams_seed: 0
 eval_every_n_epochs: 3
 arch: "resnet50"
