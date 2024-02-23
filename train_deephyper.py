@@ -196,6 +196,7 @@ if __name__ == "__main__":
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
                 for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
                     args.method = method
+                    args.IR = args.mu*(K-1)
                     args.group = f"K={args.SMA.K}_{args.method}"
                     args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
                     ##### HBO PARTdsfss
