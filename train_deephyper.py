@@ -193,8 +193,11 @@ if __name__ == "__main__":
         for K in [2,3,4,5,6,7,8]:
             args.SMA.K = K
             for mu in [.2,.3,.5]:
+
                 if args.SMA.mode == 'binary':
                     args.SMA.mu = mu/(K-1)
+                else :
+                    args.SMA.mu = mu
                 args.IR = args.mu * (K - 1)
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
                 for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
