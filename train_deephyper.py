@@ -13,7 +13,6 @@ import torch
 import models
 import itertools
 from datasets import get_loaders
-from setup_datasets import generate_metadata_SMA
 from omegaconf import OmegaConf
 from deephyper.problem import HpProblem
 from deephyper.evaluator import Evaluator
@@ -88,6 +87,8 @@ def run(job=None):
     best_selec_val = float('-inf')
     best_mean_group_acc_va = float('-inf')
     best_mean_group_acc_te = float('-inf')
+    best_acc_va = float('-inf')
+    best_acc_te = float('-inf')
     # Deactivate loading model for now
     # if os.path.exists(checkpoint_file):
     #     model.load(checkpoint_file)
@@ -130,6 +131,9 @@ def run(job=None):
             if result["mean_grp_acc_va"] >= best_mean_group_acc_va:
                 best_mean_group_acc_va = result['mean_grp_acc_va']
                 best_mean_group_acc_te = result['mean_grp_acc_te']
+            if result["avg_acc_va"] >= best_acc_va:
+                best_acc_va = result['avg_acc_va']
+                best_acc_te = result['avg_acc_te']
 
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
@@ -140,6 +144,8 @@ def run(job=None):
     # log in the end the best acc as summary
     wandb.run.summary["best_mean_group_acc_va"] = best_mean_group_acc_va
     wandb.run.summary["best_mean_group_acc_te"] = best_mean_group_acc_te
+    wandb.run.summary["best_acc_va"] = best_acc_va
+    wandb.run.summary["best_acc_te"] = best_acc_te
     wandb.finish()
     return best_mean_group_acc_va
 
@@ -183,9 +189,9 @@ if __name__ == "__main__":
     for dataset_name in ['AWA']:
         args.SMA.name = dataset_name
         # Define your search and execute it
-        for mu in [.1]:
+        for mu in [.2]:
             args.SMA.mu = mu
-            for K in [4]:
+            for K in [2]:
                 args.SMA.K = K
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
                 for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:

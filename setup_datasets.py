@@ -289,11 +289,13 @@ def generate_ALL_EXAMPLES_csv(data_folder='./data', dataset_name='plt-net', csv_
 
 def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='metadata', ratio=(.5, .2, .3),
                           K=2,
+                          mode='binary',
                           drop_original=True,
                           mu=.1,
                           pure_style=None,
                           overwrite=True,
-                          seed=42):
+                          seed=42,
+                          metadata_csv_path=None):
     """ Create a CSV file containing the split of the dataset required by SMA_Dataset class.
     The splits are stratified on the class and very importantly, different styles of the same content image are in the SAME split to prevent data leakage.
     The CSV has the same columns as the ALL_EXAMPLES CSV file with an additional column:
@@ -308,14 +310,20 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='m
         - pure_style: if not None, only keep the images of the specified style (integer between 0 and 19 or 20 for original)
         (should not be used with K or imbalance_ratio since it does not make sense)
         """
+    if K is not None:
+        if mode == 'binary':
+            print("Binary mode: only keeping 2 classes and K style")
+        else:
+            print(f"Classical mode : we keep K={K} classes and K={K} style")
     DF_MAIN_PATH = f'./{data_folder}/{SMA_dataset}/ALL_EXAMPLES_{SMA_dataset}.csv'  # format following default of generate_main_csv function
     if not os.path.isfile(DF_MAIN_PATH):
         print(f'########### No main CSV file found for dataset {SMA_dataset}. Creating it.')
         generate_ALL_EXAMPLES_csv(data_folder=data_folder, dataset_name=SMA_dataset, csv_name=None)
     meta_data_folders = f'./{data_folder}//'
     # "metadata_{args_SMA.name}_K={args_SMA.K}_imbalancetuple={args_SMA.imbalance_tuple}_splitseed={args_SMA.split_seed}.csv"
+    is_binary_str = '_binary' if mode == 'binary' else ''  # to add to the csv name to differentiate binary and K**2 groups
     metadata_csv_path = os.path.join(meta_data_folders,
-                                     f"metadata_{SMA_dataset}_K={K}_mu={mu}_splitseed={seed}.csv")
+                                     f"metadata_{SMA_dataset}_K={K}_mu={mu}_splitseed={seed}{is_binary_str}.csv")
     if os.path.isfile(metadata_csv_path):
         if not overwrite:
             print(f'########### CSV file {metadata_csv_path} already exists. Loading it instead of creating it.')
@@ -327,9 +335,9 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='m
     # Load the main DataFrame
     df = pd.read_csv(DF_MAIN_PATH)
 
-    # Keep K classes and K styles (+ original)
+    # Keep K classes and K styles (+ original) OR K style and 2 classes if mode is binary
     if K is not None:
-        df = _df_to_keep_K(df, K)
+        df = _df_to_keep_K(df, K, mode)
     # Extract rows where style is 'original'
     original_df = df[df['style'] == 'original'].copy()
 
@@ -380,7 +388,7 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='m
     return df
 
 
-def _df_to_keep_K(df, K, random_select=False):
+def _df_to_keep_K(df, K, mode, random_select=False):
     """ Keep K classes and K styles (+ original)
    To reduce variance when changing values of K and mu, we set random_select to False to keep the same classes and styles
    across experiments"""
@@ -393,9 +401,15 @@ def _df_to_keep_K(df, K, random_select=False):
     if random_select:
         selected_styles = ['original'] + list(
             np.random.choice([s for s in all_styles if s != 'original'], K, replace=False))
-        selected_classes = list(np.random.choice(all_classes, K, replace=False))
-    else :
-        selected_classes = all_classes[:K]
+        if mode != 'binary':
+            selected_classes = list(np.random.choice(all_classes, K, replace=False))
+        else:
+            selected_classes = list(np.random.choice(all_classes, 2, replace=False))
+    else:
+        if mode != 'binary':
+            selected_classes = all_classes[:K]
+        else:
+            selected_classes = all_classes[:2]
         selected_styles = ['original'] + [s for s in all_styles if s != 'original'][:K]
 
     return df[(df['style'].isin(selected_styles)) & (df['class'].isin(selected_classes))]
@@ -408,9 +422,9 @@ def _df_to_imbalalance_ratio(df, mu, seed):
     """
     all_classes = sorted(df['class'].unique().tolist())
     all_styles = sorted(df['style'].unique().tolist())
-    if len(all_classes) != len(all_styles):
-        raise ValueError(
-            "Imbalance_ratio argument requires the same number of classes and styles (make sure to that drop_original is set to True)")
+    # if len(all_classes) != len(all_styles):
+    #     raise ValueError(
+    #         "Imbalance_ratio argument requires the same number of classes and styles (make sure to that drop_original is set to True)")
     to_keep = []
 
     # subsampling of classes : we only keep a fraction of each classes to guarantee an extra class imbalance

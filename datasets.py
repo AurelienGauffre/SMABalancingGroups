@@ -104,18 +104,25 @@ class SMA(GroupDataset):
     def __init__(self, data_path, split, subsample_what=None, duplicates=None, args_SMA=None):
         root = os.path.join(data_path, args_SMA.name)
 
-        metadata = os.path.join(data_path,
-                                f"metadata_{args_SMA.name}_K={args_SMA.K}_mu={args_SMA.mu}_splitseed={args_SMA.split_seed}.csv")
-        if not os.path.exists(metadata):
-            print(f"Metadata file does not exist. Creating it...")
+        meta_data_folders = f'./{data_path}//'
+        is_binary_str = '_binary' if args_SMA.mode == 'binary' else ''
 
+        metadata_csv_path = os.path.join(meta_data_folders,
+                                     f"metadata_{args_SMA.name}_K={args_SMA.K}_mu={args_SMA.mu}_splitseed={args_SMA.split_seed}{is_binary_str}.csv")
+
+        if not os.path.exists(metadata_csv_path):
+            print(f"Metadata file does not exist. Creating it...")
             generate_metadata_SMA(data_folder='data', SMA_dataset=args_SMA.name, csv_name='metadata', ratio=(.5, .2, .3),
+                                  mode=args_SMA.mode,
                                   K=args_SMA.K,
                                   drop_original=True,
                                   mu=args_SMA.mu,
                                   pure_style=None,
                                   overwrite=True,
-                                  seed=args_SMA.split_seed)
+                                  seed=args_SMA.split_seed,
+                                  metadata_csv_path=metadata_csv_path
+                                  )
+
 
         transform = transforms.Compose(
             [
@@ -131,7 +138,7 @@ class SMA(GroupDataset):
                 # todo compute the statistics for each SMA dataset
             ]
         )
-        super().__init__(split, root, metadata, transform, subsample_what, duplicates)
+        super().__init__(split, root, metadata_csv_path, transform, subsample_what, duplicates)
         self.data_type = "images"
 
     def transform(self, x):
