@@ -189,14 +189,17 @@ if __name__ == "__main__":
     for dataset_name in ['AWA']:
         args.SMA.name = dataset_name
         # Define your search and execute it
-        for mu in [.2]:
-            args.SMA.mu = mu
-            for K in [2]:
-                args.SMA.K = K
+
+        for K in [2,3,4,5,6,7,8]:
+            args.SMA.K = K
+            for mu in [.2,.3,.5]:
+                if args.SMA.mode == 'binary':
+                    args.SMA.mu = mu/(K-1)
+                args.IR = args.mu * (K - 1)
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
                 for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
                     args.method = method
-                    args.IR = args.mu*(K-1)
+
                     args.group = f"K={args.SMA.K}_{args.method}"
                     args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
                     ##### HBO PARTdsfss
