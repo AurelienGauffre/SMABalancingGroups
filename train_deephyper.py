@@ -198,7 +198,7 @@ if __name__ == "__main__":
                     args.SMA.mu = mu/(K-1)
                 else :
                     args.SMA.mu = mu
-                args.IR = args.mu * (K - 1)
+                args.IR = args.SMA.mu * (K - 1)
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
                 for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
                     args.method = method
