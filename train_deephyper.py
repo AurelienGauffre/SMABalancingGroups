@@ -138,7 +138,7 @@ def run(job=None):
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         # print(json.dumps(result))
-        log_dict = results_to_log_dict(result)
+        log_dict = results_to_log_dict(result,args.SMA.mode)
 
         wandb.log(log_dict, step=epoch)
     # log in the end the best acc as summary

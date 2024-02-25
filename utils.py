@@ -28,9 +28,14 @@ def flatten_dictionary_for_wandb(args):
     return args
 
 
-def list_to_matrix(lst):
-    K = int(np.sqrt(len(lst)))
-    return np.array(lst).reshape(K, K)
+def list_to_matrix(lst,mode):
+    if mode != 'binary':
+
+        K = int(np.sqrt(len(lst)))
+        return np.array(lst).reshape(K, K)
+    else:
+        K = int(len(lst))//2
+        return np.array(lst).reshape(2, K)
 
 def zero_diagonal(M):
     """Sets the diagonal of the matrix to zero"""
@@ -39,12 +44,12 @@ def zero_diagonal(M):
     return M_copy
 
 
-def results_to_log_dict(result):
+def results_to_log_dict(result,mode):
     """ Computes the mean, worst, minor, major and relative accuracy from a list of accuracies"""
     log_dict = {'lr': result['lr']}
     for acc in ['acc_tr', 'acc_va', 'acc_te']:
         if acc in result:
-            acc_mat = list_to_matrix(result[acc]) * 100
+            acc_mat = list_to_matrix(result[acc],mode) * 100
             K = acc_mat.shape[0]
             log_dict[f'mean_grp_{acc}'] = np.mean(acc_mat)
             log_dict[f'worst_grp_{acc}'] = np.min(acc_mat)
