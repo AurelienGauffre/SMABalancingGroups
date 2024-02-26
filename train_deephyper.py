@@ -190,7 +190,7 @@ if __name__ == "__main__":
         args.SMA.name = dataset_name
         # Define your search and execute it
 
-        for K in [2,4,6]:
+        for K in [3,5,7]:
             args.SMA.K = K
             for mu in [0.05]:
 
