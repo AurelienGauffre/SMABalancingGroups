@@ -29,7 +29,7 @@ git pull
 # Create the SLURM script
 cat <<EOF >./run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh
 cd ~/SMABalancingGroups
-. /home/aptikal/gauffrea/oldSMA/envSMA/bin/activate
+. /home/aptikal/gauffrea/SMABalancingGroups/envSMAB/bin/activate
 git pull
 EOF
 
