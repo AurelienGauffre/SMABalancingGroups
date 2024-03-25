@@ -29,8 +29,7 @@ git pull
 # Create the SLURM script
 cat <<EOF >./run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh
 cd ~/SMABalancingGroups
-. envSMABalancingGroups/bin/activate
-git pull
+. envSMABalancingGroups/bin/activate git pull
 EOF
 
 # Append the nohup commands for each job to the SLURM script
