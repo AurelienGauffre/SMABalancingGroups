@@ -28,8 +28,8 @@ chmod +x ./run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh
 git pull
 # Create the SLURM script
 cat <<EOF >./run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh
-cd ~/semisupcon
-. envsemisupcon/bin/activate
+cd ~/SMABalancingGroups
+. envSMABalancingGroups/bin/activate
 git pull
 EOF
 
