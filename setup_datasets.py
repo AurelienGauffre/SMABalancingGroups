@@ -337,7 +337,7 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='m
 
     # Keep K classes and K styles (+ original) OR K style and 2 classes if mode is binary
     if K is not None:
-        df = _df_to_keep_K(df, K, mode)
+        df = _df_to_keep_K(df, K, mode,seed)
     # Extract rows where style is 'original'
     original_df = df[df['style'] == 'original'].copy()
 
@@ -388,7 +388,7 @@ def generate_metadata_SMA(data_folder='data', SMA_dataset="plt-net", csv_name='m
     return df
 
 
-def _df_to_keep_K(df, K, mode, random_select=False):
+def _df_to_keep_K(df, K, mode, seed,random_select=False):
     """ Keep K classes and K styles (+ original)
    To reduce variance when changing values of K and mu, we set random_select to False to keep the same classes and styles
    across experiments"""
@@ -408,9 +408,12 @@ def _df_to_keep_K(df, K, mode, random_select=False):
     else:
         if mode != 'binary':
             selected_classes = all_classes[:K]
+            selected_styles = ['original'] + [s for s in all_styles if s != 'original'][:K]
         else:
-            selected_classes = all_classes[:2]
-        selected_styles = ['original'] + [s for s in all_styles if s != 'original'][:K]
+            np.random.seed(seed)
+            selected_classes = list(np.random.choice(all_classes, 2, replace=False))
+            random_styles = list(np.random.choice([s for s in all_styles if s != 'original'], K, replace=False))
+            selected_styles = ['original'] + random_styles
 
     return df[(df['style'].isin(selected_styles)) & (df['class'].isin(selected_classes))]
 
