@@ -41,4 +41,4 @@ done
 
 echo "wait" >> "./run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh"
 
-oarsub -l /host=1/gpu=1,walltime=${WALLTIME}:0:0 /home/aptikal/gauffrea/semisupcon/run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh
+oarsub -l /host=1/gpu=1,walltime=${WALLTIME}:0:0 /home/aptikal/gauffrea/SMABalancingGroups/run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh
