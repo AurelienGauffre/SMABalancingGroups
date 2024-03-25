@@ -186,13 +186,13 @@ if __name__ == "__main__":
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
-    for dataset_name in ['AWA']:
+    for dataset_name in ['dogs'] : #args.SMA.names:
         args.SMA.name = dataset_name
         # Define your search and execute it
 
-        for K in [3,5,7]:
+        for K in [2] : #args.SMA.Ks:
             args.SMA.K = K
-            for mu in [0.05]:
+            for mu in [.2] : #args.SMA.mus:
 
                 if args.SMA.mode == 'binary':
                     args.SMA.mu = mu/(K-1)
@@ -204,7 +204,7 @@ if __name__ == "__main__":
                     args.method = method
 
                     args.group = f"K={args.SMA.K}_{args.method}"
-                    args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}"
+                    args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}_seed={args.SMA.split_seed}"
                     ##### HBO PARTdsfss
                     problem = HpProblem()
                     # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
