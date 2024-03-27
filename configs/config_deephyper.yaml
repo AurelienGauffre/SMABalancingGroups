@@ -9,17 +9,17 @@ num_init_seeds: 5
 selector: 'mean_grp_acc_va' # min_acc_va
 
 #Sweep
-#['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+
 method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
 n_eval_init_seed: 3
-n_HBO_runs: 6
 hparams_seed: 0
 eval_every_n_epochs: 3
-arch: "resnet18"
+arch: "resnet50"
 # Hyperparameters for all methods
 
+n_HBO_runs: 6
 num_epochs: 30
 batch_size: 16
 eta: 0.1
