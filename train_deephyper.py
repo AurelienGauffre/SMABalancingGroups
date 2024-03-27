@@ -185,6 +185,8 @@ if __name__ == "__main__":
                                     args_command_line.config)))
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
+    # if args.SMA.mode is not defined, we set it to 'classic':
+    args.SMA.mode = 'classic'  if ('SMA' in args) and ('mode' not in args.SMA) else args.SMA.mode
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
     for dataset_name in args.SMA.names:
         args.SMA.name = dataset_name
@@ -200,7 +202,7 @@ if __name__ == "__main__":
                     args.SMA.mu = mu
                 args.IR = args.SMA.mu * (K - 1)
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-                for method in ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']:
+                for method in args.SMA.methods:
                     args.method = method
 
                     args.group = f"K={args.SMA.K}_{args.method}"
