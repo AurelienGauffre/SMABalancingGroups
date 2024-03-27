@@ -36,14 +36,12 @@ new_reset: False
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
-  mode: 'classic'
-  img_size: 256
-  split_seed: 0
+  mode: 'binary'
   names:  ['dogs','medical-leaf','texture-dtd','73sports','plt-net', 'AWA'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [2,4]
+  split_seed: 0
+  Ks: [16]
   mus: [.4]
-  methods: ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-
+  img_size: 256
 
 
 
