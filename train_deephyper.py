@@ -186,13 +186,13 @@ if __name__ == "__main__":
     args = OmegaConf.create(config_dict)
     args["n_gpus"] = torch.cuda.device_count()
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
-    for dataset_name in ['dogs'] : #args.SMA.names:
+    for dataset_name in args.SMA.names:
         args.SMA.name = dataset_name
         # Define your search and execute it
 
-        for K in [2] : #args.SMA.Ks:
+        for K in args.SMA.Ks:
             args.SMA.K = K
-            for mu in [.2] : #args.SMA.mus:
+            for mu in args.SMA.mus:
 
                 if args.SMA.mode == 'binary':
                     args.SMA.mu = mu/(K-1)

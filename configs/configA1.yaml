@@ -1,4 +1,4 @@
-wandb_project: test
+wandb_project: test_2
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -38,7 +38,7 @@ SMA:
   names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
   split_seed: 0
   Ks: [2]
-  mus: [2]
+  mus: [.1,.5]
   img_size: 256
 
 
