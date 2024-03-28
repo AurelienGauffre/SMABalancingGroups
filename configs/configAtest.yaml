@@ -19,8 +19,8 @@ arch: "resnet50"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 12
-n_eval_init_seed: 3
+n_HBO_runs: 3
+n_eval_init_seed: 1
 
 num_epochs: 1
 batch_size: 16
@@ -37,14 +37,12 @@ new_reset: False
 # Specific hyperparameters for to create SMA dataset
 SMA:
   mode: 'classic'
-  img_size: 256
+  img_size: 32
   split_seed: 0
   names:  ['medical-leaf'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [2,4,8]
+  Ks: [2]
   mus: [0.1]
-  methods: ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
-
-
+  methods: ['erm','dro']
 
 
 
