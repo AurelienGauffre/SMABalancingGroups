@@ -1,0 +1,9 @@
+. aker_run.sh Abmu1-1 18
+. aker_run.sh Abmu1-2 22
+. aker_run.sh Abmu1-3 33
+
+
+
+. aker_run.sh Acmu1-1 28
+. aker_run.sh Acmu1-2 32
+. aker_run.sh Acmu1-3 60
