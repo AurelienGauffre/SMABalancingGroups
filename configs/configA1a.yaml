@@ -1,11 +1,11 @@
-wandb_project: test_2
+wandb_project: SMA_time
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
 slurm_partition: null #Pas None ?
 max_time: 4320  # 3 * 24 * 60
 num_hparams_seeds: 20
-num_init_seeds: 5
+#num_init_seeds: 5
 selector: 'mean_grp_acc_va' # min_acc_va
 
 #Sweep
@@ -13,12 +13,14 @@ selector: 'mean_grp_acc_va' # min_acc_va
 method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
-n_eval_init_seed: 3
-n_HBO_runs: 6
 hparams_seed: 0
 eval_every_n_epochs: 3
 arch: "resnet50"
 # Hyperparameters for all methods
+
+
+n_HBO_runs: 30
+n_eval_init_seed: 3
 
 num_epochs: 30
 batch_size: 16
@@ -34,12 +36,14 @@ new_reset: False
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
-  mode: 'binary'
-  names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
-  split_seed: 0
-  Ks: [2]
-  mus: [.1,.5]
+  mode: 'classic'
   img_size: 256
+  split_seed: 0
+  names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
+  Ks: [2,4,8]
+  mus: [.4]
+  methods: ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+
 
 
 

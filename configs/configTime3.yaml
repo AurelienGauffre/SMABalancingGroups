@@ -39,7 +39,7 @@ SMA:
   mode: 'classic'
   img_size: 256
   split_seed: 0
-  names:  ['dogs','medical-leaf','texture-dtd','73sports','plt-net', 'AWA'] #plt-net ins2 medical-leaf texture-dtd
+  names:  ['AWA','plt-net'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [16]
   mus: [.4]
   methods: ['erm']
