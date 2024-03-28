@@ -138,7 +138,7 @@ def run(job=None):
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         # print(json.dumps(result))
-        log_dict = results_to_log_dict(result,args.SMA.mode)
+        log_dict = results_to_log_dict(result, args.SMA.mode)
 
         wandb.log(log_dict, step=epoch)
     # log in the end the best acc as summary
@@ -184,9 +184,10 @@ if __name__ == "__main__":
         OmegaConf.load(os.path.join('configs',
                                     args_command_line.config)))
     args = OmegaConf.create(config_dict)
+    args["config_name"] = args_command_line.config
     args["n_gpus"] = torch.cuda.device_count()
     # if args.SMA.mode is not defined, we set it to 'classic':
-    args.SMA.mode = 'classic'  if ('SMA' in args) and ('mode' not in args.SMA) else args.SMA.mode
+    args.SMA.mode = 'classic' if ('SMA' in args) and ('mode' not in args.SMA) else args.SMA.mode
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
     for dataset_name in args.SMA.names:
         args.SMA.name = dataset_name
@@ -197,8 +198,8 @@ if __name__ == "__main__":
             for mu in args.SMA.mus:
 
                 if args.SMA.mode == 'binary':
-                    args.SMA.mu = mu/(K-1)
-                else :
+                    args.SMA.mu = mu / (K - 1)
+                else:
                     args.SMA.mu = mu
                 args.IR = args.SMA.mu * (K - 1)
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
