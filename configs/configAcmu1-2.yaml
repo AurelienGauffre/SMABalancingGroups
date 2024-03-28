@@ -1,4 +1,4 @@
-wandb_project: SMA_time
+wandb_project: SMA_all
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
