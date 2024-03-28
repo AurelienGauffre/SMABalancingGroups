@@ -241,6 +241,7 @@ if __name__ == "__main__":
                         print(f"{k}: {v}")
 
                         # now we use the best hyper parameters to rerun the model with 3 different init seed :
+                    print(f" ####  NOW RUNNING THE BEST CONFIGURATION WITH {args.n_eval_init_seed} DIFFERENT SEEDS ####")
                     for i in range(args.n_eval_init_seed)[
                              ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
                         args["init_seed"] = i
