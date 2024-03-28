@@ -19,7 +19,7 @@ arch: "resnet50"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 12
+n_HBO_runs: 9
 n_eval_init_seed: 3
 
 num_epochs: 30
