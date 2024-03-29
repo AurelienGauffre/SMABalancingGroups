@@ -20,7 +20,7 @@ d 2/4/8
 
 TO LAUNCHE
 e 2/4/8/12 (erm)
-. aker_run.sh configAemu1-1 50
+. bigfoot_run.sh Aemu1-1 48
 
 
 f 2/4/8/12 (erm)
