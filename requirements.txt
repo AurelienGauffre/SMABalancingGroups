@@ -12,10 +12,13 @@ transformers>=4.10.0
 torch==2.2
 torchvision
 wandb
-sklearn
 timm
 OmegaConf
 deephyper
+kaggle
 ray # for deephyper
+PyYAML
+msgpack
+filelock
 
 git+https://github.com/ildoonet/pytorch-randaugment

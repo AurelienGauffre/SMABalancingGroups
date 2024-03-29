@@ -15,9 +15,13 @@ d 2/4/8
 . aker_run.sh configAdmu1-1 40
 . aker_run.sh configAdmu1-1 40
 
+
+
+
+TO LAUNCHE
 e 2/4/8/12 (erm)
 . aker_run.sh configAemu1-1 50
 
 
 f 2/4/8/12 (erm)
-. aker_run.sh configAemu1-1 50
+. aker_run.sh configAfmu1-1 50
