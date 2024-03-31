@@ -39,10 +39,10 @@ SMA:
   mode: 'classic'
   img_size: 256
   split_seed: 0
-  names:  ['birds']
-  Ks: [8]
+  names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
+  Ks: [2,4,8]
   mus: [0.1]
-  methods: ['erm','jtt']
+  methods: ['erm','jtt', 'suby']
 
 
 
