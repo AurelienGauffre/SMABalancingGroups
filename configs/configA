@@ -18,18 +18,21 @@ c 2/4/8/12/16
 . aker_run.sh Acmu1-2 28
 . aker_run.sh Acmu1-3 45
 
-d 2/4/8
+d 2/4/8/12
 . aker_run.sh Admu1-0 8
 . aker_run.sh Admu1-1 15
 . aker_run.sh Admu1-2 15
 . aker_run.sh Admu1-3 15
 . aker_run.sh Admu1-4 15
+. aker_run.sh Admu1-5 20
+. aker_run.sh Admu1-6 20
+. aker_run.sh Admu1-7 20
 
 
 
 
 TO LAUNCHE
-e 2/4/8/12 (erm)
+e 2/4/8/12
 . bigfoot_run.sh Aemu1-1 20
 . bigfoot_run.sh Aemu1-2 20
 . bigfoot_run.sh Aemu1-3 20
@@ -37,7 +40,7 @@ e 2/4/8/12 (erm)
 . bigfoot_run.sh Aemu1-5 40
 
 
-f 2/4/8/12 (erm)
+f 2/4/8
 #TODO Ces 3 las sur aker sont ils lancés ?
 
 . aker_run.sh Afmu1-1 30
