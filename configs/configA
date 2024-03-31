@@ -4,12 +4,12 @@ a 2/4/8/12/16
 
 . aker_run.sh Aamu1-2 30
 . aker_run.sh Aamu1-3 30
-
 . aker_run.sh Aamu1-4 40
 . aker_run.sh Aamu1-5 40
 
 b 2/4/8/12/16
 . aker_run.sh Abmu1-1 18
+
 . aker_run.sh Abmu1-2 20
 . aker_run.sh Abmu1-3 30
 
@@ -19,11 +19,11 @@ c 2/4/8/12/16
 . aker_run.sh Acmu1-3 45
 
 d 2/4/8
-. aker_run.sh Admu1-1 8
-. aker_run.sh Admu1-1 12
-. aker_run.sh Admu1-1 30
-. aker_run.sh Admu1-1 30
-. aker_run.sh Admu1-1 40
+. aker_run.sh Admu1-0 8
+. aker_run.sh Admu1-1 15
+. aker_run.sh Admu1-2 15
+. aker_run.sh Admu1-3 15
+. aker_run.sh Admu1-4 15
 
 
 
@@ -38,6 +38,8 @@ e 2/4/8/12 (erm)
 
 
 f 2/4/8/12 (erm)
+#TODO Ces 3 las sur aker sont ils lancés ?
+
 . aker_run.sh Afmu1-1 30
 . aker_run.sh Afmu1-2 30
 . aker_run.sh Afmu1-3 30
