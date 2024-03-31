@@ -40,9 +40,9 @@ SMA:
   img_size: 256
   split_seed: 0
   names:  ['plt-net']
-  Ks: [2]
+  Ks: [4]
   mus: [0.1]
-  methods: ['jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+  methods: ['rwy', 'rwg', 'dro']
 
 
 

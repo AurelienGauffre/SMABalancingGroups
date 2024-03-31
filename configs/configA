@@ -19,7 +19,8 @@ c 2/4/8/12/16
 . aker_run.sh Acmu1-3 45
 
 d 2/4/8
-. aker_run.sh configAdmu1-1 20
+. aker_run.sh configAdmu1-1 8
+. aker_run.sh configAdmu1-1 12
 . aker_run.sh configAdmu1-1 30
 . aker_run.sh configAdmu1-1 30
 . aker_run.sh configAdmu1-1 40
@@ -29,8 +30,15 @@ d 2/4/8
 
 TO LAUNCHE
 e 2/4/8/12 (erm)
-. bigfoot_run.sh Aemu1-1 48
+. bigfoot_run.sh Aemu1-1 20
+. bigfoot_run.sh Aemu1-2 20
+. bigfoot_run.sh Aemu1-3 20
+. bigfoot_run.sh Aemu1-4 40
+. bigfoot_run.sh Aemu1-5 40
 
 
 f 2/4/8/12 (erm)
-. aker_run.sh configAfmu1-1 50
+. aker_run.sh configAfmu1-1 30
+. aker_run.sh configAfmu1-2 30
+. aker_run.sh configAfmu1-3 30
+. aker_run.sh configAfmu1-4 30
