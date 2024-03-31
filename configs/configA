@@ -1,18 +1,27 @@
+a 2/4/8/12/16
+. aker_run.sh Aamu1-1 17
+. aker_run.sh Aamu1-1bis 17
+
+. aker_run.sh Aamu1-2 30
+. aker_run.sh Aamu1-3 30
+
+. aker_run.sh Aamu1-4 40
+. aker_run.sh Aamu1-5 40
 
 b 2/4/8/12/16
 . aker_run.sh Abmu1-1 18
-. aker_run.sh Abmu1-2 22
-. aker_run.sh Abmu1-3 33
+. aker_run.sh Abmu1-2 20
+. aker_run.sh Abmu1-3 30
 
 c 2/4/8/12/16
-. aker_run.sh Acmu1-1 28
-. aker_run.sh Acmu1-2 32
-. aker_run.sh Acmu1-3 60
+. aker_run.sh Acmu1-1 25
+. aker_run.sh Acmu1-2 28
+. aker_run.sh Acmu1-3 45
 
 d 2/4/8
-. aker_run.sh configAdmu1-1 22
-. aker_run.sh configAdmu1-1 60
-. aker_run.sh configAdmu1-1 40
+. aker_run.sh configAdmu1-1 20
+. aker_run.sh configAdmu1-1 30
+. aker_run.sh configAdmu1-1 30
 . aker_run.sh configAdmu1-1 40
 
 

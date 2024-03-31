@@ -39,7 +39,7 @@ SMA:
   mode: 'classic'
   img_size: 256
   split_seed: 0
-  names:  ['73sports']
+  names:  ['birds']
   Ks: [8]
   mus: [0.1]
   methods: ['rwy', 'rwg', 'dro']
