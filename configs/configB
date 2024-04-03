@@ -1,0 +1,27 @@
+a 2/4/8/12/16
+. aker_run.sh Bamu1-1 17
+. aker_run.sh Bamu1-1bis 17
+
+
+b 2/4/8/12/16
+. aker_run.sh Bbmu1-0 5
+. aker_run.sh Bbmu1-1 10
+
+
+c 2/4/8/12/16
+. aker_run.sh Bcmu1-0 13
+. aker_run.sh Bcmu1-1 13
+
+d 2/4/8/12
+. aker_run.sh Bdmu1-0 8
+. aker_run.sh Bdmu1-1 15
+. aker_run.sh Bdmu1-2 15
+. aker_run.sh Bdmu1-3 15
+. aker_run.sh Bdmu1-4 15
+
+TO LAUNCHE
+e 2/4/8/12
+. bigfoot_run.sh Bemu1-1 20
+. bigfoot_run.sh Bemu1-2 20
+. bigfoot_run.sh Bemu1-3 20
+
