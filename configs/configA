@@ -8,13 +8,16 @@ a 2/4/8/12/16
 . aker_run.sh Aamu1-5 40
 
 b 2/4/8/12/16
-. aker_run.sh Abmu1-1 18
+. aker_run.sh Abmu1-0 5
+. aker_run.sh Abmu1-1 10
 
 . aker_run.sh Abmu1-2 20
 . aker_run.sh Abmu1-3 30
 
 c 2/4/8/12/16
-. aker_run.sh Acmu1-1 25
+. aker_run.sh Acmu1-0 13
+. aker_run.sh Acmu1-1 13
+
 . aker_run.sh Acmu1-2 28
 . aker_run.sh Acmu1-3 45
 
