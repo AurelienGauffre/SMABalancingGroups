@@ -14,13 +14,13 @@ method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
-eval_every_n_epochs: 3
+eval_every_n_epochs: 4
 arch: "resnet50"
 # Hyperparameters for all methods
 
 
 n_HBO_runs: 12
-n_eval_init_seed: 3
+n_eval_init_seed: 5
 
 num_epochs: 1
 batch_size: 16
