@@ -1,56 +1,65 @@
 a 2/4/8/12/16
-. aker_run.sh Aamu1-1 17
-. aker_run.sh Aamu1-1bis 17
+. aker_run.sh Aamu1-1 14
+. aker_run.sh Aamu1-1bis 14
 
-. aker_run.sh Aamu1-2 30
-. aker_run.sh Aamu1-3 30
-. aker_run.sh Aamu1-4 40
-. aker_run.sh Aamu1-5 40
+. aker_run.sh Aamu1-2 21
+. aker_run.sh Aamu1-3 21
+. aker_run.sh Aamu1-4 31
+. aker_run.sh Aamu1-5 31
 
 b 2/4/8/12/16
-. aker_run.sh Abmu1-0 5
-. aker_run.sh Abmu1-1 10
+. aker_run.sh Abmu1-0 4
+. aker_run.sh Abmu1-1 8
 
-. aker_run.sh Abmu1-2 20
-. aker_run.sh Abmu1-3 30
+. aker_run.sh Abmu1-2 15
+. aker_run.sh Abmu1-3 22
 
 c 2/4/8/12/16
-. aker_run.sh Acmu1-0 13
-. aker_run.sh Acmu1-1 13
+. aker_run.sh Acmu1-0 10
+. aker_run.sh Acmu1-1 10
 
-. aker_run.sh Acmu1-2 28
-. aker_run.sh Acmu1-3 45
+. aker_run.sh Acmu1-2 25
+. aker_run.sh Acmu1-3 35
 
 d 2/4/8/12
-. aker_run.sh Admu1-0 8
-. aker_run.sh Admu1-1 15
-. aker_run.sh Admu1-2 15
-. aker_run.sh Admu1-3 15
-. aker_run.sh Admu1-4 15
+. aker_run.sh Admu1-0 6
+. aker_run.sh Admu1-1 12
+. aker_run.sh Admu1-2 12
+. aker_run.sh Admu1-3 12
+. aker_run.sh Admu1-4 12
 
-. aker_run.sh Admu1-5 20
-. aker_run.sh Admu1-6 20
-. aker_run.sh Admu1-7 20
-
-
+. aker_run.sh Admu1-5 15
+. aker_run.sh Admu1-6 15
+. aker_run.sh Admu1-7 15
 
 
-TO LAUNCHE
 e 2/4/8/12
-. bigfoot_run.sh Aemu1-1 20
-. bigfoot_run.sh Aemu1-2 20
-. bigfoot_run.sh Aemu1-3 20
-. bigfoot_run.sh Aemu1-4 40
-. bigfoot_run.sh Aemu1-5 40
+. bigfoot_run.sh Aemu1-1 15
+. bigfoot_run.sh Aemu1-2 15
+. bigfoot_run.sh Aemu1-3 15
+
+. bigfoot_run.sh Aemu1-4 30
+. bigfoot_run.sh Aemu1-5 30
 
 
 f 2/4/8
-#TODO Ces 3 las sur aker sont ils lancés ?
+. aker_run.sh Afmu1-1 22
+. aker_run.sh Afmu1-2 22
+. aker_run.sh Afmu1-3 22
 
-. aker_run.sh Afmu1-1 30
-. aker_run.sh Afmu1-2 30
-. aker_run.sh Afmu1-3 30
+. bigfoot_run.sh Afmu1-4 36
+. bigfoot_run.sh Afmu1-5 36
+. bigfoot_run.sh Afmu1-6 36
 
-. bigfoot_run.sh Afmu1-4 48
-. bigfoot_run.sh Afmu1-5 48
-. bigfoot_run.sh Afmu1-6 48
+g :
+. aker_run.sh Agmu1-1 15
+. aker_run.sh Agmu1-2 15
+
+h:
+. aker_run.sh Ahmu1-1 15
+. aker_run.sh Ahmu1-2 15
+
+i:
+. aker_run.sh Aimu1-1 15
+. aker_run.sh Aimu1-2 15
+. aker_run.sh Aimu1-3 15

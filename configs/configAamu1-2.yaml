@@ -1,4 +1,4 @@
-wandb_project: SMA_all
+wandb_project: SMA_all_2
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -14,15 +14,15 @@ method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
-eval_every_n_epochs: 3
+wandb_project: SMA_all_2_n_epochs: 3
 arch: "resnet50"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 9
-n_eval_init_seed: 3
+n_HBO_runs: 8
+n_eval_init_seed: 5
 
-num_epochs: 30
+num_epochs: 20
 batch_size: 16
 eta: 0.1
 lr: 1e-3
