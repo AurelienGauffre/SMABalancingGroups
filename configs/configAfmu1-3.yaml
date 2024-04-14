@@ -42,7 +42,7 @@ SMA:
   names:  ['plt-net']
   Ks: [4]
   mus: [0.05]
-  methods: ['rwy', 'rwg', 'dro']
+  methods: ['rwy', 'rwg', 'dro',´subg']
 
 
 
