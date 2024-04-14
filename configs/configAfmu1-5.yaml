@@ -41,7 +41,7 @@ SMA:
   split_seed: 0
   names:  ['plt-net']
   Ks: [8]
-  mus: [0.1]
+  mus: [0.05]
   methods: ['subg', 'rwy']
 
 
