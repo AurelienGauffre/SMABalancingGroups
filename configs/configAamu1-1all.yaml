@@ -14,7 +14,7 @@ method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
-wandb_project: SMA_all_2_n_epochs: 3
+eval_every_n_epochs: 4
 arch: "resnet50"
 # Hyperparameters for all methods
 
