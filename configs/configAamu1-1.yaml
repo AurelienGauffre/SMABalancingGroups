@@ -40,7 +40,7 @@ SMA:
   img_size: 256
   split_seed: 0
   names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [2,4,8]
+  Ks: [4,8]
   mus: [0.1]
   methods: ['erm','jtt', 'suby']
 
