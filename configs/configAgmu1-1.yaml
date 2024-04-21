@@ -40,9 +40,9 @@ SMA:
   img_size: 256
   split_seed: 0
   names:  ['resisc'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [4,8]
-  mus: [0.2]
-  methods: ['erm','jtt', 'suby','subg', 'rwy', 'rwg', 'dro']
+  Ks: [2,4,8]
+  mus: [0.1]
+  methods: ['erm','jtt', 'suby']
 
 
 

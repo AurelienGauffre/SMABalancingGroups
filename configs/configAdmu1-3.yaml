@@ -41,7 +41,7 @@ SMA:
   split_seed: 0
   names:  ['birds']
   Ks: [8]
-  mus: [0.2]
+  mus: [0.1]
   methods: ['erm','jtt']
 
 
