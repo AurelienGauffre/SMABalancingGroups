@@ -9,12 +9,15 @@
 . bigfoot_run.sh Admu1-2 12
 . bigfoot_run.sh Admu1-3 12
 . bigfoot_run.sh Admu1-4 12
+
 . bigfoot_run.sh Aemu1-1 15
 . bigfoot_run.sh Aemu1-2 15
 . bigfoot_run.sh Aemu1-3 15
+
 . bigfoot_run.sh Afmu1-1 22
 . bigfoot_run.sh Afmu1-2 22
 . bigfoot_run.sh Afmu1-3 22
+
 . bigfoot_run.sh Agmu1-1 15
 . bigfoot_run.sh Agmu1-2 15
 . bigfoot_run.sh Ahmu1-1 15
