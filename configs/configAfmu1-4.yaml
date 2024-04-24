@@ -19,7 +19,7 @@ arch: "resnet50"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 8
+n_HBO_runs: 6
 n_eval_init_seed: 5
 
 num_epochs: 20
@@ -42,7 +42,7 @@ SMA:
   names:  ['plt-net']
   Ks: [8]
   mus: [0.2]
-  methods: ['erm']
+  methods: ['jtt', 'suby']
 
 
 
