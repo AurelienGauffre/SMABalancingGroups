@@ -1,37 +1,37 @@
-. bigfoot_run.sh Aamu1-1 14
-. bigfoot_run.sh Aamu1-1bis 14
-. bigfoot_run.sh Abmu1-0 8
-. bigfoot_run.sh Abmu1-1 12
-. bigfoot_run.sh Acmu1-0 10
-. bigfoot_run.sh Acmu1-1 10
-. bigfoot_run.sh Admu1-0 6
-. bigfoot_run.sh Admu1-1 12
-. bigfoot_run.sh Admu1-2 12
-. bigfoot_run.sh Admu1-3 12
-. bigfoot_run.sh Admu1-4 12
+. aker_run.sh Aamu1-1 14
+. aker_run.sh Aamu1-1bis 14
+. aker_run.sh Abmu1-0 8
+. aker_run.sh Abmu1-1 12
+. aker_run.sh Acmu1-0 10
+. aker_run.sh Acmu1-1 10
+. aker_run.sh Admu1-0 6
+. aker_run.sh Admu1-1 12
+. aker_run.sh Admu1-2 12
+. aker_run.sh Admu1-3 12
+. aker_run.sh Admu1-4 12
 
-. bigfoot_run.sh Aemu1-1 20
-. bigfoot_run.sh Aemu1-2 30
-. bigfoot_run.sh Aemu1-3 30
+. aker_run.sh Aemu1-1 20
+. aker_run.sh Aemu1-2 30
+. aker_run.sh Aemu1-3 30
 
-. bigfoot_run.sh Afmu1-1 22
-. bigfoot_run.sh Afmu1-2 22
-. bigfoot_run.sh Afmu1-3 22
+. aker_run.sh Afmu1-1 22
+. aker_run.sh Afmu1-2 22
+. aker_run.sh Afmu1-3 22
 
-. bigfoot_run.sh Afmu1-4 48
-. bigfoot_run.sh Afmu1-5 48
-. bigfoot_run.sh Afmu1-6 48
+. aker_run.sh Afmu1-4 48
+. aker_run.sh Afmu1-5 48
+. aker_run.sh Afmu1-6 48
 
 
-. bigfoot_run.sh Agmu1-1 15
-. bigfoot_run.sh Agmu1-2 15
+. aker_run.sh Agmu1-1 15
+. aker_run.sh Agmu1-2 15
 
-. bigfoot_run.sh Ahmu1-1 15
-. bigfoot_run.sh Ahmu1-2 15
+. aker_run.sh Ahmu1-1 15
+. aker_run.sh Ahmu1-2 15
 
-. bigfoot_run.sh Aimu1-1 20
-. bigfoot_run.sh Aimu1-2 20
-. bigfoot_run.sh Aimu1-3 20
+. aker_run.sh Aimu1-1 20
+. aker_run.sh Aimu1-2 20
+. aker_run.sh Aimu1-3 20
 
 
 
