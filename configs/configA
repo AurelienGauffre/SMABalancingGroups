@@ -18,6 +18,11 @@
 . bigfoot_run.sh Afmu1-2 22
 . bigfoot_run.sh Afmu1-3 22
 
+. bigfoot_run.sh Afmu1-4 36
+. bigfoot_run.sh Afmu1-5 36
+. bigfoot_run.sh Afmu1-6 36
+
+
 . bigfoot_run.sh Agmu1-1 15
 . bigfoot_run.sh Agmu1-2 15
 . bigfoot_run.sh Ahmu1-1 15

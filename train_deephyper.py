@@ -28,6 +28,7 @@ import wandb
 def randl(l_):
     return l_[torch.randperm(len(l_))[0]]
 
+os.environ["WANDB__SERVICE_WAIT"] = "400"
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Training configurations.')
