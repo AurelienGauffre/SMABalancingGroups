@@ -1,4 +1,4 @@
-wandb_project: SMA_all_2
+wandb_project: SMA_debug
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -14,15 +14,15 @@ method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
 dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
-eval_every_n_epochs: 4
-arch: "resnet50"
+eval_every_n_epochs: 3
+arch: "resnet18"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 5
-n_eval_init_seed: 5
+n_HBO_runs: 3
+n_eval_init_seed: 1
 
-num_epochs: 20
+num_epochs: 10
 batch_size: 16
 eta: 0.1
 lr: 1e-3
@@ -39,8 +39,8 @@ SMA:
   mode: 'classic'
   img_size: 256
   split_seed: 0
-  names:  ['plt-net'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [12]
+  names:  ['medical-leaf'] #plt-net ins2 medical-leaf texture-dtd
+  Ks: [2]
   mus: [0.1]
   methods: ['erm']
 
