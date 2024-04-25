@@ -41,7 +41,7 @@ SMA:
   split_seed: 0
   names:  ['AWA','plt-net']
   Ks: [2,4]
-  mus: [.4]
+  mus: [.2]
   methods: ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
 
 

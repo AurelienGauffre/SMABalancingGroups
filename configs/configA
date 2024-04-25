@@ -17,10 +17,9 @@
 . aker_run.sh Afmu1-1 22
 . aker_run.sh Afmu1-2 22
 . aker_run.sh Afmu1-3 22
-
-. aker_run.sh Afmu1-4 48
-. aker_run.sh Afmu1-5 48
-. aker_run.sh Afmu1-6 48
+. aker_run.sh Afmu1-4 40
+. aker_run.sh Afmu1-5 40
+. aker_run.sh Afmu1-6 60
 
 
 . aker_run.sh Agmu1-1 15
