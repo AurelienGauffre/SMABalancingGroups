@@ -41,7 +41,7 @@ SMA:
   split_seed: 0
   names:  ['airplanes'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [8]
-  mus: [0.2]
+  mus: [0.05]
   methods: ['jtt', 'rwy', 'rwg', 'dro']
 
 
