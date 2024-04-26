@@ -42,7 +42,7 @@ SMA:
   names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [2,4,8]
   mus: [0.05]
-  methods: ['jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+  methods: ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
 
 
 
