@@ -29,17 +29,26 @@
 . aker_run.sh Ahmu1-1 15
 . aker_run.sh Ahmu1-2 15
 
-. bigfoot_run.sh Aimu1-1 20
-. bigfoot_run.sh Aimu1-2 20
-. bigfoot_run.sh Aimu1-3 20
+. aker_run.sh Aimu1-1 20
+. aker_run.sh Aimu1-2 20
+. aker_run.sh Aimu1-3 20
 
 
 
 
-. aker_run.sh Aemu1-1 30
-. aker_run.sh Aemu1-2 40
-. aker_run.sh Aemu1-3 40
-. aker_run.sh Aemu1-3bis 40
+
+
+
+. bigfoot_run.sh Afmu1-2 48
+. bigfoot_run.sh Afmu1-3 48
+. bigfoot_run.sh Afmu1-4 48
+. bigfoot_run.sh Afmu1-5 48
+. bigfoot_run.sh Afmu1-6 48
+
+. bigfoot_run.sh Aemu1-1 30
+. bigfoot_run.sh Aemu1-2 40
+. bigfoot_run.sh Aemu1-3 40
+. bigfoot_run.sh Aemu1-3bis 40
 
 
 a 2/4/8/12/16
