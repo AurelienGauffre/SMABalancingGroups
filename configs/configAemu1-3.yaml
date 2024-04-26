@@ -42,7 +42,7 @@ SMA:
   names:  ['AWA']
   Ks: [8]
   mus: [0.2]
-  methods: ['rwy', 'rwg', 'dro','subg']
+  methods: ['rwy', 'rwg','subg']
 
 
 
