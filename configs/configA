@@ -38,9 +38,9 @@
 
 
 
-
-. bigfoot_run.sh Afmu1-2 40
-. bigfoot_run.sh Afmu1-3 40
+. bigfoot_run.sh Afmu1-1 40
+. bigfoot_run.sh Afmu1-2 48
+. bigfoot_run.sh Afmu1-3 48
 . bigfoot_run.sh Afmu1-4 48
 . bigfoot_run.sh Afmu1-5 48
 . bigfoot_run.sh Afmu1-6 48
