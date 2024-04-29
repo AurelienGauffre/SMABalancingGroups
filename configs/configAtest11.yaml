@@ -42,7 +42,7 @@ SMA:
   names:  ['texture-dtd'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [12]
   mus: [0.1]
-  methods: ['dro', 'suby', 'rwy', 'rwg']
+  methods: ['subg']
 
 
 
