@@ -38,7 +38,7 @@ new_reset: False
 SMA:
   mode: 'classic'
   img_size: 256
-  split_seedss: [0]
+  split_seeds: [0]
   names:  ['plt-net'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [2]
   mus: [0.05]
