@@ -206,7 +206,7 @@ if __name__ == "__main__":
                 # ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
                 for method in args.SMA.methods:
                     args.method = method
-                    for split_seed in args.split_seeds:
+                    for split_seed in args.SMA.split_seeds:
                         args.SMA.split_seed = split_seed
 
                         args.group = f"K={args.SMA.K}_{args.method}"
@@ -214,7 +214,7 @@ if __name__ == "__main__":
                         if "selector" in args.wandb_project :
                             #add the selector at the start of the string
                             args.group_best = f"{args.selector}_{args.group_best}"
-                        ##### HBO PARTdsfss
+                        ##### HBO PART
                         problem = HpProblem()
                         # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
                         problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
