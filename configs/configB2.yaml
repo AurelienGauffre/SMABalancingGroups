@@ -38,7 +38,7 @@ new_reset: False
 SMA:
   mode: 'classic'
   img_size: 256
-  split_seed: [1,2,3,4,5]
+  split_seeds: [1,2,3,4,5]
   names:  ['medical-leaf'] # airplanes plt-net ins2  texture-dtd
   Ks: [2,4,8]
   mus: [.1]

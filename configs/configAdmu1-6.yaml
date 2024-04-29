@@ -38,7 +38,7 @@ new_reset: False
 SMA:
   mode: 'classic'
   img_size: 256
-  split_seed: [0]
+  split_seeds: [0]
   names:  ['birds']
   Ks: [12]
   mus: [0.2]
