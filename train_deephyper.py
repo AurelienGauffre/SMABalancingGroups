@@ -209,6 +209,9 @@ if __name__ == "__main__":
 
                     args.group = f"K={args.SMA.K}_{args.method}"
                     args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}_seed={args.SMA.split_seed}"
+                    if "selector" in args.wandb_project :
+                        #add the selector at the start of the string
+                        args.group_best = f"{args.selector}_{args.group_best}"
                     ##### HBO PARTdsfss
                     problem = HpProblem()
                     # problem.add_hyperparameter((8, 512, "log-uniform"), "batch_size", default_value=64)
