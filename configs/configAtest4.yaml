@@ -22,7 +22,7 @@ arch: "resnet50"
 n_HBO_runs: 3
 n_eval_init_seed: 5
 
-num_epochs: 16
+num_epochs: 17
 batch_size: 16
 eta: 0.1
 lr: 1e-3
