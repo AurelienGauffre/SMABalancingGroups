@@ -1,0 +1,50 @@
+wandb_project: SMA_selector
+output_dir: 'outputs'
+slurm_output_dir: 'slurm_outputs'
+data_path: 'data'
+slurm_partition: null #Pas None ?
+max_time: 4320  # 3 * 24 * 60
+num_hparams_seeds: 20
+#num_init_seeds: 5
+selector: 'min_acc_va' # min_acc_va
+
+#Sweep
+#['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
+dataset: 'SMA'
+init_seed: 0
+hparams_seed: 0
+eval_every_n_epochs: 4
+arch: "resnet50"
+# Hyperparameters for all methods
+
+
+n_HBO_runs: 10
+n_eval_init_seed: 5
+
+num_epochs: 17
+batch_size: 16
+eta: 0.1
+lr: 1e-3
+weight_decay: 1e-3
+up: 20 #[4, 5, 6, 20, 50, 100]
+T: 3
+scheduler: False
+new_reset: False
+
+
+
+# Specific hyperparameters for to create SMA dataset
+SMA:
+  mode: 'classic'
+  img_size: 256
+  split_seeds: [1,2,3]
+  names:  ['airplanes'] # airplanes plt-net ins2  texture-dtd
+  Ks: [8]
+  mus: [.1]
+  methods: ['rwg']
+
+
+
+
+
