@@ -1,24 +1,14 @@
-. aker_run.sh Bamu1-1 20
-. aker_run.sh Bamu1-1bis 20
-. aker_run.sh Bbmu1-0 7
-. aker_run.sh Bbmu1-1 12
-. aker_run.sh Bcmu1-0 15
-. aker_run.sh Bcmu1-1 15
-
-d 2/4/8/12
-. aker_run.sh Bdmu1-0 8
-. aker_run.sh Bdmu1-1 15
-. aker_run.sh Bdmu1-2 15
-. aker_run.sh Bdmu1-3 15
-. aker_run.sh Bdmu1-4 15
 
 
-
-TO LAUNCHE
-e 2/4/8/12
-. aker_run.sh Bemu1-1 20
-. aker_run.sh Bemu1-2 20
-. aker_run.sh Bemu1-3 20
+# medical leaf K = 8, 4 seeds, 6 methodes , 15/5 runs
+. aker_run.sh Bb1 14
+. aker_run.sh Bb1bis 14
+. aker_run.sh Bb2 14
+. aker_run.sh Bb2bis 14
+. aker_run.sh Bb3 14
+. aker_run.sh Bb3bis 14
+. aker_run.sh Bb4 14
+. aker_run.sh Bb4bis 14
 
 
 
