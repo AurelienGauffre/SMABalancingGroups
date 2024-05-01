@@ -137,3 +137,18 @@ i:
 . bigfoot_run.sh Atest6 45
 . bigfoot_run.sh Atest7 45
 . bigfoot_run.sh Atest8 45
+
+
+
+. aker_run.sh B5 17
+. aker_run.sh B6 17
+. aker_run.sh B7 17
+. aker_run.sh B8 17
+. aker_run.sh B9 17
+
+. aker_run.sh B5bis 17
+. aker_run.sh B6bis 17
+. aker_run.sh B7bis 17
+. aker_run.sh B8bis 17
+. aker_run.sh B9bis 17
+
