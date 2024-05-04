@@ -1,0 +1,342 @@
+[33m(raylet)[0m [2024-05-03 15:34:55,775 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 17032454144; capacity: 360095375360. Object creation will fail if spilling is required.
+[33m(raylet)[0m [2024-05-03 15:35:05,787 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16942886912; capacity: 360095375360. Object creation will fail if spilling is required.
+[33m(raylet)[0m [2024-05-03 15:35:15,798 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16934428672; capacity: 360095375360. Object creation will fail if spilling is required.
+wandb: Waiting for W&B process to finish, PID 33361... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+[33m(raylet)[0m [2024-05-03 15:35:25,810 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16934367232; capacity: 360095375360. Object creation will fail if spilling is required.
+wandb: Run summary:
+wandb:              best_acc_te 0.52778
+wandb:              best_acc_va 0.54167
+wandb:   best_mean_group_acc_te 0.51389
+wandb:   best_mean_group_acc_va 0.54167
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 45.83333
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 43.75
+wandb:          mean_grp_acc_te 52.77778
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 54.16667
+wandb:         minor_grp_acc_te 59.72222
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 64.58333
+wandb:      relative_grp_acc_te 1.30303
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 1.47619
+wandb:         worst_grp_acc_te 19.44444
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 16.66667
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced generous-plant-1483: https://wandb.ai/aureliengauffre/SMA_selector_best/runs/2r8pwdsc
+wandb: Find logs at: ./wandb/run-20240503_153451-2r8pwdsc/logs/debug.log
+wandb: 
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.7
+wandb: Syncing run ruby-river-1484
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_selector_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_selector_best/runs/kwsmnk4j
+wandb: Run data is saved locally in /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240503_153525-kwsmnk4j
+wandb: Run `wandb offline` to turn off syncing.
+[33m(raylet)[0m [2024-05-03 15:35:35,819 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16934264832; capacity: 360095375360. Object creation will fail if spilling is required.
+[33m(raylet)[0m [2024-05-03 15:35:45,829 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16927145984; capacity: 360095375360. Object creation will fail if spilling is required.
+wandb: Waiting for W&B process to finish, PID 34998... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+[33m(raylet)[0m [2024-05-03 15:35:55,847 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16941023232; capacity: 360095375360. Object creation will fail if spilling is required.
+wandb: Run summary:
+wandb:              best_acc_te 0.64583
+wandb:              best_acc_va 0.70833
+wandb:   best_mean_group_acc_te 0.64583
+wandb:   best_mean_group_acc_va 0.70833
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 65.27778
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 72.91667
+wandb:          mean_grp_acc_te 59.02778
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 61.45833
+wandb:         minor_grp_acc_te 52.77778
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 50.0
+wandb:      relative_grp_acc_te 0.80851
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.68571
+wandb:         worst_grp_acc_te 36.11111
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 25.0
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced ruby-river-1484: https://wandb.ai/aureliengauffre/SMA_selector_best/runs/kwsmnk4j
+wandb: Find logs at: ./wandb/run-20240503_153525-kwsmnk4j/logs/debug.log
+wandb: 
+[36m(run pid=36887)[0m wandb: Currently logged in as: aureliengauffre (use `wandb login --relogin` to force relogin)
+[36m(run pid=36887)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=36887)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=36887)[0m 2024-05-03 15:36:02.270323: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+[36m(run pid=36887)[0m 2024-05-03 15:36:02.270346: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[36m(run pid=36887)[0m wandb: Tracking run with wandb version 0.12.7
+[36m(run pid=36887)[0m wandb: Syncing run dulcet-wood-3724
+[36m(run pid=36887)[0m wandb:  View project at https://wandb.ai/aureliengauffre/SMA_selector
+[36m(run pid=36887)[0m wandb:  View run at https://wandb.ai/aureliengauffre/SMA_selector/runs/29ma3ano
+[36m(run pid=36887)[0m wandb: Run data is saved locally in /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240503_153601-29ma3ano
+[36m(run pid=36887)[0m wandb: Run `wandb offline` to turn off syncing.
+[33m(raylet)[0m [2024-05-03 15:36:05,856 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16941133824; capacity: 360095375360. Object creation will fail if spilling is required.
+[36m(run pid=36887)[0m wandb: Waiting for W&B process to finish, PID 36941... (success).
+[36m(run pid=36887)[0m Error in atexit._run_exitfuncs:
+[36m(run pid=36887)[0m Traceback (most recent call last):
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+[36m(run pid=36887)[0m     self._on_finish()
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+[36m(run pid=36887)[0m     self._backend.interface._publish_telemetry(self._telemetry_obj)
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+[36m(run pid=36887)[0m     self._publish(rec)
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+[36m(run pid=36887)[0m     raise Exception("The wandb backend process has shutdown")
+[36m(run pid=36887)[0m Exception: The wandb backend process has shutdown
+[36m(run pid=36887)[0m 
+[36m(run pid=36887)[0m During handling of the above exception, another exception occurred:
+[36m(run pid=36887)[0m 
+[36m(run pid=36887)[0m Traceback (most recent call last):
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+[36m(run pid=36887)[0m     self._backend.cleanup()
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+[36m(run pid=36887)[0m     self.interface.join()
+Traceback (most recent call last):
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+[36m(run pid=36887)[0m     super(InterfaceQueue, self).join()  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+
+[36m(run pid=36887)[0m     self._communicate_shutdown()  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 236, in <module>
+    results = search.search(max_evals=args.n_HBO_runs)
+
+[36m(run pid=36887)[0m     _ = self._communicate(record)  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/_search.py", line 133, in search
+    self._search(max_evals, timeout)
+
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/hps/_cbo.py", line 339, in _search
+    new_results = self._evaluator.gather(self._gather_type, size=1)
+
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 324, in gather
+    job = task.result()
+[36m(run pid=36887)[0m     return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 262, in _execute
+    job = await self.execute(job)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_ray.py", line 116, in execute
+    output = await self._remote_run_function.remote(
+[36m(run pid=36887)[0m   File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+ray.exceptions.RayTaskError(OutOfMemoryError): [36mray::run()[39m (pid=36887, ip=129.88.65.133)
+  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 77, in run
+    model = {
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 84, in __init__
+    self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 153, in init_model_
+    self.cuda()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 3.82 GiB total capacity; 1.49 MiB already allocated; 33.38 MiB free; 2.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+[36m(run pid=36887)[0m     raise Exception("The wandb backend process has shutdown")
+[36m(run pid=36887)[0m Exception: The wandb backend process has shutdownTraceback (most recent call last):
+
+[36m(run pid=36887)[0m /usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+
+[36m(run pid=36887)[0m   warnings.warn('resource_tracker: process died unexpectedly, '  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+[36m(run pid=36887)[0m Traceback (most recent call last):
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+[36m(run pid=36887)[0m   File "/usr/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+
+[36m(run pid=36887)[0m     cache[rtype].remove(name)  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+
+[36m(run pid=36887)[0m KeyError: '/loky-36887-y9nlep_5'  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 236, in <module>
+    results = search.search(max_evals=args.n_HBO_runs)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/_search.py", line 133, in search
+    self._search(max_evals, timeout)
+
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/hps/_cbo.py", line 339, in _search
+    new_results = self._evaluator.gather(self._gather_type, size=1)
+[36m(run pid=36887)[0m Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 324, in gather
+    job = task.result()
+[36m(run pid=36887)[0m   File "/usr/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 262, in _execute
+    job = await self.execute(job)
+[36m(run pid=36887)[0m     cache[rtype].remove(name)  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_ray.py", line 116, in execute
+    output = await self._remote_run_function.remote(
+
+[36m(run pid=36887)[0m KeyError: '/loky-36887-3vl4sm_t'ray.exceptions.RayTaskError(OutOfMemoryError): [36mray::run()[39m (pid=36887, ip=129.88.65.133)
+  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 77, in run
+    model = {
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 84, in __init__
+    self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 153, in init_model_
+    self.cuda()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 3.82 GiB total capacity; 1.49 MiB already allocated; 33.38 MiB free; 2.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+[36m(run pid=36887)[0m Traceback (most recent call last):
+Traceback (most recent call last):
+[36m(run pid=36887)[0m   File "/usr/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+[36m(run pid=36887)[0m     cache[rtype].remove(name)
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+[36m(run pid=36887)[0m KeyError: '/loky-36887-s6z59tz4'
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+[36m(run pid=36887)[0m Traceback (most recent call last):
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+[36m(run pid=36887)[0m   File "/usr/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+
+[36m(run pid=36887)[0m     cache[rtype].remove(name)  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+[36m(run pid=36887)[0m KeyError: '/loky-36887-tx1w14ak'
+  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 236, in <module>
+    results = search.search(max_evals=args.n_HBO_runs)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/_search.py", line 133, in search
+    self._search(max_evals, timeout)
+[36m(run pid=36887)[0m Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/hps/_cbo.py", line 339, in _search
+    new_results = self._evaluator.gather(self._gather_type, size=1)
+[36m(run pid=36887)[0m   File "/usr/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 324, in gather
+    job = task.result()
+[36m(run pid=36887)[0m     cache[rtype].remove(name)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 262, in _execute
+    job = await self.execute(job)
+[36m(run pid=36887)[0m KeyError: '/loky-36887-8c8ph4vd'  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_ray.py", line 116, in execute
+    output = await self._remote_run_function.remote(
+
+[36m(run pid=36887)[0m Traceback (most recent call last):ray.exceptions.RayTaskError(OutOfMemoryError): [36mray::run()[39m (pid=36887, ip=129.88.65.133)
+  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 77, in run
+    model = {
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 84, in __init__
+    self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 153, in init_model_
+    self.cuda()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 3.82 GiB total capacity; 1.49 MiB already allocated; 33.38 MiB free; 2.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+[36m(run pid=36887)[0m   File "/usr/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+[36m(run pid=36887)[0m     cache[rtype].remove(name)
+[36m(run pid=36887)[0m KeyError: '/loky-36887-6hm9mv3f'
+[33m(raylet)[0m [2024-05-03 15:36:15,868 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16941084672; capacity: 360095375360. Object creation will fail if spilling is required.
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/gauffrea/.vscode/extensions/ms-python.debugpy-2024.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 236, in <module>
+    results = search.search(max_evals=args.n_HBO_runs)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/_search.py", line 133, in search
+    self._search(max_evals, timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/search/hps/_cbo.py", line 339, in _search
+    new_results = self._evaluator.gather(self._gather_type, size=1)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 324, in gather
+    job = task.result()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_evaluator.py", line 262, in _execute
+    job = await self.execute(job)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/deephyper/evaluator/_ray.py", line 116, in execute
+    output = await self._remote_run_function.remote(
+ray.exceptions.RayTaskError(OutOfMemoryError): [36mray::run()[39m (pid=36887, ip=129.88.65.133)
+  File "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py", line 77, in run
+    model = {
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 84, in __init__
+    self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 153, in init_model_
+    self.cuda()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 3.82 GiB total capacity; 1.49 MiB already allocated; 33.38 MiB free; 2.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+[33m(raylet)[0m [2024-05-03 15:37:45,971 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16931254272; capacity: 360095375360. Object creation will fail if spilling is required.[32m [repeated 9x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/ray-logging.html#log-deduplication for more options.)[0m

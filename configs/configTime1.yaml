@@ -1,11 +1,11 @@
-wandb_project: SMA_time
+wandb_project: SMA_selector
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
 slurm_partition: null #Pas None ?
 max_time: 4320  # 3 * 24 * 60
 num_hparams_seeds: 20
-num_init_seeds: 5
+#num_init_seeds: 5
 selector: 'mean_grp_acc_va' # min_acc_va
 
 #Sweep
@@ -15,14 +15,14 @@ dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
 eval_every_n_epochs: 4
-arch: "resnet50"
+arch: "resnet18"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 1
-n_eval_init_seed: 0
+n_HBO_runs: 3
+n_eval_init_seed: 3
 
-num_epochs: 20
+num_epochs: 5
 batch_size: 16
 eta: 0.1
 lr: 1e-3
@@ -38,11 +38,11 @@ new_reset: False
 SMA:
   mode: 'classic'
   img_size: 256
-  split_seed: 0
-  names:  ['AWA','plt-net']
-  Ks: [2,4]
-  mus: [.2]
-  methods: ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+  split_seeds: [1]
+  names:  ['texture-dtd'] # airplanes plt-net ins2  texture-dtd
+  Ks: [2,4,8]
+  mus: [.1]
+  methods: ['subg'] #'rwg'
 
 
 

@@ -1,0 +1,27 @@
+{
+    "os": "Linux-5.15.0-105-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2024-05-03T13:35:29.757306",
+    "startedAt": "2024-05-03T13:35:25.925920",
+    "docker": null,
+    "gpu": "NVIDIA T600 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "--config",
+        "configTime1.yaml"
+    ],
+    "state": "running",
+    "program": "/home/gauffrea/Projects/SMABalancingGroups/train_deephyper.py",
+    "codePath": "train_deephyper.py",
+    "git": {
+        "remote": "https://github.com/AurelienGauffre/SMABalancingGroups",
+        "commit": "2443b591376686e8977c3b3b2b7983fe8908ee7f"
+    },
+    "email": "aurelien.gauffre@gmail.com",
+    "root": "/home/gauffrea/Projects/SMABalancingGroups",
+    "host": "PreciGauffre",
+    "username": "gauffrea",
+    "executable": "/usr/bin/python3"
+}
