@@ -61,7 +61,7 @@ def run(job=None):
     start_time = time.time()
     torch.manual_seed(args["init_seed"])
     np.random.seed(args["init_seed"])
-    loaders = get_loaders(args["data_path"], args["dataset"], args["batch_size"], args["method"], args.SMA)
+    loaders = get_loaders(args["data_path"], args["dataset"], int(args["batch_size"]), args["method"], args.SMA)
 
     sys.stdout = Tee(os.path.join(
         args["output_dir"], f'seed_{args["hparams_seed"]}_{args["init_seed"]}.out'), sys.stdout)
@@ -224,7 +224,8 @@ if __name__ == "__main__":
                         # problem.add_hyperparameter((1, 60), "T", default_value=40)
                         if method == 'jtt':
                             problem.add_hyperparameter([1, 3, 5], "T", default_value=3)
-                            problem.add_hyperparameter((4, 100), "up", default_value=20)
+                            if "selector" in args.wandb_project:
+                                problem.add_hyperparameter([4,20,50,100], "up", default_value=20)
 
                         evaluator = get_ray_evaluator(run)
                         hbo_log_dir = f"./outputs/hbo_logdir/{args.group_best}"
