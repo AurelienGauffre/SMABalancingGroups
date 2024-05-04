@@ -219,7 +219,7 @@ if __name__ == "__main__":
                         problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
 
                         if "selector" in args.wandb_project:
-                            problem.add_hyperparameter((8, 64, "log-uniform"), "batch_size", default_value=64)
+                            problem.add_hyperparameter((8, 32, "log-uniform"), "batch_size", default_value=16)
                             problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
                         # problem.add_hyperparameter((1, 60), "T", default_value=40)
                         if method == 'jtt':
