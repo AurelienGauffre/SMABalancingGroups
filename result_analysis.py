@@ -254,5 +254,5 @@ def plot_graph_all(df, x_axis, y_axis, error_bars=None, normalize=False, methods
     # Show the figure
     fig.show()
 
-    # Display the all_stats DataFrame
-    #return all_stats.pivot_table(index=[x_axis, 'name'], columns='method', values=['count', 'sem'], aggfunc='first')
+    #Display the all_stats DataFrame
+    return all_stats.pivot_table(index=[x_axis, 'name'], columns='method', values=['count', 'sem'], aggfunc='first')
