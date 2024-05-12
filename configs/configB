@@ -15,14 +15,14 @@
 
 # texture-dtd K = 2,4,8,12   4 seeds, 2 methodes , 60/5 runs
 #Pour subg, a relancer avec rwg (65 runs au total) ! ()
-. aker_run.sh Bc1 22
-. aker_run.sh Bc1bis 22
-. aker_run.sh Bc2 22
-. aker_run.sh Bc2bis 22
-. aker_run.sh Bc3 22
-. aker_run.sh Bc3bis 22
-. aker_run.sh Bc4 22
-. aker_run.sh Bc4bis 22
+. aker_run.sh Bc1 25
+. aker_run.sh Bc1bis 25
+. aker_run.sh Bc2 25
+. aker_run.sh Bc2bis 25
+. aker_run.sh Bc3 25
+. aker_run.sh Bc3bis 25
+. aker_run.sh Bc4 25
+. aker_run.sh Bc4bis 25
 
 
 
