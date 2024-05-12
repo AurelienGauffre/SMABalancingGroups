@@ -40,9 +40,9 @@ SMA:
   img_size: 256
   split_seeds: [3]
   names:  ['texture-dtd'] # airplanes plt-net ins2  texture-dtd
-  Ks: [2,4,8,12,16]
+  Ks: [2,4,8,12]
   mus: [.1]
-  methods: ['rwg'] #'subg'
+  methods: ['erm']  #'subg'
 
 
 
