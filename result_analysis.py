@@ -256,3 +256,101 @@ def plot_graph_all(df, x_axis, y_axis, error_bars=None, normalize=False, methods
 
     #Display the all_stats DataFrame
     return all_stats.pivot_table(index=[x_axis, 'name'], columns='method', values=['count', 'sem'], aggfunc='first')
+
+
+
+import plotly.graph_objects as go
+import pandas as pd
+import numpy as np
+
+def normalize_within_dataset(df, y_axis,mode=None):
+    """Normalize the performance within each dataset."""
+    df_normalized = df.copy()
+    #if the last letter of mode is not K
+    if mode[-1] != 'K':
+        for name in df['name'].unique():
+            mask = df['name'] == name
+            if mode == 'min-max':
+                df_normalized.loc[mask, y_axis] = (df[mask][y_axis] - df[mask][y_axis].min()) / (df[mask][y_axis].max() - df[mask][y_axis].min())
+            elif mode == 'z-score':
+                df_normalized.loc[mask, y_axis] = (df[mask][y_axis] - df[mask][y_axis].mean()) / df[mask][y_axis].std()
+            elif mode == 'max':
+                df_normalized.loc[mask, y_axis] = (df[mask][y_axis] ) / (df[mask][y_axis].max())
+            elif mode == 'mean':
+                df_normalized.loc[mask, y_axis] = (df[mask][y_axis] ) / (df[mask][y_axis].mean())
+    else :
+        for name in df['name'].unique():
+            for K in df['K'].unique():
+                mask = (df['name'] == name) & (df['K'] == K)
+                if mode == 'min-max-K':
+                    df_normalized.loc[mask, y_axis] = (df[mask][y_axis] - df[mask][y_axis].min()) / (df[mask][y_axis].max() - df[mask][y_axis].min())
+                elif mode == 'z-score-K':
+                    df_normalized.loc[mask, y_axis] = (df[mask][y_axis] - df[mask][y_axis].mean()) / df[mask][y_axis].std()
+                elif mode == 'max-K':
+                    df_normalized.loc[mask, y_axis] = (df[mask][y_axis] ) / (df[mask][y_axis].max())
+                elif mode == 'mean-K':
+                    df_normalized.loc[mask, y_axis] = (df[mask][y_axis] ) / (df[mask][y_axis].mean())
+                else :
+                    raise ValueError(f"Invalid mode: {mode}")
+    return df_normalized
+
+def plot_bar(df, x_axis, y_axis, normalize_mode=False, methods=None, width=800, height=800):
+    """Plots the performance of different methods across datasets and K values using bar plots."""
+    
+    if methods is None or methods == 'ALL':
+        methods = ['erm', 'jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+
+    if normalize_mode: #normalize_mode in ['min-max', 'z-score', 'max', 'min-max-K', 'z-score-K', 'max-K']
+        df = normalize_within_dataset(df, y_axis,normalize_mode)
+
+    fig = go.Figure()  # Initialize a Plotly figure
+    all_stats = pd.DataFrame()
+
+    # Define color palette
+    COLOR_DICT = {
+        'erm': 'blue', 'jtt': 'green', 'suby': 'red', 'subg': 'purple',
+        'rwy': 'orange', 'rwg': 'brown', 'dro': 'pink'
+    }
+
+    for method in methods:
+        df_method = df[df['method'] == method]
+
+        # Group data by x_axis and compute statistics
+        grouped = df_method.groupby([x_axis])
+        stats = grouped[y_axis].agg(['mean', 'std', 'count']).reset_index()
+
+        # Calculate standard error
+        stats['sem'] = stats['std'] / np.sqrt(stats['count'])
+
+        # Append results to the all_stats DataFrame for later display
+        stats['method'] = method
+        all_stats = pd.concat([all_stats, stats], ignore_index=True)
+
+        # Add a bar for each value of x_axis
+        fig.add_trace(go.Bar(
+            x=stats[x_axis], 
+            y=stats['mean'], 
+            name=method,
+            error_y=dict(type='data', array=stats['sem'], visible=True),
+            marker_color=COLOR_DICT.get(method, 'grey')
+        ))
+
+    # Update the layout
+    fig.update_layout(barmode='group',
+                      title=f'{y_axis} vs {x_axis}, Method Performance',
+                      xaxis_title=x_axis,
+                      yaxis_title=y_axis,
+                      legend_title='Method',
+                      width=width,  # Width of the figure in pixels
+                      height=height  # Height of the figure in pixels
+                      )
+
+    # Show the figure
+    fig.show()
+
+    # Display the all_stats DataFrame
+    return all_stats.pivot_table(index=[x_axis], columns='method', values=['count', 'sem'], aggfunc='first')
+
+# Example usage:
+# Assuming `df` is your DataFrame with the necessary columns
+# plot_bar_graph(df, x_axis='K', y_axis='worst_grp_acc_te', normalize=True)

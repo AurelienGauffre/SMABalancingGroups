@@ -41,7 +41,7 @@ SMA:
   split_seeds: [0]
   names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [2,4,8]
-  mus: [0.2]
+  mus: [0.025]
   methods: ['subg', 'rwy', 'rwg', 'dro']
 
 
