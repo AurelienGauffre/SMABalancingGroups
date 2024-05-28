@@ -30,6 +30,7 @@ def randl(l_):
 
 os.environ["WANDB__SERVICE_WAIT"] = "400"
 
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Training configurations.')
     parser.add_argument('--config', type=str, default='config_deephyper.yaml')
