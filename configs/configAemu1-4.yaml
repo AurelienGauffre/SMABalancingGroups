@@ -41,7 +41,7 @@ SMA:
   split_seeds: [0]
   names:  ['AWA']
   Ks: [12]
-  mus: [0.025]
+  mus: [0.01]
   methods: ['jtt', 'suby', 'subg']
 
 
