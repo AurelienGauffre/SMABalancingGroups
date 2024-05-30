@@ -42,7 +42,7 @@ SMA:
   names:  ['birds']
   Ks: [8]
   mus: [0.01]
-  methods: ['suby', 'subg', 'dro']
+  methods: ['rwy', 'rwg', 'dro']
 
 
 
