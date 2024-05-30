@@ -40,9 +40,9 @@ SMA:
   img_size: 256
   split_seeds: [0]
   names:  ['birds']
-  Ks: [8]
-  mus: [0.01]
-  methods: ['suby', 'subg', 'dro']
+  Ks: [12]
+  mus: [0.1]
+  methods: ['suby', 'subg', 'rwy']
 
 
 

@@ -158,15 +158,54 @@ i:
 
 
 
-. aker_run.sh Cbird0mu1 6
 
-. aker_run.sh Cbird1mu1 18
-
-. aker_run.sh Cbird2mu1 18
-. aker_run.sh Cbird3mu1 18
-. aker_run.sh Cbird4mu1 20
-
+# Done
 . aker_run.sh Cbird5mu1 30
 . aker_run.sh Cbird6mu1 30
 . aker_run.sh Cbird7mu1 33
 
+
+
+
+. aker_run.sh Cbird5mu2 30
+. aker_run.sh Cbird6mu2 30
+. aker_run.sh Cbird7mu2 33
+
+. aker_run.sh Cbird5mu5 30
+. aker_run.sh Cbird6mu5 30
+. aker_run.sh Cbird7mu5 33
+
+. aker_run.sh Cbird5mu20 30
+. aker_run.sh Cbird6mu20 30
+. aker_run.sh Cbird7mu20 33
+
+
+
+. aker_run.sh Cbird0mu50 6
+. aker_run.sh Cbird1mu50 18
+. aker_run.sh Cbird2mu50 18
+. aker_run.sh Cbird3mu50 18
+. aker_run.sh Cbird4mu50 20
+. aker_run.sh Cbird5mu50 30
+. aker_run.sh Cbird6mu50 30
+. aker_run.sh Cbird7mu50 33
+
+
+. aker_run.sh Cbird0mu100 6
+. aker_run.sh Cbird1mu100 18
+. aker_run.sh Cbird2mu100 18
+. aker_run.sh Cbird3mu100 18
+. aker_run.sh Cbird4mu100 20
+. aker_run.sh Cbird5mu100 30
+. aker_run.sh Cbird6mu100 30
+. aker_run.sh Cbird7mu100 33
+
+
+. aker_run.sh Cbird0mu1 6
+. aker_run.sh Cbird1mu1 18
+. aker_run.sh Cbird2mu1 18
+. aker_run.sh Cbird3mu1 18
+. aker_run.sh Cbird4mu1 20
+. aker_run.sh Cbird5mu1 30
+. aker_run.sh Cbird6mu1 30
+. aker_run.sh Cbird7mu1 33
