@@ -154,3 +154,19 @@ i:
 . aker_run.sh B8bis 17
 . aker_run.sh B9bis 17
 
+
+
+
+
+. aker_run.sh Cbird0mu1 6
+
+. aker_run.sh Cbird1mu1 18
+
+. aker_run.sh Cbird2mu1 18
+. aker_run.sh Cbird3mu1 18
+. aker_run.sh Cbird4mu1 20
+
+. aker_run.sh Cbird5mu1 30
+. aker_run.sh Cbird6mu1 30
+. aker_run.sh Cbird7mu1 33
+
