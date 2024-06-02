@@ -2,7 +2,7 @@ import os
 
 # Base filenames and corresponding mus values
 base_files = [ "configCbird1mu1", "configCbird2mu1", "configCbird3mu1", "configCbird4mu1", "configCbird5mu1", "configCbird6mu1", "configCbird7mu1"]
-mus_values = [0.01, 0.02, 0.05, 0.1, 0.5, 1.0]
+mus_values = [.20]
 
 # Function to replace mus line in the content
 def replace_mus_line(content, new_mu):
