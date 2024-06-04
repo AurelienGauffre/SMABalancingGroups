@@ -16,9 +16,9 @@
 . aker_run.sh Cbird6mu5 50
 . aker_run.sh Cbird7mu5 50
 
-. aker_run.sh Cbird5mu20 50
-. aker_run.sh Cbird6mu20 50
-. aker_run.sh Cbird7mu20 50
+. aker_run.sh Cbird5mu20 35
+. aker_run.sh Cbird6mu20 35
+. aker_run.sh Cbird7mu20 45
 
 
 # lanced 30 mai 23h40 88665 a 88669
@@ -28,9 +28,9 @@
 # . aker_run.sh Cbird3mu50 18
 # . aker_run.sh Cbird4mu50 20
 
-. aker_run.sh Cbird5mu50 30
-. aker_run.sh Cbird6mu50 30
-. aker_run.sh Cbird7mu50 33
+. aker_run.sh Cbird5mu50 36
+. aker_run.sh Cbird6mu50 36
+. aker_run.sh Cbird7mu50 40
 
 # 88670 a 88674
 # . aker_run.sh Cbird0mu100 6
@@ -39,7 +39,7 @@
 # . aker_run.sh Cbird3mu100 18
 # . aker_run.sh Cbird4mu100 20
 
-. aker_run.sh Cbird5mu100 30
-. aker_run.sh Cbird6mu100 30
-. aker_run.sh Cbird7mu100 33
+. aker_run.sh Cbird5mu100 36
+. aker_run.sh Cbird6mu100 36
+. aker_run.sh Cbird7mu100 40
 
