@@ -41,8 +41,8 @@ SMA:
   split_seeds: [0]
   names:  ['texture-dtd'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [12]
-  mus: [0.1]
-  methods: ['subg']
+  mus: [0.05]
+  methods: ['erm','jtt', 'suby']
 
 
 
