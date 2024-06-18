@@ -39,10 +39,10 @@ SMA:
   mode: 'classic'
   img_size: 256
   split_seeds: [0]
-  names:  ['plt-doc'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [8]
-  mus: [0.01]
-  methods: ['suby']
+  names:  ['birds'] #plt-net ins2 medical-leaf texture-dtd
+  Ks: [2]
+  mus: [1]
+  methods: ['dro','rwg','rwy']
 
 
 
