@@ -60,6 +60,12 @@ def results_to_log_dict(result, mode):
             if mode != 'binary':
                 minor_acc = zero_diagonal(acc_mat).sum() / (K * (K - 1))
                 major_acc = np.trace(acc_mat) / K
+                if K**2  >= 3 : 
+                    # return mean of worst 3 groups (this metrics should called worst3_grp_acc)
+                    log_dict[f'worst3_grp_{acc}'] = np.mean(np.sort(acc_mat, axis=None)[:3])
+                if K**2  >= 5 : 
+                    # return mean of worst 3 groups (this metrics should called worst5_grp_acc)
+                    log_dict[f'worst5_grp_{acc}'] = np.mean(np.sort(acc_mat, axis=None)[:5])
             else:
                 minor_acc = zero_diagonal(acc_mat).sum() / (2 * (K - 1))
                 major_acc = np.trace(acc_mat) / 2
