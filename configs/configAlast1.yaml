@@ -19,7 +19,7 @@ arch: "resnet50"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 8
+n_HBO_runs: 3
 n_eval_init_seed: 5
 
 num_epochs: 17
@@ -40,9 +40,9 @@ SMA:
   img_size: 256
   split_seeds: [0]
   names:  ['birds'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [2]
-  mus: [0.5]
-  methods: ['dro','rwg']
+  Ks: [12]
+  mus: [0.05]
+  methods: ['rwy']
 
 
 

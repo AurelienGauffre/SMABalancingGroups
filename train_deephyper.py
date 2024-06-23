@@ -28,7 +28,7 @@ import wandb
 def randl(l_):
     return l_[torch.randperm(len(l_))[0]]
 
-os.environ["WANDB__SERVICE_WAIT"] = "400"
+os.environ["WANDB__SERVICE_WAIT"] = "500"
 
 
 def parse_args():
@@ -113,17 +113,26 @@ def run(job=None):
         result = {"epoch": epoch, "time": time.time() - start_time, "lr": model.optimizer.param_groups[0]["lr"]}
         if epoch % args.eval_every_n_epochs == 0:
             for loader_name, loader in loaders.items():
-                avg_acc, group_accs = model.accuracy(loader)
+                avg_acc, group_accs = model.accuracy(loader) # 
                 result["acc_" + loader_name] = group_accs
-                result["avg_acc_" + loader_name] = avg_acc
-                result["mean_grp_acc_" + loader_name] = np.mean(group_accs)
+                result["avg_acc_" + loader_name] = avg_acc # micro average 
+                result["mean_grp_acc_" + loader_name] = np.mean(group_accs) # this one does not take into account the size of the group, this is a "macro" average
+                
+                
             # print("DEBUG: ", result["acc_va"])
             # print("DEBUG AVG: ", result["avg_acc_va"])
-            selec_value = {
-                "min_acc_va": min(result["acc_va"]),
+            selec_metrics = {
+                "worst_acc_va": min(result["acc_va"]),
                 "avg_acc_va": result["avg_acc_va"],
                 "mean_grp_acc_va": result["mean_grp_acc_va"],
-            }[args["selector"]]
+                
+            }
+            if args.SMA.K**2 >= 3:
+                selec_metrics["worst3_grp_acc_va"] = np.mean(sorted(result["acc_va"])[:3])
+            if args.SMA.K**2 >= 5:
+                selec_metrics["worst5_grp_acc_va"] = np.mean(sorted(result["acc_va"])[:5])
+                
+            selec_value = selec_metrics[args["selector"]]
 
             if selec_value >= best_selec_val:
                 model.best_selec_val = selec_value
