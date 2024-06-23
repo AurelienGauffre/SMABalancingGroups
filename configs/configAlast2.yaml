@@ -41,8 +41,8 @@ SMA:
   split_seeds: [0]
   names:  ['birds'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [2]
-  mus: [1]
-  methods: ['dro','rwg','rwy']
+  mus: [0.05]
+  methods: ['suby']
 
 
 
