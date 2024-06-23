@@ -3,3 +3,5 @@ slurm_outputs
 debug
 *.pyc
 *.ipynb
+figs
+*.png
