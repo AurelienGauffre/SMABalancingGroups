@@ -6,7 +6,7 @@ slurm_partition: null #Pas None ?
 max_time: 4320  # 3 * 24 * 60
 num_hparams_seeds: 20
 #num_init_seeds: 5
-selector: 'min_acc_va' # min_acc_va
+selector: 'worst_acc_va' # min_acc_va
 
 #Sweep
 #['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
