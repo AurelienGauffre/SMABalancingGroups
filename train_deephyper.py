@@ -91,6 +91,12 @@ def run(job=None):
     best_mean_group_acc_te = float('-inf')
     best_acc_va = float('-inf')
     best_acc_te = float('-inf')
+    best_worst_acc_va = float('-inf')
+    best_worst_acc_te = float('-inf')
+    best_worst3_acc_va = float('-inf')
+    best_worst3_acc_te = float('-inf')
+    best_worst5_grp_acc_va = float('-inf')
+    best_worst5_grp_acc_te = float('-inf')
     # Deactivate loading model for now
     # if os.path.exists(checkpoint_file):
     #     model.load(checkpoint_file)
@@ -128,7 +134,7 @@ def run(job=None):
                 
             }
             if args.SMA.K**2 >= 3:
-                selec_metrics["worst3_grp_acc_va"] = np.mean(sorted(result["acc_va"])[:3])
+                selec_metrics["worst3_acc_va"] = np.mean(sorted(result["acc_va"])[:3])
             if args.SMA.K**2 >= 5:
                 selec_metrics["worst5_grp_acc_va"] = np.mean(sorted(result["acc_va"])[:5])
                 
@@ -145,7 +151,20 @@ def run(job=None):
             if result["avg_acc_va"] >= best_acc_va:
                 best_acc_va = result['avg_acc_va']
                 best_acc_te = result['avg_acc_te']
-
+            # same with best worst_acc :
+            if result["worst_acc_va"] >= best_worst_acc_va:
+                best_worst_acc_va = result['worst_acc_va']
+                best_worst_acc_te = result['worst_acc_te']
+            if args.SMA.K**2 >= 3:
+                if result["worst3_acc_va"] >= best_worst3_acc_va:
+                    best_worst3_acc_va = result['worst3_acc_va']
+                    best_worst3_acc_te = result['worst3_acc_te']
+            if args.SMA.K**2 >= 5:
+                if result["worst5_grp_acc_va"] >= best_worst5_grp_acc_va:
+                    best_worst5_grp_acc_va = result['worst5_grp_acc_va']
+                    best_worst5_grp_acc_te = result['worst5_grp_acc_te']
+                
+                
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         # print(json.dumps(result))
@@ -157,6 +176,15 @@ def run(job=None):
     wandb.run.summary["best_mean_group_acc_te"] = best_mean_group_acc_te
     wandb.run.summary["best_acc_va"] = best_acc_va
     wandb.run.summary["best_acc_te"] = best_acc_te
+    wandb.run.summary["best_worst_acc_va"] = best_worst_acc_va
+    wandb.run.summary["best_worst_acc_te"] = best_worst_acc_te
+    if args.SMA.K**2 >= 3:
+        wandb.run.summary["best_worst3_acc_va"] = best_worst3_acc_va
+        wandb.run.summary["best_worst3_acc_te"] = best_worst3_acc_te
+    if args.SMA.K**2 >= 5:
+        wandb.run.summary["best_worst5_grp_acc_va"] = best_worst5_grp_acc_va
+        wandb.run.summary["best_worst5_grp_acc_te"] = best_worst5_grp_acc_te
+        
     wandb.finish()
     return best_mean_group_acc_va
 
