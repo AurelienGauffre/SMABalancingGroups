@@ -152,15 +152,15 @@ def run(job=None):
                 best_acc_va = result['avg_acc_va']
                 best_acc_te = result['avg_acc_te']
             # same with best worst_acc :
-            if result["worst_acc_va"] >= best_worst_acc_va:
+            if selec_metrics["worst_acc_va"] >= best_worst_acc_va:
                 best_worst_acc_va = result['worst_acc_va']
                 best_worst_acc_te = result['worst_acc_te']
             if args.SMA.K**2 >= 3:
-                if result["worst3_acc_va"] >= best_worst3_acc_va:
+                if selec_metrics["worst3_acc_va"] >= best_worst3_acc_va:
                     best_worst3_acc_va = result['worst3_acc_va']
                     best_worst3_acc_te = result['worst3_acc_te']
             if args.SMA.K**2 >= 5:
-                if result["worst5_grp_acc_va"] >= best_worst5_grp_acc_va:
+                if selec_metrics["worst5_acc_va"] >= best_worst5_grp_acc_va:
                     best_worst5_grp_acc_va = result['worst5_grp_acc_va']
                     best_worst5_grp_acc_te = result['worst5_grp_acc_te']
                 
