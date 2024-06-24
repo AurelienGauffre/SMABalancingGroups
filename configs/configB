@@ -9,6 +9,10 @@
 . aker_run.sh Bc2bis 12
 . aker_run.sh Bc3bis 12
 
+. aker_run.sh Bc1ter 12
+. aker_run.sh Bc2ter 12
+. aker_run.sh Bc3ter 12
+
 
 
 
