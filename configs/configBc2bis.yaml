@@ -19,7 +19,7 @@ arch: "resnet50"
 # Hyperparameters for all methods
 
 
-n_HBO_runs: 60
+n_HBO_runs: 30
 n_eval_init_seed: 5
 
 num_epochs: 17
@@ -38,11 +38,11 @@ new_reset: False
 SMA:
   mode: 'classic'
   img_size: 256
-  split_seeds: [2]
+  split_seeds: [6]
   names:  ['texture-dtd'] # airplanes plt-net ins2  texture-dtd
   Ks: [2,4,8,12]
   mus: [.1]
-  methods: ['erm']  #'subg'
+  methods: ['erm', 'subg', 'dro']  #'subg'
 
 
 
