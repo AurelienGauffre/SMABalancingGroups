@@ -123,7 +123,11 @@ def run(job=None):
                 result["acc_" + loader_name] = group_accs
                 result["avg_acc_" + loader_name] = avg_acc # micro average 
                 result["mean_grp_acc_" + loader_name] = np.mean(group_accs) # this one does not take into account the size of the group, this is a "macro" average
-                
+                result["worst_acc_" + loader_name] = min(group_accs)
+                if args.SMA.K**2 >= 3:
+                    result["worst3_acc_" + loader_name] = np.mean(sorted(group_accs)[:3])
+                if args.SMA.K**2 >= 5:
+                    result["worst5_grp_acc_" + loader_name] = np.mean(sorted(group_accs)[:5])
                 
             # print("DEBUG: ", result["acc_va"])
             # print("DEBUG AVG: ", result["avg_acc_va"])
@@ -152,15 +156,15 @@ def run(job=None):
                 best_acc_va = result['avg_acc_va']
                 best_acc_te = result['avg_acc_te']
             # same with best worst_acc :
-            if selec_metrics["worst_acc_va"] >= best_worst_acc_va:
+            if result["worst_acc_va"] >= best_worst_acc_va:
                 best_worst_acc_va = result['worst_acc_va']
                 best_worst_acc_te = result['worst_acc_te']
             if args.SMA.K**2 >= 3:
-                if selec_metrics["worst3_acc_va"] >= best_worst3_acc_va:
+                if result["worst3_acc_va"] >= best_worst3_acc_va:
                     best_worst3_acc_va = result['worst3_acc_va']
                     best_worst3_acc_te = result['worst3_acc_te']
             if args.SMA.K**2 >= 5:
-                if selec_metrics["worst5_acc_va"] >= best_worst5_grp_acc_va:
+                if result["worst5_grp_acc_va"] >= best_worst5_grp_acc_va:
                     best_worst5_grp_acc_va = result['worst5_grp_acc_va']
                     best_worst5_grp_acc_te = result['worst5_grp_acc_te']
                 
