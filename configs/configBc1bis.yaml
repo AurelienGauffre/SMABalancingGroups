@@ -38,7 +38,7 @@ new_reset: False
 SMA:
   mode: 'classic'
   img_size: 256
-  split_seeds: [1]
+  split_seeds: [2]
   names:  ['texture-dtd'] # airplanes plt-net ins2  texture-dtd
   Ks: [2,4,8,12]
   mus: [.1]
