@@ -6,7 +6,7 @@ slurm_partition: null #Pas None ?
 max_time: 4320  # 3 * 24 * 60
 num_hparams_seeds: 20
 #num_init_seeds: 5
-selector: 'min_grp_acc_va' # mean_acc_va
+selector: 'worst_acc_va' # mean_acc_va
 
 #Sweep
 #['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
@@ -39,7 +39,7 @@ alphas: [0,.1,.2,.5,.9,.95,1] #alpha * supcon + (1-alpha) bce
 # Specific hyperparameters for to create SMA dataset
 SMA:
   mode: 'classic'
-  img_size: 64
+  img_size: 224
   split_seeds: [0]
   names:  ['medical-leaf'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [4]
