@@ -256,7 +256,7 @@ if __name__ == "__main__":
                                 args.SMA.split_seed = split_seed
 
                                 args.group = f"K={args.SMA.K}_{args.method}"
-                                args.group_best = f"{args.SMA.name}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}_seed={args.SMA.split_seed}"
+                                args.group_best = f"{args.SMA.name}_clmode={args.cl_mode}_alpha={args.alpha}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}_seed={args.SMA.split_seed}"
                                 if "selector" in args.wandb_project :
                                     #add the selector at the start of the string
                                     args.group_best = f"{args.selector}_{args.group_best}"
