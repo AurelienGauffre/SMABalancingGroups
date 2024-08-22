@@ -456,3 +456,1049 @@ ray.exceptions.RayTaskError(OutOfMemoryError): [36mray::run()[39m (pid=36887, 
     return self._apply(lambda t: t.cuda(device))
 torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 3.82 GiB total capacity; 1.49 MiB already allocated; 33.38 MiB free; 2.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
 [33m(raylet)[0m [2024-05-03 15:37:45,971 E 29502 29531] (raylet) file_system_monitor.cc:111: /tmp/ray/session_2024-05-03_15-33-12_714252_29259 is over 95% full, available space: 16931254272; capacity: 360095375360. Object creation will fail if spilling is required.[32m [repeated 9x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/ray-logging.html#log-deduplication for more options.)[0m
+wandb: Waiting for W&B process to finish, PID 43565... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.50347
+wandb:              best_acc_va 0.5
+wandb:   best_mean_group_acc_te 0.50347
+wandb:   best_mean_group_acc_va 0.5
+wandb:       best_worst3_acc_te 0.2037
+wandb:       best_worst3_acc_va 0.18056
+wandb:   best_worst5_grp_acc_te 0.27778
+wandb:   best_worst5_grp_acc_va 0.25
+wandb:        best_worst_acc_te 0.13889
+wandb:        best_worst_acc_va 0.16667
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 57.63889
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 47.91667
+wandb:          mean_grp_acc_te 50.34722
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 50.0
+wandb:         minor_grp_acc_te 47.91667
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 50.69444
+wandb:      relative_grp_acc_te 0.83133
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 1.05797
+wandb:        worst3_grp_acc_te 20.37037
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 18.05556
+wandb:        worst5_grp_acc_te 27.77778
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 25.0
+wandb:         worst_grp_acc_te 13.88889
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 16.66667
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced celestial-tree-8604: https://wandb.ai/aureliengauffre/SMA_selector/runs/2dj9unz9
+wandb: Find logs at: ./wandb/run-20240711_181520-2dj9unz9/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 44249... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 45562... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.50521
+wandb:              best_acc_va 0.4974
+wandb:   best_mean_group_acc_te 0.50521
+wandb:   best_mean_group_acc_va 0.4974
+wandb:       best_worst3_acc_te 0.2037
+wandb:       best_worst3_acc_va 0.18056
+wandb:   best_worst5_grp_acc_te 0.27778
+wandb:   best_worst5_grp_acc_va 0.25
+wandb:        best_worst_acc_te 0.13889
+wandb:        best_worst_acc_va 0.16667
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 57.63889
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 46.875
+wandb:          mean_grp_acc_te 50.52083
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 49.73958
+wandb:         minor_grp_acc_te 48.14815
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 50.69444
+wandb:      relative_grp_acc_te 0.83534
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 1.08148
+wandb:        worst3_grp_acc_te 20.37037
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 18.05556
+wandb:        worst5_grp_acc_te 27.77778
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 25.0
+wandb:         worst_grp_acc_te 13.88889
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 16.66667
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced eager-valley-8606: https://wandb.ai/aureliengauffre/SMA_selector/runs/2kn3za7d
+wandb: Find logs at: ./wandb/run-20240711_181825-2kn3za7d/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 46228... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 47428... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.46354
+wandb:              best_acc_va 0.45312
+wandb:   best_mean_group_acc_te 0.46354
+wandb:   best_mean_group_acc_va 0.45312
+wandb:       best_worst3_acc_te 0.24074
+wandb:       best_worst3_acc_va 0.16667
+wandb:   best_worst5_grp_acc_te 0.25
+wandb:   best_worst5_grp_acc_va 0.20833
+wandb:        best_worst_acc_te 0.22222
+wandb:        best_worst_acc_va 0.08333
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 46.52778
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 46.875
+wandb:          mean_grp_acc_te 46.35417
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 45.3125
+wandb:         minor_grp_acc_te 46.2963
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 44.79167
+wandb:      relative_grp_acc_te 0.99502
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.95556
+wandb:        worst3_grp_acc_te 24.07407
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 16.66667
+wandb:        worst5_grp_acc_te 25.0
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 20.83333
+wandb:         worst_grp_acc_te 22.22222
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 8.33333
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced gentle-dust-8608: https://wandb.ai/aureliengauffre/SMA_selector/runs/201h52is
+wandb: Find logs at: ./wandb/run-20240711_182046-201h52is/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 48063... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.38542
+wandb:              best_acc_va 0.39062
+wandb:   best_mean_group_acc_te 0.38542
+wandb:   best_mean_group_acc_va 0.39062
+wandb:       best_worst3_acc_te 0.19444
+wandb:       best_worst3_acc_va 0.18056
+wandb:   best_worst5_grp_acc_te 0.21667
+wandb:   best_worst5_grp_acc_va 0.20833
+wandb:        best_worst_acc_te 0.16667
+wandb:        best_worst_acc_va 0.125
+wandb:                       lr 0.00228
+wandb:         major_grp_acc_te 36.11111
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 38.54167
+wandb:          mean_grp_acc_te 38.54167
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 39.0625
+wandb:         minor_grp_acc_te 39.35185
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 39.23611
+wandb:      relative_grp_acc_te 1.08974
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 1.01802
+wandb:        worst3_grp_acc_te 19.44444
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 18.05556
+wandb:        worst5_grp_acc_te 21.66667
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 20.83333
+wandb:         worst_grp_acc_te 16.66667
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 12.5
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced floral-resonance-8609: https://wandb.ai/aureliengauffre/SMA_selector/runs/29u3jxm9
+wandb: Find logs at: ./wandb/run-20240711_182103-29u3jxm9/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 48669... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.34722
+wandb:              best_acc_va 0.35156
+wandb:   best_mean_group_acc_te 0.34722
+wandb:   best_mean_group_acc_va 0.35156
+wandb:       best_worst3_acc_te 0.09259
+wandb:       best_worst3_acc_va 0.09722
+wandb:   best_worst5_grp_acc_te 0.12222
+wandb:   best_worst5_grp_acc_va 0.11667
+wandb:        best_worst_acc_te 0.05556
+wandb:        best_worst_acc_va 0.08333
+wandb:                       lr 0.00084
+wandb:         major_grp_acc_te 37.5
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 33.33333
+wandb:          mean_grp_acc_te 34.72222
+wandb:          mean_grp_acc_tr 95.83333
+wandb:          mean_grp_acc_va 35.15625
+wandb:         minor_grp_acc_te 33.7963
+wandb:         minor_grp_acc_tr 94.44444
+wandb:         minor_grp_acc_va 35.76389
+wandb:      relative_grp_acc_te 0.90123
+wandb:      relative_grp_acc_tr 0.94444
+wandb:      relative_grp_acc_va 1.07292
+wandb:        worst3_grp_acc_te 9.25926
+wandb:        worst3_grp_acc_tr 77.77778
+wandb:        worst3_grp_acc_va 9.72222
+wandb:        worst5_grp_acc_te 12.22222
+wandb:        worst5_grp_acc_tr 86.66667
+wandb:        worst5_grp_acc_va 11.66667
+wandb:         worst_grp_acc_te 5.55556
+wandb:         worst_grp_acc_tr 66.66667
+wandb:         worst_grp_acc_va 8.33333
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced cerulean-donkey-8610: https://wandb.ai/aureliengauffre/SMA_selector/runs/2rhhpowd
+wandb: Find logs at: ./wandb/run-20240711_182120-2rhhpowd/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 44201... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 45436... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 47389... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.95122
+wandb:              best_acc_va 0.87037
+wandb:   best_mean_group_acc_te 0.94547
+wandb:   best_mean_group_acc_va 0.84091
+wandb:       best_worst3_acc_te 0.92729
+wandb:       best_worst3_acc_va 0.78788
+wandb:        best_worst_acc_te 0.82353
+wandb:        best_worst_acc_va 0.45455
+wandb:                       lr 0.0005
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 95.45455
+wandb:          mean_grp_acc_te 94.54657
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 84.09091
+wandb:         minor_grp_acc_te 89.09314
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 72.72727
+wandb:      relative_grp_acc_te 0.89093
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.7619
+wandb:        worst3_grp_acc_te 92.72876
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 78.78788
+wandb:         worst_grp_acc_te 82.35294
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 45.45455
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced twilight-forest-23: https://wandb.ai/aureliengauffre/SMA_debug/runs/33n9x3np
+wandb: Find logs at: ./wandb/run-20240821_151016-33n9x3np/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 48305... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.97561
+wandb:              best_acc_va 0.98148
+wandb:   best_mean_group_acc_te 0.97488
+wandb:   best_mean_group_acc_va 0.97727
+wandb:       best_worst3_acc_te 0.9665
+wandb:       best_worst3_acc_va 0.9697
+wandb:        best_worst_acc_te 0.875
+wandb:        best_worst_acc_va 0.90909
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 100.0
+wandb:          mean_grp_acc_te 100.0
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 93.18182
+wandb:         minor_grp_acc_te 100.0
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 86.36364
+wandb:      relative_grp_acc_te 1.0
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.86364
+wandb:        worst3_grp_acc_te 100.0
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 90.90909
+wandb:         worst_grp_acc_te 100.0
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 72.72727
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced light-feather-24: https://wandb.ai/aureliengauffre/SMA_debug/runs/e0v653zq
+wandb: Find logs at: ./wandb/run-20240821_151042-e0v653zq/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 49049... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.97561
+wandb:              best_acc_va 0.88889
+wandb:   best_mean_group_acc_te 0.97488
+wandb:   best_mean_group_acc_va 0.86364
+wandb:       best_worst3_acc_te 0.9665
+wandb:       best_worst3_acc_va 0.81818
+wandb:        best_worst_acc_te 0.94118
+wandb:        best_worst_acc_va 0.54545
+wandb:                       lr 0.00057
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 95.45455
+wandb:          mean_grp_acc_te 97.48775
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 86.36364
+wandb:         minor_grp_acc_te 94.97549
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 77.27273
+wandb:      relative_grp_acc_te 0.94975
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.80952
+wandb:        worst3_grp_acc_te 96.65033
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 81.81818
+wandb:         worst_grp_acc_te 94.11765
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 54.54545
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced vivid-sponge-25: https://wandb.ai/aureliengauffre/SMA_debug/runs/3rpmcy28
+wandb: Find logs at: ./wandb/run-20240821_151101-3rpmcy28/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 49690... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.97561
+wandb:              best_acc_va 0.98148
+wandb:   best_mean_group_acc_te 0.97488
+wandb:   best_mean_group_acc_va 0.97727
+wandb:       best_worst3_acc_te 0.9665
+wandb:       best_worst3_acc_va 0.9697
+wandb:        best_worst_acc_te 0.875
+wandb:        best_worst_acc_va 0.90909
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 100.0
+wandb:          mean_grp_acc_te 100.0
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 95.45455
+wandb:         minor_grp_acc_te 100.0
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 90.90909
+wandb:      relative_grp_acc_te 1.0
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.90909
+wandb:        worst3_grp_acc_te 100.0
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 93.93939
+wandb:         worst_grp_acc_te 100.0
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 81.81818
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced zany-sponge-3: https://wandb.ai/aureliengauffre/SMA_debug_best/runs/1qhc9iu9
+wandb: Find logs at: ./wandb/run-20240821_151118-1qhc9iu9/logs/debug.log
+wandb: 
+wandb: Waiting for W&B process to finish, PID 53834... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 55694... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 56733... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.97561
+wandb:              best_acc_va 0.83333
+wandb:   best_mean_group_acc_te 0.97488
+wandb:   best_mean_group_acc_va 0.80966
+wandb:       best_worst3_acc_te 0.9665
+wandb:       best_worst3_acc_va 0.74621
+wandb:        best_worst_acc_te 0.94118
+wandb:        best_worst_acc_va 0.45455
+wandb:                       lr 0.0005
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 95.45455
+wandb:          mean_grp_acc_te 97.48775
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 80.96591
+wandb:         minor_grp_acc_te 94.97549
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 66.47727
+wandb:      relative_grp_acc_te 0.94975
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.69643
+wandb:        worst3_grp_acc_te 96.65033
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 74.62121
+wandb:         worst_grp_acc_te 94.11765
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 45.45455
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced stilted-sea-28: https://wandb.ai/aureliengauffre/SMA_debug/runs/oafkp8fs
+wandb: Find logs at: ./wandb/run-20240821_152459-oafkp8fs/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 57559... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.9878
+wandb:              best_acc_va 0.96296
+wandb:   best_mean_group_acc_te 0.98958
+wandb:   best_mean_group_acc_va 0.96875
+wandb:       best_worst3_acc_te 0.98611
+wandb:       best_worst3_acc_va 0.95833
+wandb:        best_worst_acc_te 1.0
+wandb:        best_worst_acc_va 0.90909
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 100.0
+wandb:          mean_grp_acc_te 98.95833
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 96.875
+wandb:         minor_grp_acc_te 97.91667
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 93.75
+wandb:      relative_grp_acc_te 0.97917
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.9375
+wandb:        worst3_grp_acc_te 98.61111
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 95.83333
+wandb:         worst_grp_acc_te 95.83333
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 87.5
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced elated-oath-29: https://wandb.ai/aureliengauffre/SMA_debug/runs/9ouamgfc
+wandb: Find logs at: ./wandb/run-20240821_152519-9ouamgfc/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 58397... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.9878
+wandb:              best_acc_va 0.85185
+wandb:   best_mean_group_acc_te 0.98958
+wandb:   best_mean_group_acc_va 0.83239
+wandb:       best_worst3_acc_te 0.98611
+wandb:       best_worst3_acc_va 0.77652
+wandb:        best_worst_acc_te 0.95833
+wandb:        best_worst_acc_va 0.54545
+wandb:                       lr 0.00057
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 95.45455
+wandb:          mean_grp_acc_te 98.95833
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 83.23864
+wandb:         minor_grp_acc_te 97.91667
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 71.02273
+wandb:      relative_grp_acc_te 0.97917
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.74405
+wandb:        worst3_grp_acc_te 98.61111
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 77.65152
+wandb:         worst_grp_acc_te 95.83333
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 54.54545
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced fiery-paper-30: https://wandb.ai/aureliengauffre/SMA_debug/runs/2chdj90q
+wandb: Find logs at: ./wandb/run-20240821_152539-2chdj90q/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 59102... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.9878
+wandb:              best_acc_va 0.96296
+wandb:   best_mean_group_acc_te 0.98958
+wandb:   best_mean_group_acc_va 0.96875
+wandb:       best_worst3_acc_te 0.98611
+wandb:       best_worst3_acc_va 0.95833
+wandb:        best_worst_acc_te 1.0
+wandb:        best_worst_acc_va 0.90909
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 100.0
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 100.0
+wandb:          mean_grp_acc_te 98.95833
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 96.875
+wandb:         minor_grp_acc_te 97.91667
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 93.75
+wandb:      relative_grp_acc_te 0.97917
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.9375
+wandb:        worst3_grp_acc_te 98.61111
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 95.83333
+wandb:         worst_grp_acc_te 95.83333
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 87.5
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced revived-plasma-4: https://wandb.ai/aureliengauffre/SMA_debug_best/runs/25zeiq3m
+wandb: Find logs at: ./wandb/run-20240821_152556-25zeiq3m/logs/debug.log
+wandb: 
+wandb: Waiting for W&B process to finish, PID 64752... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.27632
+wandb:              best_acc_va 0.27419
+wandb:   best_mean_group_acc_te 0.27164
+wandb:   best_mean_group_acc_va 0.26527
+wandb:       best_worst3_acc_te 0.0
+wandb:       best_worst3_acc_va 0.0
+wandb:   best_worst5_grp_acc_te 0.0
+wandb:   best_worst5_grp_acc_va 0.0
+wandb:        best_worst_acc_te 0.0
+wandb:        best_worst_acc_va 0.0
+wandb:                       lr 0.0005
+wandb:         major_grp_acc_te 29.41176
+wandb:         major_grp_acc_tr 27.27273
+wandb:         major_grp_acc_va 25.0
+wandb:          mean_grp_acc_te 27.16365
+wandb:          mean_grp_acc_tr 25.56818
+wandb:          mean_grp_acc_va 26.52699
+wandb:         minor_grp_acc_te 26.41428
+wandb:         minor_grp_acc_tr 25.0
+wandb:         minor_grp_acc_va 27.03598
+wandb:      relative_grp_acc_te 0.89809
+wandb:      relative_grp_acc_tr 0.91667
+wandb:      relative_grp_acc_va 1.08144
+wandb:        worst3_grp_acc_te 0.0
+wandb:        worst3_grp_acc_tr 0.0
+wandb:        worst3_grp_acc_va 0.0
+wandb:        worst5_grp_acc_te 0.0
+wandb:        worst5_grp_acc_tr 0.0
+wandb:        worst5_grp_acc_va 0.0
+wandb:         worst_grp_acc_te 0.0
+wandb:         worst_grp_acc_tr 0.0
+wandb:         worst_grp_acc_va 0.0
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced upbeat-pine-1: https://wandb.ai/aureliengauffre/SMA_cl/runs/3nr0bwlq
+wandb: Find logs at: ./wandb/run-20240821_153456-3nr0bwlq/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 65805... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.27632
+wandb:              best_acc_va 0.27419
+wandb:   best_mean_group_acc_te 0.27164
+wandb:   best_mean_group_acc_va 0.26527
+wandb:       best_worst3_acc_te 0.0
+wandb:       best_worst3_acc_va 0.0
+wandb:   best_worst5_grp_acc_te 0.0
+wandb:   best_worst5_grp_acc_va 0.0
+wandb:        best_worst_acc_te 0.0
+wandb:        best_worst_acc_va 0.0
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 29.41176
+wandb:         major_grp_acc_tr 27.27273
+wandb:         major_grp_acc_va 25.0
+wandb:          mean_grp_acc_te 27.16365
+wandb:          mean_grp_acc_tr 25.56818
+wandb:          mean_grp_acc_va 26.52699
+wandb:         minor_grp_acc_te 26.41428
+wandb:         minor_grp_acc_tr 25.0
+wandb:         minor_grp_acc_va 27.03598
+wandb:      relative_grp_acc_te 0.89809
+wandb:      relative_grp_acc_tr 0.91667
+wandb:      relative_grp_acc_va 1.08144
+wandb:        worst3_grp_acc_te 0.0
+wandb:        worst3_grp_acc_tr 0.0
+wandb:        worst3_grp_acc_va 0.0
+wandb:        worst5_grp_acc_te 0.0
+wandb:        worst5_grp_acc_tr 0.0
+wandb:        worst5_grp_acc_va 0.0
+wandb:         worst_grp_acc_te 0.0
+wandb:         worst_grp_acc_tr 0.0
+wandb:         worst_grp_acc_va 0.0
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced lilac-sound-2: https://wandb.ai/aureliengauffre/SMA_cl/runs/3qsimu8y
+wandb: Find logs at: ./wandb/run-20240821_153519-3qsimu8y/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 66794... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.27632
+wandb:              best_acc_va 0.27419
+wandb:   best_mean_group_acc_te 0.27164
+wandb:   best_mean_group_acc_va 0.26527
+wandb:       best_worst3_acc_te 0.0
+wandb:       best_worst3_acc_va 0.0
+wandb:   best_worst5_grp_acc_te 0.0
+wandb:   best_worst5_grp_acc_va 0.0
+wandb:        best_worst_acc_te 0.0
+wandb:        best_worst_acc_va 0.0
+wandb:                       lr 0.00057
+wandb:         major_grp_acc_te 29.41176
+wandb:         major_grp_acc_tr 27.27273
+wandb:         major_grp_acc_va 25.0
+wandb:          mean_grp_acc_te 27.16365
+wandb:          mean_grp_acc_tr 25.56818
+wandb:          mean_grp_acc_va 26.52699
+wandb:         minor_grp_acc_te 26.41428
+wandb:         minor_grp_acc_tr 25.0
+wandb:         minor_grp_acc_va 27.03598
+wandb:      relative_grp_acc_te 0.89809
+wandb:      relative_grp_acc_tr 0.91667
+wandb:      relative_grp_acc_va 1.08144
+wandb:        worst3_grp_acc_te 0.0
+wandb:        worst3_grp_acc_tr 0.0
+wandb:        worst3_grp_acc_va 0.0
+wandb:        worst5_grp_acc_te 0.0
+wandb:        worst5_grp_acc_tr 0.0
+wandb:        worst5_grp_acc_va 0.0
+wandb:         worst_grp_acc_te 0.0
+wandb:         worst_grp_acc_tr 0.0
+wandb:         worst_grp_acc_va 0.0
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced honest-donkey-3: https://wandb.ai/aureliengauffre/SMA_cl/runs/wrq3jzpc
+wandb: Find logs at: ./wandb/run-20240821_153541-wrq3jzpc/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 67683... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.27632
+wandb:              best_acc_va 0.27419
+wandb:   best_mean_group_acc_te 0.27164
+wandb:   best_mean_group_acc_va 0.26527
+wandb:       best_worst3_acc_te 0.0
+wandb:       best_worst3_acc_va 0.0
+wandb:   best_worst5_grp_acc_te 0.0
+wandb:   best_worst5_grp_acc_va 0.0
+wandb:        best_worst_acc_te 0.0
+wandb:        best_worst_acc_va 0.0
+wandb:                       lr 0.0005
+wandb:         major_grp_acc_te 29.41176
+wandb:         major_grp_acc_tr 27.27273
+wandb:         major_grp_acc_va 25.0
+wandb:          mean_grp_acc_te 27.16365
+wandb:          mean_grp_acc_tr 25.56818
+wandb:          mean_grp_acc_va 26.52699
+wandb:         minor_grp_acc_te 26.41428
+wandb:         minor_grp_acc_tr 25.0
+wandb:         minor_grp_acc_va 27.03598
+wandb:      relative_grp_acc_te 0.89809
+wandb:      relative_grp_acc_tr 0.91667
+wandb:      relative_grp_acc_va 1.08144
+wandb:        worst3_grp_acc_te 0.0
+wandb:        worst3_grp_acc_tr 0.0
+wandb:        worst3_grp_acc_va 0.0
+wandb:        worst5_grp_acc_te 0.0
+wandb:        worst5_grp_acc_tr 0.0
+wandb:        worst5_grp_acc_va 0.0
+wandb:         worst_grp_acc_te 0.0
+wandb:         worst_grp_acc_tr 0.0
+wandb:         worst_grp_acc_va 0.0
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced dark-shadow-1: https://wandb.ai/aureliengauffre/SMA_cl_best/runs/dmowmm49
+wandb: Find logs at: ./wandb/run-20240821_153600-dmowmm49/logs/debug.log
+wandb: 
+wandb: Waiting for W&B process to finish, PID 88612... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.71316
+wandb:              best_acc_va 0.72984
+wandb:   best_mean_group_acc_te 0.67676
+wandb:   best_mean_group_acc_va 0.70656
+wandb:       best_worst3_acc_te 0.15605
+wandb:       best_worst3_acc_va 0.25947
+wandb:   best_worst5_grp_acc_te 0.25931
+wandb:   best_worst5_grp_acc_va 0.35568
+wandb:        best_worst_acc_te 0.0
+wandb:        best_worst_acc_va 0.125
+wandb:                       lr 0.0005
+wandb:         major_grp_acc_te 93.32108
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 95.12311
+wandb:          mean_grp_acc_te 67.67563
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 70.65578
+wandb:         minor_grp_acc_te 59.12714
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 62.5
+wandb:      relative_grp_acc_te 0.63359
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.65704
+wandb:        worst3_grp_acc_te 9.72222
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 14.39394
+wandb:        worst5_grp_acc_te 16.37255
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 29.54545
+wandb:         worst_grp_acc_te 0.0
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 6.25
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced dazzling-snowflake-4: https://wandb.ai/aureliengauffre/SMA_cl/runs/2nkjocy4
+wandb: Find logs at: ./wandb/run-20240821_172658-2nkjocy4/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 89692... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.74737
+wandb:              best_acc_va 0.74597
+wandb:   best_mean_group_acc_te 0.72316
+wandb:   best_mean_group_acc_va 0.74018
+wandb:       best_worst3_acc_te 0.21732
+wandb:       best_worst3_acc_va 0.40152
+wandb:   best_worst5_grp_acc_te 0.30294
+wandb:   best_worst5_grp_acc_va 0.48068
+wandb:        best_worst_acc_te 0.16667
+wandb:        best_worst_acc_va 0.3125
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 96.01716
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 93.03977
+wandb:          mean_grp_acc_te 69.86619
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 72.36032
+wandb:         minor_grp_acc_te 61.1492
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 65.46717
+wandb:      relative_grp_acc_te 0.63686
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.70365
+wandb:        worst3_grp_acc_te 15.93137
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 22.53788
+wandb:        worst5_grp_acc_te 21.22549
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 31.70455
+wandb:         worst_grp_acc_te 11.76471
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 12.5
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced fine-smoke-5: https://wandb.ai/aureliengauffre/SMA_cl/runs/1a59yt5z
+wandb: Find logs at: ./wandb/run-20240821_172730-1a59yt5z/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 90745... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.71053
+wandb:              best_acc_va 0.7379
+wandb:   best_mean_group_acc_te 0.66911
+wandb:   best_mean_group_acc_va 0.71792
+wandb:       best_worst3_acc_te 0.09477
+wandb:       best_worst3_acc_va 0.26894
+wandb:   best_worst5_grp_acc_te 0.19902
+wandb:   best_worst5_grp_acc_va 0.37955
+wandb:        best_worst_acc_te 0.0
+wandb:        best_worst_acc_va 0.18182
+wandb:                       lr 0.00057
+wandb:         major_grp_acc_te 94.36275
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 95.12311
+wandb:          mean_grp_acc_te 66.91052
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 71.79214
+wandb:         minor_grp_acc_te 57.75978
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 64.01515
+wandb:      relative_grp_acc_te 0.6121
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.67297
+wandb:        worst3_grp_acc_te 10.29412
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 16.47727
+wandb:        worst5_grp_acc_te 15.53922
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 31.36364
+wandb:         worst_grp_acc_te 5.88235
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 6.25
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced trim-shadow-6: https://wandb.ai/aureliengauffre/SMA_cl/runs/emho406f
+wandb: Find logs at: ./wandb/run-20240821_172805-emho406f/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 91714... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.82368
+wandb:              best_acc_va 0.80645
+wandb:   best_mean_group_acc_te 0.78812
+wandb:   best_mean_group_acc_va 0.79415
+wandb:       best_worst3_acc_te 0.35376
+wandb:       best_worst3_acc_va 0.47348
+wandb:   best_worst5_grp_acc_te 0.4701
+wandb:   best_worst5_grp_acc_va 0.54205
+wandb:        best_worst_acc_te 0.29167
+wandb:        best_worst_acc_va 0.3125
+wandb:                       lr 0.00265
+wandb:         major_grp_acc_te 91.42157
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 94.60227
+wandb:          mean_grp_acc_te 75.39663
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 77.67519
+wandb:         minor_grp_acc_te 70.05498
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 72.03283
+wandb:      relative_grp_acc_te 0.76629
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.76143
+wandb:        worst3_grp_acc_te 21.73203
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 35.98485
+wandb:        worst5_grp_acc_te 32.64706
+wandb:        worst5_grp_acc_tr 100.0
+wandb:        worst5_grp_acc_va 42.5
+wandb:         worst_grp_acc_te 8.33333
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 25.0
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced visionary-gorge-2: https://wandb.ai/aureliengauffre/SMA_cl_best/runs/3j7j3jhl
+wandb: Find logs at: ./wandb/run-20240821_172841-3j7j3jhl/logs/debug.log
+wandb: 
+[36m(run pid=96745)[0m wandb: Currently logged in as: aureliengauffre (use `wandb login --relogin` to force relogin)
+[36m(run pid=96745)[0m wandb: wandb version 0.17.7 is available!  To upgrade, please run:
+[36m(run pid=96745)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=96745)[0m 2024-08-21 17:30:51.446713: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+[36m(run pid=96745)[0m 2024-08-21 17:30:51.446739: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[36m(run pid=96745)[0m wandb: Tracking run with wandb version 0.12.7
+[36m(run pid=96745)[0m wandb: Syncing run peachy-sunset-7
+[36m(run pid=96745)[0m wandb:  View project at https://wandb.ai/aureliengauffre/SMA_cl
+[36m(run pid=96745)[0m wandb:  View run at https://wandb.ai/aureliengauffre/SMA_cl/runs/1g2pnvpq
+[36m(run pid=96745)[0m wandb: Run data is saved locally in /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240821_173050-1g2pnvpq
+[36m(run pid=96745)[0m wandb: Run `wandb offline` to turn off syncing.
+[33m(raylet)[0m [2024-08-21 17:30:55,191 E 88223 88223] (raylet) node_manager.cc:2967: 1 Workers (tasks / actors) killed due to memory pressure (OOM), 0 Workers crashed due to other reasons at node (ID: a8754aefeabe8ce191740008f51840d280cd8adc5311023df54bf7d7, IP: 129.88.65.133) over the last time period. To see more information about the Workers killed on this node, use `ray logs raylet.out -ip 129.88.65.133`
+[33m(raylet)[0m 
+[33m(raylet)[0m Refer to the documentation on how to address the out of memory issue: https://docs.ray.io/en/latest/ray-core/scheduling/ray-oom-prevention.html. Consider provisioning more memory on this node or reducing task parallelism by requesting more CPUs per task. To adjust the kill threshold, set the environment variable `RAY_memory_usage_threshold` when starting Ray. To disable worker killing, set the environment variable `RAY_memory_monitor_refresh_ms` to zero.

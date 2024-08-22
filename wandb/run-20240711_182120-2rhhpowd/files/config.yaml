@@ -1,0 +1,161 @@
+wandb_version: 1
+
+IR:
+  desc: null
+  value: 0.30000000000000004
+K:
+  desc: null
+  value: 4
+Ks:
+  desc: null
+  value:
+  - 4
+T:
+  desc: null
+  value: 3
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.7
+    framework: huggingface
+    huggingface_version: 4.25.1
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.8.10
+    start_time: 1720714880
+    t:
+      1:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      2:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      3:
+      - 2
+      - 16
+      4: 3.8.10
+      5: 0.12.7
+      6: 4.25.1
+      8:
+      - 5
+arch:
+  desc: null
+  value: resnet18
+batch_size:
+  desc: null
+  value: 19
+config_name:
+  desc: null
+  value: configTime1.yaml
+data_path:
+  desc: null
+  value: data
+dataset:
+  desc: null
+  value: SMA
+eta:
+  desc: null
+  value: 0.1
+eval_every_n_epochs:
+  desc: null
+  value: 4
+group:
+  desc: null
+  value: K=4_subg
+group_best:
+  desc: null
+  value: mean_grp_acc_va_texture-dtd_K=4_subg_mu=0.1_seed=1
+hparams_seed:
+  desc: null
+  value: 0
+img_size:
+  desc: null
+  value: 64
+init_seed:
+  desc: null
+  value: 0
+lr:
+  desc: null
+  value: 0.0008379642915115781
+max_time:
+  desc: null
+  value: 4320
+method:
+  desc: null
+  value: subg
+methods:
+  desc: null
+  value:
+  - subg
+mode:
+  desc: null
+  value: classic
+mu:
+  desc: null
+  value: 0.1
+mus:
+  desc: null
+  value:
+  - 0.1
+n_HBO_runs:
+  desc: null
+  value: 3
+n_eval_init_seed:
+  desc: null
+  value: 3
+n_gpus:
+  desc: null
+  value: 1
+name:
+  desc: null
+  value: texture-dtd
+names:
+  desc: null
+  value:
+  - texture-dtd
+new_reset:
+  desc: null
+  value: false
+num_epochs:
+  desc: null
+  value: 5
+num_hparams_seeds:
+  desc: null
+  value: 20
+output_dir:
+  desc: null
+  value: outputs
+scheduler:
+  desc: null
+  value: false
+selector:
+  desc: null
+  value: mean_grp_acc_va
+slurm_output_dir:
+  desc: null
+  value: slurm_outputs
+slurm_partition:
+  desc: null
+  value: null
+split_seed:
+  desc: null
+  value: 1
+split_seeds:
+  desc: null
+  value:
+  - 1
+up:
+  desc: null
+  value: 20
+wandb_project:
+  desc: null
+  value: SMA_selector
+weight_decay:
+  desc: null
+  value: 0.6636085077612338
