@@ -1,0 +1,41 @@
+{
+    "os": "Linux-5.15.0-117-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2024-08-21T15:30:52.345112",
+    "startedAt": "2024-08-21T15:30:50.465380",
+    "docker": null,
+    "gpu": "NVIDIA T600 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "--node-ip-address=129.88.65.133",
+        "--node-manager-port=36155",
+        "--object-store-name=/tmp/ray/session_2024-08-21_17-26-51_711506_87951/sockets/plasma_store",
+        "--raylet-name=/tmp/ray/session_2024-08-21_17-26-51_711506_87951/sockets/raylet",
+        "--redis-address=None",
+        "--metrics-agent-port=50972",
+        "--runtime-env-agent-port=47120",
+        "--logging-rotate-bytes=536870912",
+        "--logging-rotate-backup-count=5",
+        "--runtime-env-agent-port=47120",
+        "--gcs-address=129.88.65.133:60910",
+        "--session-name=session_2024-08-21_17-26-51_711506_87951",
+        "--temp-dir=/tmp/ray",
+        "--webui=",
+        "--cluster-id=ed61cbab30f2e16f8ffa8d9753a541ea26af990d8a771917936c242a",
+        "--startup-token=9",
+        "--worker-launch-time-ms=1724254247252"
+    ],
+    "state": "running",
+    "program": "/home/gauffrea/.local/lib/python3.8/site-packages/ray/_private/workers/default_worker.py",
+    "git": {
+        "remote": "https://github.com/AurelienGauffre/SMABalancingGroups",
+        "commit": "d1b3429ec716b6984fe64449fd65fb4fe0f81135"
+    },
+    "email": "aurelien.gauffre@gmail.com",
+    "root": "/home/gauffrea/Projects/SMABalancingGroups",
+    "host": "PreciGauffre",
+    "username": "gauffrea",
+    "executable": "/usr/bin/python3"
+}

@@ -1,4 +1,4 @@
-wandb_project: SMA_debug
+wandb_project: SMA_cl
 output_dir: 'outputs'
 slurm_output_dir: 'slurm_outputs'
 data_path: 'data'
@@ -22,7 +22,7 @@ arch: "resnet18"
 n_HBO_runs: 3
 n_eval_init_seed: 1
 
-num_epochs: 10
+num_epochs: 17
 batch_size: 16
 eta: 0.1
 lr: 1e-3
@@ -33,15 +33,17 @@ scheduler: False
 new_reset: False
 
 
+cl_modes: ['bce','bce+supcon'] # "bce+supcon"
+alphas: [0,.1,.2,.5,.9,.95,1] #alpha * supcon + (1-alpha) bce
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
   mode: 'classic'
-  img_size: 256
-  split_seed: 0
+  img_size: 64
+  split_seeds: [0]
   names:  ['medical-leaf'] #plt-net ins2 medical-leaf texture-dtd
-  Ks: [2]
-  mus: [0.1]
+  Ks: [4]
+  mus: [0.05]
   methods: ['erm']
 
 

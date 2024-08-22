@@ -23,7 +23,7 @@ n_HBO_runs: 3
 n_eval_init_seed: 3
 
 num_epochs: 5
-batch_size: 16
+batch_size: 8
 eta: 0.1
 lr: 1e-3
 weight_decay: 1e-3
@@ -37,10 +37,10 @@ new_reset: False
 # Specific hyperparameters for to create SMA dataset
 SMA:
   mode: 'classic'
-  img_size: 256
+  img_size: 64
   split_seeds: [1]
   names:  ['texture-dtd'] # airplanes plt-net ins2  texture-dtd
-  Ks: [2,4,8]
+  Ks: [4]
   mus: [.1]
   methods: ['subg'] #'rwg'
 

@@ -1,0 +1,215 @@
+todo:
+Trouver grad
+aselieq2l
+douleVatch
+. aker_run.sh Aamu1-1 14
+. aker_run.sh Aamu1-1bis 14
+. aker_run.sh Abmu1-0 8
+. aker_run.sh Abmu1-1 12
+. aker_run.sh Acmu1-0 10
+. aker_run.sh Acmu1-1 10
+. aker_run.sh Admu1-0 6
+. aker_run.sh Admu1-1 12
+. aker_run.sh Admu1-2 12
+. aker_run.sh Admu1-3 12
+. aker_run.sh Admu1-4 12
+
+. aker_run.sh Aemu1-1 30
+. aker_run.sh Aemu1-2 40
+. aker_run.sh Aemu1-3 40
+. aker_run.sh Aemu1-3bis 40
+
+. aker_run.sh Afmu1-1 22
+. aker_run.sh Afmu1-2 22
+. aker_run.sh Afmu1-3 22
+. aker_run.sh Afmu1-4 40
+. aker_run.sh Afmu1-5 40
+. aker_run.sh Afmu1-6 60
+
+
+. aker_run.sh Agmu1-1 15
+. aker_run.sh Agmu1-2 15
+
+. aker_run.sh Ahmu1-1 15
+. aker_run.sh Ahmu1-2 15
+
+. aker_run.sh Aimu1-1 20
+. aker_run.sh Aimu1-2 20
+. aker_run.sh Aimu1-3 20
+
+
+
+
+
+
+. bigfoot_run.sh Afmu1-1 40
+. bigfoot_run.sh Afmu1-2 48
+. bigfoot_run.sh Afmu1-3 48
+. bigfoot_run.sh Afmu1-4 48
+. bigfoot_run.sh Afmu1-5 48
+. bigfoot_run.sh Afmu1-6 48
+
+. bigfoot_run.sh Aemu1-1 30
+. bigfoot_run.sh Aemu1-2 40
+. bigfoot_run.sh Aemu1-3 40
+. bigfoot_run.sh Aemu1-3bis 40
+
+
+a 2/4/8/12/16
+. aker_run.sh Aamu1-1 14
+. aker_run.sh Aamu1-1bis 14
+
+. aker_run.sh Aamu1-2 21
+. aker_run.sh Aamu1-3 21
+. aker_run.sh Aamu1-4 31
+. aker_run.sh Aamu1-5 31
+
+b 2/4/8/12/16
+. aker_run.sh Abmu1-0 8
+. aker_run.sh Abmu1-1 12
+
+. aker_run.sh Abmu1-2 15
+. aker_run.sh Abmu1-3 22
+
+c 2/4/8/12/16
+. aker_run.sh Acmu1-0 10
+. aker_run.sh Acmu1-1 10
+
+. aker_run.sh Acmu1-2 25
+. aker_run.sh Acmu1-3 35
+
+d 2/4/8/12
+. aker_run.sh Admu1-0 6
+
+. aker_run.sh Admu1-1 18
+
+. aker_run.sh Admu1-2 18
+. aker_run.sh Admu1-3 18
+. aker_run.sh Admu1-4 20
+
+. aker_run.sh Admu1-5 30
+. aker_run.sh Admu1-6 30
+. aker_run.sh Admu1-7 30
+
+
+e 2/4/8/12
+
+. aker_run.sh Aemu1-1 15
+. aker_run.sh Aemu1-2 15
+. aker_run.sh Aemu1-3 15
+. aker_run.sh Aemu1-3bis 20
+
+. aker_run.sh Aemu1-4 30
+. aker_run.sh Aemu1-5 30
+
+. bigfoot_run.sh Aemu1-4 30
+. bigfoot_run.sh Aemu1-5 30
+
+
+f 2/4/8
+
+. aker_run.sh Afmu1-1 25
+. aker_run.sh Afmu1-2 25
+. aker_run.sh Afmu1-3 25
+
+. bigfoot_run.sh Afmu1-1 22
+. bigfoot_run.sh Afmu1-2 22
+. bigfoot_run.sh Afmu1-3 22
+
+. bigfoot_run.sh Afmu1-4 36
+. bigfoot_run.sh Afmu1-5 36
+. bigfoot_run.sh Afmu1-6 36
+
+g :
+. aker_run.sh Agmu1-1 15
+. aker_run.sh Agmu1-2 15
+
+h:
+. aker_run.sh Ahmu1-1 15
+. aker_run.sh Ahmu1-2 15
+
+i:
+. aker_run.sh Aimu1-1 15
+. aker_run.sh Aimu1-2 15
+. aker_run.sh Aimu1-3 15
+
+
+
+. bigfoot_run.sh Atest1 45
+. bigfoot_run.sh Atest2 45
+. bigfoot_run.sh Atest3 45
+. bigfoot_run.sh Atest4 45
+. bigfoot_run.sh Atest5 45
+. bigfoot_run.sh Atest6 45
+. bigfoot_run.sh Atest7 45
+. bigfoot_run.sh Atest8 45
+
+
+
+. aker_run.sh B5 17
+. aker_run.sh B6 17
+. aker_run.sh B7 17
+. aker_run.sh B8 17
+. aker_run.sh B9 17
+
+. aker_run.sh B5bis 17
+. aker_run.sh B6bis 17
+. aker_run.sh B7bis 17
+. aker_run.sh B8bis 17
+. aker_run.sh B9bis 17
+
+
+
+
+
+
+# Done
+. aker_run.sh Cbird5mu1 30
+. aker_run.sh Cbird6mu1 30
+. aker_run.sh Cbird7mu1 33
+
+
+
+
+. aker_run.sh Cbird5mu2 30
+. aker_run.sh Cbird6mu2 30
+. aker_run.sh Cbird7mu2 33
+
+. aker_run.sh Cbird5mu5 30
+. aker_run.sh Cbird6mu5 30
+. aker_run.sh Cbird7mu5 33
+
+. aker_run.sh Cbird5mu20 30
+. aker_run.sh Cbird6mu20 30
+. aker_run.sh Cbird7mu20 33
+
+
+
+. aker_run.sh Cbird0mu50 6
+. aker_run.sh Cbird1mu50 18
+. aker_run.sh Cbird2mu50 18
+. aker_run.sh Cbird3mu50 18
+. aker_run.sh Cbird4mu50 20
+. aker_run.sh Cbird5mu50 30
+. aker_run.sh Cbird6mu50 30
+. aker_run.sh Cbird7mu50 33
+
+
+. aker_run.sh Cbird0mu100 6
+. aker_run.sh Cbird1mu100 18
+. aker_run.sh Cbird2mu100 18
+. aker_run.sh Cbird3mu100 18
+. aker_run.sh Cbird4mu100 20
+. aker_run.sh Cbird5mu100 30
+. aker_run.sh Cbird6mu100 30
+. aker_run.sh Cbird7mu100 33
+
+
+. aker_run.sh Cbird0mu1 6
+. aker_run.sh Cbird1mu1 18
+. aker_run.sh Cbird2mu1 18
+. aker_run.sh Cbird3mu1 18
+. aker_run.sh Cbird4mu1 20
+. aker_run.sh Cbird5mu1 30
+. aker_run.sh Cbird6mu1 30
+. aker_run.sh Cbird7mu1 33

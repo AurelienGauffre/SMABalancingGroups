@@ -1,0 +1,176 @@
+2024-07-11 18:20:47,011 INFO    MainThread:47428 [internal.py:wandb_internal():87] W&B internal server running at pid: 47428, started at: 2024-07-11 18:20:47.011407
+2024-07-11 18:20:47,012 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: check_version
+2024-07-11 18:20:47,013 INFO    WriterThread:47428 [datastore.py:open_for_write():77] open: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/run-201h52is.wandb
+2024-07-11 18:20:47,013 DEBUG   SenderThread:47428 [sender.py:send():238] send: header
+2024-07-11 18:20:47,013 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: check_version
+2024-07-11 18:20:47,096 DEBUG   SenderThread:47428 [sender.py:send():238] send: run
+2024-07-11 18:20:47,375 INFO    SenderThread:47428 [dir_watcher.py:__init__():169] watching files in: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files
+2024-07-11 18:20:47,375 INFO    SenderThread:47428 [sender.py:_start_run_threads():825] run started: 201h52is with start time 1720714846
+2024-07-11 18:20:47,376 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:47,376 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:47,377 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: run_start
+2024-07-11 18:20:48,360 DEBUG   HandlerThread:47428 [meta.py:__init__():40] meta init
+2024-07-11 18:20:48,360 DEBUG   HandlerThread:47428 [meta.py:__init__():54] meta init done
+2024-07-11 18:20:48,360 DEBUG   HandlerThread:47428 [meta.py:probe():214] probe
+2024-07-11 18:20:48,366 DEBUG   HandlerThread:47428 [meta.py:_setup_git():204] setup git
+2024-07-11 18:20:48,376 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_created():217] file/dir created: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-summary.json
+2024-07-11 18:20:48,386 DEBUG   HandlerThread:47428 [meta.py:_setup_git():211] setup git done
+2024-07-11 18:20:48,386 DEBUG   HandlerThread:47428 [meta.py:_save_pip():58] save pip
+2024-07-11 18:20:48,387 DEBUG   HandlerThread:47428 [meta.py:_save_pip():72] save pip done
+2024-07-11 18:20:48,387 DEBUG   HandlerThread:47428 [meta.py:probe():252] probe done
+2024-07-11 18:20:48,388 DEBUG   SenderThread:47428 [sender.py:send():238] send: files
+2024-07-11 18:20:48,388 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-metadata.json with policy now
+2024-07-11 18:20:48,391 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: stop_status
+2024-07-11 18:20:48,392 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: stop_status
+2024-07-11 18:20:48,876 INFO    Thread-11 :47428 [upload_job.py:push():137] Uploaded file /tmp/tmp8zbi2ss_wandb/3qydxxxa-wandb-metadata.json
+2024-07-11 18:20:49,376 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_created():217] file/dir created: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-metadata.json
+2024-07-11 18:20:49,377 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_created():217] file/dir created: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/requirements.txt
+2024-07-11 18:20:49,377 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_created():217] file/dir created: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/output.log
+2024-07-11 18:20:51,377 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/output.log
+2024-07-11 18:20:52,208 DEBUG   SenderThread:47428 [sender.py:send():238] send: history
+2024-07-11 18:20:52,209 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:52,209 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:52,377 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-summary.json
+2024-07-11 18:20:52,453 DEBUG   SenderThread:47428 [sender.py:send():238] send: history
+2024-07-11 18:20:52,453 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:52,454 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:52,697 DEBUG   SenderThread:47428 [sender.py:send():238] send: history
+2024-07-11 18:20:52,698 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:52,698 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,377 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-summary.json
+2024-07-11 18:20:53,988 DEBUG   SenderThread:47428 [sender.py:send():238] send: history
+2024-07-11 18:20:53,988 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,988 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,988 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,988 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,988 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,989 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,989 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,989 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,989 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,989 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,989 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,989 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,989 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,989 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,989 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,990 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,990 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,990 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,990 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,990 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,990 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,990 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:53,990 DEBUG   SenderThread:47428 [sender.py:send():238] send: history
+2024-07-11 18:20:53,990 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:53,990 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:54,378 INFO    Thread-8  :47428 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-summary.json
+2024-07-11 18:20:56,947 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:56,948 DEBUG   SenderThread:47428 [sender.py:send():238] send: telemetry
+2024-07-11 18:20:56,948 DEBUG   SenderThread:47428 [sender.py:send():238] send: exit
+2024-07-11 18:20:56,948 INFO    SenderThread:47428 [sender.py:send_exit():370] handling exit code: 0
+2024-07-11 18:20:56,949 INFO    SenderThread:47428 [sender.py:send_exit():372] handling runtime: 9
+2024-07-11 18:20:56,949 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:56,949 INFO    SenderThread:47428 [sender.py:send_exit():382] send defer
+2024-07-11 18:20:56,950 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:56,951 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:56,951 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 0
+2024-07-11 18:20:56,951 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:56,951 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 0
+2024-07-11 18:20:56,952 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 1
+2024-07-11 18:20:56,952 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:56,952 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 1
+2024-07-11 18:20:57,005 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:57,005 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 1
+2024-07-11 18:20:57,005 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 2
+2024-07-11 18:20:57,006 DEBUG   SenderThread:47428 [sender.py:send():238] send: stats
+2024-07-11 18:20:57,006 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:57,006 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 2
+2024-07-11 18:20:57,006 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:57,006 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 2
+2024-07-11 18:20:57,006 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 3
+2024-07-11 18:20:57,007 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:57,007 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 3
+2024-07-11 18:20:57,007 DEBUG   SenderThread:47428 [sender.py:send():238] send: summary
+2024-07-11 18:20:57,007 INFO    SenderThread:47428 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2024-07-11 18:20:57,008 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:57,008 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 3
+2024-07-11 18:20:57,008 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 4
+2024-07-11 18:20:57,008 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:57,008 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 4
+2024-07-11 18:20:57,008 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:57,008 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 4
+2024-07-11 18:20:57,053 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:57,217 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 5
+2024-07-11 18:20:57,218 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:57,219 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:57,219 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 5
+2024-07-11 18:20:57,219 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:57,219 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 5
+2024-07-11 18:20:57,219 INFO    SenderThread:47428 [dir_watcher.py:finish():283] shutting down directory watcher
+2024-07-11 18:20:57,321 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:57,380 INFO    SenderThread:47428 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/config.yaml
+2024-07-11 18:20:57,381 INFO    SenderThread:47428 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-summary.json
+2024-07-11 18:20:57,381 INFO    SenderThread:47428 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/output.log
+2024-07-11 18:20:57,381 INFO    SenderThread:47428 [dir_watcher.py:finish():313] scan: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files
+2024-07-11 18:20:57,382 INFO    SenderThread:47428 [dir_watcher.py:finish():327] scan save: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-metadata.json wandb-metadata.json
+2024-07-11 18:20:57,382 INFO    SenderThread:47428 [dir_watcher.py:finish():327] scan save: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/requirements.txt requirements.txt
+2024-07-11 18:20:57,382 INFO    SenderThread:47428 [dir_watcher.py:finish():327] scan save: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-summary.json wandb-summary.json
+2024-07-11 18:20:57,382 INFO    SenderThread:47428 [dir_watcher.py:finish():327] scan save: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/output.log output.log
+2024-07-11 18:20:57,382 INFO    SenderThread:47428 [dir_watcher.py:finish():327] scan save: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/config.yaml config.yaml
+2024-07-11 18:20:57,383 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 6
+2024-07-11 18:20:57,383 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:57,384 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:57,384 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 6
+2024-07-11 18:20:57,384 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:57,384 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 6
+2024-07-11 18:20:57,385 INFO    SenderThread:47428 [file_pusher.py:finish():177] shutting down file pusher
+2024-07-11 18:20:57,486 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:57,486 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:57,589 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:57,589 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:57,692 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:57,693 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:57,796 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:57,796 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:57,897 INFO    Thread-13 :47428 [upload_job.py:push():137] Uploaded file /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/wandb-summary.json
+2024-07-11 18:20:57,899 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:57,899 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:57,914 INFO    Thread-12 :47428 [upload_job.py:push():137] Uploaded file /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/requirements.txt
+2024-07-11 18:20:57,953 INFO    Thread-14 :47428 [upload_job.py:push():137] Uploaded file /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/output.log
+2024-07-11 18:20:58,003 INFO    Thread-15 :47428 [upload_job.py:push():137] Uploaded file /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/files/config.yaml
+2024-07-11 18:20:58,006 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:58,006 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:58,108 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:58,108 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:58,206 INFO    Thread-7  :47428 [sender.py:transition_state():395] send defer: 7
+2024-07-11 18:20:58,207 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:58,207 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 7
+2024-07-11 18:20:58,207 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:58,207 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 7
+2024-07-11 18:20:58,212 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:58,369 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 8
+2024-07-11 18:20:58,369 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:58,370 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:58,370 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 8
+2024-07-11 18:20:58,371 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:58,371 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 8
+2024-07-11 18:20:58,371 INFO    SenderThread:47428 [sender.py:transition_state():395] send defer: 9
+2024-07-11 18:20:58,373 DEBUG   SenderThread:47428 [sender.py:send():238] send: final
+2024-07-11 18:20:58,373 DEBUG   SenderThread:47428 [sender.py:send():238] send: footer
+2024-07-11 18:20:58,373 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: defer
+2024-07-11 18:20:58,373 INFO    HandlerThread:47428 [handler.py:handle_request_defer():147] handle defer: 9
+2024-07-11 18:20:58,374 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: defer
+2024-07-11 18:20:58,374 INFO    SenderThread:47428 [sender.py:send_request_defer():391] handle sender defer: 9
+2024-07-11 18:20:58,472 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: poll_exit
+2024-07-11 18:20:58,473 DEBUG   SenderThread:47428 [sender.py:send_request():252] send_request: poll_exit
+2024-07-11 18:20:58,473 INFO    SenderThread:47428 [file_pusher.py:join():182] waiting for file pusher
+2024-07-11 18:20:58,834 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: get_summary
+2024-07-11 18:20:58,837 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: sampled_history
+2024-07-11 18:20:58,840 DEBUG   HandlerThread:47428 [handler.py:handle_request():130] handle_request: shutdown
+2024-07-11 18:20:58,840 INFO    HandlerThread:47428 [handler.py:finish():731] shutting down handler
+2024-07-11 18:20:59,373 INFO    WriterThread:47428 [datastore.py:close():281] close: /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240711_182046-201h52is/run-201h52is.wandb
+2024-07-11 18:20:59,832 INFO    SenderThread:47428 [sender.py:finish():1091] shutting down sender
+2024-07-11 18:20:59,833 INFO    SenderThread:47428 [file_pusher.py:finish():177] shutting down file pusher
+2024-07-11 18:20:59,833 INFO    SenderThread:47428 [file_pusher.py:join():182] waiting for file pusher
+2024-07-11 18:20:59,834 INFO    MainThread:47428 [internal.py:handle_exit():77] Internal process exited

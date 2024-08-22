@@ -3,7 +3,7 @@
 import torch
 import torchvision
 from transformers import BertForSequenceClassification, AdamW, get_scheduler
-
+from pytorch_metric_learning import losses
 
 class ToyNet(torch.nn.Module):
     def __init__(self, dim, gammas):
@@ -69,10 +69,44 @@ def get_sgd_optim(network, lr, weight_decay):
         momentum=0.9)
 
 
+
+
+class CustomResNet(torch.nn.Module):
+    # On a besoin de définir un nouveau modèle car on a besoin de changer la dernière couche pour le contrastive learning qui a besoin de l'embedddings
+    def __init__(self, arch, n_classes):
+        super(CustomResNet, self).__init__()
+        self.n_classes = n_classes
+
+        # Load the pre-trained ResNet model
+        if arch == "resnet18":
+            self.network = torchvision.models.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
+        elif arch == "resnet50":
+            self.network = torchvision.models.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
+            
+        self.feature_extractor = torch.nn.Sequential(*list(self.network.children())[:-1])
+        
+        # Replace the final fully connected layer to match the number of classes
+        self.fc = torch.nn.Linear(self.network.fc.in_features, self.n_classes)
+
+    def forward(self, x):
+        # Extract features (embeddings)
+        embeddings = self.feature_extractor(x)
+        embeddings = embeddings.view(embeddings.size(0), -1)  # Flatten the embeddings
+        
+        # Calculate the logits using the new fully connected layer
+        logits = self.fc(embeddings)
+        
+        return embeddings, logits
+    
+    
+
+
+
 class ERM(torch.nn.Module):
     def __init__(self, hparams, dataloader):
         super().__init__()
         self.hparams = dict(hparams)
+        self.cl_mode = self.hparams.get('cl_mode', 'bce') #contrastive learning mode (default bce, no contrastive)
         dataset = dataloader.dataset
         self.n_batches = len(dataloader)
         self.data_type = dataset.data_type
@@ -91,14 +125,18 @@ class ERM(torch.nn.Module):
         }
 
         if data_type == "images":
-            if arch == "resnet18":
+            # if arch == "resnet18":
 
-                self.network = torchvision.models.resnet.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
-            elif arch == "resnet50":
+            #     self.network = torchvision.models.resnet.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
+            # elif arch == "resnet50":
+            #     self.network = torchvision.models.resnet.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
+            
+            
 
-                self.network = torchvision.models.resnet.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
-            self.network.fc = torch.nn.Linear(
-                self.network.fc.in_features, self.n_classes)
+            # self.network.fc = torch.nn.Linear(self.network.fc.in_features, self.n_classes)
+            
+            self.network = CustomResNet(arch=arch, n_classes=self.n_classes)
+
 
             self.optimizer = optimizers['sgd'](
                 self.network,
@@ -113,47 +151,57 @@ class ERM(torch.nn.Module):
                     self.optimizer, T_max=num_training_steps, eta_min=0)
             else:
                 self.lr_scheduler = None
-
+            # if the dictionnary does not contain the key "cl_mode" or contains the key with value "classic"
+           
             self.loss = torch.nn.CrossEntropyLoss(reduction="none")
+            
+            self.loss_cl = losses.SupConLoss(temperature=0.07) 
 
-        elif data_type == "text":
-            self.network = BertWrapper(
-                BertForSequenceClassification.from_pretrained(
-                    'bert-base-uncased', num_labels=self.n_classes))
-            self.network.zero_grad()
-            self.optimizer = optimizers[text_optim](
-                self.network,
-                self.hparams['lr'],
-                self.hparams['weight_decay'])
+        # elif data_type == "text":
+        #     self.network = BertWrapper(
+        #         BertForSequenceClassification.from_pretrained(
+        #             'bert-base-uncased', num_labels=self.n_classes))
+        #     self.network.zero_grad()
+        #     self.optimizer = optimizers[text_optim](
+        #         self.network,
+        #         self.hparams['lr'],
+        #         self.hparams['weight_decay'])
 
-            num_training_steps = self.hparams["num_epochs"] * self.n_batches
-            self.lr_scheduler = get_scheduler(
-                "linear",
-                optimizer=self.optimizer,
-                num_warmup_steps=0,
-                num_training_steps=num_training_steps)
-            self.loss = torch.nn.CrossEntropyLoss(reduction="none")
+        #     num_training_steps = self.hparams["num_epochs"] * self.n_batches
+        #     self.lr_scheduler = get_scheduler(
+        #         "linear",
+        #         optimizer=self.optimizer,
+        #         num_warmup_steps=0,
+        #         num_training_steps=num_training_steps)
+        #     self.loss = torch.nn.CrossEntropyLoss(reduction="none")
 
-        elif data_type == "toy":
-            gammas = (
-                self.hparams['gamma_spu'],
-                self.hparams['gamma_core'],
-                self.hparams['gamma_noise'])
+        # elif data_type == "toy":
+        #     gammas = (
+        #         self.hparams['gamma_spu'],
+        #         self.hparams['gamma_core'],
+        #         self.hparams['gamma_noise'])
 
-            self.network = ToyNet(self.hparams['dim_noise'] + 2, gammas)
-            self.optimizer = optimizers['sgd'](
-                self.network,
-                self.hparams['lr'],
-                self.hparams['weight_decay'])
-            self.lr_scheduler = None
-            self.loss = lambda x, y: \
-                torch.nn.BCEWithLogitsLoss(reduction="none")(x.squeeze(),
-                                                             y.float())
+        #     self.network = ToyNet(self.hparams['dim_noise'] + 2, gammas)
+        #     self.optimizer = optimizers['sgd'](
+        #         self.network,
+        #         self.hparams['lr'],
+        #         self.hparams['weight_decay'])
+        #     self.lr_scheduler = None
+        #     self.loss = lambda x, y: \
+        #         torch.nn.BCEWithLogitsLoss(reduction="none")(x.squeeze(),
+        #                                                      y.float())
 
         self.cuda()
 
     def compute_loss_value_(self, i, x, y, g, epoch):
-        return self.loss(self.network(x), y).mean()
+        if self.cl_mode == 'bce':
+            return self.loss(self.network(x)[1], y).mean()
+        elif self.cl_mode == 'bce+supcon':
+            # print bce and supcon losses values :
+            print("BCE/CL: ")
+            print(self.loss(self.network(x)[1], y).mean())
+            print(self.loss_cl(self.network(x)[0], y).mean())
+            return self.loss(self.network(x)[1], y).mean() * (1-self.hparams['alpha']) + self.loss_cl(self.network(x)[0], y).mean() * self.hparams['alpha']
 
     def update(self, i, x, y, g, epoch):
         x, y, g = x.cuda(), y.cuda(), g.cuda()
@@ -180,7 +228,7 @@ class ERM(torch.nn.Module):
         return loss_value
 
     def predict(self, x):
-        return self.network(x)
+        return self.network(x)[1] #self.network(x)[1] renvoie maintenant les logits
 
     def accuracy(self, loader):
         nb_groups = loader.dataset.nb_groups

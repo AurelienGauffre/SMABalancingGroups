@@ -27,13 +27,13 @@ search:
     conditions: []
     forbiddens: []
     hyperparameters:
-    - default: 64
+    - default: 16
       log: true
       lower: 8
       name: batch_size
       q: null
       type: uniform_int
-      upper: 64
+      upper: 32
     - default: 0.001
       log: true
       lower: 0.0001
