@@ -234,14 +234,14 @@ if __name__ == "__main__":
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
     for cl_mode in args.cl_modes:
         args.cl_mode = cl_mode
-        for alpha in args.alphas:
-            args.alpha = alpha
+        for K in args.SMA.Ks:
+            args.SMA.K = K
             for dataset_name in args.SMA.names:
                 args.SMA.name = dataset_name
                 # Define your search and execute it
-
-                for K in args.SMA.Ks:
-                    args.SMA.K = K
+                for alpha in args.alphas:
+                    args.alpha = alpha
+              
                     for mu in args.SMA.mus:
 
                         if args.SMA.mode == 'binary':
