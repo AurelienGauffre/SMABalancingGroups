@@ -34,7 +34,7 @@ new_reset: False
 
 
 cl_modes: ['bce','bce+supcon'] # "bce+supcon"
-alphas: [0,.1,.2,.5,.9,.95,1] #alpha * supcon + (1-alpha) bce
+alphas: [0,0.05,.1,.2,.5,.9,.95,1] #alpha * supcon + (1-alpha) bce
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
@@ -43,7 +43,7 @@ SMA:
   split_seeds: [0]
   names:  ['medical-leaf'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [4]
-  mus: [0.05]
+  mus: [0.1]
   methods: ['erm']
 
 
