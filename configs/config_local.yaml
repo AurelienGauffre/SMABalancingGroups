@@ -40,7 +40,7 @@ alphas: [0,.1,.2,.5,.9,.95,1] #alpha * supcon + (1-alpha) bce
 SMA:
   mode: 'classic'
   img_size: 64
-  split_seeds: [0]
+  split_seeds: [1,2,3]
   names:  ['medical-leaf'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [4]
   mus: [0.05]
