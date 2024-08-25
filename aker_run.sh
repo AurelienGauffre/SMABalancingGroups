@@ -35,7 +35,7 @@ EOF
 
 # Append the nohup commands for each job to the SLURM script
 for JOB_NAME in "${JOB_NAMES[@]}"; do
-    echo "nohup python3 train_deephyper.py --config config${JOB_NAME}.yaml &" >> "./run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh"
+    echo "nohup python3 train_cl.py --config config${JOB_NAME}.yaml &" >> "./run_script_OAR/auto_runoar${JOB_NAME_FILE}.sh"
 done
 
 
