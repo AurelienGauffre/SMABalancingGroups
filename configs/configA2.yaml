@@ -20,7 +20,7 @@ arch: "resnet18"
 
 
 n_HBO_runs: 3
-n_eval_init_seed: 1
+n_eval_init_seed: 3
 
 num_epochs: 17
 batch_size: 16
@@ -40,7 +40,7 @@ alphas: [0,0.05,0.1,0.2] #alpha * supcon + (1-alpha) bce
 SMA:
   mode: 'classic'
   img_size: 224
-  split_seeds: [1,2,3]
+  split_seeds: [4,5,6]
   names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
   Ks: [2,4,8]
   mus: [0.1]
