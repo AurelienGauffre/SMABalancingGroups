@@ -59,6 +59,8 @@ class MoCo(nn.Module):
         return key
 
 def main():
+    os.environ["WANDB__SERVICE_WAIT"] = "500"
+
     args = parse_args()
     config = OmegaConf.load(os.path.join('configs', args.config))
 
