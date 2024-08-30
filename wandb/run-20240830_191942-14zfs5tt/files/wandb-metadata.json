@@ -1,0 +1,27 @@
+{
+    "os": "Linux-5.15.0-119-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2024-08-30T17:19:51.054490",
+    "startedAt": "2024-08-30T17:19:42.089650",
+    "docker": null,
+    "gpu": "NVIDIA T600 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "--config",
+        "configZ1.yaml"
+    ],
+    "state": "running",
+    "program": "/home/gauffrea/Projects/SMABalancingGroups/pretrain.py",
+    "codePath": "pretrain.py",
+    "git": {
+        "remote": "https://github.com/AurelienGauffre/SMABalancingGroups",
+        "commit": "5ade91a9add3364b3cf96e4d283bd310183f278c"
+    },
+    "email": "aurelien.gauffre@gmail.com",
+    "root": "/home/gauffrea/Projects/SMABalancingGroups",
+    "host": "PreciGauffre",
+    "username": "gauffrea",
+    "executable": "/usr/bin/python3"
+}
