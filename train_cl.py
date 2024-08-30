@@ -20,6 +20,9 @@ from deephyper.evaluator.callback import TqdmCallback
 from deephyper.search.hps import CBO
 import ray
 
+from lightly.models import utils as lightly_utils
+
+
 from utils import Tee, flatten_dictionary_for_wandb, results_to_log_dict
 
 import wandb
@@ -27,6 +30,7 @@ import wandb
 
 def randl(l_):
     return l_[torch.randperm(len(l_))[0]]
+
 
 os.environ["WANDB__SERVICE_WAIT"] = "500"
 
@@ -55,14 +59,16 @@ def run(job=None):
 
     if 'SMA' not in args:
         args.SMA = None
-    wandb.init(project=project_name, config=flatten_dictionary_for_wandb(dict(args)))
+    wandb.init(project=project_name,
+               config=flatten_dictionary_for_wandb(dict(args)))
     print(args)
     print(f'Method: {args.method}')
     # print(args)
     start_time = time.time()
     torch.manual_seed(args["init_seed"])
     np.random.seed(args["init_seed"])
-    loaders = get_loaders(args["data_path"], args["dataset"], int(args["batch_size"]), args["method"], args.SMA)
+    loaders = get_loaders(args["data_path"], args["dataset"], int(
+        args["batch_size"]), args["method"], args.SMA)
 
     sys.stdout = Tee(os.path.join(
         args["output_dir"], f'seed_{args["hparams_seed"]}_{args["init_seed"]}.out'), sys.stdout)
@@ -75,15 +81,26 @@ def run(job=None):
         f"seed_{args['hparams_seed']}_{args['init_seed']}.best.pt")
     result_file = os.path.join(
         args["output_dir"], f"{args['wandb_project']}.csv")
-    model = {
+
+    model_class = {
         "erm": models.ERM,
-        "suby": models.ERM,
-        "subg": models.ERM,
-        "rwy": models.ERM,
-        "rwg": models.ERM,
-        "dro": models.GroupDRO,
-        "jtt": models.JTT
-    }[args["method"]](args, loaders["tr"])
+            "suby": models.ERM,
+            "subg": models.ERM,
+            "rwy": models.ERM,
+            "rwg": models.ERM,
+            "dro": models.GroupDRO,
+            "jtt": models.JTT
+    }[args["method"]]
+
+
+    # Load pretrained weights if specified
+    if args.get("pretraining_name"):
+        pretrained_path = os.path.join(
+            "checkpoints", f"{args['pretraining_name']}.ckpt")
+        backbone = lightly_utils.load_from_state_dict(pretrained_path)
+        model = model_class(args, loaders["tr"], backbone=backbone)
+    else:
+        model = model_class(args, loaders["tr"])
 
     last_epoch = 0
     best_selec_val = float('-inf')
@@ -116,32 +133,37 @@ def run(job=None):
         for i, x, y, g in loaders["tr"]:
             model.update(i, x, y, g, epoch)
 
-        result = {"epoch": epoch, "time": time.time() - start_time, "lr": model.optimizer.param_groups[0]["lr"]}
+        result = {"epoch": epoch, "time": time.time() - start_time,
+                                                    "lr": model.optimizer.param_groups[0]["lr"]}
         if epoch % args.eval_every_n_epochs == 0:
             for loader_name, loader in loaders.items():
-                avg_acc, group_accs = model.accuracy(loader) # 
+                avg_acc, group_accs = model.accuracy(loader) #
                 result["acc_" + loader_name] = group_accs
-                result["avg_acc_" + loader_name] = avg_acc # micro average 
-                result["mean_grp_acc_" + loader_name] = np.mean(group_accs) # this one does not take into account the size of the group, this is a "macro" average
+                result["avg_acc_" + loader_name] = avg_acc # micro average
+                result["mean_grp_acc_" + loader_name] = np.mean(group_accs)  # this one does not take into account the size of the group, this is a "macro" average
                 result["worst_acc_" + loader_name] = min(group_accs)
                 if args.SMA.K**2 >= 3:
-                    result["worst3_acc_" + loader_name] = np.mean(sorted(group_accs)[:3])
+                    result["worst3_acc_" + \
+                        loader_name] = np.mean(sorted(group_accs)[:3])
                 if args.SMA.K**2 >= 5:
-                    result["worst5_grp_acc_" + loader_name] = np.mean(sorted(group_accs)[:5])
-                
+                    result["worst5_grp_acc_" + \
+                        loader_name] = np.mean(sorted(group_accs)[:5])
+
             # print("DEBUG: ", result["acc_va"])
             # print("DEBUG AVG: ", result["avg_acc_va"])
             selec_metrics = {
                 "worst_acc_va": min(result["acc_va"]),
                 "avg_acc_va": result["avg_acc_va"],
                 "mean_grp_acc_va": result["mean_grp_acc_va"],
-                
+
             }
             if args.SMA.K**2 >= 3:
-                selec_metrics["worst3_acc_va"] = np.mean(sorted(result["acc_va"])[:3])
+                selec_metrics["worst3_acc_va"] = np.mean(
+                    sorted(result["acc_va"])[:3])
             if args.SMA.K**2 >= 5:
-                selec_metrics["worst5_grp_acc_va"] = np.mean(sorted(result["acc_va"])[:5])
-                
+                selec_metrics["worst5_grp_acc_va"] = np.mean(
+                    sorted(result["acc_va"])[:5])
+
             selec_value = selec_metrics[args["selector"]]
 
             if selec_value >= best_selec_val:
@@ -167,8 +189,7 @@ def run(job=None):
                 if result["worst5_grp_acc_va"] >= best_worst5_grp_acc_va:
                     best_worst5_grp_acc_va = result['worst5_grp_acc_va']
                     best_worst5_grp_acc_te = result['worst5_grp_acc_te']
-                
-                
+
         # model.save(checkpoint_file) # Deactivate saving model for now
         # result["args"] = OmegaConf.to_container(result["args"], resolve=True)
         # print(json.dumps(result))
@@ -188,7 +209,7 @@ def run(job=None):
     if args.SMA.K**2 >= 5:
         wandb.run.summary["best_worst5_grp_acc_va"] = best_worst5_grp_acc_va
         wandb.run.summary["best_worst5_grp_acc_te"] = best_worst5_grp_acc_te
-        
+
     wandb.finish()
     return best_mean_group_acc_va
 
@@ -219,7 +240,6 @@ def get_ray_evaluator(run_function):
 
     return evaluator
 
-
 if __name__ == "__main__":
 
     args_command_line = parse_args()
@@ -230,7 +250,8 @@ if __name__ == "__main__":
     args["config_name"] = args_command_line.config
     args["n_gpus"] = torch.cuda.device_count()
     # if args.SMA.mode is not defined, we set it to 'classic':
-    args.SMA.mode = 'classic' if ('SMA' in args) and ('mode' not in args.SMA) else args.SMA.mode
+    args.SMA.mode = 'classic' if ('SMA' in args) and (
+        'mode' not in args.SMA) else args.SMA.mode
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
     for cl_mode in args.cl_modes:
         args.cl_mode = cl_mode
@@ -241,7 +262,7 @@ if __name__ == "__main__":
                 # Define your search and execute it
                 for alpha in args.alphas:
                     args.alpha = alpha
-              
+
                     for mu in args.SMA.mus:
 
                         if args.SMA.mode == 'binary':
@@ -257,35 +278,44 @@ if __name__ == "__main__":
 
                                 args.group = f"K={args.SMA.K}_{args.method}"
                                 args.group_best = f"{args.SMA.name}_clmode={args.cl_mode}_alpha={args.alpha}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}_seed={args.SMA.split_seed}"
-                                if "selector" in args.wandb_project :
-                                    #add the selector at the start of the string
+                                if "selector" in args.wandb_project:
+                                    # add the selector at the start of the string
                                     args.group_best = f"{args.selector}_{args.group_best}"
-                                ##### HBO PART
+                                # HBO PART
                                 problem = HpProblem()
-                                problem.add_hyperparameter((1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
+                                problem.add_hyperparameter(
+                                    (1e-4, 5e-3, "log-uniform"), "lr", default_value=1e-3)
 
                                 if "selector" in args.wandb_project:
-                                    problem.add_hyperparameter((8, 32, "log-uniform"), "batch_size", default_value=16)
-                                    problem.add_hyperparameter((1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
+                                    problem.add_hyperparameter(
+                                        (8, 32, "log-uniform"), "batch_size", default_value=16)
+                                    problem.add_hyperparameter(
+                                        (1e-4, 1.0, "log-uniform"), "weight_decay", default_value=1e-3)
                                 # problem.add_hyperparameter((1, 60), "T", default_value=40)
                                 if method == 'jtt':
-                                    problem.add_hyperparameter([1, 3, 5], "T", default_value=3)
+                                    problem.add_hyperparameter(
+                                        [1, 3, 5], "T", default_value=3)
                                     if "selector" in args.wandb_project:
-                                        problem.add_hyperparameter([4,20,50,100], "up", default_value=20)
+                                        problem.add_hyperparameter([4, 20,50,100], "up", default_value=20)
 
                                 evaluator = get_ray_evaluator(run)
                                 hbo_log_dir = f"./outputs/hbo_logdir/{args.group_best}"
-                                search = CBO(problem, evaluator, verbose=1, random_state=42, log_dir=hbo_log_dir)
-                                print("Number of workers: ", evaluator.num_workers)
+                                search = CBO(
+                                    problem, evaluator, verbose=1, random_state=42, log_dir=hbo_log_dir)
+                                print("Number of workers: ",
+                                      evaluator.num_workers)
                                 print(problem.default_configuration)
-                                print(f"GPU available: {torch.cuda.is_available()}")
-                                results = search.search(max_evals=args.n_HBO_runs)
+                                print(
+                                    f"GPU available: {torch.cuda.is_available()}")
+                                results = search.search(
+                                    max_evals=args.n_HBO_runs)
                                 # print(results['objective'])
                                 # print(results)
 
                                 i_max = results.objective.argmax()
                                 best_config = results.iloc[i_max][:-3].to_dict()
-                                best_config = {k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
+                                best_config = {
+                                    k[2:]: v for k, v in best_config.items() if k.startswith("p:")}
 
                                 print(
                                     f"The best configuration found by DeepHyper has an accuracy {results['objective'].iloc[i_max]:.3f}, \n"
@@ -296,7 +326,8 @@ if __name__ == "__main__":
                                     print(f"{k}: {v}")
 
                                     # now we use the best hyper parameters to rerun the model with different init seed :
-                                print(f" ####  NOW RUNNING THE BEST CONFIGURATION WITH {args.n_eval_init_seed} DIFFERENT SEEDS ####")
+                                print(
+                                    f" ####  NOW RUNNING THE BEST CONFIGURATION WITH {args.n_eval_init_seed} DIFFERENT SEEDS ####")
                                 for i in range(args.n_eval_init_seed)[
                                         ::-1]:  # -1 to have reverse order to 0 in the end for next outer loop
                                     args["init_seed"] = i
