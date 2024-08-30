@@ -101,7 +101,7 @@ class SMA(GroupDataset):
     """
     SMA dataset
     """
-    def __init__(self, data_path, split, subsample_what=None, duplicates=None, args_SMA=None):
+    def __init__(self, data_path, split, subsample_what=None, duplicates=None, args_SMA=None,custom_transform=None):
         root = os.path.join(data_path, args_SMA.name)
 
         meta_data_folders = f'./{data_path}//'
@@ -123,21 +123,23 @@ class SMA(GroupDataset):
                                   metadata_csv_path=metadata_csv_path
                                   )
 
-
-        transform = transforms.Compose(
-            [
-                transforms.Resize(
-                    (
-                        args_SMA.img_size,
-                        args_SMA.img_size,
-                    )
-                ),
-                #transforms.CenterCrop(224), #todo no crop ?
-                transforms.ToTensor(),
-                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
-                # todo compute the statistics for each SMA dataset
-            ]
-        )
+        if custom_transform is not None:
+            transform = custom_transform
+        else:
+            transform = transforms.Compose(
+                [
+                    transforms.Resize(
+                        (
+                            args_SMA.img_size,
+                            args_SMA.img_size,
+                        )
+                    ),
+                    #transforms.CenterCrop(224), #todo no crop ?
+                    transforms.ToTensor(),
+                    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+                    # todo compute the statistics for each SMA dataset
+                ]
+            )
         super().__init__(split, root, metadata_csv_path, transform, subsample_what, duplicates)
         self.data_type = "images"
 
@@ -362,7 +364,7 @@ class Toy(GroupDataset):
         return i, X, y, g
 
 
-def get_loaders(data_path, dataset_name, batch_size, method="erm", args_SMA=None, duplicates=None):
+def get_loaders(data_path, dataset_name, batch_size, method="erm", args_SMA=None, duplicates=None,transform=None):
     Dataset = {
         "SMA": SMA,
         "waterbirds": Waterbirds,
@@ -378,7 +380,7 @@ def get_loaders(data_path, dataset_name, batch_size, method="erm", args_SMA=None
     if dataset_name == "SMA" and args_SMA is None:
         raise ValueError("args_SMA must be provided for SMA dataset in the config file (args.SMA must be defined)")
 
-    def dl(dataset, bs, shuffle, weights):
+    def dl(dataset, bs, shuffle, weights,transform=None):
         if weights is not None:
             sampler = torch.utils.data.WeightedRandomSampler(weights, len(weights))
         else:
@@ -401,7 +403,7 @@ def get_loaders(data_path, dataset_name, batch_size, method="erm", args_SMA=None
     if dataset_name != "SMA":
         dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates)
     else:
-        dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates, args_SMA)
+        dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates, args_SMA,custom_transform=transform)
 
     if method == "rwg" or method == "dro":
         weights_tr = dataset_tr.wg

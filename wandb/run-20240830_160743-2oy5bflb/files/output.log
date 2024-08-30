@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "pretrain.py", line 92, in <module>
+    main()
+  File "pretrain.py", line 30, in main
+    model = lightly.models.SimSiam(config.backbone, num_ftrs=512)
+AttributeError: module 'lightly' has no attribute 'models'
+Traceback (most recent call last):
+  File "pretrain.py", line 92, in <module>
+    main()
+  File "pretrain.py", line 30, in main
+    model = lightly.models.SimSiam(config.backbone, num_ftrs=512)
+AttributeError: module 'lightly' has no attribute 'models'

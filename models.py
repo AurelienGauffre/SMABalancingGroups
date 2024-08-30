@@ -73,10 +73,10 @@ def get_sgd_optim(network, lr, weight_decay):
 
 class CustomResNet(torch.nn.Module):
     # On a besoin de définir un nouveau modèle car on a besoin de changer la dernière couche pour le contrastive learning qui a besoin de l'embedddings
-    def __init__(self, arch, n_classes):
+    def __init__(self, arch, n_classes,contrastive=False):
         super(CustomResNet, self).__init__()
         self.n_classes = n_classes
-
+        self.contrastive = False
         # Load the pre-trained ResNet model
         if arch == "resnet18":
             self.network = torchvision.models.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
@@ -95,6 +95,8 @@ class CustomResNet(torch.nn.Module):
         
         # Calculate the logits using the new fully connected layer
         logits = self.fc(embeddings)
+        if self.contrastive:
+            return embeddings
         
         return embeddings, logits
     
@@ -103,7 +105,7 @@ class CustomResNet(torch.nn.Module):
 
 
 class ERM(torch.nn.Module):
-    def __init__(self, hparams, dataloader):
+    def __init__(self, hparams, dataloader,contrastive=False):
         super().__init__()
         self.hparams = dict(hparams)
         self.cl_mode = self.hparams.get('cl_mode', 'bce') #contrastive learning mode (default bce, no contrastive)
@@ -115,6 +117,7 @@ class ERM(torch.nn.Module):
         self.n_examples = len(dataset)
         self.last_epoch = 0
         self.best_selec_val = 0
+        self.contrastive = contrastive
         self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
 
     def init_model_(self, data_type, text_optim="sgd", arch="resnet18"):
@@ -135,7 +138,7 @@ class ERM(torch.nn.Module):
 
             # self.network.fc = torch.nn.Linear(self.network.fc.in_features, self.n_classes)
             
-            self.network = CustomResNet(arch=arch, n_classes=self.n_classes)
+            self.network = CustomResNet(arch=arch, n_classes=self.n_classes, contrastive=self.contrastive)
 
 
             self.optimizer = optimizers['sgd'](
@@ -199,8 +202,6 @@ class ERM(torch.nn.Module):
         elif self.cl_mode == 'bce+supcon':
             # print bce and supcon losses values :
             print("BCE/CL: ")
-            print(self.loss(self.network(x)[1], y).mean())
-            print(self.loss_cl(self.network(x)[0], y).mean())
             return self.loss(self.network(x)[1], y).mean() * (1-self.hparams['alpha']) + self.loss_cl(self.network(x)[0], y).mean() * self.hparams['alpha']
 
     def update(self, i, x, y, g, epoch):

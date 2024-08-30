@@ -1,0 +1,105 @@
+Metadata file does not exist. Creating it...
+Classical mode : we keep K=4 classes and K=4 style
+########### CSV file ./data//metadata_medical-leaf_K=4_mu=0.1_splitseed=4.csv contains the following splits, styles and classes distribution:
+split  style                  class
+0      chinese_art            Amaranthus Viridis (Arive-Dantu)                61
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)     1
+                              Punica Granatum (Pomegranate)                    3
+                              Syzygium Jambos (Rose Apple)                     2
+       dawn                   Amaranthus Viridis (Arive-Dantu)                 6
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    14
+                              Punica Granatum (Pomegranate)                    3
+                              Syzygium Jambos (Rose Apple)                     2
+       prehistorian_painting  Amaranthus Viridis (Arive-Dantu)                 6
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)     1
+                              Punica Granatum (Pomegranate)                   35
+                              Syzygium Jambos (Rose Apple)                     2
+       rayonism               Amaranthus Viridis (Arive-Dantu)                 6
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)     1
+                              Punica Granatum (Pomegranate)                    3
+                              Syzygium Jambos (Rose Apple)                    23
+1      chinese_art            Amaranthus Viridis (Arive-Dantu)                24
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    11
+                              Punica Granatum (Pomegranate)                   16
+                              Syzygium Jambos (Rose Apple)                    11
+       dawn                   Amaranthus Viridis (Arive-Dantu)                24
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    11
+                              Punica Granatum (Pomegranate)                   16
+                              Syzygium Jambos (Rose Apple)                    11
+       prehistorian_painting  Amaranthus Viridis (Arive-Dantu)                24
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    11
+                              Punica Granatum (Pomegranate)                   16
+                              Syzygium Jambos (Rose Apple)                    11
+       rayonism               Amaranthus Viridis (Arive-Dantu)                24
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    11
+                              Punica Granatum (Pomegranate)                   16
+                              Syzygium Jambos (Rose Apple)                    11
+2      chinese_art            Amaranthus Viridis (Arive-Dantu)                37
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    17
+                              Punica Granatum (Pomegranate)                   24
+                              Syzygium Jambos (Rose Apple)                    17
+       dawn                   Amaranthus Viridis (Arive-Dantu)                37
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    17
+                              Punica Granatum (Pomegranate)                   24
+                              Syzygium Jambos (Rose Apple)                    17
+       prehistorian_painting  Amaranthus Viridis (Arive-Dantu)                37
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    17
+                              Punica Granatum (Pomegranate)                   24
+                              Syzygium Jambos (Rose Apple)                    17
+       rayonism               Amaranthus Viridis (Arive-Dantu)                37
+                              Muntingia Calabura (Jamaica Cherry-Gasagase)    17
+                              Punica Granatum (Pomegranate)                   24
+                              Syzygium Jambos (Rose Apple)                    17
+dtype: int64
+Traceback (most recent call last):
+  File "pretrain.py", line 92, in <module>
+    main()
+  File "pretrain.py", line 25, in main
+    loaders = get_loaders(config.data_path, config.dataset, config.batch_size, config.method, config.SMA)
+  File "/home/gauffrea/Projects/SMABalancingGroups/datasets.py", line 404, in get_loaders
+    dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates, args_SMA)
+  File "/home/gauffrea/Projects/SMABalancingGroups/datasets.py", line 131, in __init__
+    args_SMA.img_size,
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 353, in __getattr__
+    self._format_and_raise(
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/base.py", line 190, in _format_and_raise
+    format_and_raise(
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/_utils.py", line 821, in format_and_raise
+    _raise(ex, cause)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/_utils.py", line 719, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set end OC_CAUSE=1 for full backtrace
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 351, in __getattr__
+    return self._get_impl(key=key, default_value=_DEFAULT_MARKER_)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 438, in _get_impl
+    node = self._get_node(key=key, throw_on_missing_key=True)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 470, in _get_node
+    raise ConfigKeyError(f"Missing key {key}")
+omegaconf.errors.ConfigAttributeError: Missing key img_size
+    full_key: SMA.img_size
+    object_type=dict
+Traceback (most recent call last):
+  File "pretrain.py", line 92, in <module>
+    main()
+  File "pretrain.py", line 25, in main
+    loaders = get_loaders(config.data_path, config.dataset, config.batch_size, config.method, config.SMA)
+  File "/home/gauffrea/Projects/SMABalancingGroups/datasets.py", line 404, in get_loaders
+    dataset_tr = Dataset(data_path, "tr", subsample_what, duplicates, args_SMA)
+  File "/home/gauffrea/Projects/SMABalancingGroups/datasets.py", line 131, in __init__
+    args_SMA.img_size,
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 353, in __getattr__
+    self._format_and_raise(
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/base.py", line 190, in _format_and_raise
+    format_and_raise(
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/_utils.py", line 821, in format_and_raise
+    _raise(ex, cause)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/_utils.py", line 719, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set end OC_CAUSE=1 for full backtrace
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 351, in __getattr__
+    return self._get_impl(key=key, default_value=_DEFAULT_MARKER_)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 438, in _get_impl
+    node = self._get_node(key=key, throw_on_missing_key=True)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/omegaconf/dictconfig.py", line 470, in _get_node
+    raise ConfigKeyError(f"Missing key {key}")
+omegaconf.errors.ConfigAttributeError: Missing key img_size
+    full_key: SMA.img_size
+    object_type=dict

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "pretrain.py", line 102, in <module>
+    main()
+  File "pretrain.py", line 28, in main
+    model = {
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 120, in __init__
+    self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
+KeyError: 'arch'
+Traceback (most recent call last):
+  File "pretrain.py", line 102, in <module>
+    main()
+  File "pretrain.py", line 28, in main
+    model = {
+  File "/home/gauffrea/Projects/SMABalancingGroups/models.py", line 120, in __init__
+    self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
+KeyError: 'arch'

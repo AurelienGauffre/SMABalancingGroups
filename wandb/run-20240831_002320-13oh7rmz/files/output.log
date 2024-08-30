@@ -1,0 +1,15 @@
+Metadata file does not exist. Creating it...
+Classical mode : we keep K=16 classes and K=16 style
+########### CSV file ./data//metadata_medical-leaf_K=16_mu=0.2_splitseed=0.csv contains the following splits, styles and classes distribution:
+split  style                 class
+0      abstract_illusionism  Amaranthus Viridis (Arive-Dantu)              61
+                             Artocarpus Heterophyllus (Jackfruit)           3
+                             Basella Alba (Basale)                          7
+                             Carissa Carandas (Karanda)                     5
+                             Citrus Limon (Lemon)                           5
+                                                                           ..
+2      wave                  Pongamia Pinnata (Indian Beech)               18
+                             Punica Granatum (Pomegranate)                 24
+                             Santalum Album (Sandalwood)                   17
+                             Syzygium Jambos (Rose Apple)                  17
+                             Tabernaemontana Divaricata (Crape Jasmine)    17
