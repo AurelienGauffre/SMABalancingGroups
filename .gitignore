@@ -5,3 +5,7 @@ debug
 *.ipynb
 figs
 *.png
+# ignore the folder checkpoint 
+checkpoint
+# ignore the folder data
+data
