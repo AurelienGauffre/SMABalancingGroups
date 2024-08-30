@@ -2,7 +2,7 @@ wandb_project: SMA_cl_pretrain
 pretraining_name: simsiam1
 data_path: 'data'
 dataset: 'SMA'
-loss: 'simsiam'  # Options: simsiam, moco, swav
+loss: 'moco'  # Options: simsiam, moco, swav
 backbone: 'resnet50'
 input_size: 224
 vf_prob: 0.5  # Vertical flip probability
