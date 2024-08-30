@@ -9,3 +9,4 @@ figs
 checkpoint
 # ignore the folder data
 data
+wandb

@@ -21,3 +21,29 @@ config: {'wandb_project': 'SMA_cl_pretrain', 'pretraining_name': 'simsiam1', 'da
 2024-08-31 00:23:25,270 INFO    MainThread:29648 [wandb_run.py:_redirect():1695] Redirecting console.
 2024-08-31 00:23:25,272 INFO    MainThread:29648 [wandb_run.py:_redirect():1751] Redirects installed.
 2024-08-31 00:23:25,273 INFO    MainThread:29648 [wandb_init.py:init():619] run started, returning control to user process
+2024-08-31 00:27:01,934 INFO    MainThread:29648 [wandb_run.py:_atexit_cleanup():1786] got exitcode: 1
+2024-08-31 00:27:01,935 INFO    MainThread:29648 [wandb_run.py:_restore():1758] restore
+2024-08-31 00:27:04,109 INFO    MainThread:29648 [wandb_run.py:_wait_for_finish():1916] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 843
+  total_bytes: 843
+}
+
+2024-08-31 00:27:05,578 INFO    MainThread:29648 [wandb_run.py:_wait_for_finish():1916] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 843
+  total_bytes: 843
+}
+
+2024-08-31 00:27:06,367 INFO    MainThread:29648 [wandb_run.py:_wait_for_finish():1916] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 843
+  total_bytes: 15033
+}
+
