@@ -28,7 +28,7 @@ class SimSiam(nn.Module):
     def __init__(self, backbone):
         super().__init__()
         self.backbone = backbone
-        self.projection_head = SimSiamProjectionHead(512, 512, 128)
+        self.projection_head = SimSiamProjectionHead(2048, 2048, 128)
         self.prediction_head = SimSiamPredictionHead(128, 64, 128)
 
     def forward(self, x):
@@ -42,7 +42,7 @@ class MoCo(nn.Module):
     def __init__(self, backbone):
         super().__init__()
         self.backbone = backbone
-        self.projection_head = MoCoProjectionHead(512, 512, 128)
+        self.projection_head = MoCoProjectionHead(2048, 2048, 128)
         self.backbone_momentum = copy.deepcopy(self.backbone)
         self.projection_head_momentum = copy.deepcopy(self.projection_head)
         deactivate_requires_grad(self.backbone_momentum)
