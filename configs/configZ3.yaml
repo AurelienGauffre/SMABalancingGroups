@@ -19,6 +19,6 @@ SMA:
   mode: 'classic'
   K: 16
   mu: 0.2
-  name: 'medical-leaf'
+  name: 'texture-dtd'
   split_seed: 0
   img_size: 224
