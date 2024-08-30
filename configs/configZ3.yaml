@@ -1,0 +1,24 @@
+wandb_project: SMA_cl_pretrain
+pretraining_name: simsiam1
+data_path: 'data'
+dataset: 'SMA'
+loss: 'simsiam'  # Options: simsiam, moco, swav
+backbone: 'resnet50'
+input_size: 224
+vf_prob: 0.5  # Vertical flip probability
+rr_prob: 0.5  # Random rotation probability
+batch_size: 256
+num_epochs: 100
+lr: 0.05
+momentum: 0.9
+weight_decay: 1e-4
+method: 'erm'
+arch: 'resnet50'
+
+SMA:
+  mode: 'classic'
+  K: 16
+  mu: 0.2
+  name: 'texture-dtd'
+  split_seed: 0
+  img_size: 224
