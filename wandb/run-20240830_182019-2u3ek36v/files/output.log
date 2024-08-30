@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "pretrain.py", line 102, in <module>
+    main()
+  File "pretrain.py", line 34, in main
+    }[args["method"]](args, loaders["tr"],contrastive=True)
+TypeError: 'Namespace' object is not subscriptable
+Traceback (most recent call last):
+  File "pretrain.py", line 102, in <module>
+    main()
+  File "pretrain.py", line 34, in main
+    }[args["method"]](args, loaders["tr"],contrastive=True)
+TypeError: 'Namespace' object is not subscriptable

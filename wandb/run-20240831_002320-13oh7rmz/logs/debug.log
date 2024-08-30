@@ -1,0 +1,23 @@
+2024-08-31 00:23:20,623 INFO    MainThread:29648 [wandb_setup.py:_flush():71] setting env: {'mode': 'online'}
+2024-08-31 00:23:20,624 INFO    MainThread:29648 [wandb_setup.py:_flush():71] setting login settings: {}
+2024-08-31 00:23:20,624 INFO    MainThread:29648 [wandb_init.py:_log_setup():371] Logging user logs to /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240831_002320-13oh7rmz/logs/debug.log
+2024-08-31 00:23:20,624 INFO    MainThread:29648 [wandb_init.py:_log_setup():372] Logging internal logs to /home/gauffrea/Projects/SMABalancingGroups/wandb/run-20240831_002320-13oh7rmz/logs/debug-internal.log
+2024-08-31 00:23:20,624 INFO    MainThread:29648 [wandb_init.py:init():404] calling init triggers
+2024-08-31 00:23:20,625 INFO    MainThread:29648 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {'wandb_project': 'SMA_cl_pretrain', 'pretraining_name': 'simsiam1', 'data_path': 'data', 'dataset': 'SMA', 'loss': 'moco', 'backbone': 'resnet50', 'input_size': 224, 'vf_prob': 0.5, 'rr_prob': 0.5, 'batch_size': 256, 'num_epochs': 100, 'lr': 0.05, 'momentum': 0.9, 'weight_decay': 0.0001, 'method': 'erm', 'arch': 'resnet50', 'mode': 'classic', 'K': 16, 'mu': 0.2, 'name': 'medical-leaf', 'split_seed': 0, 'img_size': 224}
+2024-08-31 00:23:20,625 INFO    MainThread:29648 [wandb_init.py:init():449] starting backend
+2024-08-31 00:23:20,625 INFO    MainThread:29648 [backend.py:_multiprocessing_setup():95] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-08-31 00:23:20,641 INFO    MainThread:29648 [backend.py:ensure_launched():199] starting backend process...
+2024-08-31 00:23:20,650 INFO    MainThread:29648 [backend.py:ensure_launched():204] started backend process with pid: 29745
+2024-08-31 00:23:20,652 INFO    MainThread:29648 [wandb_init.py:init():458] backend started and connected
+2024-08-31 00:23:20,654 INFO    MainThread:29648 [wandb_init.py:init():519] updated telemetry
+2024-08-31 00:23:20,676 INFO    MainThread:29648 [wandb_init.py:init():549] communicating current version
+2024-08-31 00:23:22,870 INFO    MainThread:29648 [wandb_init.py:init():554] got version response upgrade_message: "wandb version 0.17.8 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-08-31 00:23:22,871 INFO    MainThread:29648 [wandb_init.py:init():564] communicating run to backend with 30 second timeout
+2024-08-31 00:23:23,187 INFO    MainThread:29648 [wandb_init.py:init():592] starting run threads in backend
+2024-08-31 00:23:25,269 INFO    MainThread:29648 [wandb_run.py:_console_start():1816] atexit reg
+2024-08-31 00:23:25,269 INFO    MainThread:29648 [wandb_run.py:_redirect():1690] redirect: SettingsConsole.REDIRECT
+2024-08-31 00:23:25,270 INFO    MainThread:29648 [wandb_run.py:_redirect():1695] Redirecting console.
+2024-08-31 00:23:25,272 INFO    MainThread:29648 [wandb_run.py:_redirect():1751] Redirects installed.
+2024-08-31 00:23:25,273 INFO    MainThread:29648 [wandb_init.py:init():619] run started, returning control to user process
