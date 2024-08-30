@@ -33,3 +33,11 @@
 2024-08-31 00:23:53,529 DEBUG   SenderThread:29745 [sender.py:send():238] send: stats
 2024-08-31 00:23:55,811 DEBUG   HandlerThread:29745 [handler.py:handle_request():130] handle_request: stop_status
 2024-08-31 00:23:55,811 DEBUG   SenderThread:29745 [sender.py:send_request():252] send_request: stop_status
+2024-08-31 00:24:11,083 DEBUG   HandlerThread:29745 [handler.py:handle_request():130] handle_request: stop_status
+2024-08-31 00:24:11,084 DEBUG   SenderThread:29745 [sender.py:send_request():252] send_request: stop_status
+2024-08-31 00:24:23,778 DEBUG   SenderThread:29745 [sender.py:send():238] send: stats
+2024-08-31 00:24:26,351 DEBUG   HandlerThread:29745 [handler.py:handle_request():130] handle_request: stop_status
+2024-08-31 00:24:26,352 DEBUG   SenderThread:29745 [sender.py:send_request():252] send_request: stop_status
+2024-08-31 00:24:41,656 DEBUG   HandlerThread:29745 [handler.py:handle_request():130] handle_request: stop_status
+2024-08-31 00:24:41,657 DEBUG   SenderThread:29745 [sender.py:send_request():252] send_request: stop_status
+2024-08-31 00:24:54,081 DEBUG   SenderThread:29745 [sender.py:send():238] send: stats
