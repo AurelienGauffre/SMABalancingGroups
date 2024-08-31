@@ -17,3 +17,22 @@ A2 dogs 4m
 A3 texture 3m 
 A4 rescis
 A5 plt-doc
+
+
+# medical-leaf
+. aker_run_pretrain.sh Z1 5
+. aker_run_pretrain.sh Z2 5
+# texture
+. aker_run_pretrain.sh Z3 5
+. aker_run_pretrain.sh Z4 5
+#dogs
+. aker_run_pretrain.sh Z5 8
+. aker_run_pretrain.sh Z6 8
+# airplanes
+. aker_run_pretrain.sh Z7 30 
+. aker_run_pretrain.sh Z8 30
+# pltdoc 
+
+. aker_run_pretrain.sh Z9 30 
+. aker_run_pretrain.sh Z10 30
+
