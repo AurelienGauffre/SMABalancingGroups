@@ -124,7 +124,7 @@ def main():
 
         # Save checkpoint every 10 epochs
         if (epoch + 1) % 10 == 0:
-            checkpoint_path = f"checkpoint/{config.loss}_{epoch+1}.ckpt"
+            checkpoint_path = f"checkpoint/{config.SMA.name}_{config.loss}_{epoch+1}.ckpt"
             os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
             torch.save({
                 'epoch': epoch + 1,
