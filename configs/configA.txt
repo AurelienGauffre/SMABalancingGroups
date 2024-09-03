@@ -1,3 +1,4 @@
+# training with bce or bce+supcon
 . aker_run.sh A0 16
 . aker_run.sh A2 20
 . aker_run.sh A3 16
@@ -8,15 +9,33 @@
 . aker_run.sh A4 10?
 
 
+# training with a training path (combinable avec les 1) geneérées par les Z+
+. aker_run.sh B0-0 16
+. aker_run.sh B0-1 16
+. aker_run.sh B0-2 16
+. aker_run.sh B1-0 16
+. aker_run.sh B1-1 16
+. aker_run.sh B1-2 16 
+. aker_run.sh B2-0 20
+. aker_run.sh B2-1 20
+. aker_run.sh B2-2 20
+. aker_run.sh B3-0 30
+. aker_run.sh B3-1 30
+. aker_run.sh B3-2 30
 
 
 
-A0 Leaf : k=8 2m     3*3*3*4=243*
-A1 Birds k=8 30m
-A2 dogs 4m
-A3 texture 3m 
+
+
+
+A0 Leaf : k=8 2m     3*3*3*4=243*   16
+A1 Birds k=8 30m                    
+A2 dogs 4m   20
+A3 texture 3m  16
 A4 rescis
 A5 plt-doc
+
+airplanes 30
 
 
 # medical-leaf

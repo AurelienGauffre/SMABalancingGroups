@@ -1502,3 +1502,311 @@ wandb:
 [33m(raylet)[0m [2024-08-21 17:30:55,191 E 88223 88223] (raylet) node_manager.cc:2967: 1 Workers (tasks / actors) killed due to memory pressure (OOM), 0 Workers crashed due to other reasons at node (ID: a8754aefeabe8ce191740008f51840d280cd8adc5311023df54bf7d7, IP: 129.88.65.133) over the last time period. To see more information about the Workers killed on this node, use `ray logs raylet.out -ip 129.88.65.133`
 [33m(raylet)[0m 
 [33m(raylet)[0m Refer to the documentation on how to address the out of memory issue: https://docs.ray.io/en/latest/ray-core/scheduling/ray-oom-prevention.html. Consider provisioning more memory on this node or reducing task parallelism by requesting more CPUs per task. To adjust the kill threshold, set the environment variable `RAY_memory_usage_threshold` when starting Ray. To disable worker killing, set the environment variable `RAY_memory_monitor_refresh_ms` to zero.
+wandb: Waiting for W&B process to finish, PID 61490... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 63662... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 64755... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 66147... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.58537
+wandb:              best_acc_va 0.59259
+wandb:   best_mean_group_acc_te 0.5
+wandb:   best_mean_group_acc_va 0.5
+wandb:       best_worst3_acc_te 0.33333
+wandb:       best_worst3_acc_va 0.33333
+wandb:        best_worst_acc_te 0.35294
+wandb:        best_worst_acc_va 0.27273
+wandb:                       lr 0.0005
+wandb:         major_grp_acc_te 76.47059
+wandb:         major_grp_acc_tr 100.0
+wandb:         major_grp_acc_va 65.05682
+wandb:          mean_grp_acc_te 58.51716
+wandb:          mean_grp_acc_tr 100.0
+wandb:          mean_grp_acc_va 47.15909
+wandb:         minor_grp_acc_te 40.56373
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 29.26136
+wandb:      relative_grp_acc_te 0.53045
+wandb:      relative_grp_acc_tr 1.0
+wandb:      relative_grp_acc_va 0.44978
+wandb:        worst3_grp_acc_te 44.68954
+wandb:        worst3_grp_acc_tr 100.0
+wandb:        worst3_grp_acc_va 31.62879
+wandb:         worst_grp_acc_te 35.29412
+wandb:         worst_grp_acc_tr 100.0
+wandb:         worst_grp_acc_va 27.27273
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced playful-yogurt-1725: https://wandb.ai/aureliengauffre/SMA_cl/runs/d1e0kjla
+wandb: Find logs at: ./wandb/run-20240903_234951-d1e0kjla/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 67189... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 68603... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run summary:
+wandb:              best_acc_te 0.58537
+wandb:              best_acc_va 0.59259
+wandb:   best_mean_group_acc_te 0.5
+wandb:   best_mean_group_acc_va 0.5
+wandb:       best_worst3_acc_te 0.33333
+wandb:       best_worst3_acc_va 0.33333
+wandb:        best_worst_acc_te 0.35294
+wandb:        best_worst_acc_va 0.27273
+wandb:                       lr 0.0005
+wandb:         major_grp_acc_te 76.47059
+wandb:         major_grp_acc_tr 96.42857
+wandb:         major_grp_acc_va 65.05682
+wandb:          mean_grp_acc_te 58.51716
+wandb:          mean_grp_acc_tr 98.21429
+wandb:          mean_grp_acc_va 47.15909
+wandb:         minor_grp_acc_te 40.56373
+wandb:         minor_grp_acc_tr 100.0
+wandb:         minor_grp_acc_va 29.26136
+wandb:      relative_grp_acc_te 0.53045
+wandb:      relative_grp_acc_tr 1.03704
+wandb:      relative_grp_acc_va 0.44978
+wandb:        worst3_grp_acc_te 44.68954
+wandb:        worst3_grp_acc_tr 97.61905
+wandb:        worst3_grp_acc_va 31.62879
+wandb:         worst_grp_acc_te 35.29412
+wandb:         worst_grp_acc_tr 92.85714
+wandb:         worst_grp_acc_va 27.27273
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced giddy-aardvark-1727: https://wandb.ai/aureliengauffre/SMA_cl/runs/q0fgztir
+wandb: Find logs at: ./wandb/run-20240903_235233-q0fgztir/logs/debug.log
+wandb: 
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 69666... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 70902... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: | 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: / 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: ERROR Control-C detected -- Run data was not synced
+wandb: Waiting for W&B process to finish, PID 72638... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+wandb: Waiting for W&B process to finish, PID 73690... (success).
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1794, in _atexit_cleanup
+    self._on_finish()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1967, in _on_finish
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 82, in _publish_telemetry
+    self._publish(rec)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 223, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 1803, in _atexit_cleanup
+    self._backend.cleanup()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 228, in cleanup
+    self.interface.join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 481, in join
+    super(InterfaceQueue, self).join()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 591, in join
+    self._communicate_shutdown()
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 478, in _communicate_shutdown
+    _ = self._communicate(record)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/gauffrea/.local/lib/python3.8/site-packages/wandb/sdk/interface/interface_queue.py", line 237, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+/usr/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '

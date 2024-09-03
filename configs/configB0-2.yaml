@@ -15,7 +15,7 @@ dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
 eval_every_n_epochs: 3
-arch: "resnet18"
+arch: "resnet50"
 # Hyperparameters for all methods
 
 
@@ -33,11 +33,11 @@ scheduler: False
 new_reset: False
 
 
-pretrained_path: medical-leaf_moco_100.ckpt
+pretrained_path: None
 
 
 cl_modes: ['bce'] # "bce+supcon"
-alphas: [0,0.05,0.1,0.2] #alpha * supcon + (1-alpha) bce
+alphas: [0] #alpha * supcon + (1-alpha) bce
 
 # Specific hyperparameters for to create SMA dataset
 SMA:
