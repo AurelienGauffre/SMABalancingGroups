@@ -12,3 +12,6 @@ data
 wandb
 OAR*
 outputs
+
+outputs/
+wandb/
