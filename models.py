@@ -85,7 +85,15 @@ class CustomResNet(torch.nn.Module):
             
         if pretrained_path is not None:
             print(f"############## Loading pretrained model {pretrained_path} ##############")
-            self.network.load_state_dict(torch.load(os.path.join('checkpoint',pretrained_path)))
+            
+            
+            checkpoint = torch.load(os.path.join('checkpoint', pretrained_path))
+
+            # Access the 'model_state_dict' from the loaded checkpoint
+            model_state_dict = checkpoint['model_state_dict']
+
+            # Now load the model state dict
+            self.network.load_state_dict(model_state_dict)
             
         self.feature_extractor = torch.nn.Sequential(*list(self.network.children())[:-1])
         
