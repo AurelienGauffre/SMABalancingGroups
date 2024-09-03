@@ -33,7 +33,7 @@ scheduler: False
 new_reset: False
 
 
-pretrained_path: None
+pretrained_path:
 
 
 cl_modes: ['bce'] # "bce+supcon"

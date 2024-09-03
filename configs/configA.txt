@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
-# training with bce or bce+supcon
->>>>>>> 1bf86375bd2028242dc8463234043c74160a29c7
+ with bce or bce+supcon
+
 . aker_run.sh A0 16
 . aker_run.sh A2 20
 . aker_run.sh A3 16
@@ -12,7 +10,6 @@
 . aker_run.sh A4 10?
 
 
-<<<<<<< HEAD
 
 
 
@@ -23,7 +20,6 @@ A3 texture 3m
 A4 rescis
 A5 plt-doc
 
-=======
 # training with a training path (combinable avec les 1) geneérées par les Z+
 . aker_run.sh B0-0 16
 . aker_run.sh B0-1 16
@@ -52,7 +48,6 @@ A5 plt-doc
 
 airplanes 30
 
->>>>>>> 1bf86375bd2028242dc8463234043c74160a29c7
 
 # medical-leaf
 . aker_run_pretrain.sh Z1 5
