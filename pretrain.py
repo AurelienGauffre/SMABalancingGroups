@@ -128,7 +128,7 @@ def main():
             os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
             torch.save({
                 'epoch': epoch + 1,
-                'model_state_dict': model.state_dict(),
+                'model_state_dict': model.backbone.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
                 'loss': avg_loss,
             }, checkpoint_path)
