@@ -4,7 +4,7 @@ import torch
 import torchvision
 from transformers import BertForSequenceClassification, AdamW, get_scheduler
 from pytorch_metric_learning import losses
-
+import os
 class ToyNet(torch.nn.Module):
     def __init__(self, dim, gammas):
         super(ToyNet, self).__init__()
@@ -73,15 +73,19 @@ def get_sgd_optim(network, lr, weight_decay):
 
 class CustomResNet(torch.nn.Module):
     # On a besoin de définir un nouveau modèle car on a besoin de changer la dernière couche pour le contrastive learning qui a besoin de l'embedddings
-    def __init__(self, arch, n_classes,contrastive=False):
+    def __init__(self, arch, n_classes,pretrained_path=None):
         super(CustomResNet, self).__init__()
         self.n_classes = n_classes
-        self.contrastive = False
+
         # Load the pre-trained ResNet model
         if arch == "resnet18":
             self.network = torchvision.models.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
         elif arch == "resnet50":
             self.network = torchvision.models.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
+            
+        if pretrained_path is not None:
+            print(f"############## Loading pretrained model {pretrained_path} ##############")
+            self.network.load_state_dict(torch.load(os.join("checkpoint", pretrained_path)))
             
         self.feature_extractor = torch.nn.Sequential(*list(self.network.children())[:-1])
         
@@ -95,9 +99,7 @@ class CustomResNet(torch.nn.Module):
         
         # Calculate the logits using the new fully connected layer
         logits = self.fc(embeddings)
-        if self.contrastive:
-            return embeddings
-        
+        # We return the embeddings and the logits to use both supcon and bce losses
         return embeddings, logits
     
     
@@ -105,7 +107,7 @@ class CustomResNet(torch.nn.Module):
 
 
 class ERM(torch.nn.Module):
-    def __init__(self, hparams, dataloader,contrastive=False):
+    def __init__(self, hparams, dataloader):
         super().__init__()
         self.hparams = dict(hparams)
         self.cl_mode = self.hparams.get('cl_mode', 'bce') #contrastive learning mode (default bce, no contrastive)
@@ -117,7 +119,8 @@ class ERM(torch.nn.Module):
         self.n_examples = len(dataset)
         self.last_epoch = 0
         self.best_selec_val = 0
-        self.contrastive = contrastive
+        self.pretrained_path = self.hparams.get('pretrained_path', None)
+        
         self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
 
     def init_model_(self, data_type, text_optim="sgd", arch="resnet18"):
@@ -128,17 +131,16 @@ class ERM(torch.nn.Module):
         }
 
         if data_type == "images":
-            # if arch == "resnet18":
+            # old way to call the networks
+            # # if arch == "resnet18":
 
             #     self.network = torchvision.models.resnet.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
             # elif arch == "resnet50":
             #     self.network = torchvision.models.resnet.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
             
-            
-
             # self.network.fc = torch.nn.Linear(self.network.fc.in_features, self.n_classes)
             
-            self.network = CustomResNet(arch=arch, n_classes=self.n_classes, contrastive=self.contrastive)
+            self.network = CustomResNet(arch=arch, n_classes=self.n_classes, contrastive=self.contrastive, pretrained_path=self.pretrained_path)
 
 
             self.optimizer = optimizers['sgd'](
