@@ -10,3 +10,6 @@ checkpoint
 # ignore the folder data
 data
 wandb
+OAR*
+outputs
+
