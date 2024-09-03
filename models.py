@@ -81,8 +81,9 @@ class CustomResNet(torch.nn.Module):
         self.n_classes = n_classes
 
         # Load the pre-trained ResNet model
+        print(f"############## Loading {arch} model ##############")
         if arch == "resnet18":
-            pass
+            raise NotImplementedError("Resnet18 not implemented")
         elif arch == "resnet50":
             backbone = torchvision.models.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
             in_feature = backbone.fc.in_features
@@ -143,7 +144,7 @@ class ERM(torch.nn.Module):
         
         self.init_model_(self.data_type, text_optim="sgd", arch=self.hparams['arch'])
 
-    def init_model_(self, data_type, text_optim="sgd", arch="resnet18"):
+    def init_model_(self, data_type, text_optim="sgd", arch="resnet50"):
         self.clip_grad = text_optim == "adamw"
         optimizers = {
             "adamw": get_bert_optim,

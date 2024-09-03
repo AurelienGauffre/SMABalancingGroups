@@ -15,7 +15,7 @@ dataset: 'SMA'
 init_seed: 0
 hparams_seed: 0
 eval_every_n_epochs: 3
-arch: "resnet18"
+arch: resnet18
 # Hyperparameters for all methods
 
 
