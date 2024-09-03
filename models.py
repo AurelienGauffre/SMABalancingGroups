@@ -5,10 +5,8 @@ import torchvision
 from transformers import BertForSequenceClassification, AdamW, get_scheduler
 from pytorch_metric_learning import losses
 import os
-
 import torch.nn as nn
 import torch.nn.functional as F
-
 
 class ToyNet(torch.nn.Module):
     def __init__(self, dim, gammas):
@@ -95,23 +93,6 @@ class CustomResNet(torch.nn.Module):
             
             
             checkpoint = torch.load(os.path.join('checkpoint', pretrained_path))
-
-
-            # Access the 'model_state_dict' from the loaded checkpoint
-            model_state_dict = checkpoint['model_state_dict']
-
-            # Now load the model state dict
-            self.network.load_state_dict(model_state_dict)
-            
-        self.feature_extractor = torch.nn.Sequential(*list(self.network.children())[:-1])
-        
-        # Replace the final fully connected layer to match the number of classes
-        self.fc = torch.nn.Linear(self.network.fc.in_features, self.n_classes)
-
-    def forward(self, x):
-        # Extract features (embeddings)
-        embeddings = self.feature_extractor(x)
-=======
             
 
             # Access the 'model_state_dict' from the loaded checkpoint
@@ -134,7 +115,6 @@ class CustomResNet(torch.nn.Module):
     def forward(self, x):
         # Extract features (embeddings)
         embeddings = self.network(x)
->>>>>>> 1bf86375bd2028242dc8463234043c74160a29c7
         embeddings = embeddings.view(embeddings.size(0), -1)  # Flatten the embeddings
         
         # Calculate the logits using the new fully connected layer
