@@ -140,7 +140,7 @@ class ERM(torch.nn.Module):
             
             # self.network.fc = torch.nn.Linear(self.network.fc.in_features, self.n_classes)
             
-            self.network = CustomResNet(arch=arch, n_classes=self.n_classes, contrastive=self.contrastive, pretrained_path=self.pretrained_path)
+            self.network = CustomResNet(arch=arch, n_classes=self.n_classes, pretrained_path=self.pretrained_path)
 
 
             self.optimizer = optimizers['sgd'](
