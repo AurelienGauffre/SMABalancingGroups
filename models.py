@@ -5,6 +5,11 @@ import torchvision
 from transformers import BertForSequenceClassification, AdamW, get_scheduler
 from pytorch_metric_learning import losses
 import os
+
+import torch.nn as nn
+import torch.nn.functional as F
+
+
 class ToyNet(torch.nn.Module):
     def __init__(self, dim, gammas):
         super(ToyNet, self).__init__()
@@ -79,15 +84,18 @@ class CustomResNet(torch.nn.Module):
 
         # Load the pre-trained ResNet model
         if arch == "resnet18":
-            self.network = torchvision.models.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
+            pass
         elif arch == "resnet50":
-            self.network = torchvision.models.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
+            backbone = torchvision.models.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
+            in_feature = backbone.fc.in_features
+            self.network = nn.Sequential(*list(backbone.children())[:-1])
             
         if pretrained_path is not None:
             print(f"############## Loading pretrained model {pretrained_path} ##############")
             
             
             checkpoint = torch.load(os.path.join('checkpoint', pretrained_path))
+
 
             # Access the 'model_state_dict' from the loaded checkpoint
             model_state_dict = checkpoint['model_state_dict']
@@ -103,6 +111,30 @@ class CustomResNet(torch.nn.Module):
     def forward(self, x):
         # Extract features (embeddings)
         embeddings = self.feature_extractor(x)
+=======
+            
+
+            # Access the 'model_state_dict' from the loaded checkpoint
+            #https://docs.lightly.ai/self-supervised-learning/tutorials/package/tutorial_checkpoint_finetuning.html
+            model_state_dict = checkpoint['model_state_dict']
+            model_state_dict = {
+                k.replace("backbone.", ""): v
+                for k, v in model_state_dict.items()
+                if k.startswith("backbone.")
+            }
+
+            # Now load the model state dict
+            self.network.load_state_dict(model_state_dict, strict=True)
+            
+        #self.feature_extractor = torch.nn.Sequential(*list(self.network.children())[:-1])
+        
+        # Replace the final fully connected layer to match the number of classes
+        self.fc = torch.nn.Linear(in_feature, self.n_classes)
+
+    def forward(self, x):
+        # Extract features (embeddings)
+        embeddings = self.network(x)
+>>>>>>> 1bf86375bd2028242dc8463234043c74160a29c7
         embeddings = embeddings.view(embeddings.size(0), -1)  # Flatten the embeddings
         
         # Calculate the logits using the new fully connected layer

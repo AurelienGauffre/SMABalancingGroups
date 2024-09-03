@@ -96,8 +96,18 @@ def run(job=None):
 
 
     # Load pretrained weights if specified
+<<<<<<< HEAD
 
     model = model_class(args, loaders["tr"])
+=======
+    if args.get("pretraining_path"):
+        pretrained_path = os.path.join(
+            "checkpoints", f"{args['pretraining_path']}.ckpt")
+        backbone = lightly_utils.load_from_state_dict(pretrained_path)
+        model = model_class(args, loaders["tr"], backbone=backbone)
+    else:
+        model = model_class(args, loaders["tr"])
+>>>>>>> 1bf86375bd2028242dc8463234043c74160a29c7
 
     last_epoch = 0
     best_selec_val = float('-inf')

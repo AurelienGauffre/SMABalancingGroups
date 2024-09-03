@@ -7,7 +7,11 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
+<<<<<<< HEAD
             "args": "--config configZ1.yaml"
+=======
+            "args": "--config configB0.yaml"
+>>>>>>> 1bf86375bd2028242dc8463234043c74160a29c7
         }
     ]
 }
