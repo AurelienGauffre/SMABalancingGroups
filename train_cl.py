@@ -1,5 +1,7 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
+# copy of train_deephyper.py but adapted to contrastive setting
+
 # !/usr/bin/env python
 
 import argparse
@@ -94,13 +96,8 @@ def run(job=None):
 
 
     # Load pretrained weights if specified
-    if args.get("pretraining_path"):
-        pretrained_path = os.path.join(
-            "checkpoints", f"{args['pretraining_path']}.ckpt")
-        backbone = lightly_utils.load_from_state_dict(pretrained_path)
-        model = model_class(args, loaders["tr"], backbone=backbone)
-    else:
-        model = model_class(args, loaders["tr"])
+
+    model = model_class(args, loaders["tr"])
 
     last_epoch = 0
     best_selec_val = float('-inf')
