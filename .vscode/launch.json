@@ -8,7 +8,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
 
-            "args": "--config configB0.yaml"
+            "args": "--config configB0-0.yaml"
 
         }
     ]

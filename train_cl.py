@@ -237,7 +237,6 @@ def get_ray_evaluator(run_function):
     return evaluator
 
 if __name__ == "__main__":
-
     args_command_line = parse_args()
     config_dict = OmegaConf.to_container(
         OmegaConf.load(os.path.join('configs',
@@ -248,6 +247,7 @@ if __name__ == "__main__":
     # if args.SMA.mode is not defined, we set it to 'classic':
     args.SMA.mode = 'classic' if ('SMA' in args) and (
         'mode' not in args.SMA) else args.SMA.mode
+   
     # 'medical-leaf', 'texture-dtd', '73sports', 'resisc', 'dogs'
     for cl_mode in args.cl_modes:
         args.cl_mode = cl_mode
