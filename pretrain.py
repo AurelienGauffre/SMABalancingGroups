@@ -66,7 +66,7 @@ def main():
 
     wandb.init(project=config.wandb_project, config=flatten_dictionary_for_wandb(dict(config)))
 
-    resnet = torchvision.models.resnet50()  # TO ADAPT
+    resnet = torchvision.models.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
     backbone = nn.Sequential(*list(resnet.children())[:-1])
 
     # Select model based on config
