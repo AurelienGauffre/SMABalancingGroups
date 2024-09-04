@@ -1,0 +1,2130 @@
+nohup: les entrées sont ignorées
+INFO:root:Creating Evaluator(<function run at 0x7f929f1189d0>, method=ray, method_kwargs={'num_cpus': 1, 'num_cpus_per_task': 1, 'callbacks': [<deephyper.evaluator.callback.TqdmCallback object at 0x7f929f06a490>], 'num_gpus': 1, 'num_gpus_per_task': 1}...
+2024-04-22 00:07:22,807	INFO worker.py:1752 -- Started a local Ray instance.
+INFO:deephyper.evaluator._ray:Ray Evaluator will execute run() from module __main__
+INFO:root:Creation done
+INFO:root:Asking 1 initial configurations...
+INFO:root:Asking took 0.1669 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0000 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0171 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3565527)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3565527)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3565527)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3565527)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3565527)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_000741-hw1nvlm1
+[36m(run pid=3565527)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3565527)[0m wandb: Syncing run eager-universe-3420
+[36m(run pid=3565527)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3565527)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/hw1nvlm1
+[36m(run pid=3565527)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3565527)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3565527)[0m wandb: | 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3565527)[0m wandb: / 0.016 MB of 0.023 MB uploaded (0.004 MB deduped)
+[36m(run pid=3565527)[0m wandb: - 0.016 MB of 0.023 MB uploaded (0.004 MB deduped)wandb: \ 0.023 MB of 0.023 MB uploaded (0.004 MB deduped)wandb:                                                                                
+[36m(run pid=3565527)[0m wandb: W&B sync reduced upload amount by 15.4%             
+[36m(run pid=3565527)[0m wandb: 
+[36m(run pid=3565527)[0m wandb: Run summary:
+[36m(run pid=3565527)[0m wandb:            best_acc_te 0.82693
+[36m(run pid=3565527)[0m wandb:            best_acc_va 0.83151
+[36m(run pid=3565527)[0m wandb: best_mean_group_acc_te 0.83051
+[36m(run pid=3565527)[0m wandb: best_mean_group_acc_va 0.83502
+[36m(run pid=3565527)[0m wandb:                     lr 0.0005
+[36m(run pid=3565527)[0m wandb:       major_grp_acc_te 98.60279
+[36m(run pid=3565527)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3565527)[0m wandb:       major_grp_acc_va 98.33785
+[36m(run pid=3565527)[0m wandb:        mean_grp_acc_te 80.40744
+[36m(run pid=3565527)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3565527)[0m wandb:        mean_grp_acc_va 80.40042
+[36m(run pid=3565527)[0m wandb:       minor_grp_acc_te 62.2121
+[36m(run pid=3565527)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3565527)[0m wandb:       minor_grp_acc_va 62.463
+[36m(run pid=3565527)[0m wandb:    relative_grp_acc_te 0.63094
+[36m(run pid=3565527)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3565527)[0m wandb:    relative_grp_acc_va 0.63519
+[36m(run pid=3565527)[0m wandb:       worst_grp_acc_te 42.45902
+[36m(run pid=3565527)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3565527)[0m wandb:       worst_grp_acc_va 41.63934
+[36m(run pid=3565527)[0m wandb: 
+[36m(run pid=3565527)[0m wandb:  View run eager-universe-3420 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/hw1nvlm1
+[36m(run pid=3565527)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3565527)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 2 artifact file(s) and 0 other file(s)
+[36m(run pid=3565527)[0m wandb: Find logs at: ./wandb/run-20240422_000741-hw1nvlm1/logs
+Created new evaluator with 1 worker and config: {'num_cpus': 1, 'num_cpus_per_task': 1, 'callbacks': [<deephyper.evaluator.callback.TqdmCallback object at 0x7f929f06a490>], 'num_gpus': 1, 'num_gpus_per_task': 1}
+Number of workers:  1
+{'lr': 0.001}
+GPU available: True
+[36m(run pid=3565527)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0004974556006241091, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3565527)[0m Method: erm
+  0%|          | 0/8 [00:00<?, ?it/s] 12%|█▎        | 1/8 [00:00<00:00, 5562.74it/s, failures=0, objective=0.835]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2127.9568 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0193 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0002 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0014 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0206 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0002 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0042 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3576406)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3576406)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3576406)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3576406)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3576406)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_004308-c8wf9010
+[36m(run pid=3576406)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3576406)[0m wandb: Syncing run silvery-music-3430
+[36m(run pid=3576406)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3576406)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/c8wf9010
+[36m(run pid=3576406)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3576406)[0m wandb: \ 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3576406)[0m wandb: | 0.013 MB of 0.013 MB uploaded
+[36m(run pid=3576406)[0m wandb: / 0.013 MB of 0.013 MB uploadedwandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3576406)[0m wandb: 
+[36m(run pid=3576406)[0m wandb: Run summary:
+[36m(run pid=3576406)[0m wandb:            best_acc_te 0.85471
+[36m(run pid=3576406)[0m wandb:            best_acc_va 0.85487
+[36m(run pid=3576406)[0m wandb: best_mean_group_acc_te 0.85751
+[36m(run pid=3576406)[0m wandb: best_mean_group_acc_va 0.85757
+[36m(run pid=3576406)[0m wandb:                     lr 0.00265
+[36m(run pid=3576406)[0m wandb:       major_grp_acc_te 99.5138
+[36m(run pid=3576406)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3576406)[0m wandb:       major_grp_acc_va 99.53885
+[36m(run pid=3576406)[0m wandb:        mean_grp_acc_te 82.73892
+[36m(run pid=3576406)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3576406)[0m wandb:        mean_grp_acc_va 83.97047
+[36m(run pid=3576406)[0m wandb:       minor_grp_acc_te 65.96403
+[36m(run pid=3576406)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3576406)[0m wandb:       minor_grp_acc_va 68.4021
+[36m(run pid=3576406)[0m wandb:    relative_grp_acc_te 0.66286
+[36m(run pid=3576406)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3576406)[0m wandb:    relative_grp_acc_va 0.68719
+[36m(run pid=3576406)[0m wandb:       worst_grp_acc_te 61.53005
+[36m(run pid=3576406)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3576406)[0m wandb:       worst_grp_acc_va 65.65574
+[36m(run pid=3576406)[0m wandb: 
+ 25%|██▌       | 2/8 [35:49<1:47:29, 1074.95s/it, failures=0, objective=0.835] 25%|██▌       | 2/8 [35:49<1:47:29, 1074.95s/it, failures=0, objective=0.858]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2149.8471 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0017 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0004 sec.
+INFO:root:Asking 1 new configurations...
+[36m(run pid=3576406)[0m wandb:  View run silvery-music-3430 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/c8wf9010
+[36m(run pid=3576406)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3576406)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3576406)[0m wandb: Find logs at: ./wandb/run-20240422_004308-c8wf9010/logs
+INFO:root:Asking took 0.0188 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0049 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3585653)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3585653)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3585653)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3585653)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3585653)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_011858-l2s0hmln
+[36m(run pid=3585653)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3585653)[0m wandb: Syncing run fiery-sun-3438
+[36m(run pid=3585653)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3585653)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/l2s0hmln
+[36m(run pid=3585653)[0m wandb: - 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3585653)[0m wandb: \ 0.006 MB of 0.013 MB uploadedwandb: | 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3585653)[0m wandb: 
+[36m(run pid=3585653)[0m wandb: Run summary:
+[36m(run pid=3585653)[0m wandb:            best_acc_te 0.81181
+[36m(run pid=3585653)[0m wandb:            best_acc_va 0.82038
+[36m(run pid=3585653)[0m wandb: best_mean_group_acc_te 0.8191
+[36m(run pid=3585653)[0m wandb: best_mean_group_acc_va 0.8226
+[36m(run pid=3585653)[0m wandb:                     lr 0.00057
+[36m(run pid=3585653)[0m wandb:       major_grp_acc_te 98.86847
+[36m(run pid=3585653)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3585653)[0m wandb:       major_grp_acc_va 98.50748
+[36m(run pid=3585653)[0m wandb:        mean_grp_acc_te 80.27175
+[36m(run pid=3585653)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3585653)[0m wandb:        mean_grp_acc_va 79.74914
+[36m(run pid=3585653)[0m wandb:       minor_grp_acc_te 61.67503
+[36m(run pid=3585653)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3585653)[0m wandb:       minor_grp_acc_va 60.9908
+[36m(run pid=3585653)[0m wandb:    relative_grp_acc_te 0.62381
+[36m(run pid=3585653)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3585653)[0m wandb:    relative_grp_acc_va 0.61915
+[36m(run pid=3585653)[0m wandb:       worst_grp_acc_te 42.13115
+[36m(run pid=3585653)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3585653)[0m wandb:       worst_grp_acc_va 40.65574
+[36m(run pid=3585653)[0m wandb: 
+[36m(run pid=3585653)[0m wandb:  View run fiery-sun-3438 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/l2s0hmln
+[36m(run pid=3585653)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3585653)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3585653)[0m wandb: Find logs at: ./wandb/run-20240422_011858-l2s0hmln/logs
+ 38%|███▊      | 3/8 [1:12:00<2:07:37, 1531.42s/it, failures=0, objective=0.858] 38%|███▊      | 3/8 [1:12:00<2:07:37, 1531.42s/it, failures=0, objective=0.858]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2170.4659 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0019 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0003 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0147 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0037 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3594306)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3594306)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3594306)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3594306)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3594306)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_015510-083ztc41
+[36m(run pid=3594306)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3594306)[0m wandb: Syncing run glorious-feather-3443
+[36m(run pid=3594306)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3594306)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/083ztc41
+[36m(run pid=3594306)[0m wandb: - 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3594306)[0m wandb: \ 0.006 MB of 0.013 MB uploadedwandb: | 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3594306)[0m wandb: 
+[36m(run pid=3594306)[0m wandb: Run summary:
+[36m(run pid=3594306)[0m wandb:            best_acc_te 0.87086
+[36m(run pid=3594306)[0m wandb:            best_acc_va 0.88106
+[36m(run pid=3594306)[0m wandb: best_mean_group_acc_te 0.87154
+[36m(run pid=3594306)[0m wandb: best_mean_group_acc_va 0.88145
+[36m(run pid=3594306)[0m wandb:                     lr 0.0024
+[36m(run pid=3594306)[0m wandb:       major_grp_acc_te 98.71483
+[36m(run pid=3594306)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3594306)[0m wandb:       major_grp_acc_va 98.88418
+[36m(run pid=3594306)[0m wandb:        mean_grp_acc_te 87.15404
+[36m(run pid=3594306)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3594306)[0m wandb:        mean_grp_acc_va 88.14491
+[36m(run pid=3594306)[0m wandb:       minor_grp_acc_te 75.59324
+[36m(run pid=3594306)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3594306)[0m wandb:       minor_grp_acc_va 77.40563
+[36m(run pid=3594306)[0m wandb:    relative_grp_acc_te 0.76577
+[36m(run pid=3594306)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3594306)[0m wandb:    relative_grp_acc_va 0.78279
+[36m(run pid=3594306)[0m wandb:       worst_grp_acc_te 73.38798
+[36m(run pid=3594306)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3594306)[0m wandb:       worst_grp_acc_va 75.81967
+[36m(run pid=3594306)[0m wandb: 
+[36m(run pid=3594306)[0m wandb:  View run glorious-feather-3443 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/083ztc41
+[36m(run pid=3594306)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3594306)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3594306)[0m wandb: Find logs at: ./wandb/run-20240422_015510-083ztc41/logs
+ 50%|█████     | 4/8 [1:47:53<1:57:34, 1763.53s/it, failures=0, objective=0.858] 50%|█████     | 4/8 [1:47:53<1:57:34, 1763.53s/it, failures=0, objective=0.881]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2153.4371 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0019 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0003 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0149 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0049 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3602531)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3602531)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3602531)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3602531)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3602531)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_023100-avtm36js
+[36m(run pid=3602531)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3602531)[0m wandb: Syncing run effortless-sponge-3451
+[36m(run pid=3602531)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3602531)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/avtm36js
+[36m(run pid=3602531)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3602531)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3602531)[0m wandb: | 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3602531)[0m wandb: / 0.006 MB of 0.012 MB uploaded
+[36m(run pid=3602531)[0m wandb: - 0.006 MB of 0.012 MB uploadedwandb: \ 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3602531)[0m wandb: 
+[36m(run pid=3602531)[0m wandb: Run summary:
+[36m(run pid=3602531)[0m wandb:            best_acc_te 0.85035
+[36m(run pid=3602531)[0m wandb:            best_acc_va 0.85727
+[36m(run pid=3602531)[0m wandb: best_mean_group_acc_te 0.85286
+[36m(run pid=3602531)[0m wandb: best_mean_group_acc_va 0.85906
+[36m(run pid=3602531)[0m wandb:                     lr 0.00228
+[36m(run pid=3602531)[0m wandb:       major_grp_acc_te 99.00599
+[36m(run pid=3602531)[0m wandb:       major_grp_acc_tr 99.96723
+[36m(run pid=3602531)[0m wandb:       major_grp_acc_va 99.10513
+[36m(run pid=3602531)[0m wandb:        mean_grp_acc_te 85.28627
+[36m(run pid=3602531)[0m wandb:        mean_grp_acc_tr 99.98362
+[36m(run pid=3602531)[0m wandb:        mean_grp_acc_va 85.9056
+[36m(run pid=3602531)[0m wandb:       minor_grp_acc_te 71.56655
+[36m(run pid=3602531)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3602531)[0m wandb:       minor_grp_acc_va 72.70607
+[36m(run pid=3602531)[0m wandb:    relative_grp_acc_te 0.72285
+[36m(run pid=3602531)[0m wandb:    relative_grp_acc_tr 1.00033
+[36m(run pid=3602531)[0m wandb:    relative_grp_acc_va 0.73363
+[36m(run pid=3602531)[0m wandb:       worst_grp_acc_te 64.15301
+[36m(run pid=3602531)[0m wandb:       worst_grp_acc_tr 99.93447
+[36m(run pid=3602531)[0m wandb:       worst_grp_acc_va 67.54098
+[36m(run pid=3602531)[0m wandb: 
+[36m(run pid=3602531)[0m wandb:  View run effortless-sponge-3451 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/avtm36js
+[36m(run pid=3602531)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3602531)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3602531)[0m wandb: Find logs at: ./wandb/run-20240422_023100-avtm36js/logs
+ 62%|██████▎   | 5/8 [2:24:25<1:35:37, 1912.51s/it, failures=0, objective=0.881] 62%|██████▎   | 5/8 [2:24:25<1:35:37, 1912.51s/it, failures=0, objective=0.881]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2191.9674 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0017 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0004 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0247 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0050 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3608054)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3608054)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3608054)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3608054)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3608054)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_030731-eefl1l4c
+[36m(run pid=3608054)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3608054)[0m wandb: Syncing run vague-eon-3455
+[36m(run pid=3608054)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3608054)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/eefl1l4c
+[36m(run pid=3608054)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3608054)[0m wandb: \ 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3608054)[0m wandb: | 0.006 MB of 0.013 MB uploadedwandb: / 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3608054)[0m wandb: 
+[36m(run pid=3608054)[0m wandb: Run summary:
+[36m(run pid=3608054)[0m wandb:            best_acc_te 0.85835
+[36m(run pid=3608054)[0m wandb:            best_acc_va 0.85574
+[36m(run pid=3608054)[0m wandb: best_mean_group_acc_te 0.84325
+[36m(run pid=3608054)[0m wandb: best_mean_group_acc_va 0.85512
+[36m(run pid=3608054)[0m wandb:                     lr 0.00177
+[36m(run pid=3608054)[0m wandb:       major_grp_acc_te 99.11243
+[36m(run pid=3608054)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3608054)[0m wandb:       major_grp_acc_va 99.22916
+[36m(run pid=3608054)[0m wandb:        mean_grp_acc_te 83.39185
+[36m(run pid=3608054)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3608054)[0m wandb:        mean_grp_acc_va 84.59787
+[36m(run pid=3608054)[0m wandb:       minor_grp_acc_te 67.67127
+[36m(run pid=3608054)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3608054)[0m wandb:       minor_grp_acc_va 69.96659
+[36m(run pid=3608054)[0m wandb:    relative_grp_acc_te 0.68277
+[36m(run pid=3608054)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3608054)[0m wandb:    relative_grp_acc_va 0.7051
+[36m(run pid=3608054)[0m wandb:       worst_grp_acc_te 63.82514
+[36m(run pid=3608054)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3608054)[0m wandb:       worst_grp_acc_va 65.98361
+[36m(run pid=3608054)[0m wandb: 
+ 75%|███████▌  | 6/8 [3:00:25<1:06:28, 1994.38s/it, failures=0, objective=0.881] 75%|███████▌  | 6/8 [3:00:25<1:06:28, 1994.38s/it, failures=0, objective=0.881]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2159.1891 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0027 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0003 sec.
+INFO:root:Asking 1 new configurations...
+[36m(run pid=3608054)[0m wandb:  View run vague-eon-3455 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/eefl1l4c
+[36m(run pid=3608054)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3608054)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3608054)[0m wandb: Find logs at: ./wandb/run-20240422_030731-eefl1l4c/logs
+INFO:root:Asking took 0.0174 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0040 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3615960)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3615960)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3615960)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3615960)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3615960)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_034332-wjn39p6c
+[36m(run pid=3615960)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3615960)[0m wandb: Syncing run apricot-vortex-3462
+[36m(run pid=3615960)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3615960)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/wjn39p6c
+[36m(run pid=3615960)[0m wandb: - 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3615960)[0m wandb: \ 0.006 MB of 0.013 MB uploadedwandb: | 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3615960)[0m wandb: 
+[36m(run pid=3615960)[0m wandb: Run summary:
+[36m(run pid=3615960)[0m wandb:            best_acc_te 0.83508
+[36m(run pid=3615960)[0m wandb:            best_acc_va 0.84941
+[36m(run pid=3615960)[0m wandb: best_mean_group_acc_te 0.83997
+[36m(run pid=3615960)[0m wandb: best_mean_group_acc_va 0.85339
+[36m(run pid=3615960)[0m wandb:                     lr 0.00112
+[36m(run pid=3615960)[0m wandb:       major_grp_acc_te 98.61502
+[36m(run pid=3615960)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3615960)[0m wandb:       major_grp_acc_va 98.81825
+[36m(run pid=3615960)[0m wandb:        mean_grp_acc_te 83.99707
+[36m(run pid=3615960)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3615960)[0m wandb:        mean_grp_acc_va 85.33895
+[36m(run pid=3615960)[0m wandb:       minor_grp_acc_te 69.37913
+[36m(run pid=3615960)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3615960)[0m wandb:       minor_grp_acc_va 71.85965
+[36m(run pid=3615960)[0m wandb:    relative_grp_acc_te 0.70354
+[36m(run pid=3615960)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3615960)[0m wandb:    relative_grp_acc_va 0.72719
+[36m(run pid=3615960)[0m wandb:       worst_grp_acc_te 55.30055
+[36m(run pid=3615960)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3615960)[0m wandb:       worst_grp_acc_va 60.2459
+[36m(run pid=3615960)[0m wandb: 
+[36m(run pid=3615960)[0m wandb:  View run apricot-vortex-3462 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/wjn39p6c
+[36m(run pid=3615960)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3615960)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3615960)[0m wandb: Find logs at: ./wandb/run-20240422_034332-wjn39p6c/logs
+ 88%|████████▊ | 7/8 [3:36:23<34:07, 2047.23s/it, failures=0, objective=0.881]   88%|████████▊ | 7/8 [3:36:23<34:07, 2047.23s/it, failures=0, objective=0.881]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2158.6828 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0019 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0002 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0155 sec.
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0035 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3623918)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3623918)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3623918)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3623918)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3623918)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_041930-g3x2udxu
+[36m(run pid=3623918)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3623918)[0m wandb: Syncing run lemon-gorge-3468
+[36m(run pid=3623918)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3623918)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/g3x2udxu
+[36m(run pid=3623918)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3623918)[0m wandb: \ 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3623918)[0m wandb: | 0.006 MB of 0.013 MB uploadedwandb: / 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3623918)[0m wandb: 
+[36m(run pid=3623918)[0m wandb: Run summary:
+[36m(run pid=3623918)[0m wandb:            best_acc_te 0.86678
+[36m(run pid=3623918)[0m wandb:            best_acc_va 0.87233
+[36m(run pid=3623918)[0m wandb: best_mean_group_acc_te 0.87028
+[36m(run pid=3623918)[0m wandb: best_mean_group_acc_va 0.8753
+[36m(run pid=3623918)[0m wandb:                     lr 0.00084
+[36m(run pid=3623918)[0m wandb:       major_grp_acc_te 98.54151
+[36m(run pid=3623918)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3623918)[0m wandb:       major_grp_acc_va 98.21597
+[36m(run pid=3623918)[0m wandb:        mean_grp_acc_te 83.92591
+[36m(run pid=3623918)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3623918)[0m wandb:        mean_grp_acc_va 83.05225
+[36m(run pid=3623918)[0m wandb:       minor_grp_acc_te 69.31031
+[36m(run pid=3623918)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3623918)[0m wandb:       minor_grp_acc_va 67.88852
+[36m(run pid=3623918)[0m wandb:    relative_grp_acc_te 0.70336
+[36m(run pid=3623918)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3623918)[0m wandb:    relative_grp_acc_va 0.69122
+[36m(run pid=3623918)[0m wandb:       worst_grp_acc_te 55.84699
+[36m(run pid=3623918)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3623918)[0m wandb:       worst_grp_acc_va 54.91803
+[36m(run pid=3623918)[0m wandb: 
+[36m(run pid=3623918)[0m wandb:  View run lemon-gorge-3468 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/g3x2udxu
+[36m(run pid=3623918)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v12
+[36m(run pid=3623918)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3623918)[0m wandb: Find logs at: ./wandb/run-20240422_041930-g3x2udxu/logs
+100%|██████████| 8/8 [4:12:07<00:00, 2077.55s/it, failures=0, objective=0.881]100%|██████████| 8/8 [4:12:07<00:00, 2077.55s/it, failures=0, objective=0.881]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 2143.4949 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0017 sec.
+wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_045505-9royz2q4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run usual-monkey-1989
+wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/9royz2q4
+[36m(run pid=3576406)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.002646657222892803, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3576406)[0m Method: erm
+[36m(run pid=3585653)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0005698454636535357, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3585653)[0m Method: erm
+[36m(run pid=3594306)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287236, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3594306)[0m Method: erm
+[36m(run pid=3602531)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702303, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3602531)[0m Method: erm
+[36m(run pid=3608054)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0017664102855893488, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3608054)[0m Method: erm
+[36m(run pid=3615960)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.001117890641369084, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3615960)[0m Method: erm
+[36m(run pid=3623918)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115781, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+[36m(run pid=3623918)[0m Method: erm
+The best configuration found by DeepHyper has an accuracy 0.881, 
+
+lr: 0.0024001391215287
+ ####  NOW RUNNING THE BEST CONFIGURATION WITH 5 DIFFERENT SEEDS ####
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 4, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.015 MB of 0.022 MB uploaded (0.004 MB deduped)wandb: \ 0.015 MB of 0.022 MB uploaded (0.004 MB deduped)wandb: | 0.022 MB of 0.022 MB uploaded (0.004 MB deduped)wandb:                                                                                
+wandb: W&B sync reduced upload amount by 16.1%             
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.86998
+wandb:            best_acc_va 0.8756
+wandb: best_mean_group_acc_te 0.87095
+wandb: best_mean_group_acc_va 0.8761
+wandb:                     lr 0.0024
+wandb:       major_grp_acc_te 99.08134
+wandb:       major_grp_acc_tr 100.0
+wandb:       major_grp_acc_va 98.88988
+wandb:        mean_grp_acc_te 87.22091
+wandb:        mean_grp_acc_tr 100.0
+wandb:        mean_grp_acc_va 87.2659
+wandb:       minor_grp_acc_te 75.36049
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 75.64192
+wandb:    relative_grp_acc_te 0.76059
+wandb:    relative_grp_acc_tr 1.0
+wandb:    relative_grp_acc_va 0.76491
+wandb:       worst_grp_acc_te 73.60656
+wandb:       worst_grp_acc_tr 100.0
+wandb:       worst_grp_acc_va 75.0
+wandb: 
+wandb:  View run usual-monkey-1989 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/9royz2q4
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v61
+wandb: Synced 5 W&B file(s), 0 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_045505-9royz2q4/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_053028-xr1xlliv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run glad-paper-1993
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/xr1xlliv
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 3, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.012 MB uploadedwandb: \ 0.005 MB of 0.012 MB uploadedwandb: | 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.85966
+wandb:            best_acc_va 0.86338
+wandb: best_mean_group_acc_te 0.86189
+wandb: best_mean_group_acc_va 0.86496
+wandb:                     lr 0.0024
+wandb:       major_grp_acc_te 92.98375
+wandb:       major_grp_acc_tr 95.97937
+wandb:       major_grp_acc_va 92.97577
+wandb:        mean_grp_acc_te 81.66764
+wandb:        mean_grp_acc_tr 96.75261
+wandb:        mean_grp_acc_va 82.68142
+wandb:       minor_grp_acc_te 70.35152
+wandb:       minor_grp_acc_tr 97.52585
+wandb:       minor_grp_acc_va 72.38708
+wandb:    relative_grp_acc_te 0.7566
+wandb:    relative_grp_acc_tr 1.01611
+wandb:    relative_grp_acc_va 0.77856
+wandb:       worst_grp_acc_te 55.62842
+wandb:       worst_grp_acc_tr 92.07077
+wandb:       worst_grp_acc_va 58.03279
+wandb: 
+wandb:  View run glad-paper-1993 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/xr1xlliv
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v61
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_053028-xr1xlliv/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_060550-cbfnbc6c
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dashing-cherry-2001
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/cbfnbc6c
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 2, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.005 MB uploadedwandb: | 0.005 MB of 0.011 MB uploadedwandb: / 0.005 MB of 0.011 MB uploadedwandb: - 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.85384
+wandb:            best_acc_va 0.86076
+wandb: best_mean_group_acc_te 0.85576
+wandb: best_mean_group_acc_va 0.86216
+wandb:                     lr 0.0024
+wandb:       major_grp_acc_te 99.1266
+wandb:       major_grp_acc_tr 100.0
+wandb:       major_grp_acc_va 99.14612
+wandb:        mean_grp_acc_te 82.94455
+wandb:        mean_grp_acc_tr 100.0
+wandb:        mean_grp_acc_va 83.87067
+wandb:       minor_grp_acc_te 66.7625
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 68.59523
+wandb:    relative_grp_acc_te 0.67351
+wandb:    relative_grp_acc_tr 1.0
+wandb:    relative_grp_acc_va 0.69186
+wandb:       worst_grp_acc_te 54.91803
+wandb:       worst_grp_acc_tr 100.0
+wandb:       worst_grp_acc_va 58.85246
+wandb: 
+wandb:  View run dashing-cherry-2001 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/cbfnbc6c
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v61
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_060550-cbfnbc6c/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_064130-cqz0f04v
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run devout-water-2004
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/cqz0f04v
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 1, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.012 MB uploadedwandb: | 0.005 MB of 0.012 MB uploadedwandb: / 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.90532
+wandb:            best_acc_va 0.90419
+wandb: best_mean_group_acc_te 0.90646
+wandb: best_mean_group_acc_va 0.90585
+wandb:                     lr 0.0024
+wandb:       major_grp_acc_te 99.17839
+wandb:       major_grp_acc_tr 100.0
+wandb:       major_grp_acc_va 99.25196
+wandb:        mean_grp_acc_te 85.88201
+wandb:        mean_grp_acc_tr 100.0
+wandb:        mean_grp_acc_va 86.85892
+wandb:       minor_grp_acc_te 72.58564
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 74.46587
+wandb:    relative_grp_acc_te 0.73187
+wandb:    relative_grp_acc_tr 1.0
+wandb:    relative_grp_acc_va 0.75027
+wandb:       worst_grp_acc_te 71.91257
+wandb:       worst_grp_acc_tr 100.0
+wandb:       worst_grp_acc_va 73.11475
+wandb: 
+wandb:  View run devout-water-2004 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/cqz0f04v
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v61
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_064130-cqz0f04v/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_071724-5y9xlf8i
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run different-fog-2008
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/5y9xlf8i
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 2, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.1, 'group': 'K=2_erm', 'group_best': 'plt-net_K=2_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.012 MB uploadedwandb: \ 0.005 MB of 0.012 MB uploadedwandb: | 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.871
+wandb:            best_acc_va 0.87276
+wandb: best_mean_group_acc_te 0.87419
+wandb: best_mean_group_acc_va 0.87554
+wandb:                     lr 0.0024
+wandb:       major_grp_acc_te 99.16993
+wandb:       major_grp_acc_tr 99.96723
+wandb:       major_grp_acc_va 98.99466
+wandb:        mean_grp_acc_te 85.73572
+wandb:        mean_grp_acc_tr 99.98362
+wandb:        mean_grp_acc_va 85.74968
+wandb:       minor_grp_acc_te 72.3015
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 72.50471
+wandb:    relative_grp_acc_te 0.72907
+wandb:    relative_grp_acc_tr 1.00033
+wandb:    relative_grp_acc_va 0.73241
+wandb:       worst_grp_acc_te 64.31694
+wandb:       worst_grp_acc_tr 99.93447
+wandb:       worst_grp_acc_va 65.7377
+wandb: 
+wandb:  View run different-fog-2008 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/5y9xlf8i
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v61
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_071724-5y9xlf8i/logs
+INFO:root:Creating Evaluator(<function run at 0x7f929f1189d0>, method=ray, method_kwargs={'num_cpus': 1, 'num_cpus_per_task': 1, 'callbacks': [<deephyper.evaluator.callback.TqdmCallback object at 0x7f925f1c7ca0>], 'num_gpus': 1, 'num_gpus_per_task': 1}...
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:deephyper.evaluator._ray:Ray Evaluator will execute run() from module __main__
+INFO:root:Creation done
+INFO:root:Asking 1 initial configurations...
+INFO:root:Asking took 0.0157 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0000 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0247 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3679824)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3679824)[0m wandb: - Waiting for wandb.init()...
+[36m(run pid=3679824)[0m wandb: \ Waiting for wandb.init()...
+[36m(run pid=3679824)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3679824)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3679824)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3679824)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_075313-tk4xay9i
+[36m(run pid=3679824)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3679824)[0m wandb: Syncing run elated-pine-3508
+[36m(run pid=3679824)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3679824)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/tk4xay9i
+100%|██████████| 8/8 [8:24:26<00:00, 3783.32s/it, failures=0, objective=0.881]
+[36m(run pid=3679824)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3679824)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3679824)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3679824)[0m wandb: / 0.006 MB of 0.013 MB uploadedwandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3679824)[0m wandb: 
+[36m(run pid=3679824)[0m wandb: Run summary:
+[36m(run pid=3679824)[0m wandb:            best_acc_te 0.89771
+[36m(run pid=3679824)[0m wandb:            best_acc_va 0.90036
+[36m(run pid=3679824)[0m wandb: best_mean_group_acc_te 0.90007
+[36m(run pid=3679824)[0m wandb: best_mean_group_acc_va 0.90283
+[36m(run pid=3679824)[0m wandb:                     lr 0.0005
+[36m(run pid=3679824)[0m wandb:       major_grp_acc_te 98.91065
+[36m(run pid=3679824)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3679824)[0m wandb:       major_grp_acc_va 98.83118
+[36m(run pid=3679824)[0m wandb:        mean_grp_acc_te 90.00723
+[36m(run pid=3679824)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3679824)[0m wandb:        mean_grp_acc_va 90.28323
+[36m(run pid=3679824)[0m wandb:       minor_grp_acc_te 87.03943
+[36m(run pid=3679824)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3679824)[0m wandb:       minor_grp_acc_va 87.43391
+[36m(run pid=3679824)[0m wandb:    relative_grp_acc_te 0.87998
+[36m(run pid=3679824)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3679824)[0m wandb:    relative_grp_acc_va 0.88468
+[36m(run pid=3679824)[0m wandb:       worst_grp_acc_te 64.50027
+[36m(run pid=3679824)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3679824)[0m wandb:       worst_grp_acc_va 66.96721
+[36m(run pid=3679824)[0m wandb: 
+[36m(run pid=3679824)[0m wandb:  View run elated-pine-3508 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/tk4xay9i
+[36m(run pid=3679824)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3679824)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3679824)[0m wandb: Find logs at: ./wandb/run-20240422_075313-tk4xay9i/logs
+Created new evaluator with 1 worker and config: {'num_cpus': 1, 'num_cpus_per_task': 1, 'callbacks': [<deephyper.evaluator.callback.TqdmCallback object at 0x7f925f1c7ca0>], 'num_gpus': 1, 'num_gpus_per_task': 1}
+Number of workers:  1
+{'lr': 0.001}
+GPU available: True
+[36m(run pid=3679824)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0004974556006241091, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3679824)[0m Method: erm
+  0%|          | 0/8 [00:00<?, ?it/s] 12%|#2        | 1/8 [00:00<00:00, 5433.04it/s, failures=0, objective=0.903]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 5536.8969 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0237 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0006 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0323 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0050 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3705104)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3705104)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3705104)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3705104)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3705104)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_092530-ezy48p08
+[36m(run pid=3705104)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3705104)[0m wandb: Syncing run misty-puddle-3521
+[36m(run pid=3705104)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3705104)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/ezy48p08
+[36m(run pid=3705104)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3705104)[0m wandb: \ 0.006 MB of 0.012 MB uploaded
+[36m(run pid=3705104)[0m wandb: | 0.006 MB of 0.012 MB uploadedwandb: / 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3705104)[0m wandb: 
+[36m(run pid=3705104)[0m wandb: Run summary:
+[36m(run pid=3705104)[0m wandb:            best_acc_te 0.91641
+[36m(run pid=3705104)[0m wandb:            best_acc_va 0.9149
+[36m(run pid=3705104)[0m wandb: best_mean_group_acc_te 0.91701
+[36m(run pid=3705104)[0m wandb: best_mean_group_acc_va 0.9164
+[36m(run pid=3705104)[0m wandb:                     lr 0.00265
+[36m(run pid=3705104)[0m wandb:       major_grp_acc_te 99.14443
+[36m(run pid=3705104)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3705104)[0m wandb:       major_grp_acc_va 99.15125
+[36m(run pid=3705104)[0m wandb:        mean_grp_acc_te 90.6904
+[36m(run pid=3705104)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3705104)[0m wandb:        mean_grp_acc_va 90.63254
+[36m(run pid=3705104)[0m wandb:       minor_grp_acc_te 87.87239
+[36m(run pid=3705104)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3705104)[0m wandb:       minor_grp_acc_va 87.79297
+[36m(run pid=3705104)[0m wandb:    relative_grp_acc_te 0.88631
+[36m(run pid=3705104)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3705104)[0m wandb:    relative_grp_acc_va 0.88544
+[36m(run pid=3705104)[0m wandb:       worst_grp_acc_te 69.08793
+[36m(run pid=3705104)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3705104)[0m wandb:       worst_grp_acc_va 67.86885
+[36m(run pid=3705104)[0m wandb: 
+[36m(run pid=3705104)[0m wandb:  View run misty-puddle-3521 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/ezy48p08
+[36m(run pid=3705104)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3705104)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3705104)[0m wandb: Find logs at: ./wandb/run-20240422_092530-ezy48p08/logs
+ 25%|##5       | 2/8 [1:20:24<4:01:13, 2412.30s/it, failures=0, objective=0.903] 25%|##5       | 2/8 [1:20:24<4:01:13, 2412.30s/it, failures=0, objective=0.916]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 4824.5330 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0016 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0003 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0154 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0046 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3718573)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3718573)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3718573)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3718573)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3718573)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_104555-46q7twje
+[36m(run pid=3718573)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3718573)[0m wandb: Syncing run silvery-fire-3529
+[36m(run pid=3718573)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3718573)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/46q7twje
+[36m(run pid=3718573)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3718573)[0m wandb: \ 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3718573)[0m wandb: | 0.006 MB of 0.013 MB uploadedwandb: / 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3718573)[0m wandb: 
+[36m(run pid=3718573)[0m wandb: Run summary:
+[36m(run pid=3718573)[0m wandb:            best_acc_te 0.91204
+[36m(run pid=3718573)[0m wandb:            best_acc_va 0.91508
+[36m(run pid=3718573)[0m wandb: best_mean_group_acc_te 0.91387
+[36m(run pid=3718573)[0m wandb: best_mean_group_acc_va 0.91729
+[36m(run pid=3718573)[0m wandb:                     lr 0.00057
+[36m(run pid=3718573)[0m wandb:       major_grp_acc_te 98.30323
+[36m(run pid=3718573)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3718573)[0m wandb:       major_grp_acc_va 98.00024
+[36m(run pid=3718573)[0m wandb:        mean_grp_acc_te 91.38718
+[36m(run pid=3718573)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3718573)[0m wandb:        mean_grp_acc_va 91.72941
+[36m(run pid=3718573)[0m wandb:       minor_grp_acc_te 89.08184
+[36m(run pid=3718573)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3718573)[0m wandb:       minor_grp_acc_va 89.63914
+[36m(run pid=3718573)[0m wandb:    relative_grp_acc_te 0.90619
+[36m(run pid=3718573)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3718573)[0m wandb:    relative_grp_acc_va 0.91468
+[36m(run pid=3718573)[0m wandb:       worst_grp_acc_te 73.51174
+[36m(run pid=3718573)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3718573)[0m wandb:       worst_grp_acc_va 73.93443
+[36m(run pid=3718573)[0m wandb: 
+[36m(run pid=3718573)[0m wandb:  View run silvery-fire-3529 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/46q7twje
+[36m(run pid=3718573)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3718573)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3718573)[0m wandb: Find logs at: ./wandb/run-20240422_104555-46q7twje/logs
+ 38%|###7      | 3/8 [2:30:15<4:22:47, 3153.49s/it, failures=0, objective=0.916] 38%|###7      | 3/8 [2:30:15<4:22:47, 3153.49s/it, failures=0, objective=0.917]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 4191.1397 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0229 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0002 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0006 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0330 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0063 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3726960)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3726960)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3726960)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3726960)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3726960)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_115607-aee3i00y
+[36m(run pid=3726960)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3726960)[0m wandb: Syncing run scarlet-sun-3534
+[36m(run pid=3726960)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3726960)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/aee3i00y
+[36m(run pid=3726960)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3726960)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3726960)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3726960)[0m wandb: / 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3726960)[0m wandb: - 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3726960)[0m wandb: \ 0.006 MB of 0.013 MB uploadedwandb: | 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3726960)[0m wandb: 
+[36m(run pid=3726960)[0m wandb: Run summary:
+[36m(run pid=3726960)[0m wandb:            best_acc_te 0.91557
+[36m(run pid=3726960)[0m wandb:            best_acc_va 0.91755
+[36m(run pid=3726960)[0m wandb: best_mean_group_acc_te 0.91906
+[36m(run pid=3726960)[0m wandb: best_mean_group_acc_va 0.9198
+[36m(run pid=3726960)[0m wandb:                     lr 0.0024
+[36m(run pid=3726960)[0m wandb:       major_grp_acc_te 98.9682
+[36m(run pid=3726960)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3726960)[0m wandb:       major_grp_acc_va 99.15037
+[36m(run pid=3726960)[0m wandb:        mean_grp_acc_te 91.9062
+[36m(run pid=3726960)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3726960)[0m wandb:        mean_grp_acc_va 91.98008
+[36m(run pid=3726960)[0m wandb:       minor_grp_acc_te 89.5522
+[36m(run pid=3726960)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3726960)[0m wandb:       minor_grp_acc_va 89.58999
+[36m(run pid=3726960)[0m wandb:    relative_grp_acc_te 0.90486
+[36m(run pid=3726960)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3726960)[0m wandb:    relative_grp_acc_va 0.90358
+[36m(run pid=3726960)[0m wandb:       worst_grp_acc_te 64.77335
+[36m(run pid=3726960)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3726960)[0m wandb:       worst_grp_acc_va 64.2623
+[36m(run pid=3726960)[0m wandb: 
+[36m(run pid=3726960)[0m wandb:  View run scarlet-sun-3534 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/aee3i00y
+[36m(run pid=3726960)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3726960)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3726960)[0m wandb: Find logs at: ./wandb/run-20240422_115607-aee3i00y/logs
+ 50%|#####     | 4/8 [3:42:31<3:59:38, 3594.73s/it, failures=0, objective=0.917] 50%|#####     | 4/8 [3:42:31<3:59:38, 3594.73s/it, failures=0, objective=0.92] INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 4335.9364 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0020 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0006 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0334 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0060 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3749323)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3749323)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3749323)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3749323)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3749323)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_130829-g1glmk6w
+[36m(run pid=3749323)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3749323)[0m wandb: Syncing run winter-violet-3538
+[36m(run pid=3749323)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3749323)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/g1glmk6w
+[36m(run pid=3749323)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3749323)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3749323)[0m wandb: | 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3749323)[0m wandb: / 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3749323)[0m wandb: - 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3749323)[0m wandb: \ 0.006 MB of 0.013 MB uploadedwandb: | 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3749323)[0m wandb: 
+[36m(run pid=3749323)[0m wandb: Run summary:
+[36m(run pid=3749323)[0m wandb:            best_acc_te 0.92212
+[36m(run pid=3749323)[0m wandb:            best_acc_va 0.92261
+[36m(run pid=3749323)[0m wandb: best_mean_group_acc_te 0.92316
+[36m(run pid=3749323)[0m wandb: best_mean_group_acc_va 0.92451
+[36m(run pid=3749323)[0m wandb:                     lr 0.00228
+[36m(run pid=3749323)[0m wandb:       major_grp_acc_te 98.85984
+[36m(run pid=3749323)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3749323)[0m wandb:       major_grp_acc_va 98.98202
+[36m(run pid=3749323)[0m wandb:        mean_grp_acc_te 92.31628
+[36m(run pid=3749323)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3749323)[0m wandb:        mean_grp_acc_va 92.45067
+[36m(run pid=3749323)[0m wandb:       minor_grp_acc_te 90.13509
+[36m(run pid=3749323)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3749323)[0m wandb:       minor_grp_acc_va 90.27355
+[36m(run pid=3749323)[0m wandb:    relative_grp_acc_te 0.91175
+[36m(run pid=3749323)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3749323)[0m wandb:    relative_grp_acc_va 0.91202
+[36m(run pid=3749323)[0m wandb:       worst_grp_acc_te 76.35172
+[36m(run pid=3749323)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3749323)[0m wandb:       worst_grp_acc_va 74.59016
+[36m(run pid=3749323)[0m wandb: 
+[36m(run pid=3749323)[0m wandb:  View run winter-violet-3538 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/g1glmk6w
+[36m(run pid=3749323)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3749323)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3749323)[0m wandb: Find logs at: ./wandb/run-20240422_130829-g1glmk6w/logs
+ 62%|######2   | 5/8 [4:54:04<3:11:51, 3837.30s/it, failures=0, objective=0.92] 62%|######2   | 5/8 [4:54:04<3:11:51, 3837.30s/it, failures=0, objective=0.925]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 4292.3089 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0116 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0006 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0322 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0063 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3772656)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3772656)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3772656)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3772656)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3772656)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_141959-teqbask4
+[36m(run pid=3772656)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3772656)[0m wandb: Syncing run dainty-tree-3541
+[36m(run pid=3772656)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3772656)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/teqbask4
+[36m(run pid=3772656)[0m wandb: - 0.006 MB of 0.012 MB uploaded
+[36m(run pid=3772656)[0m wandb: \ 0.006 MB of 0.012 MB uploadedwandb: | 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3772656)[0m wandb: 
+[36m(run pid=3772656)[0m wandb: Run summary:
+[36m(run pid=3772656)[0m wandb:            best_acc_te 0.92074
+[36m(run pid=3772656)[0m wandb:            best_acc_va 0.92123
+[36m(run pid=3772656)[0m wandb: best_mean_group_acc_te 0.92264
+[36m(run pid=3772656)[0m wandb: best_mean_group_acc_va 0.9232
+[36m(run pid=3772656)[0m wandb:                     lr 0.00177
+[36m(run pid=3772656)[0m wandb:       major_grp_acc_te 98.86518
+[36m(run pid=3772656)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3772656)[0m wandb:       major_grp_acc_va 98.81001
+[36m(run pid=3772656)[0m wandb:        mean_grp_acc_te 91.74019
+[36m(run pid=3772656)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3772656)[0m wandb:        mean_grp_acc_va 91.61689
+[36m(run pid=3772656)[0m wandb:       minor_grp_acc_te 89.36519
+[36m(run pid=3772656)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3772656)[0m wandb:       minor_grp_acc_va 89.21918
+[36m(run pid=3772656)[0m wandb:    relative_grp_acc_te 0.90391
+[36m(run pid=3772656)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3772656)[0m wandb:    relative_grp_acc_va 0.90294
+[36m(run pid=3772656)[0m wandb:       worst_grp_acc_te 67.01256
+[36m(run pid=3772656)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3772656)[0m wandb:       worst_grp_acc_va 65.81967
+[36m(run pid=3772656)[0m wandb: 
+[36m(run pid=3772656)[0m wandb:  View run dainty-tree-3541 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/teqbask4
+[36m(run pid=3772656)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3772656)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3772656)[0m wandb: Find logs at: ./wandb/run-20240422_141959-teqbask4/logs
+ 75%|#######5  | 6/8 [6:01:15<2:10:03, 3901.83s/it, failures=0, objective=0.925] 75%|#######5  | 6/8 [6:01:15<2:10:03, 3901.83s/it, failures=0, objective=0.925]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 4031.6876 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0019 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0006 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0359 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0065 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3799407)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3799407)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3799407)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3799407)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3799407)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_152655-o2xxagmr
+[36m(run pid=3799407)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3799407)[0m wandb: Syncing run swept-grass-3543
+[36m(run pid=3799407)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3799407)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/o2xxagmr
+[36m(run pid=3799407)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3799407)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3799407)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3799407)[0m wandb: / 0.006 MB of 0.013 MB uploadedwandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3799407)[0m wandb: 
+[36m(run pid=3799407)[0m wandb: Run summary:
+[36m(run pid=3799407)[0m wandb:            best_acc_te 0.91472
+[36m(run pid=3799407)[0m wandb:            best_acc_va 0.91387
+[36m(run pid=3799407)[0m wandb: best_mean_group_acc_te 0.91707
+[36m(run pid=3799407)[0m wandb: best_mean_group_acc_va 0.9167
+[36m(run pid=3799407)[0m wandb:                     lr 0.00112
+[36m(run pid=3799407)[0m wandb:       major_grp_acc_te 98.79493
+[36m(run pid=3799407)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3799407)[0m wandb:       major_grp_acc_va 98.98065
+[36m(run pid=3799407)[0m wandb:        mean_grp_acc_te 91.70673
+[36m(run pid=3799407)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3799407)[0m wandb:        mean_grp_acc_va 91.67019
+[36m(run pid=3799407)[0m wandb:       minor_grp_acc_te 89.344
+[36m(run pid=3799407)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3799407)[0m wandb:       minor_grp_acc_va 89.23337
+[36m(run pid=3799407)[0m wandb:    relative_grp_acc_te 0.90434
+[36m(run pid=3799407)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3799407)[0m wandb:    relative_grp_acc_va 0.90152
+[36m(run pid=3799407)[0m wandb:       worst_grp_acc_te 73.18405
+[36m(run pid=3799407)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3799407)[0m wandb:       worst_grp_acc_va 72.29508
+[36m(run pid=3799407)[0m wandb: 
+[36m(run pid=3799407)[0m wandb:  View run swept-grass-3543 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/o2xxagmr
+[36m(run pid=3799407)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3799407)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3799407)[0m wandb: Find logs at: ./wandb/run-20240422_152655-o2xxagmr/logs
+ 88%|########7 | 7/8 [7:11:22<1:06:39, 3999.79s/it, failures=0, objective=0.925] 88%|########7 | 7/8 [7:11:22<1:06:39, 3999.79s/it, failures=0, objective=0.925]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 4206.3686 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0022 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0002 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0009 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0349 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0053 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3811369)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3811369)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3811369)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3811369)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3811369)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_163707-dmkyjy1l
+[36m(run pid=3811369)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3811369)[0m wandb: Syncing run twilight-fog-3545
+[36m(run pid=3811369)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3811369)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/dmkyjy1l
+[36m(run pid=3811369)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3811369)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3811369)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3811369)[0m wandb: / 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3811369)[0m wandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3811369)[0m wandb: 
+[36m(run pid=3811369)[0m wandb: Run summary:
+[36m(run pid=3811369)[0m wandb:            best_acc_te 0.914
+[36m(run pid=3811369)[0m wandb:            best_acc_va 0.91404
+[36m(run pid=3811369)[0m wandb: best_mean_group_acc_te 0.91553
+[36m(run pid=3811369)[0m wandb: best_mean_group_acc_va 0.9164
+[36m(run pid=3811369)[0m wandb:                     lr 0.00084
+[36m(run pid=3811369)[0m wandb:       major_grp_acc_te 98.95091
+[36m(run pid=3811369)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3811369)[0m wandb:       major_grp_acc_va 98.9623
+[36m(run pid=3811369)[0m wandb:        mean_grp_acc_te 91.55336
+[36m(run pid=3811369)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3811369)[0m wandb:        mean_grp_acc_va 91.64007
+[36m(run pid=3811369)[0m wandb:       minor_grp_acc_te 89.08751
+[36m(run pid=3811369)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3811369)[0m wandb:       minor_grp_acc_va 89.19933
+[36m(run pid=3811369)[0m wandb:    relative_grp_acc_te 0.90032
+[36m(run pid=3811369)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3811369)[0m wandb:    relative_grp_acc_va 0.90135
+[36m(run pid=3811369)[0m wandb:       worst_grp_acc_te 74.8225
+[36m(run pid=3811369)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3811369)[0m wandb:       worst_grp_acc_va 74.34426
+[36m(run pid=3811369)[0m wandb: 
+[36m(run pid=3811369)[0m wandb:  View run twilight-fog-3545 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/dmkyjy1l
+[36m(run pid=3811369)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3811369)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3811369)[0m wandb: Find logs at: ./wandb/run-20240422_163707-dmkyjy1l/logs
+100%|##########| 8/8 [8:22:04<00:00, 4076.09s/it, failures=0, objective=0.925]  100%|##########| 8/8 [8:22:04<00:00, 4076.09s/it, failures=0, objective=0.925]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 4242.1266 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0114 sec.
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_174724-zb9lcpi4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run desert-pyramid-2039
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/zb9lcpi4
+[36m(run pid=3705104)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.002646657222892803, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3705104)[0m Method: erm
+[36m(run pid=3718573)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0005698454636535357, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3718573)[0m Method: erm
+[36m(run pid=3726960)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287236, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3726960)[0m Method: erm
+[36m(run pid=3749323)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702303, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3749323)[0m Method: erm
+[36m(run pid=3772656)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0017664102855893488, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3772656)[0m Method: erm
+[36m(run pid=3799407)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.001117890641369084, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3799407)[0m Method: erm
+[36m(run pid=3811369)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115781, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+[36m(run pid=3811369)[0m Method: erm
+The best configuration found by DeepHyper has an accuracy 0.925, 
+
+lr: 0.0022825343088702
+ ####  NOW RUNNING THE BEST CONFIGURATION WITH 5 DIFFERENT SEEDS ####
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 4, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.012 MB uploadedwandb: \ 0.005 MB of 0.012 MB uploadedwandb: | 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.91511
+wandb:            best_acc_va 0.91375
+wandb: best_mean_group_acc_te 0.91421
+wandb: best_mean_group_acc_va 0.91394
+wandb:                     lr 0.00228
+wandb:       major_grp_acc_te 98.2117
+wandb:       major_grp_acc_tr 99.95021
+wandb:       major_grp_acc_va 98.24025
+wandb:        mean_grp_acc_te 91.12085
+wandb:        mean_grp_acc_tr 99.98755
+wandb:        mean_grp_acc_va 91.13706
+wandb:       minor_grp_acc_te 88.75724
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 88.76933
+wandb:    relative_grp_acc_te 0.90373
+wandb:    relative_grp_acc_tr 1.0005
+wandb:    relative_grp_acc_va 0.90359
+wandb:       worst_grp_acc_te 80.46049
+wandb:       worst_grp_acc_tr 99.92535
+wandb:       worst_grp_acc_va 80.48553
+wandb: 
+wandb:  View run desert-pyramid-2039 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/zb9lcpi4
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v63
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_174724-zb9lcpi4/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_185731-hbusne9d
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run confused-resonance-2041
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/hbusne9d
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 3, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.005 MB uploadedwandb: | 0.005 MB of 0.011 MB uploadedwandb: / 0.005 MB of 0.011 MB uploadedwandb: - 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.91009
+wandb:            best_acc_va 0.91341
+wandb: best_mean_group_acc_te 0.91219
+wandb: best_mean_group_acc_va 0.91611
+wandb:                     lr 0.00228
+wandb:       major_grp_acc_te 99.17267
+wandb:       major_grp_acc_tr 100.0
+wandb:       major_grp_acc_va 99.2273
+wandb:        mean_grp_acc_te 90.43762
+wandb:        mean_grp_acc_tr 100.0
+wandb:        mean_grp_acc_va 90.34087
+wandb:       minor_grp_acc_te 87.52593
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 87.37873
+wandb:    relative_grp_acc_te 0.88256
+wandb:    relative_grp_acc_tr 1.0
+wandb:    relative_grp_acc_va 0.88059
+wandb:       worst_grp_acc_te 72.6379
+wandb:       worst_grp_acc_tr 100.0
+wandb:       worst_grp_acc_va 70.40984
+wandb: 
+wandb:  View run confused-resonance-2041 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/hbusne9d
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v64
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_185731-hbusne9d/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_200818-lgklhhum
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dark-valley-2044
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/lgklhhum
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 2, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.011 MB uploadedwandb: \ 0.005 MB of 0.012 MB uploadedwandb: | 0.005 MB of 0.012 MB uploadedwandb: / 0.005 MB of 0.012 MB uploadedwandb: - 0.005 MB of 0.012 MB uploadedwandb: \ 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.9166
+wandb:            best_acc_va 0.91876
+wandb: best_mean_group_acc_te 0.91724
+wandb: best_mean_group_acc_va 0.92
+wandb:                     lr 0.00228
+wandb:       major_grp_acc_te 98.73556
+wandb:       major_grp_acc_tr 99.89128
+wandb:       major_grp_acc_va 98.92299
+wandb:        mean_grp_acc_te 90.16443
+wandb:        mean_grp_acc_tr 99.9495
+wandb:        mean_grp_acc_va 89.98664
+wandb:       minor_grp_acc_te 87.30738
+wandb:       minor_grp_acc_tr 99.96891
+wandb:       minor_grp_acc_va 87.00786
+wandb:    relative_grp_acc_te 0.88425
+wandb:    relative_grp_acc_tr 1.00078
+wandb:    relative_grp_acc_va 0.87955
+wandb:       worst_grp_acc_te 67.83179
+wandb:       worst_grp_acc_tr 99.62687
+wandb:       worst_grp_acc_va 68.19672
+wandb: 
+wandb:  View run dark-valley-2044 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/lgklhhum
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v64
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_200818-lgklhhum/logs
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_211749-xhma8a0k
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lilac-brook-2047
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/xhma8a0k
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 1, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.005 MB uploadedwandb: | 0.005 MB of 0.011 MB uploadedwandb: / 0.005 MB of 0.011 MB uploadedwandb: - 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.91618
+wandb:            best_acc_va 0.91577
+wandb: best_mean_group_acc_te 0.9164
+wandb: best_mean_group_acc_va 0.91653
+wandb:                     lr 0.00228
+wandb:       major_grp_acc_te 98.43478
+wandb:       major_grp_acc_tr 99.89735
+wandb:       major_grp_acc_va 98.34365
+wandb:        mean_grp_acc_te 90.82372
+wandb:        mean_grp_acc_tr 99.9277
+wandb:        mean_grp_acc_va 91.09361
+wandb:       minor_grp_acc_te 88.2867
+wandb:       minor_grp_acc_tr 99.93781
+wandb:       minor_grp_acc_va 88.67694
+wandb:    relative_grp_acc_te 0.89691
+wandb:    relative_grp_acc_tr 1.00041
+wandb:    relative_grp_acc_va 0.9017
+wandb:       worst_grp_acc_te 74.6733
+wandb:       worst_grp_acc_tr 99.5894
+wandb:       worst_grp_acc_va 75.72362
+wandb: 
+wandb:  View run lilac-brook-2047 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/xhma8a0k
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v64
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_211749-xhma8a0k/logs
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_222647-k72uqgee
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fluent-sunset-2048
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/k72uqgee
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 4, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.30000000000000004, 'group': 'K=4_erm', 'group_best': 'plt-net_K=4_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.005 MB uploadedwandb: | 0.005 MB of 0.011 MB uploadedwandb: / 0.005 MB of 0.011 MB uploadedwandb: - 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.92063
+wandb:            best_acc_va 0.92065
+wandb: best_mean_group_acc_te 0.92297
+wandb: best_mean_group_acc_va 0.92336
+wandb:                     lr 0.00228
+wandb:       major_grp_acc_te 98.85354
+wandb:       major_grp_acc_tr 100.0
+wandb:       major_grp_acc_va 99.06063
+wandb:        mean_grp_acc_te 92.29718
+wandb:        mean_grp_acc_tr 100.0
+wandb:        mean_grp_acc_va 92.33562
+wandb:       minor_grp_acc_te 90.11173
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 90.09395
+wandb:    relative_grp_acc_te 0.91157
+wandb:    relative_grp_acc_tr 1.0
+wandb:    relative_grp_acc_va 0.90948
+wandb:       worst_grp_acc_te 70.89022
+wandb:       worst_grp_acc_tr 100.0
+wandb:       worst_grp_acc_va 71.06557
+wandb: 
+wandb:  View run fluent-sunset-2048 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/k72uqgee
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v64
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240422_222647-k72uqgee/logs
+INFO:root:Creating Evaluator(<function run at 0x7f929f1189d0>, method=ray, method_kwargs={'num_cpus': 1, 'num_cpus_per_task': 1, 'callbacks': [<deephyper.evaluator.callback.TqdmCallback object at 0x7f90dc63dbe0>], 'num_gpus': 1, 'num_gpus_per_task': 1}...
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:deephyper.evaluator._ray:Ray Evaluator will execute run() from module __main__
+INFO:root:Creation done
+INFO:root:Asking 1 initial configurations...
+INFO:root:Asking took 0.0078 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0000 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0126 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3843163)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3843163)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3843163)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3843163)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3843163)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240422_233601-imp70d97
+[36m(run pid=3843163)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3843163)[0m wandb: Syncing run dry-thunder-3553
+[36m(run pid=3843163)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3843163)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/imp70d97
+100%|##########| 8/8 [14:42:03<00:00, 6615.41s/it, failures=0, objective=0.925]
+[36m(run pid=3843163)[0m wandb: - 0.006 MB of 0.014 MB uploaded
+[36m(run pid=3843163)[0m wandb: \ 0.006 MB of 0.014 MB uploadedwandb: | 0.014 MB of 0.014 MB uploadedwandb:                                                                                
+[36m(run pid=3843163)[0m wandb: 
+[36m(run pid=3843163)[0m wandb: Run summary:
+[36m(run pid=3843163)[0m wandb:            best_acc_te 0.86088
+[36m(run pid=3843163)[0m wandb:            best_acc_va 0.86239
+[36m(run pid=3843163)[0m wandb: best_mean_group_acc_te 0.85831
+[36m(run pid=3843163)[0m wandb: best_mean_group_acc_va 0.85984
+[36m(run pid=3843163)[0m wandb:                     lr 0.0005
+[36m(run pid=3843163)[0m wandb:       major_grp_acc_te 97.50461
+[36m(run pid=3843163)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3843163)[0m wandb:       major_grp_acc_va 97.47633
+[36m(run pid=3843163)[0m wandb:        mean_grp_acc_te 85.59164
+[36m(run pid=3843163)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3843163)[0m wandb:        mean_grp_acc_va 85.86553
+[36m(run pid=3843163)[0m wandb:       minor_grp_acc_te 83.88979
+[36m(run pid=3843163)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3843163)[0m wandb:       minor_grp_acc_va 84.20685
+[36m(run pid=3843163)[0m wandb:    relative_grp_acc_te 0.86037
+[36m(run pid=3843163)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3843163)[0m wandb:    relative_grp_acc_va 0.86387
+[36m(run pid=3843163)[0m wandb:       worst_grp_acc_te 51.87207
+[36m(run pid=3843163)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3843163)[0m wandb:       worst_grp_acc_va 49.35673
+[36m(run pid=3843163)[0m wandb: 
+[36m(run pid=3843163)[0m wandb:  View run dry-thunder-3553 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/imp70d97
+[36m(run pid=3843163)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3843163)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3843163)[0m wandb: Find logs at: ./wandb/run-20240422_233601-imp70d97/logs
+Created new evaluator with 1 worker and config: {'num_cpus': 1, 'num_cpus_per_task': 1, 'callbacks': [<deephyper.evaluator.callback.TqdmCallback object at 0x7f90dc63dbe0>], 'num_gpus': 1, 'num_gpus_per_task': 1}
+Number of workers:  1
+{'lr': 0.001}
+GPU available: True
+[36m(run pid=3843163)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0004974556006241091, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3843163)[0m Method: erm
+[36m(run pid=3843163)[0m Metadata file does not exist. Creating it...
+[36m(run pid=3843163)[0m Classical mode : we keep K=8 classes and K=8 style
+[36m(run pid=3843163)[0m ########### CSV file ./data//metadata_plt-net_K=8_mu=0.1_splitseed=0.csv contains the following splits, styles and classes distribution:
+[36m(run pid=3843163)[0m split  style                 class                
+[36m(run pid=3843163)[0m 0      abstract_illusionism  Alcea_rosea              2679
+[36m(run pid=3843163)[0m                              Alliaria_petiolata        152
+[36m(run pid=3843163)[0m                              Anemone_nemorosa          170
+[36m(run pid=3843163)[0m                              Calendula_officinalis     234
+[36m(run pid=3843163)[0m                              Centranthus_ruber         217
+[36m(run pid=3843163)[0m                                                       ... 
+[36m(run pid=3843163)[0m 2      chinese_art           Calendula_officinalis    1814
+[36m(run pid=3843163)[0m                              Centranthus_ruber        1831
+[36m(run pid=3843163)[0m                              Cirsium_arvense          1282
+[36m(run pid=3843163)[0m                              Cirsium_vulgare          1830
+[36m(run pid=3843163)[0m                              Daucus_carota            1830
+[36m(run pid=3843163)[0m Length: 192, dtype: int64
+  0%|          | 0/8 [00:00<?, ?it/s] 12%|#2        | 1/8 [00:00<00:00, 6502.80it/s, failures=0, objective=0.86]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 12399.6067 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0112 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0004 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0249 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0052 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3856532)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3856532)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3856532)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3856532)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3856532)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240423_030241-8gw8wvrs
+[36m(run pid=3856532)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3856532)[0m wandb: Syncing run giddy-bird-3556
+[36m(run pid=3856532)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3856532)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/8gw8wvrs
+[36m(run pid=3856532)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3856532)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3856532)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3856532)[0m wandb: / 0.006 MB of 0.013 MB uploadedwandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3856532)[0m wandb: 
+[36m(run pid=3856532)[0m wandb: Run summary:
+[36m(run pid=3856532)[0m wandb:            best_acc_te 0.79942
+[36m(run pid=3856532)[0m wandb:            best_acc_va 0.80369
+[36m(run pid=3856532)[0m wandb: best_mean_group_acc_te 0.80017
+[36m(run pid=3856532)[0m wandb: best_mean_group_acc_va 0.80488
+[36m(run pid=3856532)[0m wandb:                     lr 0.00265
+[36m(run pid=3856532)[0m wandb:       major_grp_acc_te 95.98073
+[36m(run pid=3856532)[0m wandb:       major_grp_acc_tr 99.59417
+[36m(run pid=3856532)[0m wandb:       major_grp_acc_va 96.28338
+[36m(run pid=3856532)[0m wandb:        mean_grp_acc_te 77.30961
+[36m(run pid=3856532)[0m wandb:        mean_grp_acc_tr 99.49422
+[36m(run pid=3856532)[0m wandb:        mean_grp_acc_va 77.62373
+[36m(run pid=3856532)[0m wandb:       minor_grp_acc_te 74.64231
+[36m(run pid=3856532)[0m wandb:       minor_grp_acc_tr 99.47994
+[36m(run pid=3856532)[0m wandb:       minor_grp_acc_va 74.95806
+[36m(run pid=3856532)[0m wandb:    relative_grp_acc_te 0.77768
+[36m(run pid=3856532)[0m wandb:    relative_grp_acc_tr 0.99885
+[36m(run pid=3856532)[0m wandb:    relative_grp_acc_va 0.77852
+[36m(run pid=3856532)[0m wandb:       worst_grp_acc_te 21.45086
+[36m(run pid=3856532)[0m wandb:       worst_grp_acc_tr 94.31818
+[36m(run pid=3856532)[0m wandb:       worst_grp_acc_va 20.5848
+[36m(run pid=3856532)[0m wandb: 
+[36m(run pid=3856532)[0m wandb:  View run giddy-bird-3556 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/8gw8wvrs
+[36m(run pid=3856532)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3856532)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3856532)[0m wandb: Find logs at: ./wandb/run-20240423_030241-8gw8wvrs/logs
+ 25%|##5       | 2/8 [3:27:22<10:22:06, 6221.04s/it, failures=0, objective=0.86] 25%|##5       | 2/8 [3:27:22<10:22:06, 6221.04s/it, failures=0, objective=0.86]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 12442.0446 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0017 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0003 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0186 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0053 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3871989)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3871989)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3871989)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3871989)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3871989)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240423_063003-g8jxmygz
+[36m(run pid=3871989)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3871989)[0m wandb: Syncing run royal-dawn-3562
+[36m(run pid=3871989)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3871989)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/g8jxmygz
+[36m(run pid=3871989)[0m wandb: - 0.006 MB of 0.012 MB uploaded
+[36m(run pid=3871989)[0m wandb: \ 0.006 MB of 0.012 MB uploadedwandb: | 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3871989)[0m wandb: 
+[36m(run pid=3871989)[0m wandb: Run summary:
+[36m(run pid=3871989)[0m wandb:            best_acc_te 0.85514
+[36m(run pid=3871989)[0m wandb:            best_acc_va 0.85915
+[36m(run pid=3871989)[0m wandb: best_mean_group_acc_te 0.8537
+[36m(run pid=3871989)[0m wandb: best_mean_group_acc_va 0.85773
+[36m(run pid=3871989)[0m wandb:                     lr 0.00057
+[36m(run pid=3871989)[0m wandb:       major_grp_acc_te 97.32682
+[36m(run pid=3871989)[0m wandb:       major_grp_acc_tr 99.99289
+[36m(run pid=3871989)[0m wandb:       major_grp_acc_va 97.28701
+[36m(run pid=3871989)[0m wandb:        mean_grp_acc_te 85.37017
+[36m(run pid=3871989)[0m wandb:        mean_grp_acc_tr 99.99198
+[36m(run pid=3871989)[0m wandb:        mean_grp_acc_va 85.77287
+[36m(run pid=3871989)[0m wandb:       minor_grp_acc_te 83.66207
+[36m(run pid=3871989)[0m wandb:       minor_grp_acc_tr 99.99185
+[36m(run pid=3871989)[0m wandb:       minor_grp_acc_va 84.12799
+[36m(run pid=3871989)[0m wandb:    relative_grp_acc_te 0.8596
+[36m(run pid=3871989)[0m wandb:    relative_grp_acc_tr 0.99999
+[36m(run pid=3871989)[0m wandb:    relative_grp_acc_va 0.86474
+[36m(run pid=3871989)[0m wandb:       worst_grp_acc_te 52.73224
+[36m(run pid=3871989)[0m wandb:       worst_grp_acc_tr 99.54338
+[36m(run pid=3871989)[0m wandb:       worst_grp_acc_va 54.61988
+[36m(run pid=3871989)[0m wandb: 
+[36m(run pid=3871989)[0m wandb:  View run royal-dawn-3562 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/g8jxmygz
+[36m(run pid=3871989)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3871989)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3871989)[0m wandb: Find logs at: ./wandb/run-20240423_063003-g8jxmygz/logs
+ 38%|###7      | 3/8 [6:47:08<11:58:35, 8623.17s/it, failures=0, objective=0.86] 38%|###7      | 3/8 [6:47:08<11:58:35, 8623.17s/it, failures=0, objective=0.86]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 11986.1188 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0019 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0003 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0156 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0044 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3891033)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3891033)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3891033)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3891033)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3891033)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240423_095006-0y40alzk
+[36m(run pid=3891033)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3891033)[0m wandb: Syncing run youthful-snowball-3571
+[36m(run pid=3891033)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3891033)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/0y40alzk
+[36m(run pid=3891033)[0m wandb: Network error (ReadTimeout), entering retry loop.
+[36m(run pid=3891033)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3891033)[0m wandb: \ 0.006 MB of 0.012 MB uploaded
+[36m(run pid=3891033)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3891033)[0m wandb: / 0.006 MB of 0.013 MB uploadedwandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3891033)[0m wandb: 
+[36m(run pid=3891033)[0m wandb: Run summary:
+[36m(run pid=3891033)[0m wandb:            best_acc_te 0.81798
+[36m(run pid=3891033)[0m wandb:            best_acc_va 0.81799
+[36m(run pid=3891033)[0m wandb: best_mean_group_acc_te 0.81641
+[36m(run pid=3891033)[0m wandb: best_mean_group_acc_va 0.81641
+[36m(run pid=3891033)[0m wandb:                     lr 0.0024
+[36m(run pid=3891033)[0m wandb:       major_grp_acc_te 96.32985
+[36m(run pid=3891033)[0m wandb:       major_grp_acc_tr 99.63748
+[36m(run pid=3891033)[0m wandb:       major_grp_acc_va 96.61793
+[36m(run pid=3891033)[0m wandb:        mean_grp_acc_te 78.7776
+[36m(run pid=3891033)[0m wandb:        mean_grp_acc_tr 99.45639
+[36m(run pid=3891033)[0m wandb:        mean_grp_acc_va 79.1304
+[36m(run pid=3891033)[0m wandb:       minor_grp_acc_te 76.27014
+[36m(run pid=3891033)[0m wandb:       minor_grp_acc_tr 99.43052
+[36m(run pid=3891033)[0m wandb:       minor_grp_acc_va 76.63218
+[36m(run pid=3891033)[0m wandb:    relative_grp_acc_te 0.79176
+[36m(run pid=3891033)[0m wandb:    relative_grp_acc_tr 0.99792
+[36m(run pid=3891033)[0m wandb:    relative_grp_acc_va 0.79315
+[36m(run pid=3891033)[0m wandb:       worst_grp_acc_te 31.5847
+[36m(run pid=3891033)[0m wandb:       worst_grp_acc_tr 94.70588
+[36m(run pid=3891033)[0m wandb:       worst_grp_acc_va 32.02293
+[36m(run pid=3891033)[0m wandb: 
+[36m(run pid=3891033)[0m wandb:  View run youthful-snowball-3571 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/0y40alzk
+[36m(run pid=3891033)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3891033)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3891033)[0m wandb: Find logs at: ./wandb/run-20240423_095006-0y40alzk/logs
+ 50%|#####     | 4/8 [9:39:12<10:17:11, 9257.90s/it, failures=0, objective=0.86] 50%|#####     | 4/8 [9:39:12<10:17:11, 9257.90s/it, failures=0, objective=0.86]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 10324.2231 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0027 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0007 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0310 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0058 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3903641)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3903641)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3903641)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3903641)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3903641)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240423_124208-nqy7kciq
+[36m(run pid=3903641)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3903641)[0m wandb: Syncing run firm-totem-3731
+[36m(run pid=3903641)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3903641)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/nqy7kciq
+[36m(run pid=3903641)[0m wandb: - 0.006 MB of 0.012 MB uploaded
+[36m(run pid=3903641)[0m wandb: \ 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3903641)[0m wandb: | 0.006 MB of 0.013 MB uploadedwandb: / 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3903641)[0m wandb: 
+[36m(run pid=3903641)[0m wandb: Run summary:
+[36m(run pid=3903641)[0m wandb:            best_acc_te 0.80988
+[36m(run pid=3903641)[0m wandb:            best_acc_va 0.81325
+[36m(run pid=3903641)[0m wandb: best_mean_group_acc_te 0.81013
+[36m(run pid=3903641)[0m wandb: best_mean_group_acc_va 0.81349
+[36m(run pid=3903641)[0m wandb:                     lr 0.00228
+[36m(run pid=3903641)[0m wandb:       major_grp_acc_te 96.71077
+[36m(run pid=3903641)[0m wandb:       major_grp_acc_tr 99.62493
+[36m(run pid=3903641)[0m wandb:       major_grp_acc_va 96.89629
+[36m(run pid=3903641)[0m wandb:        mean_grp_acc_te 78.08986
+[36m(run pid=3903641)[0m wandb:        mean_grp_acc_tr 99.43278
+[36m(run pid=3903641)[0m wandb:        mean_grp_acc_va 77.99961
+[36m(run pid=3903641)[0m wandb:       minor_grp_acc_te 75.42973
+[36m(run pid=3903641)[0m wandb:       minor_grp_acc_tr 99.40533
+[36m(run pid=3903641)[0m wandb:       minor_grp_acc_va 75.30008
+[36m(run pid=3903641)[0m wandb:    relative_grp_acc_te 0.77995
+[36m(run pid=3903641)[0m wandb:    relative_grp_acc_tr 0.9978
+[36m(run pid=3903641)[0m wandb:    relative_grp_acc_va 0.77712
+[36m(run pid=3903641)[0m wandb:       worst_grp_acc_te 18.64275
+[36m(run pid=3903641)[0m wandb:       worst_grp_acc_tr 94.88636
+[36m(run pid=3903641)[0m wandb:       worst_grp_acc_va 18.47953
+[36m(run pid=3903641)[0m wandb: 
+[36m(run pid=3903641)[0m wandb:  View run firm-totem-3731 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/nqy7kciq
+[36m(run pid=3903641)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3903641)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3903641)[0m wandb: Find logs at: ./wandb/run-20240423_124208-nqy7kciq/logs
+ 62%|######2   | 5/8 [12:34:39<8:04:57, 9699.10s/it, failures=0, objective=0.86] 62%|######2   | 5/8 [12:34:39<8:04:57, 9699.10s/it, failures=0, objective=0.86]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 10526.7438 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0023 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0002 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0008 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0371 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0058 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3919621)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3919621)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3919621)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3919621)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3919621)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240423_153733-f5ffnye3
+[36m(run pid=3919621)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3919621)[0m wandb: Syncing run confused-armadillo-4129
+[36m(run pid=3919621)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3919621)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/f5ffnye3
+[36m(run pid=3919621)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3919621)[0m wandb: \ 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3919621)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3919621)[0m wandb: / 0.006 MB of 0.013 MB uploadedwandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3919621)[0m wandb: 
+[36m(run pid=3919621)[0m wandb: Run summary:
+[36m(run pid=3919621)[0m wandb:            best_acc_te 0.83208
+[36m(run pid=3919621)[0m wandb:            best_acc_va 0.83736
+[36m(run pid=3919621)[0m wandb: best_mean_group_acc_te 0.83359
+[36m(run pid=3919621)[0m wandb: best_mean_group_acc_va 0.83703
+[36m(run pid=3919621)[0m wandb:                     lr 0.00177
+[36m(run pid=3919621)[0m wandb:       major_grp_acc_te 96.9695
+[36m(run pid=3919621)[0m wandb:       major_grp_acc_tr 99.84155
+[36m(run pid=3919621)[0m wandb:       major_grp_acc_va 97.02854
+[36m(run pid=3919621)[0m wandb:        mean_grp_acc_te 80.04419
+[36m(run pid=3919621)[0m wandb:        mean_grp_acc_tr 99.54257
+[36m(run pid=3919621)[0m wandb:        mean_grp_acc_va 80.22691
+[36m(run pid=3919621)[0m wandb:       minor_grp_acc_te 77.62629
+[36m(run pid=3919621)[0m wandb:       minor_grp_acc_tr 99.49986
+[36m(run pid=3919621)[0m wandb:       minor_grp_acc_va 77.82667
+[36m(run pid=3919621)[0m wandb:    relative_grp_acc_te 0.80052
+[36m(run pid=3919621)[0m wandb:    relative_grp_acc_tr 0.99658
+[36m(run pid=3919621)[0m wandb:    relative_grp_acc_va 0.8021
+[36m(run pid=3919621)[0m wandb:       worst_grp_acc_te 18.79875
+[36m(run pid=3919621)[0m wandb:       worst_grp_acc_tr 85.79545
+[36m(run pid=3919621)[0m wandb:       worst_grp_acc_va 16.84211
+[36m(run pid=3919621)[0m wandb: 
+[36m(run pid=3919621)[0m wandb:  View run confused-armadillo-4129 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/f5ffnye3
+[36m(run pid=3919621)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3919621)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3919621)[0m wandb: Find logs at: ./wandb/run-20240423_153733-f5ffnye3/logs
+ 75%|#######5  | 6/8 [15:28:06<5:31:08, 9934.27s/it, failures=0, objective=0.86] 75%|#######5  | 6/8 [15:28:06<5:31:08, 9934.27s/it, failures=0, objective=0.86]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 10407.6799 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0016 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0005 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0197 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0062 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3934081)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3934081)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3934081)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3934081)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3934081)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240423_183055-48zf22do
+[36m(run pid=3934081)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3934081)[0m wandb: Syncing run hearty-dragon-4277
+[36m(run pid=3934081)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3934081)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/48zf22do
+[36m(run pid=3934081)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3934081)[0m wandb: \ 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3934081)[0m wandb: | 0.006 MB of 0.013 MB uploaded
+[36m(run pid=3934081)[0m wandb: / 0.006 MB of 0.013 MB uploadedwandb: - 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3934081)[0m wandb: 
+[36m(run pid=3934081)[0m wandb: Run summary:
+[36m(run pid=3934081)[0m wandb:            best_acc_te 0.85702
+[36m(run pid=3934081)[0m wandb:            best_acc_va 0.85897
+[36m(run pid=3934081)[0m wandb: best_mean_group_acc_te 0.85547
+[36m(run pid=3934081)[0m wandb: best_mean_group_acc_va 0.85748
+[36m(run pid=3934081)[0m wandb:                     lr 0.00112
+[36m(run pid=3934081)[0m wandb:       major_grp_acc_te 97.76535
+[36m(run pid=3934081)[0m wandb:       major_grp_acc_tr 99.9943
+[36m(run pid=3934081)[0m wandb:       major_grp_acc_va 97.68075
+[36m(run pid=3934081)[0m wandb:        mean_grp_acc_te 85.54654
+[36m(run pid=3934081)[0m wandb:        mean_grp_acc_tr 99.99346
+[36m(run pid=3934081)[0m wandb:        mean_grp_acc_va 85.74758
+[36m(run pid=3934081)[0m wandb:       minor_grp_acc_te 83.801
+[36m(run pid=3934081)[0m wandb:       minor_grp_acc_tr 99.99334
+[36m(run pid=3934081)[0m wandb:       minor_grp_acc_va 84.04284
+[36m(run pid=3934081)[0m wandb:    relative_grp_acc_te 0.85716
+[36m(run pid=3934081)[0m wandb:    relative_grp_acc_tr 0.99999
+[36m(run pid=3934081)[0m wandb:    relative_grp_acc_va 0.86038
+[36m(run pid=3934081)[0m wandb:       worst_grp_acc_te 50.31201
+[36m(run pid=3934081)[0m wandb:       worst_grp_acc_tr 99.62687
+[36m(run pid=3934081)[0m wandb:       worst_grp_acc_va 50.05848
+[36m(run pid=3934081)[0m wandb: 
+[36m(run pid=3934081)[0m wandb:  View run hearty-dragon-4277 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/48zf22do
+[36m(run pid=3934081)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3934081)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3934081)[0m wandb: Find logs at: ./wandb/run-20240423_183055-48zf22do/logs
+ 88%|########7 | 7/8 [18:24:20<2:48:59, 10139.74s/it, failures=0, objective=0.86] 88%|########7 | 7/8 [18:24:20<2:48:59, 10139.74s/it, failures=0, objective=0.86]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 10573.0901 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0112 sec.
+INFO:root:Transforming received configurations to list...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Fitting the optimizer...
+INFO:root:Fitting took 0.0003 sec.
+INFO:root:Asking 1 new configurations...
+INFO:root:Asking took 0.0162 sec.
+/home/aptikal/gauffrea/SMABalancingGroups/envSMAB/lib/python3.9/site-packages/wandb/sdk/wandb_run.py:2171: UserWarning: Run (9royz2q4) is finished. The call to `_console_raw_callback` will be ignored. Please make sure that you are using an active run.
+  lambda data: self._console_raw_callback("stderr", data),
+INFO:root:Transforming configurations to dict...
+INFO:root:Transformation took 0.0001 sec.
+INFO:root:Submitting 1 configurations...
+INFO:root:submit 1 job(s) starts...
+INFO:root:submit done
+INFO:root:Submition took 0.0049 sec.
+INFO:root:Gathering jobs...
+INFO:root:gather(BATCH, size=1) starts...
+[36m(run pid=3948100)[0m wandb: Currently logged in as: aureliengauffre. Use `wandb login --relogin` to force relogin
+[36m(run pid=3948100)[0m wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+[36m(run pid=3948100)[0m wandb:  $ pip install wandb --upgrade
+[36m(run pid=3948100)[0m wandb: Tracking run with wandb version 0.16.4
+[36m(run pid=3948100)[0m wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240423_212712-zt2p9b85
+[36m(run pid=3948100)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(run pid=3948100)[0m wandb: Syncing run vital-donkey-4359
+[36m(run pid=3948100)[0m wandb: ⭐️ View project at https://wandb.ai/aureliengauffre/SMA_all_2
+[36m(run pid=3948100)[0m wandb: 🚀 View run at https://wandb.ai/aureliengauffre/SMA_all_2/runs/zt2p9b85
+[36m(run pid=3948100)[0m wandb: - 0.006 MB of 0.006 MB uploaded
+[36m(run pid=3948100)[0m wandb: \ 0.006 MB of 0.012 MB uploaded
+[36m(run pid=3948100)[0m wandb: | 0.006 MB of 0.012 MB uploadedwandb: / 0.013 MB of 0.013 MB uploadedwandb:                                                                                
+[36m(run pid=3948100)[0m wandb: 
+[36m(run pid=3948100)[0m wandb: Run summary:
+[36m(run pid=3948100)[0m wandb:            best_acc_te 0.86307
+[36m(run pid=3948100)[0m wandb:            best_acc_va 0.86634
+[36m(run pid=3948100)[0m wandb: best_mean_group_acc_te 0.85966
+[36m(run pid=3948100)[0m wandb: best_mean_group_acc_va 0.86339
+[36m(run pid=3948100)[0m wandb:                     lr 0.00084
+[36m(run pid=3948100)[0m wandb:       major_grp_acc_te 97.92553
+[36m(run pid=3948100)[0m wandb:       major_grp_acc_tr 100.0
+[36m(run pid=3948100)[0m wandb:       major_grp_acc_va 97.94526
+[36m(run pid=3948100)[0m wandb:        mean_grp_acc_te 85.96589
+[36m(run pid=3948100)[0m wandb:        mean_grp_acc_tr 100.0
+[36m(run pid=3948100)[0m wandb:        mean_grp_acc_va 86.33942
+[36m(run pid=3948100)[0m wandb:       minor_grp_acc_te 84.25737
+[36m(run pid=3948100)[0m wandb:       minor_grp_acc_tr 100.0
+[36m(run pid=3948100)[0m wandb:       minor_grp_acc_va 84.68144
+[36m(run pid=3948100)[0m wandb:    relative_grp_acc_te 0.86042
+[36m(run pid=3948100)[0m wandb:    relative_grp_acc_tr 1.0
+[36m(run pid=3948100)[0m wandb:    relative_grp_acc_va 0.86458
+[36m(run pid=3948100)[0m wandb:       worst_grp_acc_te 45.78783
+[36m(run pid=3948100)[0m wandb:       worst_grp_acc_tr 100.0
+[36m(run pid=3948100)[0m wandb:       worst_grp_acc_va 46.66667
+[36m(run pid=3948100)[0m wandb: 
+[36m(run pid=3948100)[0m wandb:  View run vital-donkey-4359 at: https://wandb.ai/aureliengauffre/SMA_all_2/runs/zt2p9b85
+[36m(run pid=3948100)[0m wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjgxNTM1MQ==/version_details/v14
+[36m(run pid=3948100)[0m wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+[36m(run pid=3948100)[0m wandb: Find logs at: ./wandb/run-20240423_212712-zt2p9b85/logs
+100%|##########| 8/8 [21:42:24<00:00, 10689.13s/it, failures=0, objective=0.86]  100%|##########| 8/8 [21:42:24<00:00, 10689.13s/it, failures=0, objective=0.863]INFO:root:gather done - 1 job(s)
+INFO:root:Gathered 1 job(s) in 11884.8352 sec.
+INFO:root:Dumping evaluations...
+INFO:root:dump_evals starts...
+INFO:root:dump_evals done
+INFO:root:Dumping took 0.0027 sec.
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240424_004456-fxm8t5to
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run prime-dragon-2575
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/fxm8t5to
+[36m(run pid=3856532)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.002646657222892803, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3856532)[0m Method: erm
+[36m(run pid=3871989)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0005698454636535357, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3871989)[0m Method: erm
+[36m(run pid=3891033)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0024001391215287236, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3891033)[0m Method: erm
+[36m(run pid=3903641)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0022825343088702303, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3903641)[0m Method: erm
+[36m(run pid=3919621)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0017664102855893488, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3919621)[0m Method: erm
+[36m(run pid=3934081)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.001117890641369084, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3934081)[0m Method: erm
+[36m(run pid=3948100)[0m {'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115781, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+[36m(run pid=3948100)[0m Method: erm
+The best configuration found by DeepHyper has an accuracy 0.863, 
+
+lr: 0.0008379642915115
+ ####  NOW RUNNING THE BEST CONFIGURATION WITH 5 DIFFERENT SEEDS ####
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 4, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.011 MB uploadedwandb: | 0.005 MB of 0.011 MB uploadedwandb: / 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.86124
+wandb:            best_acc_va 0.86173
+wandb: best_mean_group_acc_te 0.85887
+wandb: best_mean_group_acc_va 0.85957
+wandb:                     lr 0.00084
+wandb:       major_grp_acc_te 97.67225
+wandb:       major_grp_acc_tr 100.0
+wandb:       major_grp_acc_va 97.86427
+wandb:        mean_grp_acc_te 85.88743
+wandb:        mean_grp_acc_tr 100.0
+wandb:        mean_grp_acc_va 85.95685
+wandb:       minor_grp_acc_te 84.20388
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 84.25579
+wandb:    relative_grp_acc_te 0.86211
+wandb:    relative_grp_acc_tr 1.0
+wandb:    relative_grp_acc_va 0.86095
+wandb:       worst_grp_acc_te 47.5039
+wandb:       worst_grp_acc_tr 100.0
+wandb:       worst_grp_acc_va 47.7193
+wandb: 
+wandb:  View run prime-dragon-2575 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/fxm8t5to
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v83
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240424_004456-fxm8t5to/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240424_035151-31xhfm7f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fanciful-sunset-2616
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/31xhfm7f
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 3, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.012 MB uploadedwandb: | 0.008 MB of 0.012 MB uploadedwandb: / 0.008 MB of 0.012 MB uploadedwandb: - 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.85165
+wandb:            best_acc_va 0.84869
+wandb: best_mean_group_acc_te 0.84687
+wandb: best_mean_group_acc_va 0.8476
+wandb:                     lr 0.00084
+wandb:       major_grp_acc_te 97.50059
+wandb:       major_grp_acc_tr 99.98579
+wandb:       major_grp_acc_va 97.69631
+wandb:        mean_grp_acc_te 84.04421
+wandb:        mean_grp_acc_tr 99.97501
+wandb:        mean_grp_acc_va 84.16817
+wandb:       minor_grp_acc_te 82.12187
+wandb:       minor_grp_acc_tr 99.97347
+wandb:       minor_grp_acc_va 82.23558
+wandb:    relative_grp_acc_te 0.84227
+wandb:    relative_grp_acc_tr 0.99988
+wandb:    relative_grp_acc_va 0.84175
+wandb:       worst_grp_acc_te 40.43716
+wandb:       worst_grp_acc_tr 99.43182
+wandb:       worst_grp_acc_va 42.83374
+wandb: 
+wandb:  View run fanciful-sunset-2616 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/31xhfm7f
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v84
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240424_035151-31xhfm7f/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240424_065441-c1ajjd7t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run wild-waterfall-2646
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/c1ajjd7t
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 2, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.012 MB uploadedwandb: \ 0.005 MB of 0.012 MB uploadedwandb: | 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.85828
+wandb:            best_acc_va 0.85998
+wandb: best_mean_group_acc_te 0.85712
+wandb: best_mean_group_acc_va 0.85846
+wandb:                     lr 0.00084
+wandb:       major_grp_acc_te 98.06003
+wandb:       major_grp_acc_tr 99.9893
+wandb:       major_grp_acc_va 97.99811
+wandb:        mean_grp_acc_te 85.12513
+wandb:        mean_grp_acc_tr 99.98531
+wandb:        mean_grp_acc_va 85.27867
+wandb:       minor_grp_acc_te 83.27729
+wandb:       minor_grp_acc_tr 99.98474
+wandb:       minor_grp_acc_va 83.4616
+wandb:    relative_grp_acc_te 0.84925
+wandb:    relative_grp_acc_tr 0.99995
+wandb:    relative_grp_acc_va 0.85167
+wandb:       worst_grp_acc_te 45.40984
+wandb:       worst_grp_acc_tr 99.1453
+wandb:       worst_grp_acc_va 44.67836
+wandb: 
+wandb:  View run wild-waterfall-2646 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/c1ajjd7t
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v84
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240424_065441-c1ajjd7t/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240424_095824-aaa35hl5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run honest-plant-2671
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/aaa35hl5
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 1, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.005 MB uploadedwandb: \ 0.005 MB of 0.005 MB uploadedwandb: | 0.005 MB of 0.012 MB uploadedwandb: / 0.005 MB of 0.012 MB uploadedwandb: - 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.86232
+wandb:            best_acc_va 0.86322
+wandb: best_mean_group_acc_te 0.85919
+wandb: best_mean_group_acc_va 0.86035
+wandb:                     lr 0.00084
+wandb:       major_grp_acc_te 98.05406
+wandb:       major_grp_acc_tr 99.9943
+wandb:       major_grp_acc_va 98.10063
+wandb:        mean_grp_acc_te 85.16905
+wandb:        mean_grp_acc_tr 99.99929
+wandb:        mean_grp_acc_va 85.40629
+wandb:       minor_grp_acc_te 83.32833
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 83.59281
+wandb:    relative_grp_acc_te 0.84982
+wandb:    relative_grp_acc_tr 1.00006
+wandb:    relative_grp_acc_va 0.85211
+wandb:       worst_grp_acc_te 41.63934
+wandb:       worst_grp_acc_tr 99.95438
+wandb:       worst_grp_acc_va 45.78215
+wandb: 
+wandb:  View run honest-plant-2671 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/aaa35hl5
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v85
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240424_095824-aaa35hl5/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /home/aptikal/gauffrea/SMABalancingGroups/wandb/run-20240424_134027-fcb9qz8o
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run whole-thunder-2698
+wandb:  View project at https://wandb.ai/aureliengauffre/SMA_all_2_best
+wandb:  View run at https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/fcb9qz8o
+{'wandb_project': 'SMA_all_2', 'output_dir': 'outputs', 'slurm_output_dir': 'slurm_outputs', 'data_path': 'data', 'slurm_partition': None, 'max_time': 4320, 'num_hparams_seeds': 20, 'selector': 'mean_grp_acc_va', 'method': 'erm', 'dataset': 'SMA', 'init_seed': 0, 'hparams_seed': 0, 'eval_every_n_epochs': 4, 'arch': 'resnet50', 'n_HBO_runs': 8, 'n_eval_init_seed': 5, 'num_epochs': 20, 'batch_size': 16, 'eta': 0.1, 'lr': 0.0008379642915115, 'weight_decay': 0.001, 'up': 20, 'T': 3, 'scheduler': False, 'new_reset': False, 'SMA': {'mode': 'classic', 'img_size': 256, 'split_seed': 0, 'names': ['plt-net'], 'Ks': [2, 4, 8], 'mus': [0.1], 'methods': ['erm'], 'name': 'plt-net', 'K': 8, 'mu': 0.1}, 'config_name': 'configAtest3.yaml', 'n_gpus': 1, 'IR': 0.7000000000000001, 'group': 'K=8_erm', 'group_best': 'plt-net_K=8_erm_mu=0.1_seed=0'}
+Method: erm
+wandb: - 0.005 MB of 0.011 MB uploadedwandb: \ 0.005 MB of 0.011 MB uploadedwandb: | 0.012 MB of 0.012 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:            best_acc_te 0.85976
+wandb:            best_acc_va 0.86349
+wandb: best_mean_group_acc_te 0.85692
+wandb: best_mean_group_acc_va 0.86039
+wandb:                     lr 0.00084
+wandb:       major_grp_acc_te 97.75761
+wandb:       major_grp_acc_tr 100.0
+wandb:       major_grp_acc_va 97.9117
+wandb:        mean_grp_acc_te 85.28158
+wandb:        mean_grp_acc_tr 100.0
+wandb:        mean_grp_acc_va 85.69474
+wandb:       minor_grp_acc_te 83.49929
+wandb:       minor_grp_acc_tr 100.0
+wandb:       minor_grp_acc_va 83.94946
+wandb:    relative_grp_acc_te 0.85415
+wandb:    relative_grp_acc_tr 1.0
+wandb:    relative_grp_acc_va 0.8574
+wandb:       worst_grp_acc_te 42.5897
+wandb:       worst_grp_acc_tr 100.0
+wandb:       worst_grp_acc_va 43.04094
+wandb: 
+wandb:  View run whole-thunder-2698 at: https://wandb.ai/aureliengauffre/SMA_all_2_best/runs/fcb9qz8o
+wandb:  View job at https://wandb.ai/aureliengauffre/SMA_all_2_best/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTY4NTUxMg==/version_details/v89
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240424_134027-fcb9qz8o/logs

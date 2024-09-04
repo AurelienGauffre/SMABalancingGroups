@@ -63,6 +63,4 @@ airplanes 30
 . aker_run_pretrain.sh Z8 30
 # pltdoc 
 
-. aker_run_pretrain.sh Z9 30 
-. aker_run_pretrain.sh Z10 30
 
