@@ -43,7 +43,7 @@ alphas: [0] #alpha * supcon + (1-alpha) bce
 SMA:
   mode: 'classic'
   img_size: 224
-  split_seeds: [4,5,6]
+  split_seeds: [7,8,9]
   names:  ['dogs'] #plt-net ins2 dogs dogs
   Ks: [2,4,8]
   mus: [0.1]
