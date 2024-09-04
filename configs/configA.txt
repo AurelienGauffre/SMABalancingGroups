@@ -50,6 +50,7 @@ airplanes 30
 
 
 # medical-leaf
+test
 . aker_run_pretrain.sh Z1 5
 . aker_run_pretrain.sh Z2 5
 # texture
