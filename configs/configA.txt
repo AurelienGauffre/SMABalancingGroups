@@ -20,7 +20,7 @@ A3 texture 3m
 A4 rescis
 A5 plt-doc
 
-# training with a training path (combinable avec les 1) geneérées par les Z+
+# training with a training path (combinable avec les runs geneérées par les Z+)
 . aker_run.sh B0-0 16
 . aker_run.sh B0-1 16
 . aker_run.sh B0-2 16
