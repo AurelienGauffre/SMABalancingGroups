@@ -89,23 +89,43 @@ class CustomResNet(torch.nn.Module):
             in_feature = backbone.fc.in_features
             self.network = nn.Sequential(*list(backbone.children())[:-1])
             
+            print("Keys in new model:", self.network.state_dict().keys())
+
         if pretrained_path is not None:
             print(f"############## Loading pretrained model {pretrained_path} ##############")
             
             
             checkpoint = torch.load(os.path.join('checkpoint', pretrained_path))
             
-
+            
             # Access the 'model_state_dict' from the loaded checkpoint
             #https://docs.lightly.ai/self-supervised-learning/tutorials/package/tutorial_checkpoint_finetuning.html
             model_state_dict = checkpoint['model_state_dict']
-            model_state_dict = {
-                k.replace("backbone.", ""): v
-                for k, v in model_state_dict.items()
-                if k.startswith("backbone.")
-            }
+            print("Keys in checkpoint:", model_state_dict.keys())
+            
+            checkpoint_keys = set(model_state_dict.keys())
+            new_model_keys = set(self.network.state_dict().keys())
+            # Find the common keys (intersection)
+            common_keys = checkpoint_keys.intersection(new_model_keys)
+            # Print the common keys
+            print("Common keys:", common_keys)
+            # Find the missing keys
+            missing_keys = new_model_keys - checkpoint_keys
+            # Print the missing keys
+            print("Missing keys:", missing_keys)
+            
+            
+            print("Adjusting keys ...")
+            # model_state_dict = {
+            #     k.replace("backbone.", ""): v
+            #     for k, v in model_state_dict.items()
+            #     if k.startswith("backbone.")
+            # }
 
             # Now load the model state dict
+            
+            
+            
             self.network.load_state_dict(model_state_dict, strict=True)
             
         #self.feature_extractor = torch.nn.Sequential(*list(self.network.children())[:-1])
@@ -160,7 +180,7 @@ class ERM(torch.nn.Module):
             #     self.network = torchvision.models.resnet.resnet50(weights=torchvision.models.ResNet50_Weights.IMAGENET1K_V1)
             
             # self.network.fc = torch.nn.Linear(self.network.fc.in_features, self.n_classes)
-            
+            print(f"##########################arch : {arch}")
             self.network = CustomResNet(arch=arch, n_classes=self.n_classes, pretrained_path=self.pretrained_path)
 
 

@@ -89,7 +89,7 @@ def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     model.to(device)
 
-    for epoch in range(100):
+    for epoch in range(config.num_epochs):
         total_loss = 0
         momentum_val = cosine_schedule(epoch, 100, 0.996, 1)  # For MoCo
 
