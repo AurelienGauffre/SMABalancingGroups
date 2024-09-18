@@ -3,6 +3,7 @@
 # copy of train_deephyper.py but adapted to contrastive setting
 
 # !/usr/bin/env python
+import re
 
 import argparse
 import json
@@ -274,6 +275,11 @@ if __name__ == "__main__":
 
                                 args.group = f"K={args.SMA.K}_{args.method}"
                                 args.group_best = f"{args.SMA.name}_clmode={args.cl_mode}_alpha={args.alpha}_K={args.SMA.K}_{args.method}_mu={args.SMA.mu}_seed={args.SMA.split_seed}_pretrained_path={args.pretrained_path}"
+                                # Extract the digist from the string "pretrained_path" to an int
+                                if args.pretrained_path is None :
+                                    args.pretrained_path_epochs = 0
+                                else :
+                                    args.pretrained_path_epochs = int(''.join(re.findall(r'\d+', args.pretrained_path)))
                                 if "selector" in args.wandb_project:
                                     # add the selector at the start of the string
                                     args.group_best = f"{args.selector}_{args.group_best}"

@@ -7,7 +7,7 @@ max_time: 4320  # 3 * 24 * 60
 num_hparams_seeds: 20
 #num_init_seeds: 5
 selector: 'worst_acc_va' # mean_acc_va
-
+filter: 'B'
 #Sweep
 #['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
 method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'

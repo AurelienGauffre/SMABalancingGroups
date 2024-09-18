@@ -1,13 +1,24 @@
- with bce or bce+supcon
+A : BCE+CL reg, seed 4,5,6 premier avec resnet18, apres tout relancé avec resnet50 et correctement ajouté le filre a
+Z pretraining 
+B : 7,8,9 : comparaison des différentes méthodes de pretranining
+C : 30,31,32 moco number impact of number of training iterations
+
+Check les filter C avec simsiam (ils ont un filter C eux)
+
+d with bce or bce+supcon
 
 . aker_run.sh A0 16
 . aker_run.sh A2 20
 . aker_run.sh A3 16
-. aker_run.sh A5 34
 . aker_run.sh A7 40
-. aker_run.sh A6 ?
-. aker_run.sh A1 ?
-. aker_run.sh A4 10?
+. aker_run.sh A5 34
+
+
+Same mais avec resnet50
+. aker_run.sh A0 25
+. aker_run.sh A2 35 # a relancer avec juste K =8
+. aker_run.sh A3 24
+. aker_run.sh A7 60
 
 
 
@@ -24,20 +35,55 @@ A5 plt-doc
 . aker_run.sh B0-0 16
 . aker_run.sh B0-1 16
 . aker_run.sh B0-2 16
+
 . aker_run.sh B1-0 25
 . aker_run.sh B1-1 25
 . aker_run.sh B1-2 25 
 . aker_run.sh B2-0 35
+
 . aker_run.sh B2-1 35
 . aker_run.sh B2-2 35
 . aker_run.sh B3-0 30
 . aker_run.sh B3-1 30
 . aker_run.sh B3-2 30
 
+. aker_run.sh B0-3 16
+. aker_run.sh B1-3 25
+. aker_run.sh B2-3 30
+. aker_run.sh B3-3 30
 
 
 
+. aker_run.sh C0-1 8
+. aker_run.sh C0-2 8
+. aker_run.sh C0-3 8
+. aker_run.sh C0-0 8
+. aker_run.sh C0-4 8
 
+
+. aker_run.sh C1-0 10
+. aker_run.sh C1-1 10
+. aker_run.sh C1-2 10
+. aker_run.sh C1-3 10
+. aker_run.sh C1-4 10
+
+
+. aker_run.sh C2-0 10
+. aker_run.sh C2-1 10
+. aker_run.sh C2-2 10
+. aker_run.sh C2-3 10
+. aker_run.sh C2-4 10
+
+. aker_run.sh C3-2 25
+. aker_run.sh C3-3 25
+. aker_run.sh C3-4 25
+. aker_run.sh C3-0 25
+. aker_run.sh C3-1 25
+
+
+. aker_run.sh C1-0 10
+. aker_run.sh C2-0 10
+. aker_run.sh C3-0 25
 
 A0 Leaf : k=8 2m     3*3*3*4=243*   16
 A1 Birds k=8 30m                    

@@ -94,7 +94,6 @@ class CustomResNet(torch.nn.Module):
         if pretrained_path is not None:
             print(f"############## Loading pretrained model {pretrained_path} ##############")
             
-            
             checkpoint = torch.load(os.path.join('checkpoint', pretrained_path))
             
             

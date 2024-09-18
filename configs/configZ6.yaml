@@ -9,7 +9,6 @@ vf_prob: 0.5  # Vertical flip probability
 rr_prob: 0.5  # Random rotation probability
 batch_size: 64
 num_epochs: 200
-lr: 0.05
 momentum: 0.9
 weight_decay: 1e-4
 method: 'erm'
